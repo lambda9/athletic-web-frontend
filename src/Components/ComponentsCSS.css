@@ -1,0 +1,102 @@
+:root {
+    --primaryColor: #af9a7d;
+    --mainWhite: #fff;
+    --offWhite: #f7f7f7;
+    --mainBlack: #222;
+    --mainGrey: #ececec;
+    --darkGrey: #cfcfcf;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 2.8px;
+    --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+    --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 10px;
+    background: var(--offWhite);
+    z-index: 1;
+    display: flex;
+    /* background: cyan; */
+}
+
+.nav-header {
+    width: 15%;
+    justify-content: space-between;
+    /* background-color: blueviolet; */
+}
+
+.nav-links-container {
+    width: 80;
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+    /* background-color: coral; */
+}
+
+.nav-links-container a{
+    text-decoration: none;
+    color: black; 
+    font-size: 22px;
+    padding: 10px 14px;
+    transition: var(--mainTransition);
+    letter-spacing: var(--mainSpacing);
+}
+
+.nav-links-container a:hover {
+    color: #0979FA;
+    cursor: pointer;
+}
+
+.nav-links-container-btn {
+    margin: auto;
+}
+
+.nav-links-container-btn Button{
+    margin: 1px 7px;
+}
+
+.show-nav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: burlywood;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.show-nav {
+    height: 200px;
+}
+
+.nav-btn {
+    width: 0%;
+    transition: 0.3s ease-in;
+    /* display: none; */
+    overflow: hidden;
+}
+
+@media screen and (max-width: 950px) {
+    .nav-links-container {
+        width: 0%;
+    }
+    
+    .navbar {
+        background: cyan;
+    }
+
+    .nav-btn {
+        display: block;
+        width: 10%;
+    }
+
+
+}
