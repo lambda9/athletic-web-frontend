@@ -8,7 +8,7 @@ import NavbarComp from './Components/NavbarComp';
 function App() {
     return (
         <Router>
-            <div className="App">
+            <div>
                 <NavbarComp />
             </div>
         </Router>
