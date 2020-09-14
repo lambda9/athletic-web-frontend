@@ -10,30 +10,8 @@ class NavbarComp extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            isOpen: true,
-            c1: 'bar1',
-            c2: 'bar2',
-            c3: 'bar3'
-        }
+
     }
-
-    handleToggle = () => {
-        if(this.state.c1 === 'bar1') {
-
-            this.setState({
-                c1: 'bar1 change1',
-                c2: 'bar2 change2',
-                c3: 'bar3 change3'
-            })
-            return;
-        }
-        this.setState({
-           c1: 'bar1',
-            c2: 'bar2',
-            c3: 'bar3' 
-        })
-    };
 
     render() {
         return (
@@ -46,25 +24,23 @@ class NavbarComp extends Component {
                 </div>
 
                 <div className='nav-links-container'>
-                    <a href="/">Home</a>
-                    <a href="/">Programs</a>
-                    <a href="/">Membership</a>
-                    <a href="/">Blogs</a>
-                    <a href="/">Contact Us</a>
-                    <a href="/">Contact Us</a>
+                    <Link href="/">Home</Link>
+                    <Link href="/">Programs</Link>
+                    <Link href="/">Membership</Link>
+                    <Link href="/">Blogs</Link>
+                    <Link href="/">Contact Us</Link>
+                    <Link href="/">Contact Us</Link>
                     
                     <div className='nav-links-container-btn'>
                         <Button color='primary' outline>Login</Button> 
                         <Button color='primary' outline>Login</Button> 
-                    </div>
-                
-                                   
+                    </div>        
                 </div>
 
-                <div className="nav-btn" onClick={this.handleToggle}>
-                    <div class={this.state.c1}></div>
-                    <div class={this.state.c2}></div>
-                    <div class={this.state.c3}></div>
+                <div className="nav-btn" onClick={this.props.toggleFun}>
+                    <div class={this.props.sideNavState ? 'bar1 change1' : 'bar1'}></div>
+                    <div class={this.props.sideNavState ? 'bar2 change2' : 'bar2'}></div>
+                    <div class={this.props.sideNavState ? 'bar3 change3' : 'bar3'}></div>
                  </div>
 
             </nav>
