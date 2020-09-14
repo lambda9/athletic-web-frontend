@@ -8,15 +8,15 @@ class SideNav extends Component {
         return (
             <div>
                 <div className={this.props.sideNavState ? 'side-nav show-side-nav': 'side-nav'}>
-                    <Link href="javascript:void(0)" className="closebtn" onClick={this.props.toggleFun}>×</Link>
+                    <Link href="javascript:void(0)" className="closebtn" onClick={this.props.toggleFun}>X</Link>
                     <Link href="/">Home</Link>
                     <Link href="/">Programs</Link>
                     <Link href="/">Membership</Link>
                     <Link href="/">Blogs</Link>
                     <Link href="/">Contact Us</Link>
                     <Link href="/">Contact Us</Link>
-                    <Button color='primary' outline>Login</Button>
-                    <Button color='primary' outline>Login</Button>
+                    <button className='loginTrialBtn' >Free Trial</button>
+                    <button className='loginTrialBtn'>Login</button>
                 </div>
             </div>
         )

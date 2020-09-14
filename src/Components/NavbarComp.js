@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './ComponentsCSS.css'
 import {Button} from 'reactstrap'
-
+import logo from './logo.png'
 
 
 class NavbarComp extends Component {
@@ -13,7 +13,7 @@ class NavbarComp extends Component {
 
                 <div className="nav-header">
                     <Link to="/">
-                        <label>Logo</label>
+                        <img src={logo}></img>
                     </Link>
                 </div>
 
@@ -26,8 +26,8 @@ class NavbarComp extends Component {
                     <Link href="/">Contact Us</Link>
                     
                     <div className='nav-links-container-btn'>
-                        <Button color='primary' outline>Login</Button> 
-                        <Button color='primary' outline>Login</Button> 
+                        <button >Free Trial</button> 
+                        <button >Login</button> 
                     </div>        
                 </div>
 

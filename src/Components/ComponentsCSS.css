@@ -13,7 +13,7 @@
 
 /* Navbar */
 .navbar {
-    top: 0;
+    top: 20px;
     left: 0;
     width: 100%;
     padding: 5px 10px;
@@ -25,11 +25,19 @@
 
 .nav-header {
     width: 10%;
+    padding: 0 60px;
+    display: flex;
+    justify-content: center;
     /* background-color: blueviolet; */
 }
 
+.nav-header img {
+    max-height: 100px;
+
+}
+
 .nav-links-container {
-    width: 85%;
+    width: 82%;
     height: 100%;
     display: flex;
     overflow: hidden;
@@ -44,12 +52,13 @@
     font-size: 20px;
     margin: auto;
     padding: 7px 10px;
+    font-weight: 600;
     transition: var(--mainTransition);
     letter-spacing: var(--mainSpacing);
 }
 
 .nav-links-container a:hover, .side-nav a:hover {
-    color: #0979FA;
+    color: #418FA2;
     cursor: pointer;
 }
 
@@ -60,14 +69,27 @@
 }
 
 .nav-links-container-btn {
+    width: 20%;
+    display: flex;
     margin: auto;
-    float: right;
     /* background-color: violet; */
 }
 
-.nav-links-container-btn Button{
-    float: right;
-    margin: 1px 7px;
+.nav-links-container-btn Button, .loginTrialBtn{
+    padding: 7px 13px;
+    border-radius: 6px;
+    font-size: 20px;
+    color: #418FA2;
+    outline: #418FA2;
+    border: 1px solid #418FA2;
+    background-color: inherit;
+    margin: auto;
+    transition: all 0.2s linear;
+}
+.nav-links-container-btn Button:hover, .loginTrialBtn:hover{
+    color: white;
+    border: 1px solid #418FA2;
+    background-color: #418FA2;
 }
 
 
@@ -80,7 +102,7 @@
 .bar1, .bar2, .bar3 {
     width: 35px;
     height: 5px;
-    background-color: #333;
+    background-color: #418FA2;
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -110,7 +132,7 @@
 }
 
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1050px) {
     .nav-links-container  {
         display: none;
     }

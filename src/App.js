@@ -27,7 +27,6 @@ class App extends Component {
 
             <NavbarComp sideNavState={this.state.sideNavState} toggleFun={this.toggle} />
             <SideNav sideNavState={this.state.sideNavState} toggleFun = {this.toggle}/>
-            <Carousel1 />
             
             </Router>
             
