@@ -34,4 +34,13 @@ const Carousel1 = (props) => {
 	return <Carousel />;
 };
 
+
+    return (
+        <Carousel>
+        </Carousel>
+
+    );
+}
+
 export default Carousel1;
+

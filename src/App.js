@@ -9,7 +9,6 @@ import img1 from "./Homepage/Images/img1.jpg";
 import img2 from "./Homepage/Images/img2.jpg";
 import img3 from "./Homepage/Images/img3.jpg";
 
-const images = [img1, img2, img3];
 
 class App extends Component {
 	constructor(props) {
