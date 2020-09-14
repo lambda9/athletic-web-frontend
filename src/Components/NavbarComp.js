@@ -7,12 +7,6 @@ import {Button} from 'reactstrap'
 
 class NavbarComp extends Component {
 
-    constructor(props) {
-        super(props)
-
-
-    }
-
     render() {
         return (
             <nav className="navbar">

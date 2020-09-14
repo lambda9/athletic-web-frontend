@@ -1,12 +1,8 @@
-
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import NavbarComp from './Components/NavbarComp';
 import SideNav from './Components/SideNav';
-
-
-import React, { Component } from 'react'
+import Carousel1 from './Homepage/Carousel1';
 
 class App extends Component {
     constructor(props) {
@@ -14,7 +10,6 @@ class App extends Component {
     
         this.state = {
             sideNavState: false,
-            classnameProp: 'side-nav'
         }
     }
     
@@ -32,7 +27,7 @@ class App extends Component {
 
             <NavbarComp sideNavState={this.state.sideNavState} toggleFun={this.toggle} />
             <SideNav sideNavState={this.state.sideNavState} toggleFun = {this.toggle}/>
-            
+            <Carousel1 />
             
             </Router>
             
