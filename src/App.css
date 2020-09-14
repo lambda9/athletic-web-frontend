@@ -4,7 +4,9 @@
 
 body {
   height: 1600px;
-  background-color: cornsilk;
+  background-color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.4;
 }
 
 .App-link {
