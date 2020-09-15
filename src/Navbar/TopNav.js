@@ -15,8 +15,7 @@ class TopNav extends Component {
         </div>
         
         <nav className="navbar">
-          
-
+        
           <div className="nav-toggle-btn" onClick={this.props.toggleFun}>
             <div
               class={this.props.sideNavState ? "bar1 change1" : "bar1"}
@@ -28,7 +27,7 @@ class TopNav extends Component {
               class={this.props.sideNavState ? "bar3 change3" : "bar3"}
             ></div>
           </div>
-          
+
           <div className="nav-links-container">
             <Link href="/">Home</Link>
             <Link href="/">Programs</Link>

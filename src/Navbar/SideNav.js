@@ -7,14 +7,14 @@ class SideNav extends Component {
     render() {
         return (
             <div>
-                <div className={this.props.sideNavState ? 'side-nav show-side-nav': 'side-nav'}>
-                    <Link href="javascript:void(0)" className="closebtn" onClick={this.props.toggleFun}>X</Link>
-                    <Link href="/">Home</Link>
-                    <Link href="/">Programs</Link>
-                    <Link href="/">Membership</Link>
-                    <Link href="/">Blogs</Link>
-                    <Link href="/">Contact Us</Link>
-                    <Link href="/">Contact Us</Link>
+                <div className={this.props.sideNavState ? 'side-nav' : 'side-nav show-side-nav'}>
+                    <Link to="/" className="closebtn" onClick={this.props.toggleFun}>X</Link>
+                    <Link to="/">Home</Link>
+                    <Link to="/">Programs</Link>
+                    <Link to="/">Membership</Link>
+                    <Link to="/">Blogs</Link>
+                    <Link to="/">About Us</Link>
+                    <Link to="/">Contact Us</Link>
                     <button className='loginTrialBtn' >Free Trial</button>
                     <button className='loginTrialBtn'>Login</button>
                 </div>
