@@ -1,25 +1,23 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 body {
-  height: 1600px;
-  background-color: cornsilk;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 1.4;
-  font-weight: 450;
-
+	height: 1600px;
+	background-color: white;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	line-height: 1.4;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

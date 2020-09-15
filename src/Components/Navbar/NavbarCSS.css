@@ -12,47 +12,56 @@
 }
 
 /* Navbar */
-.navbar {
-    top: 20px;
-    left: 0;
-    width: 100%;
-    padding: 5px 10px;
-    background: var(--offWhite);
-    z-index: 1;
+
+.navbar-container {
     display: flex;
-    /* background: cyan; */
+    /* background-color: red; */
 }
 
-.nav-header {
-    width: 10%;
+.nav-logo {
+    width: 11%;
     padding: 0 60px;
     display: flex;
     justify-content: center;
     /* background-color: blueviolet; */
 }
-
-.nav-header img {
+.nav-logo img {
     max-height: 100px;
+}
 
+.navbar {
+    display:block;
+    margin: auto;
+    width: 89%;
+    height: 70px;
+    padding: 5px 0;
+    border-radius: 35px 0 0 35px;
+    background: var(--offWhite);
+    z-index: 1;
+    /* background: cyan; */
+    
 }
 
 .nav-links-container {
-    width: 82%;
+    width: 95%;
     height: 100%;
     display: flex;
+    justify-content: end;
     overflow: hidden;
     transition: var(--mainTransition);
     /* background-color: coral; */
+    /* float: right; */
 }
 
 .nav-links-container a{
     text-decoration: none;
     color: black; 
     /* background: yellow; */
-    font-size: 20px;
+    text-transform: capitalize;
+    font-size: 23px;
     margin: auto;
-    padding: 7px 10px;
-    font-weight: 600;
+    /* padding: 5px 1px; */
+    font-weight: 500;
     transition: var(--mainTransition);
     letter-spacing: var(--mainSpacing);
 }
@@ -62,28 +71,23 @@
     cursor: pointer;
 }
 
-.nav-links-div {
-    margin: auto;
-    display: flex;
-    float: left;
-}
-
 .nav-links-container-btn {
-    width: 20%;
+    width: 19%;
     display: flex;
-    margin: auto;
+    margin: auto 0;
+    justify-content: space-around;
     /* background-color: violet; */
 }
 
 .nav-links-container-btn Button, .loginTrialBtn{
-    padding: 7px 13px;
+    padding: 6px 11px;
     border-radius: 6px;
     font-size: 20px;
     color: #418FA2;
     outline: #418FA2;
     border: 1px solid #418FA2;
     background-color: inherit;
-    margin: auto;
+    /* margin: auto; */
     transition: all 0.2s linear;
 }
 .nav-links-container-btn Button:hover, .loginTrialBtn:hover{
@@ -92,11 +96,46 @@
     background-color: #418FA2;
 }
 
-
 .nav-btn {
     width: 0%;
+    float: right;
+    margin-top: 11px;
     transition: 0.3s ease-in;
     overflow: hidden;
+    /* background-color: blueviolet; */
+}
+
+
+
+@media screen and (max-width: 1300px) {
+    .nav-links-container a{
+        font-size: 16px;
+        padding: 7px 7px;
+    }
+
+    
+
+    .nav-links-container-btn Button {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .nav-links-container  {
+        display: none;
+    }
+    
+    .nav-btn {
+        display: block;
+        margin-top: 11px;
+        float: right;
+        min-width: 34px;
+        width: 4.5%;
+    }
+
+    
+
 }
 
 .bar1, .bar2, .bar3 {
@@ -108,42 +147,18 @@
 }
   
 .change1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
+    -webkit-transform: rotate(-45deg) translate(-9px, 9px);
+    transform: rotate(-45deg) translate(-9px, 9px);
 }
   
 .change2 {opacity: 0;}
   
 .change3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
+    -webkit-transform: rotate(45deg) translate(-7px, -7px);
+    transform: rotate(45deg) translate(-7px, -7px);
 }
 
-@media screen and (max-width: 1300px) {
-    .nav-links-container a{
-        font-size: 16px;
-        padding: 7px 7px;
-    }
-
-    .nav-links-container-btn Button {
-        font-size: 16px;
-    }
-
-}
-
-
-@media screen and (max-width: 1050px) {
-    .nav-links-container  {
-        display: none;
-    }
-    
-    .nav-btn {
-        display: block;
-        width: 5%;
-    }
-
-}
-
+/* Side Nav */
 .side-nav {
     height: 100%;
     width: 0px;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './ComponentsCSS.css'
+import './NavbarCSS.css'
 import { Button } from 'reactstrap'
 import {Link} from 'react-router-dom'
 
@@ -14,7 +14,7 @@ class SideNav extends Component {
                     <Link href="/">Membership</Link>
                     <Link href="/">Blogs</Link>
                     <Link href="/">Contact Us</Link>
-                    <Link href="/">Contact Us</Link>
+                    <Link href="/">About Us</Link>
                     <button className='loginTrialBtn' >Free Trial</button>
                     <button className='loginTrialBtn'>Login</button>
                 </div>
