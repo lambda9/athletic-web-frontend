@@ -35,7 +35,8 @@ const Carousel1 = (props) => {
 
 
     return (
-        <Carousel
+        <Carousel>
+        </Carousel>
 
     );
 }
