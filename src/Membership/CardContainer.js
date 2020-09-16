@@ -13,18 +13,18 @@ class CardContainer extends Component {
       {
         icon: lg1,
         title: "P.T. Yearly",
-        info: "Thinking about it! Do it right now.",
+        info: "Thinking about it! Do it right now.  22,000/Yearly",
       },
       {
         icon: lg2,
         title: "P.T. Six Months",
-        info: "Get rid of unecessary fat & be in shape with us.",
+        info: "Get rid of unecessary fat & be in shape with us.   12,000/6 Months",
       },
 
       {
         icon: lg4,
         title: "Regular Yearly",
-        info: "Get personal trainer to always guide you.",
+        info: "Get personal trainer to always guide you.  8,000/Yearly",
       },
 
     ],

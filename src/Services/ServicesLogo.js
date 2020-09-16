@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { MdFitnessCenter, MdTrain } from "react-icons/md";
 import lg1 from "./logos/lg1.png";
 import lg2 from "./logos/lg2.png";
 import lg3 from "./logos/lg3.png";
 import lg4 from "./logos/lg4.png";
 import lg5 from "./logos/lg5.png";
 import Title from "../Components/Title";
+import './ServicesCSS.css'
 
 class ServicesLogo extends Component {
   state = {
