@@ -3,10 +3,9 @@ import Slide from "./Slide";
 import "./Carousel.css";
 
 const SlideContainer = ({ images, currentIndex, width, height }) => {
-	let scale = 1.2;
-	let imageWidth = width / scale;
-	let imageHeight = height / scale;
-	let bias = ((scale - 1.0) * imageWidth) / 2;
+	// let scale = 1.2;
+	let imageWidth = width;
+	let imageHeight = height;
 
 	const [offset, setOffset] = useState(0);
 	useEffect(() => {
@@ -16,8 +15,8 @@ const SlideContainer = ({ images, currentIndex, width, height }) => {
 	return (
 		<div
 			style={{
-				transition: "transform ease-in-out 0.5s",
-				transform: `translateX(${offset + bias}vw)`,
+				transition: "transform ease-in-out 1.0s",
+				transform: `translateX(${offset}vw)`,
 			}}
 			className="slideContainer"
 		>

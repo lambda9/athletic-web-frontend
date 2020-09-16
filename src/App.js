@@ -18,7 +18,7 @@ class App extends Component {
 		return (
 			<Router>
 				<NavMain />
-				
+
 				<Carousel images={images} width={100} heightToWidthRatio={0.6} />
 				<ServicesLogo />
 				<CardContainer />
