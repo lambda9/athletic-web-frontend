@@ -7,6 +7,9 @@ import img1 from "./Homepage/Images/img1.jpg";
 import img2 from "./Homepage/Images/img2.jpg";
 import img3 from "./Homepage/Images/img3.jpg";
 import NavMain from "./Navbar/NavMain";
+import CardComp from "./Membership/CardComp";
+import CardContainer from "./Membership/CardContainer";
+import ServicesLogo from "./Services/ServicesLogo";
 
 const images = [img1, img2, img3];
 
@@ -15,9 +18,10 @@ class App extends Component {
 		return (
 			<Router>
 				<NavMain />
-				{/* <img src={images[0]} /> */}
-
+				
 				<Carousel images={images} width={100} heightToWidthRatio={0.6} />
+				<ServicesLogo />
+				<CardContainer />
 			</Router>
 		);
 	}
