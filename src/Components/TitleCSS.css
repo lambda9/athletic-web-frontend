@@ -9,9 +9,30 @@
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
-.title div {
-  width: 6rem;
+.baseline {
+  position: relative;
+  width: 7rem;
   height: 5px;
   margin: 0 auto;
   background: var(--primaryColor);
+}
+
+.title-mask {
+  position: absolute;
+  height: 5px;
+  width: 0.3rem;
+  background-color: var(--mainGrey);
+}
+
+.title-mask1 {
+  left: 0.3rem;
+}
+.title-mask2 {
+  left: 0.9rem;
+}
+.title-mask3 {
+  right: 0.3rem;
+}
+.title-mask4 {
+  right: 0.9rem;
 }

@@ -5,7 +5,8 @@ import lg2 from "./logos/lg2.png";
 import lg3 from "./logos/lg3.png";
 import lg4 from "./logos/lg4.png";
 import lg5 from "./logos/lg5.png";
-import Title from '../Components/Title'
+import Title from "../Components/Title";
+import { Link } from "react-router-dom";
 
 class CardContainer extends Component {
   state = {
@@ -18,7 +19,8 @@ class CardContainer extends Component {
       {
         icon: lg2,
         title: "P.T. Six Months",
-        info: "Get rid of unecessary fat & be in shape with us.   12,000/6 Months",
+        info:
+          "Get rid of unecessary fat & be in shape with us.   12,000/6 Months",
       },
 
       {
@@ -26,14 +28,13 @@ class CardContainer extends Component {
         title: "Regular Yearly",
         info: "Get personal trainer to always guide you.  8,000/Yearly",
       },
-
     ],
   };
 
   render() {
     return (
       <div className="cardCont">
-      <Title >Our plans</Title>
+        <Title>Our plans</Title>
         <div className="cardCont-center">
           {this.state.services.map((item) => {
             return (
@@ -47,9 +48,10 @@ class CardContainer extends Component {
             );
           })}
         </div>
-        <div className="card-button">
-           <button className='btn-primary'>Checkout more >></button>
-          </div>
+
+        <div className="card-btn">
+          <Link className="button-primary">Checkout more >></Link>
+        </div>
       </div>
     );
   }

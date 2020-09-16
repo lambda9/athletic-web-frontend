@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Carousel from "./Components/Carousel/Carousel";
 import "./App.css";
 import img1 from "./Homepage/Images/img1.jpg";
