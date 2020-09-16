@@ -83,7 +83,8 @@
 .cardCont {
   padding: 1.5rem 0;
   width: 100%;
-  background-color: var(--mainGrey);
+  text-align: center;
+  /* background-color: var(--mainGrey); */
   margin: 1.5rem auto;
 }
 
@@ -93,14 +94,15 @@
   /* background-color: rgb(156, 150, 156); */
 }
 
-.card-button {
-  display: block;
+.card-btn {
+  display: inline-block;
+  text-align: center;
   margin: 18px auto 0;
   /* background-color: goldenrod; */
 }
 
-.card-button button {
-  display: block;
+.card-btn a {
+
   margin: 0 auto;
 }
 
@@ -109,10 +111,8 @@
   .card-holder {
     width: 25%;
   }
-  .card-button button {
-    margin: 0 auto;
-  }
-  .card-button {
+
+  .card-btn {
     margin: 18px auto 0;
   }
 

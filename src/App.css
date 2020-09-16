@@ -27,6 +27,7 @@ body {
   background: var(--mainWhite);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;
+  text-align: center;
 }
 h1 {
   font-size: 3em;
@@ -58,26 +59,33 @@ h6 {
   margin-bottom: 1.5em;
 }
 
-.btn-primary {
-	display: inline-block;
-	text-decoration: none;
-	letter-spacing: var(--mainSpacing);
-	color: var(--mainBlack);
-	background: var(--primaryColor);
-	padding: 0.35rem 0.7rem;
-	border: 2px solid var(--primaryColor);
-	transition: var(--mainTransition);
-	text-transform: uppercase;
-	cursor: pointer;
-  }
-  .btn-primary:hover {
-	background: transparent;
-	border: 2px solid var(--primaryColor);
-	color: var(--primaryColor);
-  }
+.button-primary {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainBlack);
+  background: var(--primaryColor);
+  outline: none;
+  font-size: 12px;
+  padding: 0.35rem 0.6rem;
+  border: 2px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  cursor: pointer;
+}
 
-.App-link {
-  color: #61dafb;
+.button-primary:hover {
+  background: transparent;
+  text-decoration: none;
+  border: 2px solid var(--primaryColor);
+  color: var(--primaryColor);
+}
+
+@media screen and (min-width: 500px) {
+  .button-primary {
+    font-size: 16px;
+    padding: 0.35rem 0.7rem;
+  }
 }
 
 @keyframes App-logo-spin {
