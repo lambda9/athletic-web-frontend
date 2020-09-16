@@ -42,7 +42,6 @@ const Carousel = ({ images, width, heightToWidthRatio }) => {
 				style={{
 					width: `${width}vw`,
 					height: `${height}vw`,
-					boxShadow: `0 0 20px #111111`,
 				}}
 			>
 				<Slides

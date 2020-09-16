@@ -17,7 +17,7 @@ class App extends Component {
 				<NavMain />
 				{/* <img src={images[0]} /> */}
 
-				<Carousel images={images} width={100} heightToWidthRatio={0.6} />
+				<Carousel images={images} width={100} heightToWidthRatio={0.43} />
 			</Router>
 		);
 	}
