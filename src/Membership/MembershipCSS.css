@@ -1,0 +1,140 @@
+.services {
+  margin: 1rem auto;
+  padding: 2rem 0;
+}
+
+.card {
+  /* padding: 2px; */
+  margin: 10px auto;
+  border: none;
+  width: 80%;
+  height: auto;
+  text-align: center;
+  overflow: hidden;
+  transition: var(--fastTransition);
+  /* box-sizing: border-box; */
+}
+
+.card img {
+  display: block;
+  /* background-color: darkslateblue; */
+  margin: 5px auto;
+}
+
+.mask1,
+.mask3 {
+  position: absolute;
+  height: 3px;
+  background-color: var(--primaryColor);
+  transition: var(--fastTransition);
+  width: 20%;
+}
+
+.mask1 {
+  top: 0px;
+  right: 0px;
+  background-color: var(--mainBlack);
+
+}
+
+.mask3 {
+  bottom: 0px;
+  left: 0px;
+}
+
+.mask2,
+.mask4 {
+  position: absolute;
+  width: 3px;
+  height: 30%;
+  transition: var(--mainTransition);
+}
+
+.mask2 {
+  right: 0px;
+  top: 0px;
+  background-color: var(--mainBlack);
+
+}
+
+.mask4 {
+  left: 0px;
+  bottom: 0px;
+  background-color: var(--primaryColor);
+}
+
+.active1,
+.active3 {
+  width: 80%;
+  height: 1.5px;
+}
+
+.card h4 {
+  margin: 7px auto;
+  letter-spacing: var(--mainSpacing);
+}
+.card p {
+     width: 90%;
+  margin: 5px auto;
+  font-size: 14px;
+  /* background-color: dodgerblue; */
+}
+.active2,
+.active4 {
+  height: 80%;
+  width: 1.5px;
+}
+
+.cardCont {
+  padding: 10px;
+  width: 100%;
+  background-color: var(--mainGrey);
+  margin: auto;
+}
+
+.cardCont-center {
+  width: 95%;
+  margin: 0 auto;
+  /* background-color: rgb(156, 150, 156); */
+}
+
+.card-button {
+    display: block;
+    margin: 18px auto 0;
+    /* background-color: goldenrod; */
+}
+
+.card-button button {
+    display: block;
+    margin: 0 auto;
+}
+
+/* min-width for screen equal or greter than min-width */
+@media screen and (min-width: 500px) {
+ 
+  .card-holder {
+      width: 25%;
+  }
+  .card-button button {
+    margin: 0 auto;
+}
+  .card-button {
+      margin: 18px auto 0;
+  }
+
+  .cardCont-center {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 300px;
+    height: 300px;
+  }
+  .card h4 {
+    margin: 12px auto;
+  }
+}
+
+
