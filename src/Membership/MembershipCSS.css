@@ -7,6 +7,8 @@
   text-align: center;
   overflow: hidden;
   transition: var(--fastTransition);
+  box-shadow: 2px 2px 30px 5px var(--darkGrey);
+
   /* box-sizing: border-box; */
 }
 
@@ -29,7 +31,6 @@
   top: 0px;
   right: 0px;
   background-color: var(--mainBlack);
-
 }
 
 .mask3 {
@@ -49,7 +50,6 @@
   right: 0px;
   top: 0px;
   background-color: var(--mainBlack);
-
 }
 
 .mask4 {
@@ -69,7 +69,7 @@
   letter-spacing: var(--mainSpacing);
 }
 .card p {
-     width: 90%;
+  width: 90%;
   margin: 5px auto;
   font-size: 14px;
   /* background-color: dodgerblue; */
@@ -94,27 +94,26 @@
 }
 
 .card-button {
-    display: block;
-    margin: 18px auto 0;
-    /* background-color: goldenrod; */
+  display: block;
+  margin: 18px auto 0;
+  /* background-color: goldenrod; */
 }
 
 .card-button button {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* min-width for screen equal or greter than min-width */
 @media screen and (min-width: 500px) {
- 
   .card-holder {
-      width: 25%;
+    width: 25%;
   }
   .card-button button {
     margin: 0 auto;
-}
+  }
   .card-button {
-      margin: 18px auto 0;
+    margin: 18px auto 0;
   }
 
   .cardCont-center {
@@ -131,5 +130,3 @@
     margin: 12px auto;
   }
 }
-
-
