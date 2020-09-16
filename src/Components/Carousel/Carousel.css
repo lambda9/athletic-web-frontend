@@ -52,12 +52,12 @@ h2 {
 }
 
 .currentSlide {
-	transform: scale(1.2);
+	/* transform: scale(1.2); */
 	z-index: 1;
 }
 
 .hiddenSlide {
-	filter: blur(8px);
+	/* filter: blur(8px); */
 	z-index: 0;
 }
 
