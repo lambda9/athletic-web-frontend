@@ -8,7 +8,10 @@ const ProgressBar = ({ animate, time }) => {
 		<div>
 			<div
 				className="progressBar"
-				style={{ width: `${progress * 100}%` }}
+				style={{
+					width: `${progress * 100}%`,
+					display: `${progress > 1 ? "none" : "block"}`,
+				}}
 			></div>
 		</div>
 	);

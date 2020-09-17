@@ -19,7 +19,6 @@
 	position: relative;
 	/* border-radius: 10px; */
 	overflow-x: hidden;
-	transition: box-shadow ease-in-out 1s;
 }
 
 .story {
@@ -53,12 +52,12 @@ h2 {
 
 .currentSlide {
 	/* transform: scale(1.2); */
-	z-index: 1;
+	/* z-index: 1; */
 }
 
 .hiddenSlide {
 	/* filter: blur(8px); */
-	z-index: 0;
+	/* z-index: 0; */
 }
 
 .carouselNav {
@@ -85,9 +84,9 @@ h2 {
 	color: white;
 }
 
-img {
-	transition: all ease-in-out 0.5s;
-}
+/* img {
+	transition: all ease-in-out 0.5s; */
+/* } */
 
 .arrows {
 	display: flex;
@@ -128,18 +127,20 @@ img {
 .indicator {
 	margin: 4px;
 	display: inline-block;
-	border: 1px solid rgba(245, 245, 245, 0.664);
+	border: 1px solid #459fb6;
 	border-radius: 0.6vw;
-	height: 0.6vw;
-	width: 0.6vw;
+	height: 0.7vw;
+	width: 0.7vw;
+	transition: all ease-in-out 2s;
 }
 
 .active {
-	background: rgba(245, 245, 245, 0.726);
+	border: 1px solid #459fb6;
+	background: #459fb6;
 	border-radius: 0.7vw;
-	height: 0.7vw;
-	width: 0.7vw;
-	transition: all ease-in-out 0.5s;
+	height: 0.9vw;
+	width: 0.9vw;
+	transition: all ease-in-out 2s;
 }
 
 .playPause {
