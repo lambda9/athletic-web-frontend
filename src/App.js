@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Carousel from "./Components/Carousel/Carousel";
 import "./App.css";
 import img1 from "./Homepage/Images/img1.jpg";
 import img2 from "./Homepage/Images/img2.jpg";
 import img3 from "./Homepage/Images/img3.jpg";
 import NavMain from "./Navbar/NavMain";
-import CardComp from "./Membership/CardComp";
 import CardContainer from "./Membership/CardContainer";
 import ServicesLogo from "./Services/ServicesLogo";
 

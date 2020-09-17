@@ -8,7 +8,7 @@
   overflow: hidden;
   transition: var(--fastTransition);
   box-shadow: 2px 2px 30px 5px var(--darkGrey);
-
+  transition: var(--mainTransition);
   /* box-sizing: border-box; */
 }
 
@@ -71,7 +71,7 @@
 .card p {
   width: 90%;
   margin: 5px auto;
-  font-size: 14px;
+  font-size: 12px;
   /* background-color: dodgerblue; */
 }
 .active2,
@@ -107,7 +107,7 @@
 }
 
 /* min-width for screen equal or greter than min-width */
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 650px) {
   .card-holder {
     width: 25%;
   }
@@ -130,3 +130,10 @@
     margin: 12px auto;
   }
 }
+
+@media screen and (min-width: 550px) {
+  .card p {
+    font-size: 16px;
+  }
+}
+

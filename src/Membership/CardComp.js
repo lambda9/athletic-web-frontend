@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import lg from "./lg1.png";
 import "./MembershipCSS.css";
 
 function CardComp(props) {

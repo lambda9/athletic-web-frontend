@@ -24,11 +24,18 @@
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
 }
-.services h6 {
+.services h4 {
   margin: 0.5rem auto;
   letter-spacing: var(--mainSpacing);
 }
 .services p {
   width: 80%;
+  font-size: var(--pFontSizeMob);
   margin: 0 auto;
+}
+
+@media screen and (min-width: 550px) {
+  .services p {
+    font-size: var(--pFontSizePC);
+  }
 }
