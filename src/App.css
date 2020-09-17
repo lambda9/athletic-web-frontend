@@ -15,6 +15,10 @@
   --mainSpacing: 1.4px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --minWidthMob: 550px;
+  --minWidthTab: 650px;
+  --pFontSizeMob: 12px;
+  --pFontSizePC: 15px
 }
 
 .App {
@@ -59,6 +63,10 @@ h6 {
   margin-bottom: 1.5em;
 }
 
+p {
+  font-size: 12px;
+}
+
 .button-primary {
   display: inline-block;
   text-decoration: none;
@@ -81,7 +89,7 @@ h6 {
   color: var(--primaryColor);
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
   .button-primary {
     font-size: 16px;
     padding: 0.35rem 0.7rem;

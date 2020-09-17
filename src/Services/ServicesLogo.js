@@ -48,7 +48,7 @@ class ServicesLogo extends Component {
                 return (
                     <div>
                     <span>{item.icon}</span>
-                    <h6>{item.title}</h6>
+                    <h4>{item.title}</h4>
                     <p>{item.info}</p>
                     </div>
                 )
