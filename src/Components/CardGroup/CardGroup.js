@@ -48,7 +48,7 @@ class CardGroup extends Component {
 				</div>
 
 				<div className="card-btn">
-					<Link className="button-primary" to="/">
+					<Link to="/membership" className="button-primary" >
 						Checkout more
 					</Link>
 				</div>

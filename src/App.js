@@ -1,28 +1,36 @@
 import React, { Component } from "react";
 
-import { BrowserRouter as Router } from "react-router-dom";
-import Carousel from "./Components/Carousel/Carousel";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import img1 from "./Images/Carousel/img1.jpg";
-import img2 from "./Images/Carousel/img2.jpg";
-import img3 from "./Images/Carousel/img3.jpg";
-import Navbar from "./Components/Navbar/Navbar";
-import CardGroup from "./Components/CardGroup/CardGroup";
-import Services from "./Components/Services/Services";
-
-const images = [img1, img2, img3];
+import Navbar from './Components/Navbar/Navbar'
+import Home from './Components/Pages/Home'
+import OurPrograms from './Components/Pages/OurPrograms'
+import ContactUs from './Components/Pages/ContactUs'
+import AboutUs from './Components/Pages/AboutUs'
+import FAQ from './Components/Pages/FAQ'
+import Gallery from './Components/Pages/Gallery'
+import Membership from './Components/Pages/Membership'
+import Error from './Components/Pages/Error'
 
 class App extends Component {
-	render() {
-		return (
-			<Router>
-				<Navbar />
-				<Carousel images={images} width={100} heightToWidthRatio={0.43} />
-				<Services />
-				<CardGroup />
-			</Router>
-		);
-	}
+  render() {
+    return (
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/programs/" component={OurPrograms} />
+		  <Route exact path="/contactUs/" component={ContactUs} />
+		  <Route exact path="/aboutUs/" component={AboutUs} />
+		  <Route exact path="/faq/" component={FAQ} />
+		  <Route exact path="/gallery/" component={Gallery} />
+		  <Route exact path="/membership/" component={Membership} />
+          <Route component={Error} />
+        </Switch>
+        
+      </Router>
+    );
+  }
 }
 
 export default App;
