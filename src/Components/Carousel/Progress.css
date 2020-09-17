@@ -1,11 +1,9 @@
-
 .progressBar {
-    position: absolute;
-    bottom: 0%;
-    left: 0%;
-    right: 0%;
-    width: 0%;
-    height: 0.8vw;
-    background-color: rgba(245, 245, 245, 0.664);
+	position: absolute;
+	bottom: 0%;
+	left: 0%;
+	right: 0%;
+	width: 0%;
+	height: 0.8vw;
+	background-color: #459fb6a8;
 }
-

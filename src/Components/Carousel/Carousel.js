@@ -4,35 +4,19 @@ import "./Carousel.css";
 import ProgressBar from "./ProgressBar";
 
 const Carousel = ({ images, width, heightToWidthRatio }) => {
-	const SLIDE_DELAY = 4000;
+	// const SLIDE_DELAY = 6000;
 
 	let height = width * heightToWidthRatio;
 
 	const [currentIndex, setCurrentIndex] = useState(0);
-	// const [isPlaying, setPlaying] = useState(false);
+	const [progressStart, setProgressStart] = useState(true);
 
-	useEffect(() => {
-		// setDelay(content[currentIndex].wordCount * 300);
-		// if (isPlaying) {
-		const timeout = setTimeout(() => {
-			setCurrentIndex((currentIndex + 1) % images.length);
-		}, SLIDE_DELAY);
-		return () => {
-			clearTimeout(timeout);
-		};
-		// }
-	}, [currentIndex, images]);
-
-	const showPrevSlide = () => {
-		// setPlaying(false);
-		if (currentIndex >= 1) {
-			setCurrentIndex(currentIndex - 1);
-		}
+	const onImageSet = () => {
+		setProgressStart(!progressStart);
 	};
 
-	const showNextSlide = () => {
-		// setPlaying(false);
-		setCurrentIndex((currentIndex + 1) % images.length);
+	const onImageStart = () => {
+		setCurrentIndex((currentIndex + 1) % 3);
 	};
 
 	return (
@@ -46,7 +30,8 @@ const Carousel = ({ images, width, heightToWidthRatio }) => {
 			>
 				<Slides
 					images={images}
-					currentIndex={currentIndex}
+					onImageSet={onImageSet}
+					onImageStart={onImageStart}
 					width={width}
 					height={height}
 				/>
@@ -59,21 +44,20 @@ const Carousel = ({ images, width, heightToWidthRatio }) => {
 									index === currentIndex ? "active" : ""
 								}`}
 								onClick={() => {
-									// setPlaying(false);
 									setCurrentIndex(index);
 								}}
 							></span>
 						);
 					})}
 				</div>
-				<div className="arrows pointer">
+				{/* <div className="arrows pointer">
 					<span className="navigation" onClick={() => showPrevSlide()}>
 						&#10094;
 					</span>
 					<span className="navigation" onClick={() => showNextSlide()}>
 						&#10095;
 					</span>
-				</div>
+				</div> */}
 				{/* <div className="playPause">
 					<i
 						className={`pointer fa ${
@@ -82,7 +66,7 @@ const Carousel = ({ images, width, heightToWidthRatio }) => {
 						onClick={() => setPlaying(!isPlaying)}
 					></i>
 				</div> */}
-				<ProgressBar key={currentIndex} animate={true} time={SLIDE_DELAY} />
+				<ProgressBar key={progressStart} animate={true} time={4000} />
 			</div>
 		</div>
 	);
