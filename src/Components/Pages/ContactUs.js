@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
+import Hero from '../Hero'
+import Banner from '../Banner'
+
 
 class ContactUs extends Component {
     render() {
         return (
             <div>
-                <h1>Im from ContactUs</h1>                
+            <Hero tempClass='contactUs-bg'>
+            <Banner title='Contact us' description='Mail, call, text or meet on-site'></Banner>
+        </Hero>               
             </div>
         )
     }

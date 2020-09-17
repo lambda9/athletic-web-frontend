@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-
+import Hero from '../Hero'
+import Banner from '../Banner'
 class OurPrograms extends Component {
     render() {
         return (
             <div>
-                <h1>Im from OurPrograms</h1>
+                <Hero tempClass='ourPrograms-bg'>
+                    <Banner title='Our programs' description='keep your energy up and burn calories'></Banner>
+                </Hero>
             </div>
         )
     }

@@ -26,7 +26,6 @@
 }
 
 body {
-  /* padding-top: 66px; */
   color: var(--mainBlack);
   background: var(--mainWhite);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -96,11 +95,37 @@ p {
   }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.banner-bg {
+    min-height: calc(60vh - 66px);
+    background: url("./Images/im1.jpg") center/cover no-repeat;
+    background-color: lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutUs-bg {
+  background: url('./Images/im5.jpg') center/cover no-repeat;
+}
+
+.error-bg {
+  background: url('./Images/im6.jpg') center/cover no-repeat;
+}
+
+.ourPrograms-bg {
+  background: url('./Images/im8.jpg') center/cover no-repeat;
+
+}
+
+.contactUs-bg {
+  background: url('./Images/im9.jpg') center/cover no-repeat;
+
+}
+
+.gallery-bg {
+  background: url('./Images/im4.jpg') center/cover no-repeat;
+}
+
+.membership-bg {
+  background:  url('./Images/im2.jpg') center/cover no-repeat;
 }
