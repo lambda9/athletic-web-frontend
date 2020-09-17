@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import lg1 from "./logos/lg1.png";
 import lg2 from "./logos/lg2.png";
-import lg3 from "./logos/lg3.png";
 import lg4 from "./logos/lg4.png";
 import lg5 from "./logos/lg5.png";
 import Title from "../Components/Title";
@@ -46,7 +45,7 @@ class ServicesLogo extends Component {
         {
             this.state.services.map(item => {
                 return (
-                    <div>
+                    <div key={item.title}>
                     <span>{item.icon}</span>
                     <h4>{item.title}</h4>
                     <p>{item.info}</p>

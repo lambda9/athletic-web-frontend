@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import CardComp from "./CardComp";
 import lg1 from "./logos/lg1.png";
 import lg2 from "./logos/lg2.png";
-import lg3 from "./logos/lg3.png";
 import lg4 from "./logos/lg4.png";
-import lg5 from "./logos/lg5.png";
 import Title from "../Components/Title";
 import { Link } from "react-router-dom";
 
@@ -38,7 +36,7 @@ class CardContainer extends Component {
         <div className="cardCont-center">
           {this.state.services.map((item) => {
             return (
-              <div className="card-holder">
+              <div className="card-holder" key={item.title}>
                 <CardComp
                   icon={item.icon}
                   title={item.title}
@@ -50,7 +48,7 @@ class CardContainer extends Component {
         </div>
 
         <div className="card-btn">
-          <Link className="button-primary">Checkout more >></Link>
+          <Link className="button-primary" to='/'>Checkout more >></Link>
         </div>
       </div>
     );

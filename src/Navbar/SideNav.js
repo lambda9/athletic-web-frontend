@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './NavbarCSS.css'
-import { Button } from 'reactstrap'
 import {Link} from 'react-router-dom'
 
 class SideNav extends Component {
