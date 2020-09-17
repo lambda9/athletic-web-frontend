@@ -6,11 +6,11 @@ function Title(props) {
 		<div className="title">
 			<h4>{props.children}</h4>
 			<div className="baseline">
-				{" "}
-				<div className="title-mask title-mask1"></div>
-				<div className="title-mask title-mask2"></div>
-				<div className="title-mask title-mask3"></div>
-				<div className="title-mask title-mask4"></div>
+				<div className="title-mask"></div>
+				<div className="title-mask"></div>
+				<div className="title-mask title-mask-center"></div>
+				<div className="title-mask"></div>
+				<div className="title-mask"></div>
 			</div>
 		</div>
 	);
