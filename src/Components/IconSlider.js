@@ -24,6 +24,7 @@ class IconSlider extends Component {
     });
   };
   render() {
+    this.props.about_plan.map(i => console.log(i))
     return (
       <div
         className="slider-div"
@@ -38,10 +39,16 @@ class IconSlider extends Component {
             <MdFitnessCenter
               className={this.state.isActive ? "icon active-icon" : "icon"} />
           </div>
-          <h4>{this.props.title}</h4>
-          <p>{this.props.description}</p>
+          <h4>Benefits</h4>
+          <p>
+          </p>
         </div>
-        <img src={img}></img>
+        <div>
+              <p>{this.props.type}</p>
+              <h4>{this.props.title}</h4>
+              <h2>$ {this.props.price}</h2>
+        </div>
+        
       </div>
     );
   }
