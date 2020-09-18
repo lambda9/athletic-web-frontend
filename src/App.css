@@ -109,14 +109,12 @@ p {
   }
 }
 
-
-
 .aboutUs-bg {
   background: url('./Images/im5.jpg') center/cover no-repeat;
 }
 
 .error-bg {
-  background: url('./Images/im6.jpg') center/cover no-repeat;
+  background: url('./Images/im2.jpg') center/cover no-repeat;
 }
 
 .ourPrograms-bg {
@@ -134,5 +132,5 @@ p {
 }
 
 .membership-bg {
-  background:  url('./Images/im2.jpg') center/cover no-repeat;
+  background:  url('./Images/im6.jpg') center/cover no-repeat;
 }

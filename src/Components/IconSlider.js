@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import img from "../Images/im11.jpg";
+import {} from 'react-icons/fa'
 import "./IconSlider.css";
 import { MdFitnessCenter } from "react-icons/md";
+import {Link} from 'react-router-dom'
+import Title from "./Title/Title";
 
 class IconSlider extends Component {
   constructor(props) {
@@ -24,7 +27,6 @@ class IconSlider extends Component {
     });
   };
   render() {
-    this.props.about_plan.map(i => console.log(i))
     return (
       <div
         className="slider-div"
@@ -40,13 +42,21 @@ class IconSlider extends Component {
               className={this.state.isActive ? "icon active-icon" : "icon"} />
           </div>
           <h4>Benefits</h4>
-          <p>
+          <p> {
+            this.props.description.map(plan => {
+              return (
+              <div>{plan}</div>
+            )
+          })
+          }
           </p>
+          <Link to='/' className='button-primary'>Buy now</Link>
         </div>
-        <div>
+        <div className='slider-card-content'>
               <p>{this.props.type}</p>
-              <h4>{this.props.title}</h4>
-              <h2>$ {this.props.price}</h2>
+              <Title >{this.props.title}</Title>
+              <h1>&#8377; {this.props.price}</h1>
+              <h3>for {this.props.duration}</h3>
         </div>
         
       </div>

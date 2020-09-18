@@ -1,5 +1,5 @@
 .slider-div {
-  margin: 40px auto;
+  margin: 20px auto;
   width: 275px;
   height: 380px;
   position: relative;
@@ -18,59 +18,111 @@
 }
 
 .icon-div {
-    margin: 0 auto;
-    margin-top: -20px;
-    border-radius: 150px 150px 0 0;
-    width: 40px;
-    height: 20px;
-    transition: var(--mainTransition);
-    background-color: rgba(0, 0, 0, 0.75);
+  margin: 0 auto;
+  margin-top: -20px;
+  border-radius: 150px 150px 0 0;
+  width: 40px;
+  height: 20px;
+  transition: var(--mainTransition);
+  background-color: rgba(0, 0, 0, 0.85);
 }
 
 .icon {
-    margin: 8px auto;
-    font-size: 24px;
-    transition: var(--mainTransition);
-    color: white;
+  margin: 8px auto;
+  font-size: 24px;
+  transition: var(--mainTransition);
+  color: var(--primaryColor);
 }
 
 .overlay-div h4 {
-    text-transform: uppercase;
-    letter-spacing: var(--mainSpacing);
-    margin: 1.1rem auto;
-    transition: var(--mainTransition);
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  margin: 1.1rem auto;
+  transition: var(--mainTransition);
+  color: white;
+}
+.overlay-div p {
+    font-size: var(--pFontSizePC);
+    margin-bottom: 4rem;
+    text-transform: capitalize;
+    font-size: 16px;
     color: white;
+  }
+
+.overlay-div a {
+    position: absolute;
+    bottom: -100px;
+    transform: translate(-50%, -50%);
 }
 
 .active-overlay-div {
-    height: 100%;
-    background-color: #459fb6b4;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .active-icon-div {
-    background-color: #459fb6b4;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .active-icon {
-    margin-top: 40px;
-    font-size: 42px;
+  margin-top: 40px;
+  font-size: 42px;
 }
 
 .active-overlay-div h4 {
-    margin-top: 6rem;
-    font-size: 26px;
-}
-.active-overlay-div p { 
-    font-size: var(--pFontSizePC);
+  margin-top: 5rem;
+  font-size: 28px;
 }
 
-.slider-div img {
-    display: block;
-    width: 100%;
-    height: auto;
+.active-overlay-div a {
+    bottom: 10px;
+}
+
+.active-overlay-div a  {
+    margin-bottom: 0px;
+}
+
+.active-overlay-div span {
+  width: 10px;
+  height: 5px;
+  background-color: var(--primaryColor);
+}
+
+.active-overlay-div p {
+  font-size: var(--pFontSizePC);
+  margin-bottom: 4rem;
+  text-transform: capitalize;
+  font-size: 16px;
+  color: white;
 }
 
 .overlay-div:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+.slider-card-content {
+  border-top: 2px solid var(--primaryColor);
+}
+
+.slider-card-content p {
+  font-size: 18px;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  margin: 15px auto 15px;
+}
+
+.slider-card-content h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+@media screen and (min-width: 550px) {
+  .slider-div {
+    width: 300px;
+    height: 420px;
+  }
+
+  .slider-card-content h4 {
+    font-size: 24px;
+  }
+}
