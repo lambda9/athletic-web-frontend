@@ -2,13 +2,30 @@
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
   color: var(--mainWhite);
-  padding: 1.2rem 3.5rem;
+  padding: 1.2rem 1.3rem;
   text-align: center;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
+  transition: var(--mainTransition);
 }
 
 .banner p {
-  font-size: 1.2rem;
+  font-size: var(--pFontSizeMob);
+  letter-spacing: 0.8px;
   margin-bottom: 2rem;
+  transition: var(--mainTransition);
+}
+
+@media screen and (min-width: 550px) {
+  .banner p {
+    font-size: var(--pFontSizePC);
+    letter-spacing: 1px;
+  }
+
+  .banner {
+    padding: 1.2rem 2.5rem;
+  }
+
+
+
 }

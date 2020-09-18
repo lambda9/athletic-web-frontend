@@ -74,7 +74,7 @@ p {
   background: var(--primaryColor);
   outline: none;
   font-size: 12px;
-  padding: 0.35rem 0.6rem;
+  padding: 0.3rem 0.6rem;
   border: 2px solid var(--primaryColor);
   transition: var(--mainTransition);
   text-transform: uppercase;
@@ -88,21 +88,27 @@ p {
   color: var(--primaryColor);
 }
 
-@media screen and (min-width: 600px) {
+.banner-bg {
+  min-height: calc(60vh - 66px);
+  background: url("./Images/im1.jpg") center/cover no-repeat;
+  background-color: lavender;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 550px) {
   .button-primary {
     font-size: 16px;
     padding: 0.35rem 0.7rem;
   }
+
+  .banner-bg {
+    min-height: calc(70vh - 60px);
+  }
 }
 
-.banner-bg {
-    min-height: calc(60vh - 66px);
-    background: url("./Images/im1.jpg") center/cover no-repeat;
-    background-color: lavender;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .aboutUs-bg {
   background: url('./Images/im5.jpg') center/cover no-repeat;
