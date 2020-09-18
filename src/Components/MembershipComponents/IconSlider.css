@@ -101,7 +101,8 @@
 }
 
 .slider-card-content {
-  border-top: 2px solid var(--primaryColor);
+  border-top: 4px solid var(--primaryColor);
+  padding: 2px 7px;
 }
 
 .slider-card-content p {

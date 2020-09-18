@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import img from "../Images/im11.jpg";
-import {} from 'react-icons/fa'
 import "./IconSlider.css";
 import { MdFitnessCenter } from "react-icons/md";
 import {Link} from 'react-router-dom'
-import Title from "./Title/Title";
+import Title from "../Title/Title";
 
 class IconSlider extends Component {
   constructor(props) {
@@ -43,20 +41,20 @@ class IconSlider extends Component {
           </div>
           <h4>Benefits</h4>
           <p> {
-            this.props.description.map(plan => {
+            this.props.item.description.map(plan => {
               return (
               <div>{plan}</div>
             )
           })
           }
           </p>
-          <Link to='/' className='button-primary'>Buy now</Link>
+          <Link to={`/joinNow/${this.props.item.plan_id}`} className='button-primary'>join now</Link>
         </div>
         <div className='slider-card-content'>
-              <p>{this.props.type}</p>
-              <Title >{this.props.title}</Title>
-              <h1>&#8377; {this.props.price}</h1>
-              <h3>for {this.props.duration}</h3>
+              <p>{this.props.item.type}</p>
+              <Title >{this.props.item.title}</Title>
+              <h1>&#8377; {this.props.item.price}</h1>
+              <h3>for {this.props.item.duration}</h3>
         </div>
         
       </div>
