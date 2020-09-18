@@ -12,7 +12,7 @@
 .banner p {
   font-size: var(--pFontSizeMob);
   letter-spacing: 0.8px;
-  margin-bottom: 2rem;
+  margin: -0.4rem auto 1rem;
   transition: var(--mainTransition);
 }
 
@@ -20,6 +20,8 @@
   .banner p {
     font-size: var(--pFontSizePC);
     letter-spacing: 1px;
+  margin: 0rem auto 2rem;
+
   }
 
   .banner {

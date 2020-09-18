@@ -1,0 +1,75 @@
+.slider-div {
+  margin: 40px auto;
+  max-width: 275px;
+  max-height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-div {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.753);
+  padding: 0 5px;
+  width: 100%;
+  height: 12%;
+  transition: var(--mainTransition);
+}
+
+.icon-div {
+    margin: 0 auto;
+    margin-top: -20px;
+    border-radius: 150px 150px 0 0;
+    width: 40px;
+    height: 20px;
+    transition: var(--mainTransition);
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.icon {
+    margin: 8px auto;
+    font-size: 24px;
+    transition: var(--mainTransition);
+    color: white;
+}
+
+.overlay-div h4 {
+    text-transform: uppercase;
+    letter-spacing: var(--mainSpacing);
+    margin: 1.1rem auto;
+    transition: var(--mainTransition);
+    color: white;
+}
+
+.active-overlay-div {
+    height: 100%;
+    background-color: #459fb6b4;
+}
+
+.active-icon-div {
+    background-color: #459fb6b4;
+}
+
+.active-icon {
+    margin-top: 40px;
+    font-size: 42px;
+}
+
+.active-overlay-div h4 {
+    margin-top: 6rem;
+    font-size: 26px;
+}
+.active-overlay-div p { 
+    font-size: var(--pFontSizePC);
+}
+
+.slider-div img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay-div:hover {
+    cursor: pointer;
+}
+
