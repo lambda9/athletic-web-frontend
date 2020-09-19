@@ -135,6 +135,10 @@
 	height: 0px;
 }
 
+.bottom-nav a {
+	font-size: 0.8em;
+}
+
 .bottom-nav-open {
 	height: 380px;
 }
