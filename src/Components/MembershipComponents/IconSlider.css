@@ -1,0 +1,129 @@
+.slider-div {
+  margin: 20px auto;
+  width: 275px;
+  height: 380px;
+  position: relative;
+  background-color: var(--mainGrey);
+  overflow: hidden;
+}
+
+.overlay-div {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.753);
+  padding: 0 5px;
+  width: 100%;
+  height: 12%;
+  transition: var(--mainTransition);
+}
+
+.icon-div {
+  margin: 0 auto;
+  margin-top: -20px;
+  border-radius: 150px 150px 0 0;
+  width: 40px;
+  height: 20px;
+  transition: var(--mainTransition);
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.icon {
+  margin: 8px auto;
+  font-size: 24px;
+  transition: var(--mainTransition);
+  color: var(--primaryColor);
+}
+
+.overlay-div h4 {
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  margin: 1.1rem auto;
+  transition: var(--mainTransition);
+  color: white;
+}
+.overlay-div p {
+    font-size: var(--pFontSizePC);
+    margin-bottom: 4rem;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: white;
+  }
+
+.overlay-div a {
+    position: absolute;
+    bottom: -100px;
+    transform: translate(-50%, -50%);
+}
+
+.active-overlay-div {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.active-icon-div {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.active-icon {
+  margin-top: 40px;
+  font-size: 42px;
+}
+
+.active-overlay-div h4 {
+  margin-top: 5rem;
+  font-size: 28px;
+}
+
+.active-overlay-div a {
+    bottom: 10px;
+}
+
+.active-overlay-div a  {
+    margin-bottom: 0px;
+}
+
+.active-overlay-div span {
+  width: 10px;
+  height: 5px;
+  background-color: var(--primaryColor);
+}
+
+.active-overlay-div p {
+  font-size: var(--pFontSizePC);
+  margin-bottom: 4rem;
+  text-transform: capitalize;
+  font-size: 16px;
+  color: white;
+}
+
+.overlay-div:hover {
+  cursor: pointer;
+}
+
+.slider-card-content {
+  border-top: 4px solid var(--primaryColor);
+  padding: 2px 7px;
+}
+
+.slider-card-content p {
+  font-size: 18px;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  margin: 15px auto 15px;
+}
+
+.slider-card-content h3 {
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+@media screen and (min-width: 550px) {
+  .slider-div {
+    width: 300px;
+    height: 420px;
+  }
+
+  .slider-card-content h4 {
+    font-size: 24px;
+  }
+}

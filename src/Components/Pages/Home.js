@@ -8,16 +8,16 @@ import img2 from "../../Images/Carousel/img2.jpg";
 import img3 from "../../Images/Carousel/img3.jpg";
 
 function Home() {
-	const images = [img1, img2, img3];
+  const images = [img1, img2, img3];
 
-	return (
-		<div>
-			{/* <Navbar /> */}
-			<Carousel images={images} width={100} heightToWidthRatio={0.43} />
-			<Services />
-			<CardGroup />
-		</div>
-	);
+  return (
+    <div>
+      <Navbar />
+      <Carousel images={images} width={100} heightToWidthRatio={0.43} />
+      <Services />
+      <CardGroup />
+    </div>
+  );
 }
 
 export default Home;
