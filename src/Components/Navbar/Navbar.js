@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import logo from "./logo.png";
 import NavToggleButton from "./NavToggleButton";
@@ -8,25 +8,26 @@ import BottomNav from "./BottomNav";
 const Navbar = () => {
 	const [color, setColor] = useState("rgba(0, 0, 0, 0.5");
 	const [bottomNavOpen, setBottomNavOpen] = useState(false);
-	const [navWidth, setNavWidth] = useState(0);
-	const [navPosition, setNavPosition] = useState("fixed");
+	const [navWidth, setNavWidth] = useState(-1);
+	const [navPosition, setNavPosition] = useState("inherit");
+
+	let location = useLocation();
 
 	useEffect(() => {
 		window.addEventListener("resize", () => {
-			// console.log(window.innerWidth);
 			setNavWidth(window.innerWidth);
 		});
-		if (navWidth < 600 || bottomNavOpen) {
+		if (navWidth < 600 || bottomNavOpen || location.pathname !== "/h") {
 			setNavPosition("inherit");
 			setColor("black");
 		} else {
 			setNavPosition("fixed");
 			setColor("rgba(0, 0, 0, 0.5");
 		}
-		if (navWidth > 900) {
+		if (navWidth > 1000) {
 			setBottomNavOpen(false);
 		}
-	}, [bottomNavOpen, navWidth]);
+	}, [bottomNavOpen, navWidth, location]);
 
 	return (
 		<nav>
@@ -42,7 +43,7 @@ const Navbar = () => {
 				<div className="right-nav">
 					<div className="text-logo">athletic</div>
 					<div className="nav-links-container">
-						<Link to="/">Home</Link>
+						<Link to="/h">Home</Link>
 						<Link to="/programs">Programs</Link>
 						<Link to="/membership">Membership</Link>
 						<Link to="/gallery">Gallery</Link>
@@ -59,15 +60,6 @@ const Navbar = () => {
 						}}
 					/>
 				</div>
-				{/* <div className="nav-toggle-btn" onClick={this.props.toggleFun}>
-					<div className={"bar1"}></div>
-					<div
-					className={this.props.sideNavState ? "bar2 change2" : "bar2"}
-					></div>
-					<div
-					className={this.props.sideNavState ? "bar3 change3" : "bar3"}
-					></div>
-				</div> */}
 			</div>
 			<BottomNav visible={bottomNavOpen} />
 		</nav>
