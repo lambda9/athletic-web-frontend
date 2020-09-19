@@ -13,7 +13,6 @@ import Membership from "./Components/Pages/Membership";
 import Error from "./Components/Pages/Error";
 import JoinNow from "./Components/Pages/JoinNow";
 
-
 class App extends Component {
 	render() {
 		return (
@@ -27,7 +26,7 @@ class App extends Component {
 					<Route exact path="/faq/" component={FAQ} />
 					<Route exact path="/gallery/" component={Gallery} />
 					<Route exact path="/membership/" component={Membership} />
-          <Route exact path="/joinNow/:slug" component={JoinNow} />
+					<Route exact path="/joinNow/:slug" component={JoinNow} />
 					<Route component={Error} />
 				</Switch>
 			</Router>
