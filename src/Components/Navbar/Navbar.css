@@ -11,8 +11,8 @@
 }
 
 .nav-logo {
-	width: 10em;
-	margin: 0 1em;
+	width: 7em;
+	margin: 0 3em;
 }
 
 .nav-logo img {
@@ -27,9 +27,9 @@
 }
 
 .nav-links-container {
-	flex-grow: 1;
+	flex-grow: 0.8;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
 }
 
@@ -53,8 +53,7 @@
 }
 
 .nav-links-container-btn {
-	flex-grow: 0.1;
-	/* flex-shrink: 0.3; */
+	flex-grow: 0.15;
 	display: flex;
 	justify-content: space-between;
 }
@@ -76,16 +75,6 @@
 	color: white;
 	border: 1px solid var(--primaryColor);
 	background-color: var(--primaryColor);
-}
-
-.nav-toggle-btn {
-	width: 0%;
-	display: block;
-	float: right;
-	/* margin: auto; */
-	transition: var(--mainTransition);
-	overflow: hidden;
-	/* background-color: red; */
 }
 
 .nav-toggle-container {
