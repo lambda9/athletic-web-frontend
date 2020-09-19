@@ -6,26 +6,41 @@ import NavToggleButton from "./NavToggleButton";
 import BottomNav from "./BottomNav";
 
 const Navbar = () => {
-	const [color, setColor] = useState("rgba(0, 0, 0, 0.5)");
+	const [color, setColor] = useState("rgba(0, 0, 0, 0.5");
 	const [bottomNavOpen, setBottomNavOpen] = useState(false);
+	const [navWidth, setNavWidth] = useState(0);
+	const [navPosition, setNavPosition] = useState("fixed");
 
 	useEffect(() => {
-		if (bottomNavOpen) {
+		window.addEventListener("resize", () => {
+			// console.log(window.innerWidth);
+			setNavWidth(window.innerWidth);
+		});
+		if (navWidth < 600 || bottomNavOpen) {
+			setNavPosition("inherit");
 			setColor("black");
 		} else {
-			setColor("rgba(0, 0, 0, 0.5)");
+			setNavPosition("fixed");
+			setColor("rgba(0, 0, 0, 0.5");
 		}
-	}, [bottomNavOpen]);
+		if (navWidth > 900) {
+			setBottomNavOpen(false);
+		}
+	}, [bottomNavOpen, navWidth]);
 
 	return (
 		<nav>
-			<div className="nav-main" style={{ backgroundColor: color }}>
+			<div
+				className="nav-main"
+				style={{ backgroundColor: color, position: navPosition }}
+			>
 				<div className="nav-logo left-nav">
 					<Link to="/">
 						<img src={logo} alt={"logo"}></img>
 					</Link>
 				</div>
 				<div className="right-nav">
+					<div className="text-logo">athletic</div>
 					<div className="nav-links-container">
 						<Link to="/">Home</Link>
 						<Link to="/programs">Programs</Link>
