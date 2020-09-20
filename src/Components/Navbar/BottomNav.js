@@ -23,7 +23,7 @@ const BottomNav = ({ visible }) => {
 			<div className="bottom-nav-link-container">
 				{links.map((value, index) => {
 					return (
-						<Fragment>
+						<Fragment key={index}>
 							<Link to={value[0]}>{value[1]}</Link>
 							<div
 								style={{
@@ -35,10 +35,6 @@ const BottomNav = ({ visible }) => {
 						</Fragment>
 					);
 				})}
-				<div className="bottom-nav-btn-grp">
-					<button className="loginTrialBtn">Free Trial</button>
-					<button className="loginTrialBtn">Login</button>
-				</div>
 			</div>
 		</div>
 	);

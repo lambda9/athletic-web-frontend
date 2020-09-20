@@ -18,17 +18,19 @@ class App extends Component {
 		return (
 			<Router>
 				<Navbar />
-				<Switch>
-					<Route exact path="/h" component={Home} />
-					<Route exact path="/programs/" component={OurPrograms} />
-					<Route exact path="/contactUs/" component={ContactUs} />
-					<Route exact path="/aboutUs/" component={AboutUs} />
-					<Route exact path="/faq/" component={FAQ} />
-					<Route exact path="/gallery/" component={Gallery} />
-					<Route exact path="/membership/" component={Membership} />
-					<Route exact path="/joinNow/:slug" component={JoinNow} />
-					<Route component={Error} />
-				</Switch>
+				<div className="main-content">
+					<Switch>
+						<Route exact path="/h" component={Home} />
+						<Route exact path="/programs/" component={OurPrograms} />
+						<Route exact path="/contactUs/" component={ContactUs} />
+						<Route exact path="/aboutUs/" component={AboutUs} />
+						<Route exact path="/faq/" component={FAQ} />
+						<Route exact path="/gallery/" component={Gallery} />
+						<Route exact path="/membership/" component={Membership} />
+						<Route exact path="/joinNow/:slug" component={JoinNow} />
+						<Route component={Error} />
+					</Switch>
+				</div>
 			</Router>
 		);
 	}
