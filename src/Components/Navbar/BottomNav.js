@@ -35,10 +35,6 @@ const BottomNav = ({ visible }) => {
 						</Fragment>
 					);
 				})}
-				<div className="bottom-nav-btn-grp">
-					<button className="loginTrialBtn">Free Trial</button>
-					<button className="loginTrialBtn">Login</button>
-				</div>
 			</div>
 		</div>
 	);

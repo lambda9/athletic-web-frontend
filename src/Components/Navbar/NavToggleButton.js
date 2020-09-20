@@ -1,17 +1,11 @@
-import userEvent from "@testing-library/user-event";
-import React, { useEffect, useRef, useState } from "react";
-import "./Navbar.css";
+import React from "react";
 
-const NavToggleButton = ({ onClick }) => {
-	const [isOpen, setIsOpen] = useState(false);
-
+const NavToggleButton = (props) => {
 	return (
 		<div
-			className={`nav-toggle-container ${isOpen ? "change" : ""}`}
-			onClick={() => {
-				setIsOpen(!isOpen);
-				onClick();
-			}}
+			className={`nav-toggle-container ${props.isOpen ? "change" : ""}`}
+			style={{ display: props.isVisible ? "block" : "none" }}
+			onClick={props.onClick}
 		>
 			<div className="bar bar1"></div>
 			<div className="bar bar2"></div>
