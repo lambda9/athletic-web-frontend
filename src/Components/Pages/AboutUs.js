@@ -37,6 +37,7 @@ class AboutUs extends Component {
             <Triangle top={11} left={40} w1={40} w2={40} w3={60} color={"rgb(0, 0, 0, 0.75)"} angle={0} />
             <Square top={10} left={10} width={40} height={40} color={"rgb(0, 0, 0, 0.75)"} angle={0}/>
             <Circle top={20} left={10} r1={80} r2={40} color={"rgb(0, 0, 0, 0.75)"}/>
+            
             </div>
         </div>
       </div>

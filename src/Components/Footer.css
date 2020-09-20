@@ -1,0 +1,52 @@
+.footer-comp {
+    background: url('../Images/im18.jpg') center/cover no-repeat;
+    width: 100%;
+    height: 20rem;
+}
+
+.footer-bg {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.footer-left-div, .footer-right-div {
+    width: 40%;
+    padding: 10px;
+    height: fit-content;
+    color: white;
+    letter-spacing: var(--mainSpacing);
+    text-transform: capitalize;
+    text-align: left;
+    text-decoration: none;
+}
+
+.footer-right-div {
+    width: 60%;
+}
+
+.footer-social-div {
+    /* width: 20%; */
+    background-color: red;
+}
+.footer-right-div p {
+    font-size: var(--pFontSizeMob);
+    margin: 8px 0 0 0;
+    font-size: var(--pFontSizeMob);
+}
+
+
+.footer-left-div a {
+    margin-top: 8px;
+    font-size: var(--pFontSizeMob);
+    color: white;
+    display: block;
+    transition: var(--fastTransition);
+    width: fit-content;
+}
+
+.footer-left-div a:hover {
+    text-decoration: none;
+    color: var(--primaryColor);
+}
