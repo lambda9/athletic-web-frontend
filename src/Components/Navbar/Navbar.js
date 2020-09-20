@@ -11,22 +11,27 @@ import NavLinkGroup from "./NavLinkGroup";
 const Navbar = () => {
 	const [bottomNavOpen, setBottomNavOpen] = useState(false);
 	const [navWidth, setNavWidth] = useState(window.innerWidth);
+	const [scroll, setScroll] = useState(window.scrollY);
 	const [navState, setNavState] = useState("full");
 	const [logoSize, setLogoSize] = useState("7em");
-
-	let location = useLocation();
 
 	const handleWindowResize = () => {
 		setNavWidth(window.innerWidth);
 	};
 
 	const handleWindowScroll = () => {
-		if (window.scrollY > 300) {
-			setLogoSize("4em");
-		} else {
-			setLogoSize("7em");
-		}
+		setScroll(window.scrollY);
 	};
+
+	useEffect(() => {
+		if (scroll > 300 || navState === "small") {
+			setLogoSize("4em");
+			document.querySelector(".main-content").style.paddingTop = "65px";
+		} else if (scroll < 300 && navState === "full") {
+			setLogoSize("7em");
+			document.querySelector(".main-content").style.paddingTop = "100px";
+		}
+	}, [navState, scroll]);
 
 	useEffect(() => {
 		window.addEventListener("resize", handleWindowResize);
@@ -35,14 +40,13 @@ const Navbar = () => {
 			setNavState("small");
 		} else {
 			setNavState("full");
-		}
-		if (navWidth > 1000) {
 			setBottomNavOpen(false);
 		}
 		return () => {
 			window.removeEventListener("resize", handleWindowResize);
+			window.removeEventListener("scroll", handleWindowScroll);
 		};
-	}, [bottomNavOpen, navWidth, location]);
+	}, [navWidth]);
 
 	return (
 		<nav className="top-nav-container">
@@ -50,6 +54,10 @@ const Navbar = () => {
 				<Logo width={logoSize} />
 				<TextLogo isVisible={navState !== "full" ? true : false} />
 				<NavLinkGroup isVisible={navState === "full" ? true : false} />
+				<div className="nav-btn-grp">
+					<button className="button-primary">free trial</button>
+					<button className="button-primary">login</button>
+				</div>
 				<NavToggleButton
 					onClick={() => {
 						setBottomNavOpen(!bottomNavOpen);

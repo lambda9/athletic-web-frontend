@@ -48,13 +48,16 @@
 	cursor: pointer;
 }
 
-.nav-links-container-btn {
-	flex-grow: 0.15;
+.nav-btn-grp {
 	display: flex;
 	justify-content: space-between;
 }
 
-.nav-links-container-btn Button,
+.nav-btn-grp button {
+	margin-right: 20px;
+}
+
+.n .nav-links-container-btn Button,
 .loginTrialBtn {
 	padding: 4px 7px;
 	border-radius: 6px;
@@ -127,10 +130,6 @@
 	background-color: rgba(0, 0, 0, 0.918);
 	transition: all ease-out 0.4s;
 	height: 0px;
-}
-
-.bottom-nav a {
-	font-size: 0.8em;
 }
 
 .bottom-nav-open {
