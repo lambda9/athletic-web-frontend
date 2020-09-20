@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import NavToggleButton from "./NavToggleButton";
 import BottomNav from "./BottomNav";
-import NavLink from "./NavLink";
 import Logo from "./Logo";
 import TextLogo from "./TextLogo";
 import NavLinkGroup from "./NavLinkGroup";
