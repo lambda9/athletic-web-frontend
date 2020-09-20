@@ -95,6 +95,7 @@ p {
 }
 
 .banner-bg {
+
 	min-height: calc(55vh - 66px);
 	background: url("./Images/im1.jpg") center/cover no-repeat;
 	background-color: lavender;
