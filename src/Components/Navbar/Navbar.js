@@ -1,66 +1,90 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import logo from "./logo.png";
 import NavToggleButton from "./NavToggleButton";
 import BottomNav from "./BottomNav";
+import Logo from "./Logo";
+import TextLogo from "./TextLogo";
+import NavLinkGroup from "./NavLinkGroup";
+import ButtonGroup from "./ButtonGroup";
 
 const Navbar = () => {
-	const [color, setColor] = useState("rgba(0, 0, 0, 0.5");
 	const [bottomNavOpen, setBottomNavOpen] = useState(false);
-	const [navWidth, setNavWidth] = useState(-1);
-	const [navPosition, setNavPosition] = useState("inherit");
+	const [navWidth, setNavWidth] = useState(window.innerWidth);
+	const [scroll, setScroll] = useState(window.scrollY);
+	const [navState, setNavState] = useState("full");
+	const [logoSize, setLogoSize] = useState("7em");
+	const [buttonGroupVisible, setButtonGroupVisible] = useState(true);
 
-	let location = useLocation();
+	const links = [
+		["/h", "home"],
+		["/programs", "programs"],
+		["/membership", "membership"],
+		["/gallery", "gallery"],
+		["/aboutUs", "about us"],
+		["/contactUs", "contact us"],
+	];
+
+	const location = useLocation();
+
+	const handleWindowResize = () => {
+		setNavWidth(window.innerWidth);
+	};
+
+	const handleWindowScroll = () => {
+		setScroll(window.scrollY);
+	};
 
 	useEffect(() => {
-		window.addEventListener("resize", () => {
-			setNavWidth(window.innerWidth);
-		});
-		if (navWidth < 600 || bottomNavOpen || location.pathname !== "/h") {
-			setNavPosition("inherit");
-			setColor("black");
-		} else {
-			setNavPosition("fixed");
-			setColor("rgba(0, 0, 0, 0.5");
+		if (scroll > 300 || navState === "small") {
+			setLogoSize("4em");
+			document.querySelector(".main-content").style.paddingTop = "65px";
+		} else if (scroll < 300 && navState === "full") {
+			setLogoSize("7em");
+			document.querySelector(".main-content").style.paddingTop = "100px";
 		}
-		if (navWidth > 1000) {
+	}, [navState, scroll]);
+
+	useEffect(() => {
+		window.addEventListener("resize", handleWindowResize);
+		window.addEventListener("scroll", handleWindowScroll);
+		if (navWidth < 1000) {
+			setNavState("small");
+		} else {
+			setNavState("full");
 			setBottomNavOpen(false);
 		}
-	}, [bottomNavOpen, navWidth, location]);
+		if (navWidth < 500) {
+			setButtonGroupVisible(false);
+		} else {
+			setButtonGroupVisible(true);
+		}
+		return () => {
+			window.removeEventListener("resize", handleWindowResize);
+			window.removeEventListener("scroll", handleWindowScroll);
+		};
+	}, [navWidth]);
 
 	return (
-		<nav>
-			<div
-				className="nav-main"
-				style={{ backgroundColor: color, position: navPosition }}
-			>
-				<div className="nav-logo left-nav">
-					<Link to="/">
-						<img src={logo} alt={"logo"}></img>
-					</Link>
-				</div>
-				<div className="right-nav">
-					<div className="text-logo">athletic</div>
-					<div className="nav-links-container">
-						<Link to="/h">Home</Link>
-						<Link to="/programs">Programs</Link>
-						<Link to="/membership">Membership</Link>
-						<Link to="/gallery">Gallery</Link>
-						<Link to="/aboutUs">About Us</Link>
-						<Link to="/contactUs">Contact Us</Link>
-					</div>
-					<div className="nav-links-container-btn">
-						<button href="/">Free Trial</button>
-						<button href="/">Login</button>
-					</div>
-					<NavToggleButton
-						onClick={() => {
-							setBottomNavOpen(!bottomNavOpen);
-						}}
-					/>
-				</div>
+		<nav className="top-nav-container">
+			<div className="top-nav">
+				<Logo width={logoSize} />
+				<TextLogo isVisible={navState !== "full" ? true : false} />
+				<NavLinkGroup
+					isVisible={navState === "full" ? true : false}
+					currentLink={location.pathname}
+					links={links}
+				/>
+				<ButtonGroup isVisible={buttonGroupVisible} />
+				<NavToggleButton
+					onClick={() => {
+						setBottomNavOpen(!bottomNavOpen);
+					}}
+					isOpen={bottomNavOpen}
+					isVisible={navState !== "full" ? true : false}
+				/>
 			</div>
+			<div className="nav-bottom"></div>
 			<BottomNav visible={bottomNavOpen} />
 		</nav>
 	);

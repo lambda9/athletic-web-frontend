@@ -1,136 +1,140 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 :root {
-  --primaryColor: #459fb6;
-  --mainWhite: #fff;
-  --offWhite: #e0e0e0;
-  --mainBlack: #222;
-  --mainGrey: #ececec;
-  --darkGrey: #cfcfcf;
-  --mainTransition: all 0.4s linear;
-  --fastTransition: all 0.3s linear;
-  --mainSpacing: 1.4px;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-  --minWidthMob: 550px;
-  --minWidthTab: 650px;
-  --pFontSizeMob: 12px;
-  --pFontSizePC: 15px
+	--primaryColor: #459fb6;
+	--primaryRed: #c13434;
+	--mainWhite: #fff;
+	--offWhite: #e0e0e0;
+	--mainBlack: #222;
+	--mainGrey: #ececec;
+	--darkGrey: #cfcfcf;
+	--mainTransition: all 0.4s linear;
+	--fastTransition: all 0.3s linear;
+	--mainSpacing: 1.4px;
+	--lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+	--darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+	--minWidthMob: 550px;
+	--minWidthTab: 650px;
+	--pFontSizeMob: 12px;
+	--pFontSizePC: 15px;
 }
 
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 body {
-  color: var(--mainBlack);
-  background: var(--mainWhite);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  line-height: 1.4;
-  text-align: center;
+	color: var(--mainBlack);
+	background: var(--mainWhite);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	line-height: 1.4;
+	text-align: center;
 }
+
+.main-content {
+	padding-top: 100px;
+}
+
 h1 {
-  font-size: 3em;
-  line-height: 1;
-  margin-bottom: 0.5em;
+	font-size: 3em;
+	line-height: 1;
+	margin-bottom: 0.5em;
 }
 h2 {
-  font-size: 2em;
-  margin-bottom: 0.75em;
+	font-size: 2em;
+	margin-bottom: 0.75em;
 }
 h3 {
-  font-size: 1.5em;
-  line-height: 1;
-  margin-bottom: 1em;
+	font-size: 1.5em;
+	line-height: 1;
+	margin-bottom: 1em;
 }
 h4 {
-  font-size: 1.2em;
-  line-height: 1.25;
-  margin-bottom: 1.25em;
+	font-size: 1.2em;
+	line-height: 1.25;
+	margin-bottom: 1.25em;
 }
 h5 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 1.5em;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 1.5em;
 }
 h6 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 1.5em;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 1.5em;
 }
 
 p {
-  font-size: 12px;
+	font-size: 12px;
 }
 
 .button-primary {
-  display: inline-block;
-  text-decoration: none;
-  letter-spacing: var(--mainSpacing);
-  color: var(--mainBlack);
-  background: var(--primaryColor);
-  outline: none;
-  font-size: 12px;
-  padding: 0.3rem 0.6rem;
-  border: 2px solid var(--primaryColor);
-  transition: var(--mainTransition);
-  text-transform: uppercase;
-  cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	letter-spacing: var(--mainSpacing);
+	color: var(--mainBlack);
+	background: var(--primaryColor);
+	outline: none;
+	font-size: 12px;
+	padding: 0.3rem 0.6rem;
+	border: 2px solid var(--primaryColor);
+	transition: var(--mainTransition);
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .button-primary:hover {
-  background: transparent;
-  text-decoration: none;
-  border: 2px solid var(--primaryColor);
-  color: var(--primaryColor);
+	background: transparent;
+	text-decoration: none;
+	border: 2px solid var(--primaryColor);
+	color: var(--primaryColor);
 }
 
 .banner-bg {
-  min-height: calc(55vh - 66px);
-  background: url("./Images/im1.jpg") center/cover no-repeat;
-  background-color: lavender;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--mainTransition);
+	min-height: calc(55vh - 66px);
+	background: url("./Images/im1.jpg") center/cover no-repeat;
+	background-color: lavender;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--mainTransition);
 }
 
 @media screen and (min-width: 550px) {
-  .button-primary {
-    font-size: 16px;
-    padding: 0.35rem 0.7rem;
-  }
+	.button-primary {
+		font-size: 16px;
+		padding: 0.35rem 0.7rem;
+	}
 
-  .banner-bg {
-    min-height: calc(70vh - 60px);
-  }
+	.banner-bg {
+		min-height: calc(70vh - 60px);
+	}
 }
 
 .aboutUs-bg {
-  background: url('./Images/im5.jpg') center/cover no-repeat;
+	background: url("./Images/im5.jpg") center/cover no-repeat;
 }
 
 .error-bg {
-  background: url('./Images/im2.jpg') center/cover no-repeat;
+	background: url("./Images/im2.jpg") center/cover no-repeat;
 }
 
 .ourPrograms-bg {
-  background: url('./Images/im8.jpg') center/cover no-repeat;
-
+	background: url("./Images/im8.jpg") center/cover no-repeat;
 }
 
 .contactUs-bg {
-  background: url('./Images/im9.jpg') center/cover no-repeat;
-
+	background: url("./Images/im9.jpg") center/cover no-repeat;
 }
 
 .gallery-bg {
-  background: url('./Images/im4.jpg') center/cover no-repeat;
+	background: url("./Images/im4.jpg") center/cover no-repeat;
 }
 
 .membership-bg {
-  background:  url('./Images/im6.jpg') center/cover no-repeat;
+	background: url("./Images/im6.jpg") center/cover no-repeat;
 }

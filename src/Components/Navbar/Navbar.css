@@ -1,35 +1,29 @@
-/* Navbar */
-.nav-main {
+.top-nav-container {
 	position: fixed;
-	z-index: 1;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
+	z-index: 100;
 	width: 100%;
-	padding: 5px;
-	/* border: 1px solid whitesmoke; */
 }
 
-.nav-logo {
-	width: 7em;
-	margin: 0 3em;
+.top-nav {
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 3px solid #459fb6;
+	box-shadow: 0px 2px 10px #000000ad;
+	width: 100%;
 }
 
 .nav-logo img {
-	width: 100%;
-}
-
-.right-nav {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
+	width: 7em;
+	margin: 0.5em;
+	transition: all linear 0.2s;
 }
 
 .nav-links-container {
-	flex-grow: 0.8;
+	flex-grow: 1;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 }
 
@@ -39,7 +33,8 @@
 	text-transform: capitalize;
 	color: whitesmoke;
 	font-size: 18px;
-	transition: var(--mainTransition);
+	transition: color linear 0.4s;
+	/* transition: border-bottom linear 0.4s; */
 	letter-spacing: var(--mainSpacing);
 	overflow: hidden;
 	/* background: yellow; */
@@ -52,43 +47,27 @@
 	cursor: pointer;
 }
 
-.nav-links-container-btn {
-	flex-grow: 0.15;
+.nav-btn-grp {
 	display: flex;
-	justify-content: space-between;
-}
-
-.nav-links-container-btn Button,
-.loginTrialBtn {
-	padding: 4px 7px;
-	border-radius: 6px;
-	font-size: 18px;
-	color: var(--primaryColor);
-	outline: var(--primaryColor);
-	border: 1px solid var(--primaryColor);
-	background-color: inherit;
-	margin: auto;
-	transition: all 0.2s linear;
-}
-.nav-links-container-btn Button:hover,
-.loginTrialBtn:hover {
-	color: white;
-	border: 1px solid var(--primaryColor);
-	background-color: var(--primaryColor);
+	flex-grow: 0.1;
+	justify-content: space-evenly;
 }
 
 .nav-toggle-container {
-	display: none;
+	padding: 0.5em;
+}
+
+.nav-link-active {
+	padding: 0.2em 0;
+	border-bottom: 3px solid var(--primaryRed);
 }
 
 .text-logo {
-	display: none;
 	color: var(--primaryColor);
 	font-weight: 600;
 	font-size: 2em;
-	margin: auto;
 	font-family: "Courier New", Courier, monospace;
-	/* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+	margin: auto;
 	text-transform: capitalize;
 }
 
@@ -99,7 +78,6 @@
 	border-radius: 4px;
 	margin: 6px;
 	transition: all ease-out 0.4s;
-	/* border: 1px solid white; */
 }
 
 .change .bar1 {
@@ -123,46 +101,12 @@
 	flex-direction: column;
 }
 
-.bottom-nav-btn-grp {
-	display: flex;
-	justify-content: center;
-	/* margin: 20px 0; */
-}
-
 .bottom-nav {
 	background-color: rgba(0, 0, 0, 0.918);
 	transition: all ease-out 0.4s;
 	height: 0px;
 }
 
-.bottom-nav a {
-	font-size: 0.8em;
-}
-
 .bottom-nav-open {
 	height: 380px;
-}
-
-@media screen and (max-width: 1000px) {
-	.text-logo {
-		display: block;
-	}
-	.nav-links-container {
-		display: none;
-	}
-
-	.nav-toggle-container {
-		display: block;
-	}
-
-	.nav-logo {
-		margin: 0;
-		width: 4em;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.nav-links-container-btn {
-		display: none;
-	}
 }
