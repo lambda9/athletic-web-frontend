@@ -1,20 +1,16 @@
 .card {
-  /* padding: 2px; */
   margin: 10px auto;
   border: none;
   width: 80%;
-  height: auto;
   text-align: center;
   overflow: hidden;
   transition: var(--fastTransition);
   box-shadow: 2px 2px 30px 5px var(--darkGrey);
   transition: var(--mainTransition);
-  /* box-sizing: border-box; */
 }
 
 .card img {
   display: block;
-  /* background-color: darkslateblue; */
   margin: 5px auto;
 }
 
@@ -30,7 +26,7 @@
 .mask1 {
   top: 0px;
   right: 0px;
-  background-color: var(--mainBlack);
+  background-color: var(--primaryRed);
 }
 
 .mask3 {
@@ -49,7 +45,7 @@
 .mask2 {
   right: 0px;
   top: 0px;
-  background-color: var(--mainBlack);
+  background-color: var(--primaryRed);
 }
 
 .mask4 {
@@ -63,7 +59,11 @@
   width: 80%;
   height: 1.5px;
 }
-
+.active2,
+.active4 {
+  height: 80%;
+  width: 1.5px;
+}
 .card h4 {
   margin: 7px auto;
   letter-spacing: var(--mainSpacing);
@@ -72,37 +72,27 @@
   width: 90%;
   margin: 5px auto;
   font-size: 12px;
-  /* background-color: dodgerblue; */
-}
-.active2,
-.active4 {
-  height: 80%;
-  width: 1.5px;
 }
 
 .cardCont {
   padding: 1.5rem 0;
   width: 100%;
   text-align: center;
-  /* background-color: var(--mainGrey); */
   margin: 1.5rem auto;
 }
 
 .cardCont-center {
   width: 95%;
   margin: 0 auto;
-  /* background-color: rgb(156, 150, 156); */
 }
 
 .card-btn {
   display: inline-block;
   text-align: center;
   margin: 18px auto 0;
-  /* background-color: goldenrod; */
 }
 
 .card-btn a {
-
   margin: 0 auto;
 }
 
@@ -136,4 +126,3 @@
     font-size: 16px;
   }
 }
-

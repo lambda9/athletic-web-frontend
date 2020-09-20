@@ -4,22 +4,22 @@
 	box-sizing: border-box;
 }
 :root {
-	--primaryColor: #459fb6;
-	--primaryRed: #c13434;
-	--mainWhite: #fff;
-	--offWhite: #e0e0e0;
-	--mainBlack: #222;
-	--mainGrey: #ececec;
-	--darkGrey: #cfcfcf;
-	--mainTransition: all 0.4s linear;
-	--fastTransition: all 0.3s linear;
-	--mainSpacing: 1.4px;
-	--lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-	--darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-	--minWidthMob: 550px;
-	--minWidthTab: 650px;
-	--pFontSizeMob: 12px;
-	--pFontSizePC: 15px;
+  --primaryColor: #459fb6;
+  --primaryRed: #c13434;
+  --offWhite: #e0e0e0;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #cfcfcf;
+  --mainTransition: all 0.4s linear;
+  --fastTransition: all 0.3s linear;
+  --mainSpacing: 1.4px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --minWidthMob: 550px;
+  --minWidthTab: 650px;
+  --pFontSizeMob: 12px;
+  --pFontSizePC: 15px
+
 }
 
 .App {
@@ -136,5 +136,19 @@ p {
 }
 
 .membership-bg {
-	background: url("./Images/im6.jpg") center/cover no-repeat;
+  background:  url('./Images/im6.jpg') center/cover no-repeat;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primaryColor); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #347b8d; 
+}
+
