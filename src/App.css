@@ -134,3 +134,16 @@ p {
 .membership-bg {
   background:  url('./Images/im6.jpg') center/cover no-repeat;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primaryColor); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #347b8d; 
+}

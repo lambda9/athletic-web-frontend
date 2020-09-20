@@ -1,5 +1,5 @@
 .plan-container {
-    margin: 20px auto;
+    margin: 40px auto;
     background: url('../../Images/im19.jpg') center/cover no-repeat;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .plan-container-center h4 {
-    /* font-size: 24px; */
+    /* color: white */
 }
 
 .plan-card-container {
