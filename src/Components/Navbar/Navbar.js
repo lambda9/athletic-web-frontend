@@ -7,6 +7,7 @@ import NavLink from "./NavLink";
 import Logo from "./Logo";
 import TextLogo from "./TextLogo";
 import NavLinkGroup from "./NavLinkGroup";
+import ButtonGroup from "./ButtonGroup";
 
 const Navbar = () => {
 	const [bottomNavOpen, setBottomNavOpen] = useState(false);
@@ -14,6 +15,7 @@ const Navbar = () => {
 	const [scroll, setScroll] = useState(window.scrollY);
 	const [navState, setNavState] = useState("full");
 	const [logoSize, setLogoSize] = useState("7em");
+	const [buttonGroupVisible, setButtonGroupVisible] = useState(true);
 
 	const handleWindowResize = () => {
 		setNavWidth(window.innerWidth);
@@ -36,11 +38,16 @@ const Navbar = () => {
 	useEffect(() => {
 		window.addEventListener("resize", handleWindowResize);
 		window.addEventListener("scroll", handleWindowScroll);
-		if (navWidth < 800) {
+		if (navWidth < 1000) {
 			setNavState("small");
 		} else {
 			setNavState("full");
 			setBottomNavOpen(false);
+		}
+		if (navWidth < 500) {
+			setButtonGroupVisible(false);
+		} else {
+			setButtonGroupVisible(true);
 		}
 		return () => {
 			window.removeEventListener("resize", handleWindowResize);
@@ -54,10 +61,7 @@ const Navbar = () => {
 				<Logo width={logoSize} />
 				<TextLogo isVisible={navState !== "full" ? true : false} />
 				<NavLinkGroup isVisible={navState === "full" ? true : false} />
-				<div className="nav-btn-grp">
-					<button className="button-primary">free trial</button>
-					<button className="button-primary">login</button>
-				</div>
+				<ButtonGroup isVisible={buttonGroupVisible} />
 				<NavToggleButton
 					onClick={() => {
 						setBottomNavOpen(!bottomNavOpen);

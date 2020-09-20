@@ -23,7 +23,7 @@ const BottomNav = ({ visible }) => {
 			<div className="bottom-nav-link-container">
 				{links.map((value, index) => {
 					return (
-						<Fragment>
+						<Fragment key={index}>
 							<Link to={value[0]}>{value[1]}</Link>
 							<div
 								style={{
