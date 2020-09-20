@@ -17,6 +17,17 @@ const Navbar = () => {
 	const [logoSize, setLogoSize] = useState("7em");
 	const [buttonGroupVisible, setButtonGroupVisible] = useState(true);
 
+	const links = [
+		["/h", "home"],
+		["/programs", "programs"],
+		["/membership", "membership"],
+		["/gallery", "gallery"],
+		["/aboutUs", "about us"],
+		["/contactUs", "contact us"],
+	];
+
+	const location = useLocation();
+
 	const handleWindowResize = () => {
 		setNavWidth(window.innerWidth);
 	};
@@ -60,7 +71,11 @@ const Navbar = () => {
 			<div className="top-nav">
 				<Logo width={logoSize} />
 				<TextLogo isVisible={navState !== "full" ? true : false} />
-				<NavLinkGroup isVisible={navState === "full" ? true : false} />
+				<NavLinkGroup
+					isVisible={navState === "full" ? true : false}
+					currentLink={location.pathname}
+					links={links}
+				/>
 				<ButtonGroup isVisible={buttonGroupVisible} />
 				<NavToggleButton
 					onClick={() => {

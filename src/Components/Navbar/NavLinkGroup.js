@@ -8,12 +8,28 @@ const NavLinkGroup = (props) => {
 			style={{ display: props.isVisible ? "flex" : "none" }}
 		>
 			{/* <NavLink to={"/h"} text={"home"} /> */}
-			<Link to="/h">Home</Link>
+			{props.links.map((value, index) => {
+				return (
+					<Link
+						key={index}
+						to={value[0]}
+						className={props.currentLink === value[0] ? "nav-link-active" : ""}
+					>
+						{value[1]}
+					</Link>
+				);
+			})}
+			{/* <Link
+				to="/h"
+				className={props.currentLink === "/h" ? "nav-link-active" : ""}
+			>
+				Home
+			</Link>
 			<Link to="/programs">Programs</Link>
 			<Link to="/membership">Membership</Link>
 			<Link to="/gallery">Gallery</Link>
 			<Link to="/aboutUs">About Us</Link>
-			<Link to="/contactUs">Contact Us</Link>
+			<Link to="/contactUs">Contact Us</Link> */}
 		</div>
 	);
 };
