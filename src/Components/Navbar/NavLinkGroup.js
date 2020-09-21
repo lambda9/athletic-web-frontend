@@ -13,7 +13,7 @@ const NavLinkGroup = (props) => {
 					<Link
 						key={index}
 						to={value[0]}
-						className={props.currentLink === value[0] ? "nav-link-active" : ""}
+						id={props.currentLink === value[0] ? "nav-link-active" : ""}
 					>
 						{value[1]}
 					</Link>
