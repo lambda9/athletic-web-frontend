@@ -4,7 +4,7 @@ import Banner from "../Banner";
 import Title from "../Title/Title";
 import IconSlider from "../MembershipComponents/IconSlider";
 import "./Membership.css";
-import bgImg from '../../Images/im6.jpg'
+import bgImg from "../../Images/im6.jpg";
 
 class Membership extends Component {
   state = {
@@ -141,7 +141,9 @@ class Membership extends Component {
 
         <div className="plan-container">
           <div className="plan-container-center">
-            <Title>Select membership plan</Title>
+          <div className='plan-selectMembership-title'>
+          <Title>Select membership plan</Title>
+          </div>
             <div className="plan-card-container">
               {this.state.plans.map((plan) => {
                 return <IconSlider item={plan} />;

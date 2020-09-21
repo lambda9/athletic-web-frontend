@@ -23,9 +23,16 @@ class Hero extends Component {
       this.setState({
         width: window.innerWidth,
         height: window.innerHeight,
-        mHeight: 55,
+        mHeight: 50,
       });
+      return;
     }
+
+    this.setState({
+      width: window.innerWidth,
+        height: window.innerHeight,
+        mHeight: 75,
+    })
     console.log(this.state.width, this.state.height, this.state.mHeight);
   }
 
