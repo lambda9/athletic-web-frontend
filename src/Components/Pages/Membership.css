@@ -1,27 +1,38 @@
+.membership-page {
+  /* background: url('../../Images/im19.jpg') center/cover no-repeat; */
+}
+
+.membership-bg-temp {
+  display: flex;
+  min-height: calc(70vh - 60px);
+  background: url("../../Images/im19.jpg") center/cover no-repeat;
+  align-items: center;
+  justify-content: center;
+}
+
 .plan-container {
-    margin: 40px auto;
-    background: url('../../Images/im19.jpg') center/cover no-repeat;
+  margin: 40px auto;
+  background: url("../../Images/im19.jpg") center/cover no-repeat;
 }
 
 .plan-container-center {
-    /* background-color: rgb(0,0,0); Fallback color */
   background-color: var(--mainGrey);
   background-color: rgba(255, 255, 255, 0.55);
-    z-index: 2;
-    padding: 20px 0;
-    width: 100%;
+  z-index: 2;
+  padding: 20px 0;
+  width: 100%;
 }
 
 .plan-container-center h4 {
-    /* color: white */
+  /* color: white */
 }
 
 .plan-card-container {
-    z-index: 3;
-    margin: 0 auto;
-    width: 85%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    row-gap: 1rem;
-    column-gap: 5rem;
+  z-index: 3;
+  margin: 0 auto;
+  width: 85%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 1rem;
+  column-gap: 5rem;
 }

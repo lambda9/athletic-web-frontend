@@ -133,12 +133,9 @@ class Membership extends Component {
 
   render() {
     return (
-      <div>
+      <div className="membership-page">
         <Hero tempClass="membership-bg">
-          <Banner
-            title="Get membership"
-            description="Be our member and get complete benefits"
-          ></Banner>
+          <Banner title="get membership" description="get today" />
         </Hero>
 
         <div className="plan-container">
@@ -146,11 +143,7 @@ class Membership extends Component {
             <Title>Select membership plan</Title>
             <div className="plan-card-container">
               {this.state.plans.map((plan) => {
-                return (
-                  <IconSlider
-                    item={plan}
-                  />
-                );
+                return <IconSlider item={plan} />;
               })}
             </div>
           </div>
@@ -161,3 +154,4 @@ class Membership extends Component {
 }
 
 export default Membership;
+// <Banner title="get membership" description="get today" />

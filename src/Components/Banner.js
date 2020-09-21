@@ -4,7 +4,7 @@ import img1 from "../Images/im1.jpg";
 import Title from "./Title/Title";
 import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
-class Hero extends Component {
+class Banner extends Component {
   render() {
     return (
       <div className="banner">
@@ -18,4 +18,4 @@ class Hero extends Component {
   }
 }
 
-export default Hero;
+export default Banner;
