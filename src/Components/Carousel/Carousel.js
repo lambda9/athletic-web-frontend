@@ -73,6 +73,10 @@ const Carousel = ({
 								className={`indicator pointer ${
 									index === currentIndex ? "active" : ""
 								}`}
+								style={{
+									// color: "black",
+									transition: `all linear ${transitionDelay / 1000}s`,
+								}}
 							></span>
 						);
 					})}
