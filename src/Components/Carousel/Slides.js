@@ -1,70 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Slide from "./Slide";
 import "./Carousel.css";
 
 const SlideContainer = ({
 	images,
-	onImageSet,
-	onImageStart,
+	offset,
+	transitionDelay,
+	showAnimation,
 	width,
 	height,
+	onTransitionEnd,
 }) => {
-	const SLIDE_DELAY = 4000;
-
-	const [carouselImages, setCarouselImages] = useState(images);
-
-	const [style, setStyle] = useState({
-		transition: "none",
-		transform: "0vw",
-	});
-
-	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setStyle({
-				transition: "all ease-in-out 2.0s",
-				transform: `translateX(-${imageWidth}vw)`,
-			});
-			onImageStart();
-		}, SLIDE_DELAY);
-
-		return () => {
-			clearTimeout(timeout);
-		};
-	});
-
-	const transitionEnd = () => {
-		let tempImages = carouselImages.slice();
-		let firstImage = tempImages.shift();
-		tempImages.push(firstImage);
-		setCarouselImages(tempImages);
-		setStyle({
-			transition: "none",
-			transform: "translateX(0vw)",
-		});
-		onImageSet();
+	console.log(offset);
+	const style = {
+		transition: showAnimation
+			? "none"
+			: `transform ease-in-out ${transitionDelay / 1000}s`,
+		transform: `translateX(${offset}vw)`,
 	};
-
-	// console.log("container created");
-	let imageWidth = width;
-	let imageHeight = height;
-
-	useEffect(() => {});
 
 	return (
 		<div
 			style={style}
 			className="slideContainer"
-			onTransitionEnd={transitionEnd}
+			onTransitionEnd={onTransitionEnd}
 		>
-			{carouselImages.map((value, index) => {
-				return (
-					<Slide
-						key={index}
-						img={value}
-						width={imageWidth}
-						height={imageHeight}
-					/>
-				);
+			{images.map((value, index) => {
+				return <Slide key={index} img={value} width={width} height={height} />;
 			})}
 		</div>
 	);
