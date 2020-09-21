@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
-import { SiInstagram, SiFacebook, SiC, FaCopyright } from "react-icons/all";
+import {
+  SiInstagram,
+  SiFacebook,
+  FaGooglePlay,
+  FaApple,
+  FaCopyright,
+} from "react-icons/all";
 
 class Footer extends Component {
   links = [
@@ -43,13 +49,14 @@ class Footer extends Component {
               {this.timmings.map((item) => {
                 return (
                   <p>
-                    {item[0]}:  {item[1]}
+                    {item[0]}: {item[1]}
                   </p>
                 );
               })}
             </div>
+            <div className="footer-get-app-div"></div>
           </div>
-          <div>
+          <div className='footer-social-buttons-container'>
             <div className="footer-social-media">
               <Link>
                 <SiFacebook />
@@ -58,7 +65,15 @@ class Footer extends Component {
                 <SiInstagram />
               </Link>
             </div>
-            <div className="footer-app"></div>
+            <div className="footer-get-app-bottom">
+              <div>Get app on</div>
+              <Link>
+                <FaGooglePlay />
+              </Link>
+              <Link>
+                <FaApple />{" "}
+              </Link>
+            </div>
           </div>
           <div className="footer-copyright">
             <div>
@@ -72,6 +87,4 @@ class Footer extends Component {
   }
 }
 
-
 export default Footer;
-  
