@@ -21,7 +21,6 @@ let useProgress = (animate, time) => {
 	let [progress, setProgress] = useState(0);
 
 	useEffect(() => {
-		console.log("effect");
 		if (animate) {
 			let rafId = null;
 			let start = null;

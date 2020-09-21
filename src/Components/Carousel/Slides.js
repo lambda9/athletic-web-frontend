@@ -11,7 +11,6 @@ const SlideContainer = ({
 	height,
 	onTransitionEnd,
 }) => {
-	console.log(offset);
 	const style = {
 		transition: showAnimation
 			? "none"
