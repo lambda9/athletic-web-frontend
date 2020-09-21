@@ -4,6 +4,7 @@ import Banner from "../Banner";
 import Title from "../Title/Title";
 import IconSlider from "../MembershipComponents/IconSlider";
 import "./Membership.css";
+import bgImg from '../../Images/im6.jpg'
 
 class Membership extends Component {
   state = {
@@ -134,7 +135,7 @@ class Membership extends Component {
   render() {
     return (
       <div className="membership-page">
-        <Hero tempClass="membership-bg">
+        <Hero bgImg={bgImg}>
           <Banner title="get membership" description="get today" />
         </Hero>
 

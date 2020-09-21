@@ -7,7 +7,7 @@ class Gallery extends Component {
   render() {
     return (
       <div>
-        <Hero tempClass="gallery-bg">
+        <Hero bgImg={bgImg}>
           <Banner
             title="gallery"
             description="checkout our latest pics and moments"

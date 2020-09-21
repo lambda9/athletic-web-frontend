@@ -2,14 +2,6 @@
   /* background: url('../../Images/im19.jpg') center/cover no-repeat; */
 }
 
-.membership-bg-temp {
-  display: flex;
-  min-height: calc(70vh - 60px);
-  background: url("../../Images/im19.jpg") center/cover no-repeat;
-  align-items: center;
-  justify-content: center;
-}
-
 .plan-container {
   margin: 40px auto;
   background: url("../../Images/im19.jpg") center/cover no-repeat;

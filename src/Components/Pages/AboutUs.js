@@ -5,12 +5,13 @@ import "./AboutUs.css";
 import Triangle from "../Shapes/Triangle";
 import Square from "../Shapes/Square";
 import Circle from "../Shapes/Circle";
+import bgImg from '../../Images/im5.jpg'
 
 class AboutUs extends Component {
   render() {
     return (
       <div className="aboutUs-page">
-        <Hero tempClass="aboutUs-bg">
+        <Hero bgImg={bgImg}>
           <Banner title="About us"></Banner>
         </Hero>
 
