@@ -17,9 +17,10 @@
 
 .footer-left-div,
 .footer-right-div {
-  width: 40%;
+  width: 10%;
   padding: 10px;
   height: fit-content;
+  min-width: 8rem;
   color: white;
   letter-spacing: var(--mainSpacing);
   text-transform: capitalize;
@@ -28,7 +29,8 @@
 }
 
 .footer-right-div {
-  width: 60%;
+  min-width: 13rem;
+  width: 30%;
 }
 
 .footer-right-div p {
@@ -79,12 +81,12 @@
 @media screen and (min-width: 550px) {
   .footer-left-div,
   .footer-right-div {
-    width: 30%;
     font-size: 24px;
+    min-width: 15rem;
   }
 
   .footer-right-div {
-    width: 54%;
+    min-width: 19rem;
   }
 
   .footer-left-div a {
@@ -103,7 +105,5 @@
   .footer-social-media a {
     margin: 5px 2rem;
   }
-
-
 
 }

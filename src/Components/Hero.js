@@ -7,22 +7,10 @@ class Hero extends Component {
     this.state = {
       width: 0,
       height: 0,
-      mHeight: 75,
+      mHeight: 80,
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
-
-  bannerBg = {
-    display: "flex",
-    backgroundImage: `url(${this.props.bgImg})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    minHeight: `calc(55vh - 66px)`,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "lavender",
-  };
 
   componentDidMount() {
     this.updateWindowDimensions();
@@ -46,24 +34,25 @@ class Hero extends Component {
   }
 
   render() {
-    return <div style={this.bannerBg}>{this.props.children}</div>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          backgroundImage: `url(${this.props.bgImg})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          minHeight: `calc(${this.state.mHeight}vh - 66px)`,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "lavender",
+        }}
+      >
+        {this.props.children}
+      </div>
+    );
   }
 }
 
 export default Hero;
 
-// function Hero(props) {
-// let bannerBg = {
-//   display: "flex",
-//   backgroundImage: `url(${props.bgImg})`,
-//   backgroundRepeat: 'no-repeat',
-//   backgroundPosition: 'center',
-//   backgroundSize: 'cover',
-//   minHeight: "calc(75vh - 60px)",
-//   alignItems: "center",
-//   justifyContent: "center",
-//   backgroundColor: "lavender",
-// }
-//   return <div style={bannerBg}>{props.children}</div>;
-// }
-// export default Hero;
