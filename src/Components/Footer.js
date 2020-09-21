@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Footer.css";
 import { Link } from "react-router-dom";
+import { SiInstagram, SiFacebook, SiC, FaCopyright } from "react-icons/all";
 
 class Footer extends Component {
   links = [
@@ -26,30 +27,45 @@ class Footer extends Component {
     return (
       <div className="footer-comp">
         <div className="footer-bg">
-        <div className=''>
-          <div className="footer-left-div">
-            Quick Links
-            {this.links.map((item) => {
-              return (
-                <Link to={`${item[0]}`} className="aa">
-                  {item[1]}
-                </Link>
-              );
-            })}
+          <div className="footer-divs-container">
+            <div className="footer-left-div">
+              Quick Links
+              {this.links.map((item) => {
+                return (
+                  <Link to={`${item[0]}`} className="aa">
+                    {item[1]}
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="footer-right-div">
+              Timmings
+              {this.timmings.map((item) => {
+                return (
+                  <p>
+                    {item[0]}:  {item[1]}
+                  </p>
+                );
+              })}
+            </div>
           </div>
-          <div className="footer-right-div">
-            Timmings
-            {this.timmings.map((item) => {
-              return (
-                <p>
-                  {item[0]}: {item[1]}
-                </p>
-              );
-            })}
+          <div>
+            <div className="footer-social-media">
+              <Link>
+                <SiFacebook />
+              </Link>
+              <Link>
+                <SiInstagram />
+              </Link>
+            </div>
+            <div className="footer-app"></div>
           </div>
-        </div>
-
-          <div className='footer-social-div'>Hey babes</div>
+          <div className="footer-copyright">
+            <div>
+              <FaCopyright /> Athletic gym and fitness center
+            </div>
+            <div>All rights reserved</div>
+          </div>
         </div>
       </div>
     );

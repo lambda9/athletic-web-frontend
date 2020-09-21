@@ -12,6 +12,7 @@ import Gallery from "./Components/Pages/Gallery";
 import Membership from "./Components/Pages/Membership";
 import Error from "./Components/Pages/Error";
 import JoinNow from "./Components/Pages/JoinNow";
+import Footer from "./Components/Footer";
 
 class App extends Component {
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
             <Route component={Error} />
           </Switch>
         </div>
+        <Footer />
       </Router>
     );
   }

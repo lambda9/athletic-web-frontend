@@ -101,7 +101,7 @@
 }
 
 .slider-card-content {
-  border-top: 4px solid var(--primaryColor);
+  border-top: 4px solid var(--primaryRed);
   padding: 2px 7px;
 }
 

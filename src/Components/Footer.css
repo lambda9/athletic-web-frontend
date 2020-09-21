@@ -1,52 +1,109 @@
 .footer-comp {
-    background: url('../Images/im18.jpg') center/cover no-repeat;
-    width: 100%;
-    height: 20rem;
+  background: url("../Images/im18.jpg") center/cover no-repeat;
+  width: 100%;
 }
 
 .footer-bg {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
+  display: block;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
-.footer-left-div, .footer-right-div {
-    width: 40%;
-    padding: 10px;
-    height: fit-content;
-    color: white;
-    letter-spacing: var(--mainSpacing);
-    text-transform: capitalize;
-    text-align: left;
-    text-decoration: none;
+.footer-divs-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.footer-left-div,
+.footer-right-div {
+  width: 40%;
+  padding: 10px;
+  height: fit-content;
+  color: white;
+  letter-spacing: var(--mainSpacing);
+  text-transform: capitalize;
+  text-align: left;
+  text-decoration: none;
 }
 
 .footer-right-div {
-    width: 60%;
+  width: 60%;
 }
 
-.footer-social-div {
-    /* width: 20%; */
-    background-color: red;
-}
 .footer-right-div p {
-    font-size: var(--pFontSizeMob);
-    margin: 8px 0 0 0;
-    font-size: var(--pFontSizeMob);
+  font-size: var(--pFontSizeMob);
+  margin: 8px 0 0 0;
 }
-
 
 .footer-left-div a {
-    margin-top: 8px;
-    font-size: var(--pFontSizeMob);
-    color: white;
-    display: block;
-    transition: var(--fastTransition);
-    width: fit-content;
+  margin-top: 8px;
+  font-size: var(--pFontSizeMob);
+  color: white;
+  display: block;
+  transition: var(--fastTransition);
+  width: fit-content;
 }
 
 .footer-left-div a:hover {
-    text-decoration: none;
-    color: var(--primaryColor);
+  text-decoration: none;
+  color: var(--primaryColor);
+}
+
+.footer-social-media {
+  margin: 1rem;
+  margin-right: auto;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-social-media a {
+  margin: 5px auto;
+  text-decoration: none;
+  font-size: 32px;
+  color: var(--primaryColor);
+}
+
+.footer-app {
+  width: 60%;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  margin: 1.5rem auto;
+  letter-spacing: var(--mainSpacing);
+  color: white;
+}
+
+@media screen and (min-width: 550px) {
+  .footer-left-div,
+  .footer-right-div {
+    width: 30%;
+    font-size: 24px;
+  }
+
+  .footer-right-div {
+    width: 54%;
+  }
+
+  .footer-left-div a {
+    font-size: 18px;
+  }
+
+  .footer-right-div p {
+    font-size: 18px;
+  }
+
+  .footer-social-media {
+    margin: 1rem auto;
+    display: block;
+  }
+
+  .footer-social-media a {
+    margin: 5px 2rem;
+  }
+
+
+
 }

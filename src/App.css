@@ -72,6 +72,10 @@ p {
   font-size: 12px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .button-primary {
   display: inline-block;
   text-decoration: none;

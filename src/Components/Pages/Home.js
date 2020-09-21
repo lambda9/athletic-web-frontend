@@ -6,7 +6,6 @@ import Navbar from "../Navbar/Navbar";
 import img1 from "../../Images/Carousel/img1.jpg";
 import img2 from "../../Images/Carousel/img2.jpg";
 import img3 from "../../Images/Carousel/img3.jpg";
-import Footer from "../Footer";
 
 function Home() {
 	const images = [img1, img2, img3];
@@ -16,7 +15,6 @@ function Home() {
 			<Carousel images={images} width={100} heightToWidthRatio={0.43} />
 			<Services />
 			<CardGroup />
-			<Footer />
 		</div>
 	);
 }
