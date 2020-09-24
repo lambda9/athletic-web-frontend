@@ -2,16 +2,7 @@ import React, { Component, Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-const BottomNav = ({ visible }) => {
-	const links = [
-		["/h", "home"],
-		["programs", "programs"],
-		["membership", "membership"],
-		["gallery", "gallery"],
-		["aboutUs", "about us"],
-		["contactUs", "contact us"],
-	];
-
+const BottomNav = ({ visible, links, currentLink, onLinkClick }) => {
 	const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 	const [overflowHeight, setOverflowHeight] = useState(visible ? 300 : 0);
 
@@ -42,18 +33,14 @@ const BottomNav = ({ visible }) => {
 			<div className="bottom-nav-link-container">
 				{links.map((value, index) => {
 					return (
-						// <Fragment key={index}>
-						<Link key={index} to={value[0]}>
+						<Link
+							onClick={onLinkClick}
+							key={index}
+							to={value[0]}
+							id={currentLink === value[0] ? "nav-link-active" : ""}
+						>
 							{value[1]}
 						</Link>
-						// <div
-						// 	style={{
-						// 		width: "100%",
-						// 		height: "2px",
-						// 		backgroundColor: "#459fb6",
-						// 	}}
-						// ></div>
-						// </Fragment>
 					);
 				})}
 			</div>
