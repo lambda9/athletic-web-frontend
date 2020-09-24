@@ -1,11 +1,12 @@
 .aboutUs-page {
-  height: 1000px;
+  height: 1500px;
+  /* background-color: grey; */
 }
 
 .about-content {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 1000px;
   overflow: hidden;
   /* background-color: wheat; */
 }
@@ -16,7 +17,7 @@
   /* background-color: turquoise; */
 }
 .about-hz-line {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   width: 100%;
   height: 8px;
   background-color: var(--primaryColor);
@@ -30,7 +31,7 @@
 }
 
 .about-vt-line {
-  margin-left: 3rem;
+  margin-left: 2.5rem;
   width: 8px;
   height: 100%;
   background-color: var(--primaryColor);
@@ -62,4 +63,14 @@
   margin: 1rem auto;
   letter-spacing: var(--mainSpacing);
   color: var(--primaryColor);
+}
+
+.tempLine {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  width: 10px;
+  height: 100px;
+  background-color: red;
+  transform: rotate();
 }

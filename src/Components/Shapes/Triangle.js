@@ -3,8 +3,8 @@ import React from "react";
 function Triangle(props) {
   let style = {
     position: "absolute",
-    top: `${props.top}rem`,
-    left: `${props.left}rem`,
+    top: `${props.top}px`,
+    left: `${props.left}px`,
     width: "0",
     height: "0",
     borderLeft: `${props.w1}px solid transparent`,

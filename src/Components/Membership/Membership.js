@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Hero from "../Hero";
 import Banner from "../Banner";
 import Title from "../Title/Title";
-import IconSlider from "../MembershipComponents/IconSlider";
+import IconSlider from "./IconSlider";
 import "./Membership.css";
 import bgImg from "../../Images/im6.jpg";
 
