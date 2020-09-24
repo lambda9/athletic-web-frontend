@@ -6,7 +6,7 @@ function GetApp() {
   return (
     <div className="footer-get-app">
       <div className="footer-get-app-cont">
-        <span>Get app on</span>
+        <span>Get app</span>
         <Link>
           <FaGooglePlay />
         </Link>

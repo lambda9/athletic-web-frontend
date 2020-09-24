@@ -140,12 +140,13 @@
   .footer-get-app-cont {
     font-size: 24px;
     display: flex;
+    justify-content: start;
     flex-direction: column;
   }
 
   .footer-get-app-cont a {
     font-size: 46px;
-    margin: 0 auto;
+    margin-right: auto;
     margin-top: 1rem;
   }
 
