@@ -4,6 +4,7 @@ import Banner from "../Banner";
 import Title from "../Title/Title";
 import IconSlider from "../MembershipComponents/IconSlider";
 import "./Membership.css";
+import bgImg from "../../Images/im6.jpg";
 
 class Membership extends Component {
   state = {
@@ -133,24 +134,19 @@ class Membership extends Component {
 
   render() {
     return (
-      <div>
-        <Hero tempClass="membership-bg">
-          <Banner
-            title="Get membership"
-            description="Be our member and get complete benefits"
-          ></Banner>
+      <div className="membership-page">
+        <Hero bgImg={bgImg}>
+          <Banner title="get membership" description="get today" />
         </Hero>
 
         <div className="plan-container">
           <div className="plan-container-center">
-            <Title>Select membership plan</Title>
+          <div className='plan-selectMembership-title'>
+          <Title>Select membership plan</Title>
+          </div>
             <div className="plan-card-container">
               {this.state.plans.map((plan) => {
-                return (
-                  <IconSlider
-                    item={plan}
-                  />
-                );
+                return <IconSlider item={plan} />;
               })}
             </div>
           </div>
@@ -161,3 +157,4 @@ class Membership extends Component {
 }
 
 export default Membership;
+// <Banner title="get membership" description="get today" />
