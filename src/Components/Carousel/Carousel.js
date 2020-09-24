@@ -3,13 +3,39 @@ import Slides from "./Slides";
 import "./Carousel.css";
 import ProgressBar from "./ProgressBar";
 
-const Carousel = ({ images, width, heightToWidthRatio }) => {
-	// const SLIDE_DELAY = 6000;
-
+const Carousel = ({
+	images,
+	width,
+	heightToWidthRatio,
+	slideDelay,
+	transitionDelay,
+}) => {
 	let height = width * heightToWidthRatio;
 
+	const [offset, setOffset] = useState(0);
+	const [carouselImages, setCarouselImages] = useState(images);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [progressStart, setProgressStart] = useState(true);
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setOffset(-width);
+			setCurrentIndex((currentIndex + 1) % carouselImages.length);
+		}, slideDelay);
+		return () => {
+			clearTimeout(timeout);
+		};
+	});
+
+	const onTransitionEnd = () => {
+		console.log("transition end");
+		let tempImages = carouselImages.slice();
+		tempImages.push(tempImages[0]);
+		tempImages.shift();
+		setCarouselImages(tempImages);
+		setProgressStart(!progressStart);
+		setOffset(0);
+	};
 
 	const onImageSet = () => {
 		setProgressStart(!progressStart);
@@ -29,44 +55,33 @@ const Carousel = ({ images, width, heightToWidthRatio }) => {
 				}}
 			>
 				<Slides
-					images={images}
+					images={carouselImages}
 					onImageSet={onImageSet}
 					onImageStart={onImageStart}
+					transitionDelay={transitionDelay}
+					offset={offset}
 					width={width}
 					height={height}
+					showAnimation={offset === 0}
+					onTransitionEnd={onTransitionEnd}
 				/>
 				<div className="indicators">
-					{images.map((value, index) => {
+					{carouselImages.map((value, index) => {
 						return (
 							<span
 								key={index}
 								className={`indicator pointer ${
 									index === currentIndex ? "active" : ""
 								}`}
-								onClick={() => {
-									setCurrentIndex(index);
+								style={{
+									// color: "black",
+									transition: `all linear ${transitionDelay / 1000}s`,
 								}}
 							></span>
 						);
 					})}
 				</div>
-				{/* <div className="arrows pointer">
-					<span className="navigation" onClick={() => showPrevSlide()}>
-						&#10094;
-					</span>
-					<span className="navigation" onClick={() => showNextSlide()}>
-						&#10095;
-					</span>
-				</div> */}
-				{/* <div className="playPause">
-					<i
-						className={`pointer fa ${
-							isPlaying ? "fa-pause-circle" : "fa-play-circle"
-						}`}
-						onClick={() => setPlaying(!isPlaying)}
-					></i>
-				</div> */}
-				<ProgressBar key={progressStart} animate={true} time={4000} />
+				<ProgressBar key={progressStart} animate={true} time={slideDelay} />
 			</div>
 		</div>
 	);
