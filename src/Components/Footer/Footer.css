@@ -87,9 +87,10 @@
 }
 
 .footer-get-app-cont span {
-  color: white;
   margin: auto 0.2rem;
+  text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
+  color: white;
 }
 
 .footer-get-app-cont a {
@@ -149,7 +150,7 @@
   }
 
   .footer-social-media-cont a{
-    font-size: 46px;
+    font-size: 42px;
   }
 
   .footer-buttons-right {

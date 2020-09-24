@@ -13,11 +13,13 @@ import Membership from "./Components/Pages/Membership";
 import Error from "./Components/Pages/Error";
 import JoinNow from "./Components/Pages/JoinNow";
 import Footer from "./Components/Footer/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
 
 class App extends Component {
   render() {
     return (
       <Router>
+      <ScrollToTop />
         <Navbar />
         <div className="main-content">
           <Switch>
