@@ -55,20 +55,13 @@ class Footer extends Component {
               </div>
             </div>
             <div className="footer-buttons-right">
-              <div className="footer-social-div">
-                <SocialMedia />
-              </div>
-              <div className="footer-get-app-div">
-                <GetApp />
-              </div>
+              <GetApp />
             </div>
           </div>
           <div className="footer-buttons">
-            <div className="footer-social-div">
-              <SocialMedia />
-            </div>
-            <div className="footer-get-app-div">
-              <GetApp />
+            <SocialMedia />
+            <div className='footer-get-app-div'>
+            <GetApp />
             </div>
           </div>
           <div className="footer-copyright">

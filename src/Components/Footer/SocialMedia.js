@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { SiInstagram, SiFacebook } from "react-icons/all";
+import { SiInstagram, SiFacebook, BiPhoneCall, SiGooglemaps } from "react-icons/all";
 
 export class SocialMedia extends Component {
   render() {
@@ -12,6 +12,12 @@ export class SocialMedia extends Component {
           </Link>
           <Link>
             <SiInstagram />
+          </Link>
+          <Link>
+            <BiPhoneCall />
+          </Link>
+          <Link>
+            <SiGooglemaps />
           </Link>
         </div>
       </div>

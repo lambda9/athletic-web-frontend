@@ -75,37 +75,30 @@
 
 .footer-social-media-cont a,
 .footer-get-app-cont a {
-  font-size: 32px;
-  margin: 0.2rem 0.4rem;
+  font-size: 34px;
+  margin: 0rem 1rem;
   text-decoration: none;
   color: var(--primaryColor);
 }
 
 .footer-get-app-cont {
   display: flex;
+  margin-top: 0.8rem;
 }
 
 .footer-get-app-cont span {
   color: white;
   margin: auto 0.2rem;
+  letter-spacing: var(--mainSpacing);
 }
 
 .footer-get-app-cont a {
-  margin: 0.2rem 0.4rem;
+  margin-right: 0.4rem;
 }
 
 .footer-buttons {
   width: 100%;
-  display: flex;
   margin: 1rem auto;
-}
-
-.footer-social-div {
-  width: 40%;
-}
-
-.footer-get-app-div {
-  width: 60%;
 }
 
 .footer-buttons-right {
@@ -119,52 +112,52 @@
   color: white;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 460px) {
   .footer-timmings-div,
   .footer-quick-links-div {
     font-size: 24px;
-    min-width: 8.2rem;
+    min-width: 10rem;
   }
 
   .footer-timmings-div {
-    min-width: 16rem;
+    min-width: 19rem;
   }
 
   .footer-quick-links-div a {
     font-size: 18px;
   }
-
   .footer-timmings-div p {
     font-size: 18px;
   }
+}
 
-  .footer-buttons {
+@media screen and (min-width: 600px) {
+  .footer-get-app-div {
     display: none;
   }
 
+  .footer-get-app-cont {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-get-app-cont a {
+    font-size: 46px;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  .footer-social-media-cont a{
+    font-size: 46px;
+  }
+
   .footer-buttons-right {
-    width: 30%;
+    width: 25%;
     height: fit-content;
     text-align: center;
-    margin: auto;
+    /* margin: auto; */
     display: block;
   }
 
-  .footer-social-div,
-  .footer-get-app-div {
-    width: 100%;
-    margin-top: 2rem;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .footer-social-media-cont a,
-  .footer-get-app-cont a {
-    font-size: 38px;
-    margin: 0.2rem 0.4rem;
-  }
-
-  .footer-get-app-cont span {
-    font-size: 18px;
-  }
 }
