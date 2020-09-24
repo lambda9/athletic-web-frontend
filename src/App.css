@@ -3,6 +3,11 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+html {
+	height: 100%;
+}
+
 :root {
 	--primaryColor: #459fb6;
 	--mainWhite: #ffffff;
@@ -32,6 +37,11 @@ body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	line-height: 1.4;
 	text-align: center;
+	height: 100%;
+}
+
+#root {
+	height: 100%;
 }
 
 .main-content {
@@ -95,8 +105,7 @@ p {
 }
 
 .banner-bg {
-
-	min-height: calc(55vh - 66px);
+	/* min-height: calc(55vh - 66px); */
 	background: url("./Images/im1.jpg") center/cover no-repeat;
 	background-color: lavender;
 	display: flex;
