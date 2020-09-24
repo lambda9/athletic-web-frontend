@@ -8,13 +8,18 @@ import TextLogo from "./TextLogo";
 import NavLinkGroup from "./NavLinkGroup";
 import ButtonGroup from "./ButtonGroup";
 
+const SMALL = 0;
+const LARGE = 1;
+const SMALL_LOGO = "4em";
+const LARGE_LOGO = "7em";
+
 const Navbar = () => {
-	const [bottomNavOpen, setBottomNavOpen] = useState(false);
-	const [navWidth, setNavWidth] = useState(window.innerWidth);
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 	const [scroll, setScroll] = useState(window.scrollY);
-	const [navState, setNavState] = useState("full");
-	const [logoSize, setLogoSize] = useState("7em");
-	const [buttonGroupVisible, setButtonGroupVisible] = useState(true);
+	const [navWidth, setNavWidth] = useState(SMALL);
+	const [logoSize, setLogoSize] = useState(LARGE_LOGO);
+	const [bottomNavOpen, setBottomNavOpen] = useState(false);
+	const [btnGroupVisible, setBtnGroupVisible] = useState(true);
 
 	const links = [
 		["/h", "home"],
@@ -28,64 +33,75 @@ const Navbar = () => {
 	const location = useLocation();
 
 	const handleWindowResize = () => {
-		setNavWidth(window.innerWidth);
+		setWindowWidth(window.innerWidth);
 	};
 
 	const handleWindowScroll = () => {
 		setScroll(window.scrollY);
 	};
 
-	useEffect(() => {
-		if (scroll > 300 || navState === "small") {
-			setLogoSize("4em");
-			document.querySelector(".main-content").style.paddingTop = "65px";
-		} else if (scroll < 300 && navState === "full") {
-			setLogoSize("7em");
-			document.querySelector(".main-content").style.paddingTop = "100px";
-		}
-	}, [navState, scroll]);
+	const onLinkClick = () => {
+		setBottomNavOpen(false);
+	};
 
 	useEffect(() => {
 		window.addEventListener("resize", handleWindowResize);
 		window.addEventListener("scroll", handleWindowScroll);
-		if (navWidth < 1000) {
-			setNavState("small");
-		} else {
-			setNavState("full");
-			setBottomNavOpen(false);
-		}
-		if (navWidth < 500) {
-			setButtonGroupVisible(false);
-		} else {
-			setButtonGroupVisible(true);
-		}
 		return () => {
 			window.removeEventListener("resize", handleWindowResize);
 			window.removeEventListener("scroll", handleWindowScroll);
 		};
-	}, [navWidth]);
+	}, []);
+
+	useEffect(() => {
+		if (windowWidth < 1000) {
+			setLogoSize(SMALL_LOGO);
+			setNavWidth(SMALL);
+			document.querySelector(".main-content").style.paddingTop = "65px";
+		} else {
+			setNavWidth(LARGE);
+			setBottomNavOpen(false);
+			if (scroll > 300) {
+				setLogoSize(SMALL_LOGO);
+				document.querySelector(".main-content").style.paddingTop = "65px";
+			} else {
+				setLogoSize(LARGE_LOGO);
+				document.querySelector(".main-content").style.paddingTop = "100px";
+			}
+		}
+		if (windowWidth < 500) {
+			setBtnGroupVisible(false);
+		} else {
+			setBtnGroupVisible(true);
+		}
+	}, [windowWidth, scroll]);
 
 	return (
 		<nav className="top-nav-container">
 			<div className="top-nav">
 				<Logo width={logoSize} />
-				<TextLogo isVisible={navState !== "full" ? true : false} />
+				<TextLogo isVisible={navWidth !== LARGE ? true : false} />
 				<NavLinkGroup
-					isVisible={navState === "full" ? true : false}
+					isVisible={navWidth === LARGE ? true : false}
 					currentLink={location.pathname}
 					links={links}
 				/>
-				<ButtonGroup isVisible={buttonGroupVisible} />
+				<ButtonGroup isVisible={btnGroupVisible} />
 				<NavToggleButton
 					onClick={() => {
 						setBottomNavOpen(!bottomNavOpen);
 					}}
 					isOpen={bottomNavOpen}
-					isVisible={navState !== "full" ? true : false}
+					isVisible={navWidth === SMALL ? true : false}
 				/>
 			</div>
 			<div className="nav-bottom"></div>
-			<BottomNav visible={bottomNavOpen} />
+			<BottomNav
+				links={links}
+				currentLink={location.pathname}
+				visible={bottomNavOpen}
+				onLinkClick={onLinkClick}
+			/>
 		</nav>
 	);
 };
