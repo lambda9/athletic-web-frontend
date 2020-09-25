@@ -1,21 +1,23 @@
 .membership-page {
+  min-height: fit-content;
+  /* height: 4400px; */
+  overflow: hidden;
 }
 
 .plan-container {
+  position: relative;
   margin: 2rem auto;
-  background: url("../../Images/im19.jpg") center/cover no-repeat;
+  z-index: -10;
 }
 
 .plan-container-center {
-  background-color: var(--mainGrey);
-  background-color: rgba(0, 0, 0, 0.6);
   z-index: 2;
   padding: 20px 0;
   width: 100%;
 }
 
 .plan-selectMembership-title h4 {
-  color: white;
+  z-index: 3;
 }
 
 .plan-container-center h4 {
@@ -32,15 +34,3 @@
   column-gap: 5rem;
 }
 
-/* for screen greate than or equal to min-width*/
-@media screen and (min-width: 550px) {
-  .plan-container {
-    margin: 3rem auto;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .plan-container {
-    margin: 4rem auto;
-  }
-}
