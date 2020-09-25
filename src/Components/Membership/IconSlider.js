@@ -30,23 +30,19 @@ class IconSlider extends Component {
         className="slider-div"
         onMouseOver={this.mouseEnter}
         onMouseLeave={this.mouseLeave}>
-        <div
-          className={
-            this.state.isActive ? "overlay-div active-overlay-div" : "overlay-div"}>
-          <div
-            className={
-              this.state.isActive ? "icon-div active-icon-div" : "icon-div"}>
-            <MdFitnessCenter
-              className={this.state.isActive ? "icon active-icon" : "icon"} />
+        <div className={ this.state.isActive ? "overlay-div active-overlay-div" : "overlay-div"}>
+          <div className={ this.state.isActive ? "icon-div active-icon-div" : "icon-div"}>
+            <MdFitnessCenter className={this.state.isActive ? "icon active-icon" : "icon"} />
           </div>
           <h4>Benefits</h4>
-          <p> {
-            this.props.item.description.map(plan => {
-              return (
-              <div>{plan}</div>
-            )
-          })
-          }
+          <p> 
+            {
+              this.props.item.description.map(plan => {
+                return (
+                <div>{plan}</div>
+                )
+              })
+            }
           </p>
           <Link to={`/joinNow/${this.props.item.plan_id}`} className='button-primary'>join now</Link>
         </div>

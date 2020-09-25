@@ -4,7 +4,7 @@
   overflow: hidden;
 }
 
-.plan-container {
+.plan-bg-container {
   position: relative;
   margin: 2rem auto;
   z-index: -10;

@@ -7,6 +7,8 @@ import Square from "../Shapes/Square";
 import Circle from "../Shapes/Circle";
 import Line from '../Shapes/Line';
 import bgImg from '../../Images/im5.jpg'
+import Dots from '../Shapes/Dots'
+
 
 class AboutUs extends Component {
   render() {
@@ -28,9 +30,7 @@ class AboutUs extends Component {
           </div>
 
           <div className="about-content">
-            
-            <Square top={0} left={0} width={32} height={32} color={"#459fb6"} angle={0}/>
-            
+                        
             <Triangle top={180} left={120} w1={40} w2={40} w3={80} color={"rgb(253,238,238)"} angle={15} />
             <Circle top={300} left={60} r1={140} r2={140} color={"rgb(238,238,239)"}/>
             <Circle top={309} left={70} r1={120} r2={120} color={"rgb(255, 255, 255)"}/>
@@ -48,7 +48,9 @@ class AboutUs extends Component {
 
             <Line top={450} left={240} width={10} length={600} color={"rgb(241,241,244)"} angle={-45}/>
             <Line top={490} left={240} width={10} length={600} color={"rgb(241,241,244)"} angle={-45}/>
-           
+
+            <Dots top={850} left={240} width={800} height={240} spacing={25} r={7} color={"#dcf1e7"} angle={0}/>
+
             <div className="about-hz-line-container">
               <div className="about-hz-line" />
             </div>
