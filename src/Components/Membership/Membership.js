@@ -191,15 +191,15 @@ class Membership extends Component {
 
 
           <Triangle top={420} left={185} w1={40} w2={40} w3={80} color={"rgb(253,238,238)"} angle={-35} />
-            <Circle top={500} left={240} r1={140} r2={140} color={"rgb(238,238,239)"}/>
-            <Circle top={509} left={250} r1={120} r2={120} color={"rgb(255, 255, 255)"}/>
-            <Circle top={530} left={170} r1={50} r2={50} color={"rgb(238, 238, 239)"}/>
-            <Circle top={630} left={210} r1={30} r2={30} color={"rgb(238, 238, 239)"}/>
+          <Circle top={500} left={240} r1={140} r2={140} color={"rgb(238,238,239)"}/>
+          <Circle top={509} left={250} r1={120} r2={120} color={"rgb(255, 255, 255)"}/>
+          <Circle top={530} left={170} r1={50} r2={50} color={"rgb(238, 238, 239)"}/>
+          <Circle top={630} left={210} r1={30} r2={30} color={"rgb(238, 238, 239)"}/>
         
-            <Circle top={930} left={300} r1={30} r2={30} color={"rgb(238, 238, 239)"}/>
-            <Circle top={930} left={220} r1={50} r2={50} color={"rgb(238, 238, 239)"}/>
+          <Circle top={930} left={300} r1={30} r2={30} color={"rgb(238, 238, 239)"}/>
+          <Circle top={930} left={220} r1={50} r2={50} color={"rgb(238, 238, 239)"}/>
         
-            <Line top={1000} left={270} width={10} length={1000} color={"rgb(253,238,238)"} angle={0}/>
+          <Line top={1000} left={270} width={10} length={1000} color={"rgb(253,238,238)"} angle={0}/>
           <Line top={1000} left={300} width={10} length={1000} color={"rgb(253,238,238)"} angle={0}/>
 
           <Square top={1900} left={250} width={150} height={600} color={"#459fb6"} angle={0}/>
@@ -210,7 +210,11 @@ class Membership extends Component {
 
           <Circle top={-100} left={820} r1={1200} r2={1800} color={"rgb(220,222,231)"}/>
 
-            </div>
+
+          <Square top={130} left={1450} width={120} height={1300} color={"#c13434"} angle={0}/>
+          <Square top={140} left={1460} width={100} height={1280} color={"rgb(220,222,231)"} angle={0}/>
+
+        </div>
 
           <div className="plan-container-center">
             <div className="plan-selectMembership-title">
