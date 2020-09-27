@@ -14,11 +14,18 @@ function Hero(props) {
   };
 
   useEffect(() => {
-    window.addEventListener("resize", updateWindowDimensions());
-  }, [window.innerWidth]);
+    window.addEventListener("resize", updateWindowDimensions);
+
+    return () => {
+			window.removeEventListener("resize", updateWindowDimensions);
+		};
+  }, []);
 
   return (
     <div
+
+    className='hero-backDrop'
+
       style={{
         display: "flex",
         backgroundImage: `url(${props.bgImg})`,

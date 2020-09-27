@@ -109,14 +109,15 @@ a {
   color: var(--primaryColor);
 }
 
-.banner-bg {
-	/* min-height: calc(55vh - 66px); */
-	background: url("./Images/im1.jpg") center/cover no-repeat;
-	background-color: lavender;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: var(--mainTransition);
+.hero-backDrop {
+  display: "flex";
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  transition: var(--mainTransition);
+  background-color: lavender;
 }
 
 @media screen and (min-width: 550px) {
