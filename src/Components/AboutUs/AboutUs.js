@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import Hero from "../Hero";
 import Banner from "../Banner";
+import AboutUsBg from "./AboutUsBg";
 import "./AboutUs.css";
-import Triangle from "../Shapes/Triangle";
-import Square from "../Shapes/Square";
-import Circle from "../Shapes/Circle";
-import Line from '../Shapes/Line';
-import bgImg from '../../Images/im5.jpg'
-import Dots from '../Shapes/Dots'
 
+import img1 from "../../Images/im20.jpg";
+import img2 from "../../Images/im21.jpg";
+import img3 from "../../Images/im10.jpg";
+import bgImg from "../../Images/im5.jpg";
 
 class AboutUs extends Component {
   render() {
@@ -17,8 +16,10 @@ class AboutUs extends Component {
         <Hero bgImg={bgImg}>
           <Banner title="About us"></Banner>
         </Hero>
-
-        <div>
+        <div className="about-bg">
+          <AboutUsBg />
+        </div>
+        <div className="about-content">
           <div className="about-slogan">
             <h4>TIME FOR WAR</h4>
             <p>Today. Right now you are going to war.</p>
@@ -29,36 +30,44 @@ class AboutUs extends Component {
             <h3>ARE YOU FOCUSED...?</h3>
           </div>
 
-          <div className="about-content">
-                        
-            <Triangle top={180} left={120} w1={40} w2={40} w3={80} color={"rgb(253,238,238)"} angle={15} />
-            <Circle top={300} left={60} r1={140} r2={140} color={"rgb(238,238,239)"}/>
-            <Circle top={309} left={70} r1={120} r2={120} color={"rgb(255, 255, 255)"}/>
-            <Circle top={309} left={240} r1={50} r2={50} color={"rgb(238, 238, 239)"}/>
-            <Circle top={420} left={230} r1={30} r2={30} color={"rgb(238, 238, 239)"}/>
-            
-            <Triangle top={410} left={595} w1={40} w2={40} w3={80} color={"rgb(253,238,238)"} angle={-35} />
-            <Circle top={500} left={660} r1={140} r2={140} color={"rgb(238,238,239)"}/>
-            <Circle top={509} left={670} r1={120} r2={120} color={"rgb(255, 255, 255)"}/>
-            <Circle top={530} left={580} r1={50} r2={50} color={"rgb(238, 238, 239)"}/>
-            <Circle top={630} left={620} r1={30} r2={30} color={"rgb(238, 238, 239)"}/>
-            
-            <Triangle top={40} left={1100} w1={300} w2={300} w3={600} color={"rgb(220,222,231)"} angle={180} />
-
-
-            <Line top={450} left={240} width={10} length={600} color={"rgb(241,241,244)"} angle={-45}/>
-            <Line top={490} left={240} width={10} length={600} color={"rgb(241,241,244)"} angle={-45}/>
-
-            <Dots top={850} left={240} width={800} height={240} spacing={25} r={7} color={"#dcf1e7"} angle={0}/>
-
-            <div className="about-hz-line-container">
-              <div className="about-hz-line" />
+          <div className="about-story-div">
+            <div className="about-our-story">
+              <img src={img1}></img>
+              <div className="about-our-story-text">
+                <h4> Our Story</h4>
+                <p>
+                  Gym and Fitness was founded in 2002 as a family owned and
+                  operated business. The Gym and Fitness founders didn’t want it
+                  to be just another gym equipment retailer - they wanted to be
+                  the best in the industry and set their minds to doing so!
+                </p>
+              </div>
             </div>
-            <div className="about-vt-line-container">
-              <div className="about-vt-line" />
+            <div className="about-our-story inverted-our-story">
+              <img className="inverted-img" src={img2}></img>
+              <div className="about-our-story-text inverted-text">
+                <h4> what we do</h4>
+                <p>
+                  We want to help you live a fit and healthy lifestyle! We do
+                  this by helping you find the most suitable equipment for your
+                  home gym, studio or commercial gym, keeping your budget,
+                  lifestyle and fitness goals in mind.
+                </p>
+              </div>
             </div>
-
+            <div className="about-our-story">
+              <img src={img3}></img>
+              <div className="about-our-story-text">
+                <h4> Our Culture</h4>
+                <p>
+                  Gym and Fitness was founded in 2002 as a family owned and
+                  operated business. The Gym and Fitness founders didn’t want it
+                  to be just another gym equipment retailer - they wanted to be
+                  the best in the industry and set their minds to doing so!
+                </p>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     );
