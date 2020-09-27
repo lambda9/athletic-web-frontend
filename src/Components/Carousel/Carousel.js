@@ -28,7 +28,6 @@ const Carousel = ({
 	});
 
 	const onTransitionEnd = () => {
-		console.log("transition end");
 		let tempImages = carouselImages.slice();
 		tempImages.push(tempImages[0]);
 		tempImages.shift();
@@ -74,7 +73,6 @@ const Carousel = ({
 									index === currentIndex ? "active" : ""
 								}`}
 								style={{
-									// color: "black",
 									transition: `all linear ${transitionDelay / 1000}s`,
 								}}
 							></span>
