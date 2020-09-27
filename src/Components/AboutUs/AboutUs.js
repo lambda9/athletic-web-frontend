@@ -20,16 +20,6 @@ class AboutUs extends Component {
           <AboutUsBg />
         </div>
         <div className="about-content">
-          <div className="about-slogan">
-            <h4>TIME FOR WAR</h4>
-            <p>Today. Right now you are going to war.</p>
-            <p>You are going into war with your opponent</p>
-            <p>You are going to war with yourself.</p>
-            <p>You are not scared… You are prepared</p>
-            <p>You are not weak… You are a machine. A Freak.</p>
-            <h3>ARE YOU FOCUSED...?</h3>
-          </div>
-
           <div className="about-story-div">
             <div className="about-our-story">
               <img src={img1}></img>

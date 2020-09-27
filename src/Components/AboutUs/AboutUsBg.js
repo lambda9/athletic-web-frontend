@@ -21,7 +21,7 @@ function AboutUsBg() {
         <Circle top={530} left={580} r1={50} r2={50} color={"rgb(238, 238, 239)"}/>
         <Circle top={630} left={620} r1={30} r2={30} color={"rgb(238, 238, 239)"}/>
         
-        <Triangle top={40} left={1100} w1={300} w2={300} w3={600} color={"rgb(220,222,231)"} angle={180} />
+        <Triangle top={0} left={1100} w1={300} w2={300} w3={600} color={"rgb(220,222,231)"} angle={180} />
         <Dots top={850} left={0} width={400} height={440} spacing={25} r={7} color={"#dcf1e7"} angle={0}/>
 
         </div>

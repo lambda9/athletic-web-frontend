@@ -52,18 +52,16 @@
   flex-direction: column;
   margin: 3rem auto;
   padding: 0.4rem;
-  background: linear-gradient(to right, var(--mainGrey), transparent);
   transition: var(--mainTransition);
-  /* background-color: mediumspringgreen; */
+  background-color: var(--mainGrey);
 }
 
 .inverted-our-story {
-  background: linear-gradient(to left, var(--mainGrey), transparent);
-
+  background: var(--mainGrey);
 }
 
 .about-our-story img {
-  width: 220px;
+  width: 100%;
   margin: auto;
   border-radius: 5px;
   /* background-color: navajowhite; */
@@ -75,19 +73,20 @@
   margin: 0.5rem auto 0.2rem;
 }
 
-.about-our-story-desc {
-  width: 95%;
-  margin: 0.1rem auto;
-  margin-top: 0px;
-  background-color: lightcyan;
-  font-size: var(--pFontSizeMob);
+.about-our-story-text {
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 650px) {
   .about-slogan,
   .about-our-story {
     width: 80%;
+    background: linear-gradient(to right, var(--mainGrey), transparent);
+
     flex-direction: row;
+  }
+  .inverted-our-story {
+    background: linear-gradient(to left, var(--mainGrey), transparent);
   }
   .about-our-story img {
     min-width: 240px;
@@ -100,6 +99,7 @@
     width: 75%;
     text-align: start;
     padding-left: 1rem;
+    margin-top: 0;
     /* background-color: magenta; */
   }
 
@@ -108,7 +108,7 @@
   }
 
   .inverted-our-story {
-  flex-direction: row-reverse;
+    flex-direction: row-reverse;
   }
 
   .about-our-story h4 {

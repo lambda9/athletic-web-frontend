@@ -184,7 +184,7 @@ class Membership extends Component {
           </div>
 
           <div className="plan-card-container">
-            {this.state.tempPlan.map((plan) => {
+            {this.state.plans.map((plan) => {
               return <IconSlider item={plan} />;
             })}
           </div>
