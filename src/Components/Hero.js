@@ -17,25 +17,16 @@ function Hero(props) {
     window.addEventListener("resize", updateWindowDimensions);
 
     return () => {
-			window.removeEventListener("resize", updateWindowDimensions);
-		};
+      window.removeEventListener("resize", updateWindowDimensions);
+    };
   }, []);
 
   return (
     <div
-
-    className='hero-backDrop'
-
+      className="hero-back-drop"
       style={{
-        display: "flex",
         backgroundImage: `url(${props.bgImg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
         minHeight: `calc(${minHeight}vh - 66px)`,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "lavender",
       }}
     >
       <Banner title={props.title} description={props.description} />
