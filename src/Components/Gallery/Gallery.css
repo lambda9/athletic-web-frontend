@@ -35,6 +35,7 @@
 	height: 30vw;
 	overflow-x: visible;
 	overflow-y: scroll;
+	scrollbar-width: 0;
 }
 
 .thumbnail-slides > div {
@@ -51,4 +52,8 @@
 .thumbnail-slides {
 	display: flex;
 	flex-direction: column;
+}
+
+.active-thumbnail {
+	border: 2px solid blue;
 }

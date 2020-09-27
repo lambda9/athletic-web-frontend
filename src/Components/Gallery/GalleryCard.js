@@ -10,7 +10,7 @@ import img4 from "../../Images/im4.jpg";
 import img5 from "../../Images/im5.jpg";
 import img6 from "../../Images/im6.jpg";
 
-const images = [img1, img4, img5];
+const images = [img1, img4, img5, img1, img4, img5];
 
 const GalleryCard = () => {
 	// return <div>hello</div>;
@@ -45,6 +45,7 @@ const GalleryCard = () => {
 										console.log("yes cliked");
 										setCurrentIndex(index);
 									}}
+									active={currentIndex === index}
 									key={index}
 									width={"10vw"}
 									height={"7.5vw"}
