@@ -25,7 +25,7 @@ const GalleryCard = () => {
 					<div
 						className={"main-img-slides"}
 						style={{
-							backgroundColor: "black",
+							// backgroundColor: "black",
 							transform: `translateX(${-currentIndex * 40}vw)`,
 						}}
 					>

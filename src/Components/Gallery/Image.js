@@ -1,16 +1,8 @@
 import React from "react";
 
-const Image = ({ active, width, height, src, onClick }) => {
+const Image = ({ active, src, onClick }) => {
 	return (
-		<div
-			onClick={onClick}
-			className={active ? "active-thumbnail" : ""}
-			style={{
-				width: width,
-				height: height,
-				// border: "2px solid black",
-			}}
-		>
+		<div onClick={onClick} className={active ? "active-thumbnail" : ""}>
 			<img src={src} alt="gallery " />
 		</div>
 	);

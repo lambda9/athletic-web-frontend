@@ -20,6 +20,8 @@
 .main-img-slides > div {
 	display: flex;
 	align-items: center;
+	width: 40vw;
+	height: 30vw;
 }
 
 .main-img-slides img {
@@ -33,15 +35,18 @@
 
 .thumbnail-window {
 	height: 30vw;
-	overflow-x: visible;
-	overflow-y: scroll;
-	scrollbar-width: 0;
+	overflow: scroll;
+	/* overflow-x: visible; */
+	/* overflow-y: scroll; */
+	/* scrollbar-width: 0; */
 }
 
 .thumbnail-slides > div {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	width: 10vw;
+	height: 7.5vw;
 }
 
 .thumbnail-slides img {
@@ -52,8 +57,43 @@
 .thumbnail-slides {
 	display: flex;
 	flex-direction: column;
+	height: fit-content;
 }
 
 .active-thumbnail {
 	border: 2px solid blue;
+}
+
+@media screen and (max-width: 550px) {
+	.images-container {
+		flex-direction: column;
+	}
+
+	.thumbnail-slides {
+		flex-direction: row;
+	}
+
+	.main-img-window {
+		width: 90vw;
+		height: 75vw;
+	}
+
+	.main-img-slides > div {
+		width: 90vw;
+		height: 75vw;
+	}
+
+	.thumbnail-window {
+		width: 90vw;
+		height: 20vw;
+	}
+
+	.thumbnail-slides {
+		width: fit-content;
+	}
+
+	.thumbnail-slides > div {
+		width: 25vw;
+		height: 20vw;
+	}
 }
