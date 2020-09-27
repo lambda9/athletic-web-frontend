@@ -11,9 +11,7 @@ class Membership extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: 0,
-      height: 0,
-      mHeight: 80,
+
       plans: [
         {
           plan_id: "pl_1",
@@ -137,37 +135,9 @@ class Membership extends Component {
         },
       ],
     };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
-  componentDidMount() {
-    this.updateWindowDimensions();
-    console.log(this.state.mHeight, "component");
-    window.addEventListener("resize", this.updateWindowDimensions);
-  }
-
-  updateWindowDimensions() {
-    if (window.innerWidth <= 550) {
-      this.setState({
-        width: window.innerWidth,
-        height: window.innerHeight,
-        mHeight: 50,
-      });
-      return;
-    }
-
-    this.setState({
-      width: window.innerWidth,
-      height: window.innerHeight,
-      mHeight: 75,
-    });
-    console.log(this.state.width, this.state.height, this.state.mHeight);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateWindowDimensions);
-  }
-
+  
   render() {
     return (
       <div className="membership-page">
@@ -195,4 +165,3 @@ class Membership extends Component {
 }
 
 export default Membership;
-// <Banner title="get membership" description="get today" />

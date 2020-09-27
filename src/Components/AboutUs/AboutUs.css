@@ -1,7 +1,7 @@
-.aboutUs-page {
+.about-page {
   min-height: fit-content;
   overflow: hidden;
-  height: 2000px;
+  height: 3000px;
 }
 
 .about-bg {
@@ -15,37 +15,6 @@
   width: 100%;
 }
 
-.about-slogan {
-  display: block;
-  width: 95%;
-  height: 190px;
-  padding: 0.1rem;
-  margin: 2rem auto;
-  background-color: var(--mainGrey);
-  text-align: center;
-}
-
-.about-slogan h4,
-.about-our-story-text h4 {
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: var(--mainSpacing);
-  margin: 0.7rem auto 0.7rem;
-}
-
-.about-slogan p,
-.about-our-story-text p {
-  margin: 0px auto;
-  font-size: var(--pFontSizeMob);
-  letter-spacing: var(--mainSpacing);
-}
-
-.about-slogan h3 {
-  margin: 1rem auto;
-  letter-spacing: var(--mainSpacing);
-  color: var(--primaryColor);
-}
-
 .about-our-story {
   width: 95%;
   display: flex;
@@ -56,6 +25,25 @@
   background-color: var(--mainGrey);
 }
 
+.about-our-story-text {
+  margin-top: 1rem;
+}
+
+.about-our-story-text h4 {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  border-left: 2px solid var(--primaryRed);
+  padding-left: 4px;
+  margin: 0.5rem auto 0.2rem;
+}
+
+.about-our-story-text p {
+  margin: 0px auto;
+  font-size: var(--pFontSizeMob);
+  letter-spacing: var(--mainSpacing);
+}
+
 .inverted-our-story {
   background: var(--mainGrey);
 }
@@ -64,30 +52,19 @@
   width: 100%;
   margin: auto;
   border-radius: 5px;
-  /* background-color: navajowhite; */
-}
-
-.about-our-story-text h4 {
-  border-left: 2px solid var(--primaryRed);
-  padding-left: 4px;
-  margin: 0.5rem auto 0.2rem;
-}
-
-.about-our-story-text {
-  margin-top: 1rem;
 }
 
 @media screen and (min-width: 650px) {
-  .about-slogan,
   .about-our-story {
     width: 80%;
     background: linear-gradient(to right, var(--mainGrey), transparent);
-
     flex-direction: row;
   }
+
   .inverted-our-story {
     background: linear-gradient(to left, var(--mainGrey), transparent);
   }
+  
   .about-our-story img {
     min-width: 240px;
     width: 25%;
@@ -100,7 +77,6 @@
     text-align: start;
     padding-left: 1rem;
     margin-top: 0;
-    /* background-color: magenta; */
   }
 
   .inverted-text {
@@ -111,17 +87,12 @@
     flex-direction: row-reverse;
   }
 
-  .about-our-story h4 {
+  .about-our-story-text h4 {
     border-left: 4px solid var(--primaryRed);
     margin: 0.5rem 0rem;
     padding-left: 10px;
     font-size: 28px;
     text-align: start;
-  }
-
-  .about-our-story-desc,
-  .about-our-story-desc {
-    width: 95%;
   }
 }
 
