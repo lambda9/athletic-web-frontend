@@ -171,9 +171,9 @@ class Membership extends Component {
   render() {
     return (
       <div className="membership-page">
-        <Hero bgImg={bgImg}>
-          <Banner title="get membership" description="get today" />
-        </Hero>
+        <Hero bgImg={bgImg} title="get membership" description="get today" />
+        
+        
 
         <div className="plan-bg-container">
           <MembershipBG />

@@ -13,9 +13,9 @@ class AboutUs extends Component {
   render() {
     return (
       <div className="aboutUs-page">
-        <Hero bgImg={bgImg}>
-          <Banner title="About us"></Banner>
+        <Hero bgImg={bgImg} title="About Us">
         </Hero>
+        
         <div className="about-bg">
           <AboutUsBg />
         </div>

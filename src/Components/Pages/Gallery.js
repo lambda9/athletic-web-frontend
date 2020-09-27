@@ -7,11 +7,9 @@ class Gallery extends Component {
   render() {
     return (
       <div>
-        <Hero bgImg={bgImg}>
-          <Banner
-            title="gallery"
-            description="checkout our latest pics and moments"
-          ></Banner>
+        <Hero bgImg={bgImg} title="gallery"
+        description="checkout our latest pics and moments">
+          
         </Hero>
       </div>
     );

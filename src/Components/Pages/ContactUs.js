@@ -7,11 +7,9 @@ class ContactUs extends Component {
   render() {
     return (
       <div>
-        <Hero bgImg={bgImg}>
-          <Banner
-            title="Contact us"
-            description="Mail, call, text or meet on-site"
-          ></Banner>
+        <Hero bgImg={bgImg} title="Contact us"
+        description="Mail, call, text or meet on-site">
+          
         </Hero>
       </div>
     );
