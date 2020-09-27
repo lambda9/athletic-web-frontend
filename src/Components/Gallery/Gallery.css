@@ -13,8 +13,8 @@
 .main-img-window {
 	border: 1px solid rebeccapurple;
 	overflow: hidden;
-	/* width: 40em; */
-	/* height: 30em; */
+	width: 40vw;
+	height: 30vw;
 }
 
 .main-img-slides > div {
@@ -31,21 +31,20 @@
 	width: fit-content;
 }
 
-.main-img-slides div {
-	width: 80%;
-}
-
 .thumbnail-window {
-	height: 30em;
-	overflow: hidden;
+	height: 30vw;
+	overflow-x: visible;
+	overflow-y: scroll;
 }
 
 .thumbnail-slides > div {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .thumbnail-slides img {
+	/* height: 100%; */
 	width: 100%;
 }
 

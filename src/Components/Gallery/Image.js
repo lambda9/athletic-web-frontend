@@ -1,17 +1,16 @@
 import React from "react";
 
-import img1 from "../../Images/im1.jpg";
-
-const Image = ({ width, height }) => {
+const Image = ({ width, height, src, onClick }) => {
 	return (
 		<div
+		onClick={onClick}
 			style={{
 				width: width,
 				height: height,
 				border: "2px solid black",
 			}}
 		>
-			<img src={img1} alt="gallery " />
+			<img src={src} alt="gallery " />
 		</div>
 	);
 };
