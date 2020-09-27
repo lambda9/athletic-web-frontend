@@ -1,0 +1,55 @@
+.gallery-main-container {
+	border: 1px solid red;
+}
+
+.images-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 80%;
+	margin: auto;
+}
+
+.main-img-window {
+	border: 1px solid rebeccapurple;
+	overflow: hidden;
+	/* width: 40em; */
+	/* height: 30em; */
+}
+
+.main-img-slides > div {
+	display: flex;
+	align-items: center;
+}
+
+.main-img-slides img {
+	width: 100%;
+}
+
+.main-img-slides {
+	display: flex;
+	width: fit-content;
+}
+
+.main-img-slides div {
+	width: 80%;
+}
+
+.thumbnail-window {
+	height: 30em;
+	overflow: hidden;
+}
+
+.thumbnail-slides > div {
+	display: flex;
+	align-items: center;
+}
+
+.thumbnail-slides img {
+	width: 100%;
+}
+
+.thumbnail-slides {
+	display: flex;
+	flex-direction: column;
+}
