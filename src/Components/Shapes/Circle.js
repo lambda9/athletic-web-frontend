@@ -3,8 +3,8 @@ import React from "react";
 function Circle(props) {
   let style = {
     position: "absolute",
-    top: `${props.top}rem`,
-    left: `${props.left}rem`,
+    top: `${props.top}px`,
+    left: `${props.left}px`,
     width: `${props.r1}px`,
     height: `${props.r2}px`,
     backgroundColor: `${props.color}`,

@@ -8,8 +8,8 @@ import bgImg from '../../Images/im2.jpg'
 function Error() {
   return (
     <div>
-      <Hero bgImg={bgImg}>
-      <Banner title='404 page not found'></Banner>
+      <Hero bgImg={bgImg} title='404 page not found' descrption="invalid url">
+    
       </Hero>
     </div>
   );

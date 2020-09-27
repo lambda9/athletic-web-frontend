@@ -1,5 +1,5 @@
 .footer-comp {
-  margin-top: 5rem;
+  margin-top: 0rem;
   background: url("../../Images/im18.jpg") center/cover no-repeat;
   width: 100%;
 }
@@ -127,6 +127,7 @@
   .footer-quick-links-div a {
     font-size: 18px;
   }
+
   .footer-timmings-div p {
     font-size: 18px;
   }

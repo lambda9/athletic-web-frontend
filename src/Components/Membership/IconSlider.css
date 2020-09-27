@@ -23,6 +23,7 @@
   border-radius: 150px 150px 0 0;
   width: 40px;
   height: 20px;
+  color: var(--primaryColor);
   transition: var(--mainTransition);
   background-color: rgba(0, 0, 0, 0.75);
 }
@@ -31,7 +32,6 @@
   margin: 8px auto;
   font-size: 24px;
   transition: var(--mainTransition);
-  color: var(--primaryColor);
 }
 
 .overlay-div h4 {
@@ -41,27 +41,20 @@
   transition: var(--mainTransition);
   color: white;
 }
-.overlay-div p {
-    font-size: var(--pFontSizePC);
-    margin-bottom: 4rem;
-    text-transform: capitalize;
-    font-size: 16px;
-    color: white;
-  }
 
 .overlay-div a {
-    position: absolute;
-    bottom: -100px;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  bottom: -100px;
+  transform: translate(-50%, -50%);
+}
+
+.active-icon-div,
+.active-overlay-div {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .active-overlay-div {
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.active-icon-div {
-  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .active-icon {
@@ -75,23 +68,20 @@
 }
 
 .active-overlay-div a {
-    bottom: 10px;
+  bottom: 10px;
 }
 
-.active-overlay-div a  {
-    margin-bottom: 0px;
+.active-overlay-div a {
+  margin-bottom: 0px;
 }
 
-.active-overlay-div span {
-  width: 10px;
-  height: 5px;
-  background-color: var(--primaryColor);
-}
-
-.active-overlay-div p {
+.active-overlay-div p,
+.overlay-div p {
   font-size: var(--pFontSizePC);
   margin-bottom: 4rem;
+  margin-left: 2.5rem;
   text-transform: capitalize;
+  text-align: start;
   font-size: 16px;
   color: white;
 }
@@ -107,12 +97,11 @@
 
 .slider-card-content p {
   font-size: 18px;
-  text-transform: capitalize;
-  letter-spacing: var(--mainSpacing);
   margin: 15px auto 15px;
 }
 
-.slider-card-content h3 {
+.slider-card-content h3,
+.slider-card-content p {
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
 }

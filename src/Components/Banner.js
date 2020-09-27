@@ -1,21 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Banner.css";
-import img1 from "../Images/im1.jpg";
 import Title from "./Title/Title";
 import { Link } from "react-router-dom";
-import { Button } from "reactstrap";
-class Banner extends Component {
-  render() {
-    return (
-      <div className="banner">
-        <Title>{this.props.title}</Title>
-        <p>{this.props.description}</p>
-        <Link to="/h" className="button-primary">
-          Back to Home
-        </Link>
-      </div>
-    );
-  }
+
+function Banner(props) {
+  return (
+    <div className="banner">
+      <Title>{props.title}</Title>
+      <p>{props.description}</p>
+      <Link to="/h" className="button-primary">
+        Back to Home
+      </Link>
+    </div>
+  );
 }
 
 export default Banner;

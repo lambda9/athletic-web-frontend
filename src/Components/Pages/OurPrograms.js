@@ -6,8 +6,7 @@ class OurPrograms extends Component {
     render() {
         return (
             <div>
-                <Hero bgImg={bgImg}>
-                    <Banner title='Our programs' description='keep your energy up and burn calories'></Banner>
+                <Hero bgImg={bgImg} title='Our programs' description='keep your energy up and burn calories'>
                 </Hero>
             </div>
         )

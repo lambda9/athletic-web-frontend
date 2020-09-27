@@ -1,0 +1,41 @@
+.membership-page {
+  min-height: fit-content;
+  overflow: hidden;
+}
+
+.plan-bg-container {
+  position: relative;
+  margin: 2rem auto;
+  z-index: -10;
+}
+
+.plan-container-center {
+  z-index: 2;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.plan-selectMembership-title h4 {
+  z-index: 3;
+}
+
+.plan-card-container {
+  z-index: 3;
+  margin: 0 auto;
+  width: 85%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  row-gap: 1rem;
+  column-gap: 5rem;
+}
+
+.plan-filter-div {
+  width: 100%;
+  display: grid;
+  text-align: center;
+}
+
+.plan-filter-type {
+  margin: auto;
+}
+
