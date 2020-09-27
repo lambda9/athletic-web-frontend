@@ -1,6 +1,5 @@
 .membership-page {
   min-height: fit-content;
-  /* height: 4400px; */
   overflow: hidden;
 }
 
@@ -20,10 +19,6 @@
   z-index: 3;
 }
 
-.plan-container-center h4 {
-  /* color: white */
-}
-
 .plan-card-container {
   z-index: 3;
   margin: 0 auto;
@@ -32,5 +27,15 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   row-gap: 1rem;
   column-gap: 5rem;
+}
+
+.plan-filter-div {
+  width: 100%;
+  display: grid;
+  text-align: center;
+}
+
+.plan-filter-type {
+  margin: auto;
 }
 
