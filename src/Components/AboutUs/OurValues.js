@@ -7,7 +7,7 @@ import {
 } from "react-icons/all";
 import Title from "../Title/Title";
 import OurValuesCard from "./OurValuesCard";
-import './OurValues.css'
+import "./OurValues.css";
 
 function OurValues() {
   const services = [

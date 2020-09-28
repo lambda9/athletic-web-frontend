@@ -11,42 +11,88 @@ import OurValues from "./OurValues";
 import Title from "../Title/Title";
 
 const desc =
-	" We want to help you live a fit and healthy lifestyle! We do this by helping you find the most suitable equipment for your home gym, studio or commercial gym, keeping your budget, lifestyle and fitness goals in mind.";
+  " We want to help you live a fit and healthy lifestyle! We do this by helping you find the most suitable equipment for your home gym, studio or commercial gym, keeping your budget, lifestyle and fitness goals in mind.";
 
-class AboutUs extends Component {
-	render() {
-		return (
-			<div className="about-page">
-				<Hero bgImg={backDropImg} title="About Us" />
+function AboutUs() {
+  const ourStoryCard = [
+    {
+      id: 1,
+      img: img1,
+      title: "Our Story",
+      descrition: desc,
+      inverted: false,
+    },
+    {
+      id: 2,
+      img: img2,
+      title: "What we do",
+      descrition: desc,
+      inverted: true,
+    },
+    {
+      id: 3,
+      img: img3,
+      title: "our culture",
+      descrition: desc,
+      inverted: false,
+    },
+  ];
 
-				<div className="about-bg">
-					<AboutUsBg />
-				</div>
+  const ourTeam = [
+    {
+      id: 2,
+      img: img1,
+      title: "saroop saran",
+      descrition: "Im the owner bitch!",
+      inverted: false,
+    },
+    {
+      id: 2,
+      img: img2,
+      title: "bhati",
+      descrition: "Hey! trainer is here",
+      inverted: true,
+    },
+  ];
 
-				<div className="about-content">
-					<AboutCard
-						img={img1}
-						title="Our story"
-						description={desc}
-						inverted={false}
-					/>
-					<AboutCard
-						img={img2}
-						title="What we do"
-						description={desc}
-						inverted={true}
-					/>
-					<AboutCard
-						img={img3}
-						title="our culture"
-						description={desc}
-						inverted={false}
-					/>
-				</div>
-				<OurValues />
-			</div>
-		);
-	}
+  return (
+    <div className="about-page">
+      <Hero bgImg={backDropImg} title="About Us" />
+
+      <div className="about-bg">
+        <AboutUsBg />
+      </div>
+
+      <div className="about-content">
+        {ourStoryCard.map((item) => {
+          return (
+            <AboutCard
+              key={item.id}
+              img={item.img}
+              title={item.title}
+              description={item.descrition}
+              inverted={item.inverted}
+            />
+          );
+        })}
+      </div>
+      <OurValues />
+      <div className="about-our-team-title">
+        <Title>our team</Title>
+      </div>
+      {ourTeam.map((item) => {
+        return (
+          <AboutCard
+            title={item.title}
+            key={item.id}
+            img={item.img}
+            description={item.descrition}
+            inverted={item.inverted}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
 export default AboutUs;
