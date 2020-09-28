@@ -1,0 +1,54 @@
+.pro-car-main-div {
+  width: 90%;
+  height: 600px;
+  background-color: lightslategray;
+  margin: 20px auto;
+  position: relative;
+}
+
+.pro-car-nextBtn,
+.pro-car-prevBtn {
+  position: absolute;
+  top: 80%;
+  width: 50px;
+  height: 50px;
+  font-size: 32px;
+  background-color: lightyellow;
+  border-radius: 50%;
+}
+
+.pro-car-img-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.pro-car-nextBtn {
+  right: 10px;
+}
+
+.pro-car-prevBtn {
+  left: 10px;
+}
+
+.pro-car-left-img {
+  margin: auto;
+  width: 20%;
+}
+.pro-car-main-img {
+  margin: auto;
+  width: 50%;
+}
+
+.pro-car-right-img {
+  width: 20%;
+  margin: auto;
+}
+
+.pro-car-left-img img,
+.pro-car-main-img img,
+.pro-car-right-img img {
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
