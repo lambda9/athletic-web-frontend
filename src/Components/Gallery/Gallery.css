@@ -6,12 +6,17 @@
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	width: 80%;
+	/* justify-items: end; */
+	/* align-content: stretch; */
+	width: 60%;
+	height: 500px;
+	/* border: 2px solid black; */
+	/* background-color: #4ea6bc; */
 	margin: auto;
+	box-shadow: 0 0 4px 1px #414141;
 }
 
 .main-img-window {
-	border: 1px solid rebeccapurple;
 	overflow: hidden;
 	width: 40vw;
 	height: 30vw;

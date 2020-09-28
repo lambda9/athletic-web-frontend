@@ -35,6 +35,7 @@ const GalleryCard = () => {
 							);
 						})}
 					</div>
+					<div>Controls</div>
 				</div>
 				<div className="thumbnail-window">
 					<div className={"thumbnail-slides"}>
@@ -56,7 +57,6 @@ const GalleryCard = () => {
 					</div>
 				</div>
 			</div>
-			<div>Controls</div>
 		</div>
 	);
 };
