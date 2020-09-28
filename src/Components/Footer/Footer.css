@@ -20,7 +20,7 @@
 .footer-timmings-div,
 .footer-quick-links-div {
   width: 25%;
-  padding: 10px;
+  padding: 15px 10px;
   height: fit-content;
   min-width: 9rem;
   color: white;
@@ -124,13 +124,11 @@
     min-width: 19rem;
   }
 
-  .footer-quick-links-div a {
-    font-size: 18px;
+  .footer-quick-links-div a, .footer-timmings-div p {
+    font-size: 15px;
   }
 
-  .footer-timmings-div p {
-    font-size: 18px;
-  }
+   
 }
 
 @media screen and (min-width: 600px) {
