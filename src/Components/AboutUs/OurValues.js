@@ -6,7 +6,7 @@ import {
 	MdHeadsetMic,
 } from "react-icons/all";
 import Title from "../Title/Title";
-import "../Services/Services.css";
+import ServiceCard from "./ServiceCard";
 
 function OurValues() {
 	const services = [
@@ -40,14 +40,14 @@ function OurValues() {
 		<div className="services">
 			<Title>Our values</Title>
 			<div className="services-center">
-				{services.map((item) => {
+				{services.map((item, index) => {
 					return (
-						<div key={item.title} className="services-item-container">
-							{item.icon}
-
-							<h4>{item.title}</h4>
-							<p>{item.info}</p>
-						</div>
+						<ServiceCard
+							key={index}
+							title={item.title}
+							icon={item.icon}
+							info={item.info}
+						/>
 					);
 				})}
 			</div>
