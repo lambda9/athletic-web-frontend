@@ -33,7 +33,7 @@
 	text-transform: capitalize;
 	color: whitesmoke;
 	font-size: 18px;
-	transition: color linear 0.4s;
+	transition: color linear 0.2s;
 	/* transition: border-bottom linear 0.4s; */
 	letter-spacing: var(--mainSpacing);
 	overflow: hidden;

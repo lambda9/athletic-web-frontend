@@ -81,7 +81,13 @@
   .ourvalues-item-container {
     width: 260px;
     height: 300px;
+    transition: var(--fastTransition);
   }
+
+  .ourvalues-item-container:hover {
+    transform: scale(1.1);
+  }
+
   .ourvalues-item-container p {
     font-size: var(--pFontSizePC);
   }
