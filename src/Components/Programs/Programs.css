@@ -2,25 +2,39 @@
   width: 90%;
   height: 600px;
   background-color: lightslategray;
-  margin: 20px auto;
-  position: relative;
+  /* margin: 20px auto;
+  display: flex; */
 }
 
+.pro-car-img-div {
+  display: flex;
+  height: 500px;
+  background-color: linen;
+  transition: var(--mainTransition);
+}
+
+.pro-car-img-unactive {
+  max-width: 150px;
+  height: auto;
+  margin: auto 50px;
+  transition: var(--mainTransition);
+}
+
+.pro-car-img-active {
+  max-width: 350px;
+  height: auto;
+  margin: auto 50px;
+  transition: var(--mainTransition);
+}
 .pro-car-nextBtn,
 .pro-car-prevBtn {
   position: absolute;
-  top: 80%;
+  top: 100%;
   width: 50px;
   height: 50px;
   font-size: 32px;
   background-color: lightyellow;
   border-radius: 50%;
-}
-
-.pro-car-img-div {
-  width: 100%;
-  height: 100%;
-  display: flex;
 }
 
 .pro-car-nextBtn {
@@ -31,7 +45,7 @@
   left: 10px;
 }
 
-.pro-car-left-img {
+/* .pro-car-left-img {
   margin: auto;
   width: 20%;
 }
@@ -51,4 +65,4 @@
   margin: auto;
   width: 100%;
   height: auto;
-}
+} */
