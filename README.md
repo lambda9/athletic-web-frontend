@@ -34,6 +34,17 @@ $ cd athletic-web-frontend
 $ npm install
 ```
 
+## Setting Up Images
+
+Images used by our project for development are not tracked on GitHub so we have to download [Images.zip](https://drive.google.com/file/d/15yt1hgyv09BtInrSWVAPmh8PCM6owWZv/view?usp=sharing)
+
+and extract it into
+
+`athletic-web-frontend/src/`
+
+A folder **Images** will be created in above directory after extracting and now we are
+ready to roll.
+
 ## Start
 
 ```bash
