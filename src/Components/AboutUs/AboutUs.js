@@ -2,13 +2,14 @@ import React, { Component } from "react";
 import "./AboutUs.css";
 import Hero from "../Hero";
 import AboutUsBg from "./AboutUsBg";
-import AboutCard from "./AboutCard";
+import OurStoryCard from "./OurStoryCard";
 import img1 from "../../Images/im20.jpg";
 import img2 from "../../Images/im21.jpg";
 import img3 from "../../Images/im10.jpg";
 import backDropImg from "../../Images/im5.jpg";
 import OurValues from "./OurValues";
 import Title from "../Title/Title";
+import OurTeam from "./OurTeam";
 
 const desc =
   " We want to help you live a fit and healthy lifestyle! We do this by helping you find the most suitable equipment for your home gym, studio or commercial gym, keeping your budget, lifestyle and fitness goals in mind.";
@@ -66,7 +67,7 @@ function AboutUs() {
       <div className="about-content">
         {ourStoryCard.map((item) => {
           return (
-            <AboutCard
+            <OurStoryCard
               key={item.id}
               img={item.img}
               title={item.title}
@@ -80,17 +81,8 @@ function AboutUs() {
       <div className="about-our-team-title">
         <Title>our team</Title>
       </div>
-      {ourTeam.map((item) => {
-        return (
-          <AboutCard
-            title={item.title}
-            key={item.id}
-            img={item.img}
-            description={item.descrition}
-            inverted={item.inverted}
-          />
-        );
-      })}
+      
+      <OurTeam />
     </div>
   );
 }

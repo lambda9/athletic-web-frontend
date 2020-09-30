@@ -39,7 +39,7 @@
   display: block;
   margin: 0.6rem auto 0.2rem;
   width: fit-content;
-  border-left: 3px solid var(--primaryRed);
+  border-left: 2px solid var(--primaryRed);
   padding-left: 4px;
   letter-spacing: var(--mainSpacing);
 }
@@ -85,7 +85,7 @@
   }
 
   .ourvalues-item-container:hover {
-    transform: scale(1.08);
+    transform: scale(1.06);
   }
 
   .ourvalues-item-container p {
@@ -100,6 +100,8 @@
 
   .ourvalues-item-container h4 {
     font-size: 1.5em;
+    border-left: 3px solid var(--primaryRed);
+    padding-left: 5px;
     margin: 0.4 auto 0.4rem;
   }
 }

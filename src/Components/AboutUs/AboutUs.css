@@ -59,6 +59,41 @@
   margin-bottom: -1rem;
 }
 
+.about-our-team-main-div {
+  width: 80%;
+  display: flex;
+  margin: 20px auto;
+  background-color: rgb(17, 153, 85);
+}
+
+.about-our-team-img {
+  margin: auto;
+  width: 100%;
+  transition: var(--fastTransition);
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: mediumaquamarine;
+}
+
+.about-our-team-img img {
+  width: 55%;
+  /* margin: auto 2rem; */
+}
+
+.about-our-team-details {
+  background-color: orange;
+  width: 0;
+  left: 0;
+  overflow: hidden;
+  transition: var(--fastTransition);
+}
+
+.about-our-team-details-active {
+  width: 45%;
+  transition: var(--fastTransition);
+}
+
 @media screen and (min-width: 650px) {
   .about-our-story {
     width: 80%;
