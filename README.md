@@ -1,33 +1,57 @@
 # Athletics Website Frontend
 
-Website for athletics gym jodhpur developed using ReactJs
+Website for athletics gym jodhpur developed using ReactJs. It will contain admin panel.
 
-## Installation
-first step is to clone this repository
+## Requirements
 
-```
-git clone https://github.com/lambda9/athletic-web-frontend.git
+For development we need only Node.js installed on your environment, and please use VSCode and
+Prettier Extension. And follow contribution guidelines and style guide.
+
+### Node.js Installation
+
+Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+npm will also be installed a package manager.
+
+You will be able to run following commands after installing node.
+
+```bash
+$ node --version
 ```
 
-then navigate to athletic-web-frontend directory and inside it run
+```bash
+$ npm --version
+```
 
-```
-npm install
-```
-after installing dependencies you can start
+refer to [Node.js](https://nodejs.org/en/) homepage for installation.
 
+## Install
+
+```bash
+$ git clone https://github.com/lambda9/athletic-web-frontend.git
+
+$ cd Project
+
+$ npm install
 ```
-npm start
+
+## Start
+
+```bash
+$ npm start
 ```
 
 ## Requirements
+
 # Manage Plans
+
 - gym plans, prices extra
 
 # Manage Members
-- memeber add, enquiry, 
+
+- memeber add, enquiry,
 
 # Record Entry
+
 - record
 
 # SMS service
@@ -41,4 +65,3 @@ npm start
 # member addition
 
 ## Installation
-
