@@ -1,0 +1,11 @@
+.Entry-Form{
+    background-color: aqua;
+    display: block;
+    /* flex-direction: column; */
+}
+
+input{
+    background-color: cyan;
+    display: flex;
+    flex-direction: column;
+}
