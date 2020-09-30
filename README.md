@@ -53,6 +53,14 @@ $ npm start
 
 ## Requirements
 
+# Resources
+  ## Github
+  [Basic github working](https://guides.github.com/activities/hello-world/)
+  
+  [git-scm](https://git-scm.com/)
+  
+  [Pro-git Book](https://git-scm.com/book/en/v2)
+
 # Manage Plans
 
 - gym plans, prices extra
