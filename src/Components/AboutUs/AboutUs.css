@@ -60,38 +60,57 @@
 }
 
 .about-our-team-main-div {
-  width: 80%;
+  width: 65%;
   display: flex;
   margin: 20px auto;
-  background-color: rgb(17, 153, 85);
+  justify-content: space-between;
+  /* background-color: rgb(17, 153, 85); */
 }
 
 .about-our-team-img {
-  margin: auto;
-  width: 100%;
+  margin: auto 10px;
+  width: 33%;
   transition: var(--fastTransition);
   position: relative;
   display: flex;
-  justify-content: space-evenly;
-  background-color: mediumaquamarine;
+  z-index: 1;
+  /* justify-content: space-evenly; */
+  /* background-color: rgb(102, 112, 205); */
 }
 
 .about-our-team-img img {
-  width: 55%;
+  width: 100%;
+  z-index: 3;
   /* margin: auto 2rem; */
 }
 
-.about-our-team-details {
+.about-our-team-details-o,
+.about-our-team-details-t {
   background-color: orange;
-  width: 0;
-  left: 0;
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  z-index: 2;
   overflow: hidden;
   transition: var(--fastTransition);
 }
 
-.about-our-team-details-active {
-  width: 45%;
+.about-our-team-details-o {
+  left: 0;
+}
+
+.about-our-team-details-t {
+  right: 0;
+}
+
+.about-our-team-details-active-o {
   transition: var(--fastTransition);
+  left: 100%;
+}
+
+.about-our-team-details-active-t {
+  transition: var(--fastTransition);
+  right: 100%;
 }
 
 @media screen and (min-width: 650px) {

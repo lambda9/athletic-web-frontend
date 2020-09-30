@@ -9,40 +9,40 @@ function OurTeam() {
 
   return (
     <div className="about-our-team-main-div">
-      <div className="about-our-team-img">
+      <div
+        className="about-our-team-img"
+        onMouseEnter={() => setDetailsOwner(true)}
+        onMouseLeave={() => setDetailsOwner(false)}
+      >
         <div
           className={
             detailsOwner
-              ? "about-our-team-details about-our-team-details-active"
-              : "about-our-team-details"
+              ? "about-our-team-details-o about-our-team-details-active-o"
+              : "about-our-team-details-o"
           }
         >
-          <h2>Owner</h2>
+          <h2>Trainer</h2>
           <p>there is some details about the team meamber</p>
         </div>{" "}
-        <img
-          src={img1}
-          onMouseEnter={() => setDetailsOwner(true)}
-          onMouseLeave={() => setDetailsOwner(false)}
-        ></img>
+        <img src={img1}></img>
       </div>
-      <div className="about-our-team-img">
-
-        <img
-          src={img2}
-          onMouseEnter={() => setDetailsTrainer(true)}
-          onMouseLeave={() => setDetailsTrainer(false)}
-        ></img>
+      <div
+        className="about-our-team-img"
+        onMouseEnter={() => setDetailsTrainer(true)}
+        onMouseLeave={() => setDetailsTrainer(false)}
+      >
         <div
           className={
             detailsTrainer
-              ? "about-our-team-details about-our-team-details-active"
-              : "about-our-team-details"
+              ? "about-our-team-details-t about-our-team-details-active-t"
+              : "about-our-team-details-t"
           }
         >
           <h2>Owner</h2>
           <p>there is some details about the team meamber</p>
         </div>
+        <img src={img2}></img>
+
       </div>
     </div>
   );
