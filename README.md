@@ -56,11 +56,13 @@ $ npm start
 # Resources
    ## Github
    - [Basic github working](https://guides.github.com/activities/hello-world/)
-
    - [git-scm](https://git-scm.com/)
-
    - [Pro-git Book](https://git-scm.com/book/en/v2)
 
+   ## React
+   - [React Documentation](https://reactjs.org/docs/getting-started.html)
+   - [React Youtube](https://www.youtube.com/playlist?list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3)
+   
 # Manage Plans
 
 - gym plans, prices extra
