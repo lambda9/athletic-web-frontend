@@ -5,7 +5,7 @@ import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Pages/Home";
 import OurPrograms from "./Components/Pages/OurPrograms";
-import ContactUs from "./Components/Pages/ContactUs";
+import ContactUs from "./Components/ContactUs/ContactUs";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import FAQ from "./Components/Pages/FAQ";
 import Gallery from "./Components/Pages/Gallery";
