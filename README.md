@@ -29,7 +29,7 @@ refer to [Node.js](https://nodejs.org/en/) homepage for installation.
 ```bash
 $ git clone https://github.com/lambda9/athletic-web-frontend.git
 
-$ cd Project
+$ cd athletic-web-frontend
 
 $ npm install
 ```
