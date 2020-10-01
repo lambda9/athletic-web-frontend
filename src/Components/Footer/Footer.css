@@ -5,7 +5,7 @@
 }
 
 .footer-bg {
-  display: block;
+  padding-bottom: 1rem;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
@@ -122,7 +122,7 @@
 
 .footer-copyright {
   font-size: 12px;
-  margin: 1.5rem auto;
+  margin: 1.5rem auto 0;
   letter-spacing: var(--mainSpacing);
   color: white;
 }
@@ -181,7 +181,6 @@
     width: 25%;
     height: fit-content;
     text-align: center;
-    /* margin: auto; */
     display: block;
   }
 }
