@@ -5,7 +5,7 @@
 }
 
 html {
-	height: 100%;
+  height: 100%;
 }
 
 :root {
@@ -19,11 +19,12 @@ html {
   --mainTransition: all 0.4s linear;
   --fastTransition: all 0.3s linear;
   --mainSpacing: 1.4px;
+  --mobileSpacing: 1.1px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --minWidthMob: 550px;
   --minWidthTab: 650px;
-  --pFontSizeMob: 12px;
+  --pFontSizeMob: 10px;
   --pFontSizePC: 15px;
 }
 
@@ -32,16 +33,16 @@ html {
 }
 
 body {
-	color: var(--mainBlack);
-	background: var(--mainWhite);
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	line-height: 1.4;
-	text-align: center;
-	height: 100%;
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.4;
+  text-align: center;
+  height: 100%;
 }
 
 #root {
-	height: 100%;
+  height: 100%;
 }
 
 .main-content {
@@ -101,7 +102,6 @@ a {
   cursor: pointer;
 }
 
-
 .button-primary:hover {
   background: transparent;
   text-decoration: none;
@@ -109,14 +109,16 @@ a {
   color: var(--primaryColor);
 }
 
-.banner-bg {
-	/* min-height: calc(55vh - 66px); */
-	background: url("./Images/im1.jpg") center/cover no-repeat;
-	background-color: lavender;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: var(--mainTransition);
+.hero-back-drop {
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  transition: var(--mainTransition);
+  background-color: lavender;
+  min-height: calc(50vh - 60px);
 }
 
 @media screen and (min-width: 550px) {
@@ -125,6 +127,9 @@ a {
     padding: 0.35rem 0.7rem;
   }
 
+  .hero-back-drop {
+    min-height: calc(80vh - 60px);
+  }
 }
 
 ::-webkit-scrollbar {

@@ -1,65 +1,17 @@
-import React from "react";
-import { Component } from "react";
+import React, { useState, useEffect } from "react";
+import Banner from "./Banner";
 
-class Hero extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      width: 0,
-      height: 0,
-      mHeight: 80,
-    };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-  }
-
-  componentDidMount() {
-    this.updateWindowDimensions();
-    console.log(this.state.mHeight, "component");
-    window.addEventListener("resize", this.updateWindowDimensions);
-  }
-
-  updateWindowDimensions() {
-    if (window.innerWidth <= 550) {
-      this.setState({
-        width: window.innerWidth,
-        height: window.innerHeight,
-        mHeight: 50,
-      });
-      return;
-    }
-
-    this.setState({
-      width: window.innerWidth,
-        height: window.innerHeight,
-        mHeight: 75,
-    })
-    console.log(this.state.width, this.state.height, this.state.mHeight);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateWindowDimensions);
-  }
-
-  render() {
-    return (
-      <div
-        style={{
-          display: "flex",
-          backgroundImage: `url(${this.props.bgImg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          minHeight: `calc(${this.state.mHeight}vh - 66px)`,
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "lavender",
-        }}
-      >
-        {this.props.children}
-      </div>
-    );
-  }
+function Hero(props) {
+  return (
+    <div
+      className="hero-back-drop"
+      style={{
+        backgroundImage: `url(${props.bgImg})`,
+      }}
+    >
+      <Banner title={props.title} description={props.description} />
+    </div>
+  );
 }
 
 export default Hero;
-

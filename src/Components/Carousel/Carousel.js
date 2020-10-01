@@ -4,28 +4,28 @@ import "./Carousel.css";
 import ProgressBar from "./ProgressBar";
 
 const Carousel = ({
-	images,
-	width,
-	heightToWidthRatio,
-	slideDelay,
-	transitionDelay,
+  images,
+  width,
+  heightToWidthRatio,
+  slideDelay,
+  transitionDelay,
 }) => {
-	let height = width * heightToWidthRatio;
+  let height = width * heightToWidthRatio;
 
-	const [offset, setOffset] = useState(0);
-	const [carouselImages, setCarouselImages] = useState(images);
-	const [currentIndex, setCurrentIndex] = useState(0);
-	const [progressStart, setProgressStart] = useState(true);
+  const [offset, setOffset] = useState(0);
+  const [carouselImages, setCarouselImages] = useState(images);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [progressStart, setProgressStart] = useState(true);
 
-	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setOffset(-width);
-			setCurrentIndex((currentIndex + 1) % carouselImages.length);
-		}, slideDelay);
-		return () => {
-			clearTimeout(timeout);
-		};
-	});
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setOffset(-width);
+      setCurrentIndex((currentIndex + 1) % carouselImages.length);
+    }, slideDelay);
+    return () => {
+      clearTimeout(timeout);
+    };
+  });
 
 	const onTransitionEnd = () => {
 		let tempImages = carouselImages.slice();
@@ -36,13 +36,14 @@ const Carousel = ({
 		setOffset(0);
 	};
 
-	const onImageSet = () => {
-		setProgressStart(!progressStart);
-	};
 
-	const onImageStart = () => {
-		setCurrentIndex((currentIndex + 1) % 3);
-	};
+  const onImageSet = () => {
+    setProgressStart(!progressStart);
+  };
+
+  const onImageStart = () => {
+    setCurrentIndex((currentIndex + 1) % 3);
+  };
 
 	return (
 		<div className="carouselContainer">

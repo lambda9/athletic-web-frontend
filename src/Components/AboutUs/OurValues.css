@@ -1,0 +1,107 @@
+.ourvalues {
+  background: var(--mainGrey);
+  text-align: center;
+  margin: 1.5rem auto;
+  padding: 1rem 0;
+}
+
+.ourvalues-center {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: lightskyblue; */
+}
+
+.ourvalues-item-container {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 170px;
+  margin: 0.5em;
+  padding: 0.4rem 0;
+  /* background-color: lightcoral; */
+  background: linear-gradient(30deg, #343a40 38%, #030202 30%);
+  box-shadow: 0 0 4px 0px #000000;
+  color: whitesmoke;
+}
+
+.ourvalues-item-icon {
+  font-size: 64px;
+  color: var(--primaryColor);
+  margin: 0.2rem auto 0.2rem;
+}
+
+.ourvalues-item-container h4 {
+  display: block;
+  margin: 0.6rem auto 0.2rem;
+  width: fit-content;
+  border-left: 2px solid var(--primaryRed);
+  padding-left: 4px;
+  letter-spacing: var(--mainSpacing);
+}
+.ourvalues-item-container p {
+  width: 90%;
+  font-size: 10px;
+  margin: 0 auto;
+  letter-spacing: var(--mainSpacing);
+}
+
+.ourvalues-item-card-border1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primaryRed);
+  width: 75px;
+  height: 2px;
+}
+.ourvalues-item-card-border2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primaryRed);
+  width: 2px;
+  height: 40px;
+}
+
+@media screen and (min-width: 550px) {
+  .ourvalues-center {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+    grid-row-gap: 0.3rem;
+    grid-column-gap: 0.4rem;
+    justify-items: center;
+    align-items: stretch;
+  }
+
+  .ourvalues-item-container {
+    width: 260px;
+    height: 300px;
+    transition: var(--fastTransition);
+  }
+
+  .ourvalues-item-container:hover {
+    transform: scale(1.06);
+  }
+
+  .ourvalues-item-container p {
+    font-size: var(--pFontSizePC);
+  }
+
+  .ourvalues-item-icon {
+    font-size: 92px;
+    margin: 0.5rem auto 1rem;
+    text-align: center;
+  }
+
+  .ourvalues-item-container h4 {
+    font-size: 1.5em;
+    border-left: 3px solid var(--primaryRed);
+    padding-left: 5px;
+    margin: 0.4 auto 0.4rem;
+  }
+}

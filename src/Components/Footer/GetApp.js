@@ -11,7 +11,7 @@ function GetApp() {
           <FaGooglePlay />
         </Link>
         <Link>
-          <FaApple />{" "}
+          <FaApple />
         </Link>
       </div>
     </div>
