@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Hero from "../Hero";
 import bgImg from "../../Images/im9.jpg";
-import EntryForm from './EntryForm'
+import EntryForm from "./EntryForm";
+
 
 class ContactUs extends Component {
   render() {
