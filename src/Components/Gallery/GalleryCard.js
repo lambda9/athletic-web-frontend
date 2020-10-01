@@ -19,28 +19,36 @@ const GalleryCard = () => {
 
 	return (
 		<div className={"gallery-main-container"}>
-			<h3>Equipments</h3>
-			<div className={"images-container"}>
-				<div className={"main-img-window"}>
-					<Image src={images[currentIndex]} />
-				</div>
-				<div className="thumbnail-window">
-					<div className={"thumbnail-slides"}>
-						{images.map((value, index) => {
-							return (
-								<Image
-									onClick={() => {
-										console.log("yes cliked");
-										setCurrentIndex(index);
-									}}
-									active={currentIndex === index}
-									key={index}
-									width={"10vw"}
-									height={"7.5vw"}
-									src={value}
-								/>
-							);
-						})}
+			<div>
+				{/* <p className={"gallery-title"}>Equipments</p> */}
+				<div className={"images-container"}>
+					<div className={"main-img-window"}>
+						<div className={"image-div"}>
+							<img src={images[currentIndex]} alt={"equipemt"} />
+							<div className="image-overlay">
+								<h4>Title</h4>
+								<p>This is description of image</p>
+							</div>
+						</div>
+					</div>
+					<div className="thumbnail-window">
+						<div className={"thumbnail-slides"}>
+							{images.map((value, index) => {
+								return (
+									<Image
+										onClick={() => {
+											console.log("yes cliked");
+											setCurrentIndex(index);
+										}}
+										active={currentIndex === index}
+										key={index}
+										width={"10vw"}
+										height={"7.5vw"}
+										src={value}
+									/>
+								);
+							})}
+						</div>
 					</div>
 				</div>
 			</div>
