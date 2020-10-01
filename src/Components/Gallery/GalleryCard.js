@@ -22,20 +22,7 @@ const GalleryCard = () => {
 			<h3>Equipments</h3>
 			<div className={"images-container"}>
 				<div className={"main-img-window"}>
-					<div
-						className={"main-img-slides"}
-						style={{
-							// backgroundColor: "black",
-							transform: `translateX(${-currentIndex * 40}vw)`,
-						}}
-					>
-						{images.map((value, index) => {
-							return (
-								<Image key={index} width={"40vw"} height={"30vw"} src={value} />
-							);
-						})}
-					</div>
-					<div>Controls</div>
+					<Image src={images[currentIndex]} />
 				</div>
 				<div className="thumbnail-window">
 					<div className={"thumbnail-slides"}>
