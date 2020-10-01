@@ -33,11 +33,9 @@
 	text-transform: capitalize;
 	color: whitesmoke;
 	font-size: 18px;
-	transition: color linear 0.4s;
-	/* transition: border-bottom linear 0.4s; */
+	transition: var(--fastTransition);
 	letter-spacing: var(--mainSpacing);
 	overflow: hidden;
-	/* background: yellow; */
 }
 
 .nav-links-container a:hover,

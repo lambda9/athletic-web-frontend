@@ -32,7 +32,9 @@ class Footer extends Component {
           <div className="footer-link-timmings">
             <div className="footer-quick-links-div">
               <div className="footer-quick-links-cont">
+                <span>
                 Quick Links
+                </span>
                 {this.links.map((item) => {
                   return (
                     <Link to={`${item[0]}`} className="aa">
@@ -44,7 +46,9 @@ class Footer extends Component {
             </div>
             <div className="footer-timmings-div">
               <div className="footer-timmings-cont">
+                <span>
                 Timmings
+                </span>
                 {this.timmings.map((item) => {
                   return (
                     <p>

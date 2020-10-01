@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Pages/Home";
-import OurPrograms from "./Components/Pages/OurPrograms";
+import Programs from "./Components/Programs/ProgramsPage";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import FAQ from "./Components/Pages/FAQ";
@@ -24,7 +24,7 @@ class App extends Component {
         <div className="main-content">
           <Switch>
             <Route exact path="/h" component={Home} />
-            <Route exact path="/programs/" component={OurPrograms} />
+            <Route exact path="/programs/" component={Programs} />
             <Route exact path="/contactUs/" component={ContactUs} />
             <Route exact path="/aboutUs/" component={AboutUs} />
             <Route exact path="/faq/" component={FAQ} />
