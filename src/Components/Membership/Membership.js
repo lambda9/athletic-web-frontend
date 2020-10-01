@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Hero from "../Hero";
-import Banner from "../Banner";
 import Title from "../Title/Title";
 import IconSlider from "./IconSlider";
 import "./Membership.css";
@@ -11,7 +10,6 @@ class Membership extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
       plans: [
         {
           plan_id: "pl_1",
@@ -137,13 +135,10 @@ class Membership extends Component {
     };
   }
 
-  
   render() {
     return (
       <div className="membership-page">
         <Hero bgImg={bgImg} title="get membership" description="get today" />
-        
-        
 
         <div className="plan-bg-container">
           <MembershipBG />

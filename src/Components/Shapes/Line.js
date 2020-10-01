@@ -8,7 +8,7 @@ function Line(props) {
         width: `${props.width}px`,
         height: `${props.length}px`,
         backgroundColor: `${props.color}`,
-        transform: `rotate(${props.angle}deg)`
+        transform: `rotate(${props.angle}deg)`,
     }
     return (
         <div style={style} />
