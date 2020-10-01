@@ -7,7 +7,7 @@ import GetApp from "./GetApp";
 
 class Footer extends Component {
   links = [
-    ["/h", "home"],
+    ["/", "home"],
     ["programs", "programs"],
     ["membership", "membership"],
     ["gallery", "gallery"],
