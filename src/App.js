@@ -19,10 +19,11 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <ScrollToTop />
+        <ScrollToTop />
         <Navbar />
         <div className="main-content">
           <Switch>
+            <Route exact path="/" component={Home} />
             <Route exact path="/h" component={Home} />
             <Route exact path="/programs/" component={Programs} />
             <Route exact path="/contactUs/" component={ContactUs} />
