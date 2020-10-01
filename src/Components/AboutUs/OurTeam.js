@@ -1,49 +1,44 @@
 import React, { useState } from "react";
-import img1 from "../../Images/im18.jpg";
-import img2 from "../../Images/im2.jpg";
+import img1 from "../../Images/im21.jpg";
+import img2 from "../../Images/im20.jpg";
 import "./AboutUs.css";
 
 function OurTeam() {
   const [detailsOwner, setDetailsOwner] = useState(false);
   const [detailsTrainer, setDetailsTrainer] = useState(false);
-
+  const ourTeam = [
+    {
+      id: 2,
+      img: img1,
+      title: "swaroop saran",
+      descrition: "Im the owner bitch! dont you understand that hey",
+      inverted: false,
+    },
+    {
+      id: 2,
+      img: img2,
+      title: "bhati",
+      descrition: "Hey! trainer is here",
+      inverted: true,
+    },
+  ];
   return (
     <div className="about-our-team-main-div">
-      <div
-        className="about-our-team-img"
-        onMouseEnter={() => setDetailsOwner(true)}
-        onMouseLeave={() => setDetailsOwner(false)}
-      >
-        <div
-          className={
-            detailsOwner
-              ? "about-our-team-details-o about-our-team-details-active-o"
-              : "about-our-team-details-o"
-          }
-        >
-          <h2>Trainer</h2>
-          <p>there is some details about the team meamber</p>
-        </div>{" "}
-        <img src={img1}></img>
-      </div>
-      <div
-        className="about-our-team-img"
-        onMouseEnter={() => setDetailsTrainer(true)}
-        onMouseLeave={() => setDetailsTrainer(false)}
-      >
-        <div
-          className={
-            detailsTrainer
-              ? "about-our-team-details-t about-our-team-details-active-t"
-              : "about-our-team-details-t"
-          }
-        >
-          <h2>Owner</h2>
-          <p>there is some details about the team meamber</p>
-        </div>
-        <img src={img2}></img>
-
-      </div>
+      {ourTeam.map((item) => {
+        return (
+          <div
+            className="about-our-team-cont"
+            onMouseEnter={() => setDetailsOwner(true)}
+            onMouseLeave={() => setDetailsOwner(false)}
+          >
+            <img src={item.img}></img>
+            <div className="about-our-team-desc-div">
+              <h4>{item.title}</h4>
+              <p>{item.descrition}</p>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

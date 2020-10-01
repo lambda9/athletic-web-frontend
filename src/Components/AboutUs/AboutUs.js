@@ -39,22 +39,7 @@ function AboutUs() {
     },
   ];
 
-  const ourTeam = [
-    {
-      id: 2,
-      img: img1,
-      title: "saroop saran",
-      descrition: "Im the owner bitch!",
-      inverted: false,
-    },
-    {
-      id: 2,
-      img: img2,
-      title: "bhati",
-      descrition: "Hey! trainer is here",
-      inverted: true,
-    },
-  ];
+
 
   return (
     <div className="about-page">
