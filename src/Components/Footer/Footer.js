@@ -37,7 +37,7 @@ class Footer extends Component {
                 </span>
                 {this.links.map((item) => {
                   return (
-                    <Link to={`${item[0]}`} className="aa">
+                    <Link to={`${item[0]}`}>
                       {item[1]}
                     </Link>
                   );
