@@ -1,6 +1,7 @@
 .footer-comp {
   margin-top: 0rem;
-  background: url("../../Images/im18.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+    url("../../Images/im18.jpg") center/cover no-repeat;
   width: 100%;
 }
 
@@ -38,7 +39,7 @@
 
 .footer-quick-links-cont span,
 .footer-timmings-cont span {
-  border-left: 2px solid var(--primaryRed);
+  border-left: 2px solid var(--primaryColor);
   padding-left: 4px;
 }
 
@@ -94,7 +95,7 @@
 
 .footer-get-app-cont span {
   margin: auto 0.2rem;
-  border-left: 2px solid var(--primaryRed);
+  border-left: 2px solid var(--primaryColor);
   padding-left: 4px;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
@@ -162,7 +163,7 @@
   .footer-quick-links-cont span,
   .footer-get-app-cont span,
   .footer-timmings-cont span {
-    border-left: 3px solid var(--primaryRed);
+    border-left: 3px solid var(--primaryColor);
     padding-left: 5px;
   }
 

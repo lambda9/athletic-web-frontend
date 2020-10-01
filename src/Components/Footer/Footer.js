@@ -16,13 +16,8 @@ class Footer extends Component {
   ];
 
   timmings = [
-    ["monday", "8 A.M. - 10 P.M."],
-    ["Tuesday", "8 A.M. - 10 P.M."],
-    ["wednesday", "8 A.M. - 10 P.M."],
-    ["thursday", "8 A.M. - 10 P.M."],
-    ["friday", "8 A.M. - 10 P.M."],
-    ["saturday", "8 A.M. - 10 P.M."],
-    ["sunday", "8 A.M. - 10 P.M."],
+    ["Week Days", "8 A.M. - 10 P.M."],
+    ["Weekends", "8 A.M. - 10 P.M."],
   ];
 
   render() {
@@ -32,9 +27,7 @@ class Footer extends Component {
           <div className="footer-link-timmings">
             <div className="footer-quick-links-div">
               <div className="footer-quick-links-cont">
-                <span>
-                Quick Links
-                </span>
+                <span>Quick Links</span>
                 {this.links.map((item) => {
                   return (
                     <Link to={`${item[0]}`}>
@@ -46,9 +39,9 @@ class Footer extends Component {
             </div>
             <div className="footer-timmings-div">
               <div className="footer-timmings-cont">
-                <span>
-                Timmings
-                </span>
+                <span>Timings</span>
+                <br />
+
                 {this.timmings.map((item) => {
                   return (
                     <p>
@@ -64,8 +57,8 @@ class Footer extends Component {
           </div>
           <div className="footer-buttons">
             <SocialMedia />
-            <div className='footer-get-app-div'>
-            <GetApp />
+            <div className="footer-get-app-div">
+              <GetApp />
             </div>
           </div>
           <div className="footer-copyright">

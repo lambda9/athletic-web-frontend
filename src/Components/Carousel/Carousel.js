@@ -27,15 +27,14 @@ const Carousel = ({
     };
   });
 
-	const onTransitionEnd = () => {
-		let tempImages = carouselImages.slice();
-		tempImages.push(tempImages[0]);
-		tempImages.shift();
-		setCarouselImages(tempImages);
-		setProgressStart(!progressStart);
-		setOffset(0);
-	};
-
+  const onTransitionEnd = () => {
+    let tempImages = carouselImages.slice();
+    tempImages.push(tempImages[0]);
+    tempImages.shift();
+    setCarouselImages(tempImages);
+    setProgressStart(!progressStart);
+    setOffset(0);
+  };
 
   const onImageSet = () => {
     setProgressStart(!progressStart);
@@ -45,45 +44,45 @@ const Carousel = ({
     setCurrentIndex((currentIndex + 1) % 3);
   };
 
-	return (
-		<div className="carouselContainer">
-			<div
-				className="carousel"
-				style={{
-					width: `${width}vw`,
-					height: `${height}vw`,
-				}}
-			>
-				<Slides
-					images={carouselImages}
-					onImageSet={onImageSet}
-					onImageStart={onImageStart}
-					transitionDelay={transitionDelay}
-					offset={offset}
-					width={width}
-					height={height}
-					showAnimation={offset === 0}
-					onTransitionEnd={onTransitionEnd}
-				/>
-				<div className="indicators">
-					{carouselImages.map((value, index) => {
-						return (
-							<span
-								key={index}
-								className={`indicator pointer ${
-									index === currentIndex ? "active" : ""
-								}`}
-								style={{
-									transition: `all linear ${transitionDelay / 1000}s`,
-								}}
-							></span>
-						);
-					})}
-				</div>
-				<ProgressBar key={progressStart} animate={true} time={slideDelay} />
-			</div>
-		</div>
-	);
+  return (
+    <div className="carouselContainer">
+      <div
+        className="carousel"
+        style={{
+          width: `${width}vw`,
+          height: `${height}vw`,
+        }}
+      >
+        <Slides
+          images={carouselImages}
+          onImageSet={onImageSet}
+          onImageStart={onImageStart}
+          transitionDelay={transitionDelay}
+          offset={offset}
+          width={width}
+          height={height}
+          showAnimation={offset === 0}
+          onTransitionEnd={onTransitionEnd}
+        />
+        <div className="indicators">
+          {carouselImages.map((value, index) => {
+            return (
+              <span
+                key={index}
+                className={`indicator pointer ${
+                  index === currentIndex ? "active" : ""
+                }`}
+                style={{
+                  transition: `all linear ${transitionDelay / 1000}s`,
+                }}
+              ></span>
+            );
+          })}
+        </div>
+        <ProgressBar key={progressStart} animate={true} time={slideDelay} />
+      </div>
+    </div>
+  );
 };
 
 export default Carousel;
