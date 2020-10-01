@@ -24,7 +24,6 @@ class App extends Component {
         <div className="main-content">
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/h" component={Home} />
             <Route exact path="/programs/" component={Programs} />
             <Route exact path="/contactUs/" component={ContactUs} />
             <Route exact path="/aboutUs/" component={AboutUs} />

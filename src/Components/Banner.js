@@ -8,7 +8,7 @@ function Banner(props) {
     <div className="banner">
       <Title>{props.title}</Title>
       <p>{props.description}</p>
-      <Link to="/h" className="button-primary">
+      <Link to="/" className="button-primary">
         Back to Home
       </Link>
     </div>

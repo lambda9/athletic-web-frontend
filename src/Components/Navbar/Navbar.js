@@ -22,7 +22,7 @@ const Navbar = () => {
 	const [btnGroupVisible, setBtnGroupVisible] = useState(true);
 
 	const links = [
-		["/h", "home"],
+		["/", "home"],
 		["/programs", "programs"],
 		["/membership", "membership"],
 		["/gallery", "gallery"],
