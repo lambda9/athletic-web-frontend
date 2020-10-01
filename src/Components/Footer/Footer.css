@@ -40,7 +40,7 @@
 
 .footer-quick-links-cont span,
 .footer-timmings-cont span {
-  border-left: 2px solid var(--primaryRed);
+  border-left: 2px solid var(--primaryColor);
   padding-left: 4px;
 }
 
@@ -96,7 +96,7 @@
 
 .footer-get-app-cont span {
   margin: auto 0.2rem;
-  border-left: 2px solid var(--primaryRed);
+  border-left: 2px solid var(--primaryColor);
   padding-left: 4px;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
