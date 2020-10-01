@@ -15,6 +15,8 @@ class Gallery extends Component {
 					></Banner>
 				</Hero>
 				<GalleryCard images={[]} />
+				<GalleryCard images={[]} />
+				<GalleryCard images={[]} />
 			</div>
 		);
 	}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Image from "./Image";
+import ImageSlides from "./ImageSlides";
 import "./Gallery.css";
 
 import img1 from "../../Images/im1.jpg";
@@ -16,14 +17,26 @@ const GalleryCard = () => {
 	// return <div>hello</div>;
 
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const [prevIndex, setPrevIndex] = useState(0);
+
+	const onImageSelected = (index) => {
+		setCurrentIndex(index);
+	};
 
 	return (
 		<div className={"gallery-main-container"}>
 			<div>
-				{/* <p className={"gallery-title"}>Equipments</p> */}
+				<p className={"gallery-title"}>Equipments</p>
 				<div className={"images-container"}>
 					<div className={"main-img-window"}>
-						<div className={"image-div"}>
+						<div className={"hidden"}>
+							<img src={images[currentIndex]} alt={"equipemt"} />
+							<div className="image-overlay">
+								<h4>Title</h4>
+								<p>This is description of image</p>
+							</div>
+						</div>
+						<div className={"visible"}>
 							<img src={images[currentIndex]} alt={"equipemt"} />
 							<div className="image-overlay">
 								<h4>Title</h4>
@@ -31,25 +44,11 @@ const GalleryCard = () => {
 							</div>
 						</div>
 					</div>
-					<div className="thumbnail-window">
-						<div className={"thumbnail-slides"}>
-							{images.map((value, index) => {
-								return (
-									<Image
-										onClick={() => {
-											console.log("yes cliked");
-											setCurrentIndex(index);
-										}}
-										active={currentIndex === index}
-										key={index}
-										width={"10vw"}
-										height={"7.5vw"}
-										src={value}
-									/>
-								);
-							})}
-						</div>
-					</div>
+					<ImageSlides
+						images={images}
+						currentIndex={currentIndex}
+						onClick={onImageSelected}
+					/>
 				</div>
 			</div>
 		</div>

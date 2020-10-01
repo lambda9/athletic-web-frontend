@@ -1,12 +1,5 @@
 .gallery-main-container {
-	/* position: relative; */
 	margin: 2em;
-}
-
-.gallery-title {
-	font-size: 1.5em;
-	margin: 1em;
-	text-transform: uppercase;
 }
 
 .images-container {
@@ -17,7 +10,7 @@
 	height: 36vw;
 	margin: auto;
 	box-shadow: 0 0 18px 1px #9b9b9b;
-	background-color: var(--gray);
+	background: linear-gradient(30deg, #e3e3e3 38%, #b8b8b8 30%);
 }
 
 .main-img-window {
@@ -26,14 +19,23 @@
 	height: 100%;
 }
 
-.image-div {
+.main-img-window > div {
 	position: absolute;
 	top: 50%;
 	left: 0%;
 	transform: translateY(-50%);
+	transition: opacity 1s ease-in-out;
 }
 
-.image-div img {
+.hidden {
+	opacity: 0;
+}
+
+.visible {
+	opacity: 1;
+}
+
+.main-img-window img {
 	width: 100%;
 	box-shadow: 0 0 6px black;
 }
@@ -60,67 +62,77 @@
 	height: -webkit-fill-available;
 }
 
-.thumbnail-window {
-	height: 30vw;
-	width: fit-content;
-	height: -webkit-fill-available;
+.slides-main-container {
+	height: 100%;
+	width: 10vw;
 	overflow-y: scroll;
 	box-shadow: 0 0 10px 0px #313131;
 }
 
-.thumbnail-slides > div {
+.slides-container > div {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 10vw;
-	height: 7.5vw;
+	width: 100%;
+	margin-bottom: 0.3em;
 }
 
-.thumbnail-slides img {
+.slides-container img {
 	/* height: 100%; */
 	width: 100%;
 }
 
-.thumbnail-slides {
+.slides-container {
 	display: flex;
 	flex-direction: column;
 	height: fit-content;
 }
 
 .active-thumbnail {
-	border: 2px solid blue;
+	transform: scale(1.5);
 }
 
 @media screen and (max-width: 550px) {
 	.images-container {
-		flex-direction: column;
+		background: none;
+		box-shadow: none;
 	}
 
-	.thumbnail-slides {
-		flex-direction: row;
+	.gallery-main-container {
+		margin: 1em;
+	}
+
+	.images-container {
+		flex-direction: column;
+		width: 90vw;
+		height: 80vw;
 	}
 
 	.main-img-window {
-		width: 90vw;
-		height: 75vw;
+		width: 100%;
 	}
 
-	.main-img-slides > div {
-		width: 90vw;
-		height: 75vw;
-	}
-
-	.thumbnail-window {
-		width: 90vw;
+	.slides-main-container {
 		height: 20vw;
+		width: 100%;
+		overflow-y: hidden;
+		overflow-x: scroll;
 	}
 
-	.thumbnail-slides {
+	.slides-container {
+		flex-direction: row;
+		height: 100%;
 		width: fit-content;
 	}
+	.slides-container > div {
+		width: 100%;
+		height: 100%;
+		margin-bottom: 0;
+		margin-right: 0.2em;
+	}
 
-	.thumbnail-slides > div {
-		width: 25vw;
-		height: 20vw;
+	.slides-container img {
+		height: 100%;
+		width: initial;
 	}
 }
