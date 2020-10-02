@@ -37,7 +37,6 @@
 	top: 50%;
 	left: 0%;
 	transform: translateY(-50%);
-	transition: opacity 1s ease-in-out;
 }
 
 .hidden {
@@ -110,9 +109,27 @@
 	z-index: 5;
 }
 
+.blender-image {
+	position: relative;
+	height: 400px;
+}
+
+.blender-image > div {
+	/* transition: opacity ease-in-out 1s; */
+	position: absolute;
+}
+
+.visible-img {
+	opacity: 1;
+}
+
+.hidden-img {
+	opacity: 1;
+}
+
 @media screen and (max-width: 900px) {
 	.images-container {
-		width: 95%;
+		width: 90%;
 		height: 46vw;
 	}
 }

@@ -10,6 +10,7 @@ import img3 from "../../Images/im3.jpg";
 import img4 from "../../Images/im4.jpg";
 import img5 from "../../Images/im5.jpg";
 import img6 from "../../Images/im6.jpg";
+import BlenderImage from "./BlenderImage";
 
 const images = [img1, img4, img5, img1, img4, img5];
 
@@ -20,6 +21,7 @@ const GalleryCard = () => {
 	const [prevIndex, setPrevIndex] = useState(0);
 
 	const onImageSelected = (index) => {
+		setPrevIndex(currentIndex);
 		setCurrentIndex(index);
 	};
 
