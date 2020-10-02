@@ -46,7 +46,6 @@ function ProgramCarousel() {
 
   const nextImg = () => {
     setX(x + 1);
-
   };
 
   const prevImg = () => {
@@ -58,14 +57,14 @@ function ProgramCarousel() {
       <div
         className="pro-car-img-div"
         style={{
-          transform: `translate(${-x * 300}px)`,
+          transform: `translate(calc(${-x*17.5}vw + 100px))`,
         }}
       >
         {temp.map((item, index) => {
           return (
             <img
               className={
-                index == x ? "pro-car-img-active" : "pro-car-img-unactive"
+                index == x+1 ? "pro-car-img-active" : "pro-car-img-unactive "
               }
               src={item.img}
             ></img>

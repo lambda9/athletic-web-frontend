@@ -2,26 +2,33 @@
   width: 90%;
   height: 600px;
   background-color: lightslategray;
-  /* margin: 20px auto;
-  display: flex; */
 }
 
 .pro-car-img-div {
   display: flex;
+  width: fit-content;
   height: 500px;
   background-color: linen;
   transition: var(--mainTransition);
 }
 
+/* .pro-car-img-div img{
+  width: 15vw;
+  height: auto;
+  margin: auto 50px;
+  transition: var(--mainTransition);
+} */
+
 .pro-car-img-unactive {
-  max-width: 150px;
+  width: 15vw;
   height: auto;
   margin: auto 50px;
   transition: var(--mainTransition);
 }
 
 .pro-car-img-active {
-  max-width: 350px;
+  /* transform: scale(2.2); */
+  width: 30vw;
   height: auto;
   margin: auto 50px;
   transition: var(--mainTransition);
