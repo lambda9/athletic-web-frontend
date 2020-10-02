@@ -14,20 +14,21 @@
 	align-items: center;
 	width: fit-content;
 	height: 90%;
-	background-color: linen;
-	transition: var(--mainTransition);
+	/* background-color: linen; */
+	/* transition: transform ease-in-out 0.5s; */
 }
 
 .pro-car-img-div > div {
-	width: 30vw;
 	padding: 1em;
 }
 
 .pro-car-img-div img {
 	width: 100%;
-	transition: var(--mainTransition);
 }
 
+.img-div > img {
+	transition: transform ease-in-out 0.5s;
+}
 /* .pro-car-img-div img{
   width: 15vw;
   height: auto;
@@ -45,6 +46,7 @@
 
 .pro-car-img-unactive {
 	transform: scale(0.9);
+	/* filter: blur(0.5em); */
 }
 
 .pro-car-img-active {
