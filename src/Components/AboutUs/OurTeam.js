@@ -25,9 +25,9 @@ function OurTeam() {
   return (
     <div
       className="about-our-team-main-div"
-      data-aos="fade-right"
+      data-aos="fade-down"
       data-aos-duration="1000"
-      data-aos-delay="1000"
+      
     >
       {ourTeam.map((item) => {
         return (

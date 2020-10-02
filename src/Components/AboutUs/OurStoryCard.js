@@ -5,7 +5,6 @@ function OurStoryCard(props) {
     <div
       data-aos={props.right}
       data-aos-duration="1000"
-      data-aos-delay="5000"
       className={
         props.inverted
           ? "about-our-story inverted-our-story"
@@ -16,7 +15,6 @@ function OurStoryCard(props) {
       <div
         data-aos={props.right}
         data-aos-duration="1000"
-        data-aos-delay="5000"
         className={
           props.inverted
             ? "about-our-story-text inverted-text"

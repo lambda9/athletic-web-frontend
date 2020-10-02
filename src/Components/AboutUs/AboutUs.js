@@ -43,16 +43,14 @@ function AboutUs() {
   ];
 
   return (
-    <div className="about-page" data-aos="fade-up">
+    <div className="about-page" data-aos="fade-in" data-aos-duration="2000">
       <Hero bgImg={backDropImg} title="About Us" />
 
       <div className="about-bg">
         <AboutUsBg />
       </div>
 
-      <div
-        className="about-content"
-      >
+      <div className="about-content">
         {ourStoryCard.map((item) => {
           return (
             <OurStoryCard
@@ -67,7 +65,11 @@ function AboutUs() {
         })}
       </div>
       <OurValues />
-      <div className="about-our-team-title" data-aos="fade-up">
+      <div
+        className="about-our-team-title"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <Title>our team</Title>
       </div>
 
