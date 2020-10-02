@@ -1,0 +1,27 @@
+.temp {
+    /* width: 250px; */
+    /* margin: auto; */
+}
+
+.free-modal {
+
+    margin: 0 auto;
+    text-align: left;
+    /* background-color: chocolate; */
+}
+
+.free-input {
+    margin: 0.1rem auto 1rem;
+}
+
+.free-form-group {
+    text-align: left;
+    margin: 0;
+    /* background-color: cornflowerblue; */
+}
+
+.free-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+}
