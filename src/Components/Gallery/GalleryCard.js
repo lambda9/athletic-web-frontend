@@ -25,31 +25,33 @@ const GalleryCard = () => {
 
 	return (
 		<div className={"gallery-main-container"}>
-			<div>
-				<p className={"gallery-title"}>Equipments</p>
-				<div className={"images-container"}>
-					<div className={"main-img-window"}>
-						<div className={"hidden"}>
-							<img src={images[currentIndex]} alt={"equipemt"} />
-							<div className="image-overlay">
-								<h4>Title</h4>
-								<p>This is description of image</p>
-							</div>
-						</div>
-						<div className={"visible"}>
-							<img src={images[currentIndex]} alt={"equipemt"} />
-							<div className="image-overlay">
-								<h4>Title</h4>
-								<p>This is description of image</p>
-							</div>
+			<div className={"images-container"}>
+				<div
+					style={{
+						backgroundImage: `url(${images[currentIndex]})`,
+					}}
+				></div>
+				<div className={"main-img-window"}>
+					<div className={"hidden"}>
+						<img src={images[currentIndex]} alt={"equipemt"} />
+						<div className="image-overlay">
+							<h4>Title</h4>
+							<p>This is description of image</p>
 						</div>
 					</div>
-					<ImageSlides
-						images={images}
-						currentIndex={currentIndex}
-						onClick={onImageSelected}
-					/>
+					<div className={"visible"}>
+						<img src={images[currentIndex]} alt={"equipemt"} />
+						<div className="image-overlay">
+							<h4>Title</h4>
+							<p>This is description of image</p>
+						</div>
+					</div>
 				</div>
+				<ImageSlides
+					images={images}
+					currentIndex={currentIndex}
+					onClick={onImageSelected}
+				/>
 			</div>
 		</div>
 	);
