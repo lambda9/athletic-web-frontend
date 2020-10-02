@@ -83,12 +83,3 @@ function ProgramCarousel() {
 
 export default ProgramCarousel;
 
-// <div className="pro-car-left-img">
-// <img src={img1} />
-// </div>
-// <div className="pro-car-main-img">
-// <img src={img2} />
-// </div>
-// <div className="pro-car-right-img">
-// <img src={img3} />
-// </div>
