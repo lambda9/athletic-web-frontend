@@ -6,80 +6,74 @@ import img4 from "../../Images/im10.jpg";
 import img5 from "../../Images/im20.jpg";
 import img6 from "../../Images/im21.jpg";
 import "./Programs.css";
+import Slide from "./Slide";
+import { isElement } from "react-dom/test-utils";
 
 function ProgramCarousel() {
-  let dt = [
-    {
-      id: 0,
-      img: img1,
-      title: "title",
-    },
-    {
-      id: 1,
-      img: img2,
-      title: "title",
-    },
-    {
-      id: 2,
-      img: img3,
-      title: "title",
-    },
-    {
-      id: 3,
-      img: img4,
-      title: "title",
-    },
-    {
-      id: 4,
-      img: img5,
-      title: "title",
-    },
-    {
-      id: 5,
-      img: img6,
-      title: "title",
-    },
-  ];
+	let dt = [
+		{
+			id: 0,
+			img: img1,
+			title: "title",
+		},
+		{
+			id: 1,
+			img: img2,
+			title: "title",
+		},
+		{
+			id: 2,
+			img: img3,
+			title: "title",
+		},
+		{
+			id: 3,
+			img: img4,
+			title: "title",
+		},
+		{
+			id: 4,
+			img: img5,
+			title: "title",
+		},
+		{
+			id: 5,
+			img: img6,
+			title: "title",
+		},
+	];
 
-  const [x, setX] = useState(0);
-  const [temp, setTemp] = useState(dt);
+	const [x, setX] = useState(1);
+	const [temp, setTemp] = useState(dt);
 
-  const nextImg = () => {
-    setX(x + 1);
-  };
+	const nextImg = () => {
+		setX(x + 1);
+	};
 
-  const prevImg = () => {
-    setX(x - 1);
-  };
+	const prevImg = () => {
+		setX(x - 1);
+	};
 
-  return (
-    <div className="pro-car-main-div">
-      <div
-        className="pro-car-img-div"
-        style={{
-          transform: `translate(calc(${-x*17.5}vw + 100px))`,
-        }}
-      >
-        {temp.map((item, index) => {
-          return (
-            <img
-              className={
-                index == x+1 ? "pro-car-img-active" : "pro-car-img-unactive "
-              }
-              src={item.img}
-            ></img>
-          );
-        })}
-      </div>
-      <div className="pro-car-nextBtn" onClick={nextImg}>
-        &#8250;
-      </div>
-      <div className="pro-car-prevBtn" onClick={prevImg}>
-        &#8249;
-      </div>
-    </div>
-  );
+	return (
+		<div className="pro-car-main-div">
+			<div
+				className="pro-car-img-div"
+				style={{
+					transform: `translateX(${-x * 30}vw)`,
+				}}
+			>
+				{temp.map((item, index) => {
+					return <Slide key={item.img} item={item} active={index === x + 1} />;
+				})}
+			</div>
+			<div className="pro-car-nextBtn" onClick={nextImg}>
+				&#8250;
+			</div>
+			<div className="pro-car-prevBtn" onClick={prevImg}>
+				&#8249;
+			</div>
+		</div>
+	);
 }
 
 export default ProgramCarousel;
-
