@@ -43,7 +43,7 @@ function AboutUs() {
   ];
 
   return (
-    <div className="about-page" data-aos="fade-in" data-aos-duration="2000">
+    <div className="about-page">
       <Hero bgImg={backDropImg} title="About Us" />
 
       <div className="about-bg">
