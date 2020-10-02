@@ -23,7 +23,12 @@ function OurTeam() {
     },
   ];
   return (
-    <div className="about-our-team-main-div">
+    <div
+      className="about-our-team-main-div"
+      data-aos="fade-right"
+      data-aos-duration="1000"
+      data-aos-delay="1000"
+    >
       {ourTeam.map((item) => {
         return (
           <div
