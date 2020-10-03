@@ -3,6 +3,8 @@ import React from "react";
 function OurStoryCard(props) {
   return (
     <div
+      data-aos={props.right}
+      data-aos-duration="1000"
       className={
         props.inverted
           ? "about-our-story inverted-our-story"
@@ -11,6 +13,8 @@ function OurStoryCard(props) {
     >
       <img src={props.img}></img>
       <div
+        data-aos={props.right}
+        data-aos-duration="1000"
         className={
           props.inverted
             ? "about-our-story-text inverted-text"

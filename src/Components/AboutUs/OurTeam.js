@@ -11,19 +11,24 @@ function OurTeam() {
       id: 2,
       img: img1,
       title: "swaroop saran",
-      descrition: "Im the owner bitch! dont you understand that hey",
+      descrition: "Hey! I'm the owner and manager of this gym",
       inverted: false,
     },
     {
       id: 2,
       img: img2,
       title: "bhati",
-      descrition: "Hey! trainer is here",
+      descrition: "Hey! I'm your trainer.",
       inverted: true,
     },
   ];
   return (
-    <div className="about-our-team-main-div">
+    <div
+      className="about-our-team-main-div"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      
+    >
       {ourTeam.map((item) => {
         return (
           <div

@@ -5,6 +5,8 @@ function Hero(props) {
   return (
     <div
       className="hero-back-drop"
+      data-aos="fade-in" 
+      data-aos-duration="1000"
       style={{
         backgroundImage: `url(${props.bgImg})`,
       }}

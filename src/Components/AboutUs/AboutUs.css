@@ -8,6 +8,7 @@
   position: relative;
   margin: 0rem auto;
   z-index: -10;
+  
 }
 
 .about-content {
@@ -16,7 +17,7 @@
 }
 
 .about-our-story {
-  width: 95%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   margin: 3rem auto;
@@ -60,7 +61,7 @@
 }
 
 .about-our-team-main-div {
-  width: 90%;
+  width: 85%;
   margin: 40px auto 30px;
   justify-content: space-between;
   /* background-color: rgb(17, 153, 85); */
@@ -68,32 +69,39 @@
 
 .about-our-team-cont {
   display: flex;
-  margin: 20px auto;
-  padding: 8px 7px;
+  flex-direction: column;
   box-shadow: 0 0 4px 0px #000000;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 10px;
+  /* background-color: burlywood; */
 }
 
 .about-our-team-desc-div {
-  text-align: left;
+  padding: 0.2rem;
+  background-color: var(--mainGrey);
+  border-radius: 0 0 10px 10px;
 }
 
 .about-our-team-desc-div h4 {
-  font-size: 16px;
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: var(--mobileSpacing);
   margin-bottom: 0;
 }
 
 .about-our-team-desc-div p {
-  margin-top: 10px;
+  margin-bottom: 0;
   letter-spacing: var(--mobileSpacing);
   transition: var(--mainTransition);
 }
 
 .about-our-team-cont img {
-  width: 150px;
-  margin: auto 5px auto 0;
-  border-radius: 2px;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px 10px 0 0;
+  /* margin: auto 5px auto 0; */
+  /* border-radius: 2px; */
 }
 
 @media screen and (min-width: 650px) {
@@ -138,12 +146,19 @@
   }
 
   .about-our-team-main-div {
-    /* margin: 4rem auto; */
-    width: 60%;
+    margin: 4rem auto;
+    width: 55%;
   }
 
   .about-our-team-cont {
     margin: 3rem auto;
+    flex-direction: row;
+  }
+  .about-our-team-desc-div {
+    text-align: left;
+    width: 70%;
+    padding-left: 10px;
+    border-radius: 0 10px 10px 0;
   }
 
   .about-our-team-desc-div h4 {
@@ -152,13 +167,14 @@
 
   .about-our-team-desc-div p {
     font-size: 18px;
+    margin: 1rem 0;
     letter-spacing: var(--mainSpacing);
   }
 
   .about-our-team-cont img {
     width: 50%;
-  max-width: 350px;
-
+    border-radius: 10px 0 0 10px;
+    max-width: 450px;
   }
 }
 
