@@ -51,6 +51,7 @@
 
 .pro-car-img-active {
 	transform: scale(1.5);
+	box-shadow: 0 0 11px 0px #979797;
 }
 
 .pro-car-nextBtn,
@@ -93,3 +94,11 @@
   width: 100%;
   height: auto;
 } */
+
+@media screen and (max-width: 900px) {
+	.pro-car-main-div {
+		width: 99vw;
+		background-color: whitesmoke;
+		height: 380px;
+	}
+}

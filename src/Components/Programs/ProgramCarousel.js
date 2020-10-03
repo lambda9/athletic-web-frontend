@@ -7,6 +7,7 @@ import img5 from "../../Images/im20.jpg";
 import img6 from "../../Images/im21.jpg";
 import "./Programs.css";
 import Slide from "./Slide";
+import Slider from "./Slider";
 
 const dt = [
 	{
@@ -44,28 +45,30 @@ const dt = [
 class ProgramCarousel extends Component {
 	constructor(props) {
 		super();
-		let width = window.innerWidth;
-		console.log(width);
+		let windowWidth = window.innerWidth;
 		this.state = {
-			count: width < 900 ? 1 : 2,
-			currentIndex: width < 550 ? 1 : 2,
+			currentIndex: 1,
+			indexOffset: windowWidth < 900 ? 0 : 1,
 			direction: 0,
-			temp: dt,
-			transition: "none",
-			width: width < 900 ? 90 : 30,
+			temp: this.rotateRight(dt, 2),
+			transition: "transform ease-in-out 0.5s",
+			width: windowWidth < 900 ? 60 : 30,
+			offset: windowWidth < 900 ? -40.5 : 0,
 		};
 	}
 
 	handleWindowResize = () => {
 		if (window.innerWidth < 900) {
 			this.setState({
-				count: 1,
-				width: 90,
+				width: 60,
+				offset: -40.5,
+				indexOffset: 0,
 			});
 		} else {
 			this.setState({
-				count: 2,
 				width: 30,
+				offset: 0,
+				indexOffset: 1,
 			});
 		}
 	};
@@ -86,19 +89,11 @@ class ProgramCarousel extends Component {
 
 	componentDidMount() {
 		window.addEventListener("resize", this.handleWindowResize);
-		this.setState((state) => {
-			return {
-				temp: this.rotateRight(state.temp, 2),
-			};
-		});
-		setTimeout(this.updateTransition);
 	}
 
-	updateTransition = () => {
-		this.setState({
-			transition: "transform ease-in-out 0.5s",
-		});
-	};
+	componentWillUnmount() {
+		window.removeEventListener("resize", this.handleWindowResize);
+	}
 
 	rotateLeft = (arr) => {
 		let tempArr = [...arr];
@@ -126,38 +121,23 @@ class ProgramCarousel extends Component {
 		this.setState({
 			temp: newTemp,
 			direction: 0,
-			currentIndex: 2,
-			transition: "none",
+			currentIndex: 1,
 		});
-		setTimeout(this.updateTransition);
 	};
 
 	render() {
 		return (
 			<div className="pro-car-main-div">
-				<div
-					className="pro-car-img-div"
-					style={{
-						transition: this.state.transition,
-						transform: `translateX(${
-							-this.state.currentIndex * this.state.width
-						}vw)`,
-					}}
+				<Slider
+					images={this.state.temp}
+					animate={this.state.currentIndex !== 1}
+					activeIndex={this.state.currentIndex + 1}
+					translate={
+						-this.state.currentIndex * this.state.width + this.state.offset
+					}
+					width={this.state.width}
 					onTransitionEnd={this.onTransitionEnd}
-				>
-					{this.state.temp.map((item, index) => {
-						return (
-							<Slide
-								key={item.img}
-								item={item}
-								width={`${this.state.width}vw`}
-								active={
-									index === this.state.currentIndex + (this.state.count - 1)
-								}
-							/>
-						);
-					})}
-				</div>
+				/>
 				<div className="pro-car-nextBtn" onClick={this.nextImg}>
 					&#8250;
 				</div>
