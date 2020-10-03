@@ -1,19 +1,55 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { Col, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./FreeTrial.css";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
-      width: "25ch",
+      width: "90%",
     },
   },
+
+  submittButton: {},
 }));
+
+const ColorButton = withStyles((theme) => ({
+  root: {
+    margin: "1rem auto 0.1rem",
+    fontSize: '16px',
+    letterSpacing: "1.4px",
+    padding: "0.3rem 0.6rem",
+    border: "2px solid #459fb6",
+    textTransform: "uppercase",
+    textDecoration: "none",
+    backgroundColor: "#459fb6",
+    color: "black",
+    transition: "all 0.3s linear",
+    "&:hover": {
+      backgroundColor: "transparent",
+      color: "#459fb6",
+    },
+  },
+}))(Button);
+
+const CssTextField = withStyles({
+  root: {
+    "& label.Mui-focused": {
+      color: "#459fb6",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "#459fb6",
+    },
+    "&:hover .MuiInput-underline": {
+      borderBottomColor: "yellow",
+    },
+  },
+})(TextField);
 
 const ModalExample = (props) => {
   const classes = useStyles();
@@ -50,31 +86,50 @@ const ModalExample = (props) => {
   const toggle = () => setModal(!modal);
 
   return (
-    <div className="temp">
-      <form className={classes.root} noValidate autoComplete="off">
-        <TextField
-          required
-          id="outlined-basic"
-          label="Name"
-          placeholder="Name"
-        />
-        <TextField disabled id="standard-disabled" label="Disabled" />
-      </form>
+    <div>
+      <Button color="danger" onClick={toggle}>
+        Click me
+      </Button>
+      <Modal keyboard={false} isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>
+          TRY US - FILL OUT THE FORM BELOW & WE’LL EMAIL YOU A FREE 7-DAY PASS!
+        </ModalHeader>
+        <ModalBody>
+          <div className="temp">
+            <form className={classes.root} autoComplete="nope">
+
+            
+              <CssTextField
+                required
+                type="text"
+                label="Name"
+                variant="standard"
+                autoComplete="nope"
+              />
+              <CssTextField
+                required
+                type="email"
+                label="E-mail"
+                variant="standard"
+                autoComplete="nope"
+              />
+              <CssTextField
+                required
+                type="tel"
+                autoComplete="nope"
+                label="Phone Number"
+                variant="standard"
+              />
+              <ColorButton type="submitt" className={classes.submittButton}>
+                Submitt
+              </ColorButton>
+            </form>
+          </div>
+        </ModalBody>
+        <ModalFooter></ModalFooter>
+      </Modal>
     </div>
   );
 };
 
 export default ModalExample;
-
-// <Button color="danger" onClick={toggle}>
-//         Click me
-//       </Button>
-//       <Modal keyboard={false} isOpen={modal} toggle={toggle}>
-//         <ModalHeader toggle={toggle}>
-//           TRY US - FILL OUT THE FORM BELOW & WE’LL EMAIL YOU A FREE 7-DAY PASS!
-//         </ModalHeader>
-//         <ModalBody>
-
-//         </ModalBody>
-//         <ModalFooter></ModalFooter>
-//       </Modal>
