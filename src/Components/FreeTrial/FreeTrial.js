@@ -34,10 +34,16 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     width: "50%",
     display: "flex",
+
+  },
+
+  radioButton: {
+    marginTop: "0px",
+    marginBottom: '-5px'
   },
 
   selectEmpty: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(1),
   },
 }));
 
@@ -185,10 +191,12 @@ const ModalExample = (props) => {
                       value="morning"
                       control={<Radio />}
                       label="Morning"
+                      className={classes.radioButton}
                     />
                     <FormControlLabel
                       value="evening"
                       control={<Radio />}
+                      className={classes.radioButton}
                       label="Evening"
                     />
                   </RadioGroup>
