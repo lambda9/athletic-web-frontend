@@ -87,13 +87,8 @@ class ProgramCarousel extends Component {
 	componentDidMount() {
 		window.addEventListener("resize", this.handleWindowResize);
 		this.setState((state) => {
-			let tempArr = state.temp.slice();
-			for (let i = 0; i < this.state.count; i++) {
-				let last = tempArr.pop();
-				tempArr.unshift(last);
-			}
 			return {
-				temp: tempArr,
+				temp: this.rotateRight(state.temp, 2),
 			};
 		});
 		setTimeout(this.updateTransition);
@@ -105,35 +100,35 @@ class ProgramCarousel extends Component {
 		});
 	};
 
-	rotateLeft = (state) => {
-		let tempArr = state.temp.slice();
-		tempArr.push(tempArr[0]);
+	rotateLeft = (arr) => {
+		let tempArr = [...arr];
+		let first = tempArr[0];
+		tempArr.push(first);
 		tempArr.shift();
-		return {
-			temp: tempArr,
-			currentIndex: 1,
-			transition: "none",
-			direction: 0,
-		};
+		return tempArr;
 	};
 
-	rotateRight = (state) => {
-		let tempArr = state.temp.slice();
-		tempArr.unshift(tempArr.pop());
-		return {
-			temp: tempArr,
-			currentIndex: 1,
-			transition: "none",
-			direction: 0,
-		};
+	rotateRight = (arr, n = 1) => {
+		let tempArr = [...arr];
+		for (let i = 0; i < n; i++) {
+			tempArr.unshift(tempArr.pop());
+		}
+		return tempArr;
 	};
 
 	onTransitionEnd = () => {
+		let newTemp;
 		if (this.state.direction === 1) {
-			this.setState(this.rotateLeft);
+			newTemp = this.rotateLeft(this.state.temp);
 		} else if (this.state.direction === -1) {
-			this.setState(this.rotateRight);
+			newTemp = this.rotateRight(this.state.temp);
 		}
+		this.setState({
+			temp: newTemp,
+			direction: 0,
+			currentIndex: 2,
+			transition: "none",
+		});
 		setTimeout(this.updateTransition);
 	};
 
