@@ -5,12 +5,10 @@
 }
 
 .top-nav {
-	background-color: black;
+	background-color: rgba(0, 0, 0, 0);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border-bottom: 3px solid #459fb6;
-	box-shadow: 0px 2px 10px #000000ad;
 	width: 100%;
 }
 
@@ -61,8 +59,8 @@
 
 #nav-link-active {
 	padding: 0.2em 0;
-	border-bottom: 3px solid var(--primaryRed);
-	color: var(--primaryColor);
+	border-bottom: 3px solid var(--primaryColor);
+	color: var(--mainWhite);
 }
 
 .text-logo {

@@ -57,16 +57,16 @@ const Navbar = () => {
 		if (windowWidth < 1000) {
 			setLogoSize(SMALL_LOGO);
 			setNavWidth(SMALL);
-			document.querySelector(".main-content").style.paddingTop = "65px";
+			document.querySelector(".main-content").style.paddingTop = "0";
 		} else {
 			setNavWidth(LARGE);
 			setBottomNavOpen(false);
 			if (scroll > 300) {
 				setLogoSize(SMALL_LOGO);
-				document.querySelector(".main-content").style.paddingTop = "65px";
+				document.querySelector(".main-content").style.paddingTop = "0";
 			} else {
 				setLogoSize(LARGE_LOGO);
-				document.querySelector(".main-content").style.paddingTop = "100px";
+				document.querySelector(".main-content").style.paddingTop = "0";
 			}
 		}
 		if (windowWidth < 500) {

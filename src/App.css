@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -9,12 +11,13 @@ html {
 }
 
 :root {
-  --primaryColor: #459fb6;
+  --primaryColor: #1ca9c9;
+  --accentColor: #06242b; 
   --mainWhite: #ffffff;
   --primaryRed: #c13434;
   --offWhite: #e0e0e0;
-  --mainBlack: #222;
-  --mainGrey: #ececec;
+  --mainBlack: #04181d;
+  --mainGrey: #edfafd;
   --darkGrey: #cfcfcf;
   --mainTransition: all 0.4s linear;
   --fastTransition: all 0.3s linear;
@@ -35,7 +38,7 @@ html {
 body {
   color: var(--mainBlack);
   background: var(--mainWhite);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Spartan', sans-serif;
   line-height: 1.4;
   text-align: center;
   height: 100%;
