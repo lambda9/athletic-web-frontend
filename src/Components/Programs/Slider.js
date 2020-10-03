@@ -11,7 +11,6 @@ const Slider = ({
 	translate,
 	onTransitionEnd,
 }) => {
-	console.log("re render", animate);
 	const style = {
 		// transition: "tranform ease-in-out 0.5s",
 		transition: animate ? `transform ease-in-out 0.5s` : "none",

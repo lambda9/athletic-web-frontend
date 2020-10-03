@@ -52,7 +52,7 @@ class ProgramCarousel extends Component {
 			direction: 0,
 			temp: this.rotateRight(dt, 2),
 			transition: "transform ease-in-out 0.5s",
-			width: windowWidth < 900 ? 60 : 30,
+			width: windowWidth < 900 ? 60 : 33,
 			offset: windowWidth < 900 ? -40.5 : 0,
 		};
 	}
@@ -66,7 +66,7 @@ class ProgramCarousel extends Component {
 			});
 		} else {
 			this.setState({
-				width: 30,
+				width: 33,
 				offset: 0,
 				indexOffset: 1,
 			});
