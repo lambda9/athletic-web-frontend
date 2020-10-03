@@ -2,6 +2,12 @@
     margin-top: -1rem;
 }
 
+.tt {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .free-modal {
 
     margin: 0 auto;
