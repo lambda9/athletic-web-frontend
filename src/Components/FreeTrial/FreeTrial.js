@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import "./FreeTrial.css";
@@ -17,7 +17,7 @@ import NativeSelect from "@material-ui/core/NativeSelect";
 import "@material-ui/pickers";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = (theme) => ({
   root: {
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
@@ -34,18 +34,17 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     width: "50%",
     display: "flex",
-
   },
 
   radioButton: {
     marginTop: "0px",
-    marginBottom: '-5px'
+    marginBottom: "-5px",
   },
 
   selectEmpty: {
     marginTop: theme.spacing(1),
   },
-}));
+});
 
 const ColorButton = withStyles((theme) => ({
   root: {
@@ -77,160 +76,192 @@ const CssTextField = withStyles({
   },
 })(TextField);
 
-const ModalExample = (props) => {
-  const classes = useStyles();
+let dt = new Date() + 1
 
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2014-08-18T21:11:54")
-  );
-  const [value, setValue] = React.useState("best");
-  const [error, setError] = React.useState(false);
-  const [state, setState] = React.useState({
-    age: "",
-    name: "hai",
-  });
-  const handleChange = (event) => {
+class ModalExample extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      modal: false,
+      name: "",
+      email: "",
+      phoneNum: "",
+      time: "morning",
+      program: "cardio",
+      date: this.getNextDate(),
+    };
+  }
+
+  getNextDate() {
+    var dt = new Date()
+    dt.setDate(dt.getDate() + 1)
+    console.log(dt, "date date")
+    return dt.toISOString().split('T')[0]
+
+  }
+  handleChange = (event) => {
+    console.log(this.state.date)
     const name = event.target.name;
-    setState({
-      ...state,
+    console.log(name, event.target.value);
+    this.setState({
+      ...this.state,
       [name]: event.target.value,
     });
   };
 
-  const handleRadioChange = (event) => {
-    setValue(event.target.value);
-    setError(false);
+  handleSubmitt = () => {
+    console.log(this.state);
   };
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
+  toggle = () => {
+    console.log("im in toggle");
+    this.setState({
+      modal: !this.state.modal,
+    });
   };
-  const inputFields = [
-    {
-      id: "name",
-      name: "name",
-      for: "name",
-      type: "text",
-      placeholder: "Name",
-      required: true,
-    },
-    {
-      id: "email",
-      name: "email",
-      for: "email",
-      type: "email",
-      placeholder: "Email",
-      required: true,
-    },
-    {
-      id: "phoneNumber",
-      name: "phoneNumber",
-      for: "phoneNumber",
-      type: "tel",
-      placeholder: "Phone Number",
-      required: true,
-    },
-  ];
 
-  const [modal, setModal] = useState(false);
+  render() {
+    const { classes } = this.props;
+    return (
+      <div>
+        <Button
+          color="danger"
+          onClick={() => {
+            this.setState({ modal: !this.state.modal });
+          }}
+        >
+          Click me
+        </Button>
+        <Modal keyboard={false} isOpen={this.state.modal} toggle={this.toggle}>
+          <ModalHeader toggle={this.toggle}>
+            TRY US - FILL OUT THE FORM BELOW & WE’LL EMAIL YOU A FREE 7-DAY
+            PASS!
+          </ModalHeader>
+          <ModalBody>
+            <div className="temp">
+              <form className={classes.root} autoComplete="nope">
+                <CssTextField
+                  required
+                  keyboard={false}
+                  type="text"
+                  name="name"
+                  value={this.state.name}
+                  label="Name"
+                  variant="standard"
+                  onChange={this.handleChange}
+                />
+                <CssTextField
+                  required
+                  type="email"
+                  value={this.state.email}
+                  name="email"
+                  label="E-mail"
+                  variant="standard"
+                  onChange={this.handleChange}
+                />
+                <CssTextField
+                  required
+                  value={this.state.phoneNum}
+                  type="tel"
+                  name="phoneNum"
+                  label="Phone Number"
+                  variant="standard"
+                  onChange={this.handleChange}
+                />
 
-  const toggle = () => setModal(!modal);
+                <TextField
+                  label="Date"
+                  name="date"    
+                  type="date"
+                  min="1980-01-01" max="2000-01-01"              
+                  value={this.state.date}
+                  onChange={this.handleChange}
+                />
+                <div className="tt">
+                  <FormControl
+                    component="fieldset"
+                    className={classes.radioControl}
+                  >
+                    <FormLabel component="legend">Choose Time</FormLabel>
+                    <RadioGroup
+                      aria-label="morning"
+                      name="time"
+                      value={this.state.time}
+                      onChange={this.handleChange}
+                    >
+                      <FormControlLabel
+                        value="morning"
+                        control={<Radio />}
+                        label="Morning"
+                        className={classes.radioButton}
+                      />
+                      <FormControlLabel
+                        value="evening"
+                        control={<Radio />}
+                        className={classes.radioButton}
+                        label="Evening"
+                      />
+                    </RadioGroup>
+                  </FormControl>
 
-  return (
-    <div>
-      <Button color="danger" onClick={toggle}>
-        Click me
-      </Button>
-      <Modal keyboard={false} isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>
-          TRY US - FILL OUT THE FORM BELOW & WE’LL EMAIL YOU A FREE 7-DAY PASS!
-        </ModalHeader>
-        <ModalBody>
-          <div className="temp">
-            <form className={classes.root} autoComplete="nope">
-              <CssTextField
-                required
-                type="text"
-                label="Name"
-                variant="standard"
-              />
-              <CssTextField
-                required
-                type="email"
-                label="E-mail"
-                variant="standard"
-              />
-              <CssTextField
-                required
-                type="tel"
-                label="Phone Number"
-                variant="standard"
-              />
+                  <FormControl>
+                    <InputLabel htmlFor="select-program">Program</InputLabel>
+                    <Select
+                      native
+                      name="program"
+                      value={this.state.program}
+                      onChange={this.handleChange}
+                    >
+                      <option aria-label="None" value="" />
+                      <option value={"Cardio"}>Cardio</option>
+                      <option value={"weightLoss"}>Weight Loss</option>
+                      <option value={"muscleGain"}>Muscle Gain</option>
+                    </Select>
+                  </FormControl>
+                </div>
 
-              <CssTextField
-                required
-                type="date"
-                label="date"
-                value="date"
-                variant="standard"
-              />
-              <div className='tt'>
-                <FormControl
-                  component="fieldset"
-                  error={error}
-                  className={classes.radioControl}
+                <ColorButton
+                  onClick={this.handleSubmitt}
+                  className={classes.submittButton}
                 >
-                  <FormLabel component="legend">Choose Time</FormLabel>
-                  <RadioGroup
-                    aria-label="morning"
-                    name="morning"
-                    value={value}
-                    onChange={handleRadioChange}
-                  >
-                    <FormControlLabel
-                      value="morning"
-                      control={<Radio />}
-                      label="Morning"
-                      className={classes.radioButton}
-                    />
-                    <FormControlLabel
-                      value="evening"
-                      control={<Radio />}
-                      className={classes.radioButton}
-                      label="Evening"
-                    />
-                  </RadioGroup>
-                </FormControl>
+                  Submitt
+                </ColorButton>
+              </form>
+            </div>
+          </ModalBody>
+          <ModalFooter></ModalFooter>
+        </Modal>
+      </div>
+    );
+  }
+}
 
-                <FormControl>
-                  <InputLabel htmlFor="select-program">Program</InputLabel>
-                  <Select
-                    native
-                    value={state.age}
-                    onChange={handleChange}
-                    inputProps={{
-                      name: "Program",
-                      id: "select-preogram",
-                    }}
-                  >
-                    <option aria-label="None" value="" />
-                    <option value={"Cardio"}>Cardio</option>
-                    <option value={"weightLoss"}>Weight Loss</option>
-                    <option value={"muscleGain"}>Muscle Gain</option>
-                  </Select>
-                </FormControl>
-              </div>
+export default withStyles(useStyles)(ModalExample);
 
-              <ColorButton type="submitt" className={classes.submittButton}>
-                Submitt
-              </ColorButton>
-            </form>
-          </div>
-        </ModalBody>
-        <ModalFooter></ModalFooter>
-      </Modal>
-    </div>
-  );
-};
-
-export default ModalExample;
+// const inputFields = [
+//   {
+//     id: "name",
+//     name: "name",
+//     for: "name",
+//     type: "text",
+//     placeholder: "Name",
+//     required: true,
+//   },
+//   {
+//     id: "email",
+//     name: "email",
+//     for: "email",
+//     type: "email",
+//     placeholder: "Email",
+//     required: true,
+//   },
+//   {
+//     id: "phoneNumber",
+//     name: "phoneNumber",
+//     for: "phoneNumber",
+//     type: "tel",
+//     placeholder: "Phone Number",
+//     required: true,
+//   },
+// ];

@@ -8,6 +8,13 @@
     justify-content: space-evenly;
 }
 
+.ms::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+
+    color: white;
+  
+  }
+
+  
 .free-modal {
 
     margin: 0 auto;
