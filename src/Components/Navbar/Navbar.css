@@ -14,7 +14,10 @@
 	width: 37%;
 	text-align: left;
 	padding-left: 5%;
-	transition: all linear 0.2s;
+}
+
+.nav-logo img {
+	transition: all ease-in-out 0.3s;
 }
 
 .nav-links-container {
