@@ -14,96 +14,96 @@ const SMALL_LOGO = "4em";
 const LARGE_LOGO = "7em";
 
 const Navbar = () => {
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-	const [scroll, setScroll] = useState(window.scrollY);
-	const [navWidth, setNavWidth] = useState(SMALL);
-	const [logoSize, setLogoSize] = useState(LARGE_LOGO);
-	const [bottomNavOpen, setBottomNavOpen] = useState(false);
-	const [btnGroupVisible, setBtnGroupVisible] = useState(true);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [scroll, setScroll] = useState(window.scrollY);
+  const [navWidth, setNavWidth] = useState(SMALL);
+  const [logoSize, setLogoSize] = useState(LARGE_LOGO);
+  const [bottomNavOpen, setBottomNavOpen] = useState(false);
+  const [btnGroupVisible, setBtnGroupVisible] = useState(true);
 
-	const links = [
-		["/", "home"],
-		["/programs", "programs"],
-		["/membership", "membership"],
-		["/gallery", "gallery"],
-		["/aboutUs", "about us"],
-		["/contactUs", "contact us"],
-	];
+  const links = [
+    ["/", "home"],
+    ["/programs", "programs"],
+    ["/membership", "membership"],
+    ["/gallery", "gallery"],
+    ["/aboutUs", "about us"],
+    ["/contactUs", "contact us"],
+  ];
 
-	const location = useLocation();
+  const location = useLocation();
 
-	const handleWindowResize = () => {
-		setWindowWidth(window.innerWidth);
-	};
+  const handleWindowResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
 
-	const handleWindowScroll = () => {
-		setScroll(window.scrollY);
-	};
+  const handleWindowScroll = () => {
+    setScroll(window.scrollY);
+  };
 
-	const onLinkClick = () => {
-		setBottomNavOpen(false);
-	};
+  const onLinkClick = () => {
+    setBottomNavOpen(false);
+  };
 
-	useEffect(() => {
-		window.addEventListener("resize", handleWindowResize);
-		window.addEventListener("scroll", handleWindowScroll);
-		return () => {
-			window.removeEventListener("resize", handleWindowResize);
-			window.removeEventListener("scroll", handleWindowScroll);
-		};
-	}, []);
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    window.addEventListener("scroll", handleWindowScroll);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+      window.removeEventListener("scroll", handleWindowScroll);
+    };
+  }, []);
 
-	useEffect(() => {
-		if (windowWidth < 1000) {
-			setLogoSize(SMALL_LOGO);
-			setNavWidth(SMALL);
-			document.querySelector(".main-content").style.paddingTop = "65px";
-		} else {
-			setNavWidth(LARGE);
-			setBottomNavOpen(false);
-			if (scroll > 300) {
-				setLogoSize(SMALL_LOGO);
-				document.querySelector(".main-content").style.paddingTop = "65px";
-			} else {
-				setLogoSize(LARGE_LOGO);
-				document.querySelector(".main-content").style.paddingTop = "100px";
-			}
-		}
-		if (windowWidth < 500) {
-			setBtnGroupVisible(false);
-		} else {
-			setBtnGroupVisible(true);
-		}
-	}, [windowWidth, scroll]);
+  useEffect(() => {
+    if (windowWidth < 1000) {
+      setLogoSize(SMALL_LOGO);
+      setNavWidth(SMALL);
+      document.querySelector(".main-content").style.paddingTop = "65px";
+    } else {
+      setNavWidth(LARGE);
+      setBottomNavOpen(false);
+      if (scroll > 300) {
+        setLogoSize(SMALL_LOGO);
+        document.querySelector(".main-content").style.paddingTop = "65px";
+      } else {
+        setLogoSize(LARGE_LOGO);
+        document.querySelector(".main-content").style.paddingTop = "100px";
+      }
+    }
+    if (windowWidth < 500) {
+      setBtnGroupVisible(false);
+    } else {
+      setBtnGroupVisible(true);
+    }
+  }, [windowWidth, scroll]);
 
-	return (
-		<nav className="top-nav-container">
-			<div className="top-nav">
-				<Logo width={logoSize} />
-				<TextLogo isVisible={navWidth !== LARGE ? true : false} />
-				<NavLinkGroup
-					isVisible={navWidth === LARGE ? true : false}
-					currentLink={location.pathname}
-					links={links}
-				/>
-				<ButtonGroup isVisible={btnGroupVisible} />
-				<NavToggleButton
-					onClick={() => {
-						setBottomNavOpen(!bottomNavOpen);
-					}}
-					isOpen={bottomNavOpen}
-					isVisible={navWidth === SMALL ? true : false}
-				/>
-			</div>
-			<div className="nav-bottom"></div>
-			<BottomNav
-				links={links}
-				currentLink={location.pathname}
-				visible={bottomNavOpen}
-				onLinkClick={onLinkClick}
-			/>
-		</nav>
-	);
+  return (
+    <nav className="top-nav-container">
+      <div className="top-nav">
+        <Logo width={logoSize} />
+        <TextLogo isVisible={navWidth !== LARGE ? true : false} />
+        <NavLinkGroup
+          isVisible={navWidth === LARGE ? true : false}
+          currentLink={location.pathname}
+          links={links}
+        />
+        <ButtonGroup isVisible={btnGroupVisible} />
+        <NavToggleButton
+          onClick={() => {
+            setBottomNavOpen(!bottomNavOpen);
+          }}
+          isOpen={bottomNavOpen}
+          isVisible={navWidth === SMALL ? true : false}
+        />
+      </div>
+      <div className="nav-bottom"></div>
+      <BottomNav
+        links={links}
+        currentLink={location.pathname}
+        visible={bottomNavOpen}
+        onLinkClick={onLinkClick}
+      />
+    </nav>
+  );
 };
 
 export default Navbar;
