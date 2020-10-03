@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import Hero from "../Hero";
 import bgImg from "../../Images/im9.jpg";
-import EntryForm from "./EntryForm";
-
-
+import FreeTrial from '../FreeTrial/FreeTrial'
 class ContactUs extends Component {
   render() {
     return (
@@ -13,8 +11,7 @@ class ContactUs extends Component {
           title="Contact us"
           description="Mail, call, text or meet on-site"
         ></Hero>
-
-        <EntryForm />
+        <FreeTrial />
       </div>
     );
   }

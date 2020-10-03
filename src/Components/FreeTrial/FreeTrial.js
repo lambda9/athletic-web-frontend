@@ -3,8 +3,21 @@ import { Link } from "react-router-dom";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { Col, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import "./FreeTrial.css";
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+  },
+}));
 
 const ModalExample = (props) => {
+  const classes = useStyles();
+
   const inputFields = [
     {
       id: "name",
@@ -37,46 +50,31 @@ const ModalExample = (props) => {
   const toggle = () => setModal(!modal);
 
   return (
-    <div>
-      <Button color="danger" onClick={toggle}>
-        Click me
-      </Button>
-      <Modal keyboard={false} isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>
-          TRY US - FILL OUT THE FORM BELOW & WE’LL EMAIL YOU A FREE 7-DAY PASS!
-        </ModalHeader>
-        <ModalBody>
-          <Form>
-            {inputFields.map((item) => {
-              return (
-                <FormGroup className="free-form-group">
-                  <Label for={item.for} className={"free-modal"}>
-                    {item.placeholder}
-                  </Label>
-                  <Input
-                    type={item.type}
-                    name={item.name}
-                    id={item.id}
-                    placeholder={item.placeholder}
-                    required={item.required}
-                    className={"free-input"}
-                  />
-                </FormGroup>
-              );
-            })}
-            <div className='free-buttons'>
-            <Button>Submitt</Button>{" "}
-            <Button color="secondary" onClick={toggle}>
-            Cancel
-            </Button>
-            </div>
-            <span >By Submitting this form your agree to our terms and condtions</span>
-          </Form>
-        </ModalBody>
-        <ModalFooter></ModalFooter>
-      </Modal>
+    <div className="temp">
+      <form className={classes.root} noValidate autoComplete="off">
+        <TextField
+          required
+          id="outlined-basic"
+          label="Name"
+          placeholder="Name"
+        />
+        <TextField disabled id="standard-disabled" label="Disabled" />
+      </form>
     </div>
   );
 };
 
 export default ModalExample;
+
+// <Button color="danger" onClick={toggle}>
+//         Click me
+//       </Button>
+//       <Modal keyboard={false} isOpen={modal} toggle={toggle}>
+//         <ModalHeader toggle={toggle}>
+//           TRY US - FILL OUT THE FORM BELOW & WE’LL EMAIL YOU A FREE 7-DAY PASS!
+//         </ModalHeader>
+//         <ModalBody>
+
+//         </ModalBody>
+//         <ModalFooter></ModalFooter>
+//       </Modal>

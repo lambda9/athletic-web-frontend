@@ -1,6 +1,7 @@
 .temp {
-    /* width: 250px; */
-    /* margin: auto; */
+    background-color: cornsilk;
+    margin: 10px;
+    padding: 5px;
 }
 
 .free-modal {
