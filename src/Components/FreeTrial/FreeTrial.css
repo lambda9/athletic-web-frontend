@@ -1,39 +1,68 @@
+.free-trial-main-div {
+    width: 95%;
+    margin: 5rem auto;
+    padding: 0.8rem;
+    border: 2px solid black;
+    transition: var(--mainTransition);
+}
+
+.free-trial-head-text {
+    width: 90%;
+    font-size: 16px;
+    margin: 0rem auto 2rem;
+}
+
 .temp {
-    margin-top: -1rem;
+  margin-top: -1rem;
 }
 
-.tt {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-evenly;
+.free-trial-entry-fields-selection {
+  margin: 1rem auto 0;
+  width: 80%;
+  display: flex;
+  justify-content: center;
 }
 
-.ms::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.free-trial-terms-text {
+    font-size: 12px;
+    text-decoration: none;
+}
 
-    color: white;
-  
-  }
-
-  
 .free-modal {
-
-    margin: 0 auto;
-    text-align: left;
-    /* background-color: chocolate; */
+  margin: 0 auto;
+  text-align: left;
+  /* background-color: chocolate; */
 }
 
 .free-input {
-    margin: 0.1rem auto 1rem;
+  margin: 0.1rem auto 1rem;
 }
 
 .free-form-group {
-    text-align: left;
-    margin: 0;
-    /* background-color: cornflowerblue; */
+  text-align: left;
+  margin: 0;
 }
 
 .free-buttons {
-    display: flex;
-    justify-content: space-evenly;
-    width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+}
+
+@media screen and (min-width: 800px) {
+    .free-trial-main-div {
+        width: 65%;
+        padding: 2rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .free-trial-main-div {
+        width: 75%;
+        padding: 1.3rem;
+    }
+
+    .free-trial-head-text {
+        font-size: 18px;
+    }
 }
