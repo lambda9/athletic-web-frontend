@@ -140,7 +140,7 @@ class ModalExample extends Component {
           </ModalHeader>
           <ModalBody>
             <div className="temp">
-              <form className={classes.root} autoComplete="nope">
+              <form className={classes.root} autoComplete="nope" onSubmit={this.handleSubmitt}>
                 <CssTextField
                   required
                   keyboard={false}
@@ -208,6 +208,7 @@ class ModalExample extends Component {
                   <FormControl>
                     <InputLabel htmlFor="select-program">Program</InputLabel>
                     <Select
+                    required
                       native
                       name="program"
                       value={this.state.program}
@@ -222,7 +223,7 @@ class ModalExample extends Component {
                 </div>
 
                 <ColorButton
-                  onClick={this.handleSubmitt}
+                type='submitt'
                   className={classes.submittButton}
                 >
                   Submitt
