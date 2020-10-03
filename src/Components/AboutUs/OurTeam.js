@@ -25,7 +25,7 @@ function OurTeam() {
   return (
     <div
       className="about-our-team-main-div"
-      data-aos="fade-down"
+      data-aos="fade-up"
       data-aos-duration="1000"
       
     >

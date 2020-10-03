@@ -38,7 +38,7 @@ function OurValues() {
   ];
 
   return (
-    <div className="ourvalues" data-aos="fade-in" data-aos-duration="1000">
+    <div className="ourvalues" data-aos="fade-up" data-aos-duration="1000">
       <Title>Our values</Title>
       <div className="ourvalues-center">
         {services.map((item, index) => {
