@@ -5,7 +5,7 @@ import FreeTrialEntryFields from "./FreeTrialEntryFields";
 import "./FreeTrial.css";
 import { Link } from "react-router-dom";
 
-class ModalExample extends Component {
+class FreeTrialModal extends Component {
   constructor(props) {
     super(props);
 
@@ -48,6 +48,6 @@ class ModalExample extends Component {
   }
 }
 
-export default ModalExample;
+export default FreeTrialModal;
 
 
