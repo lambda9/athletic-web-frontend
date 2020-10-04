@@ -27,7 +27,6 @@ export default function ControlledAccordions() {
     };
   }, []);
 
-
   const handleWindowResize = () => {
     setwidth(window.innerWidth)
   }
@@ -35,36 +34,36 @@ export default function ControlledAccordions() {
   const useStyles = makeStyles((theme) => ({
     root: {
       width: "90%",
+      // backgroundColor: 'transparent',
       margin: "1rem auto",
       "& .MuiAccordion-rounded": {
         margin: "0.5rem auto",
       },
       "& .Mui-expanded": {},
     },
-
-    expanded: {
+    acc: {
       transition: "all linear 0.2s",
+      backgroundColor: 'transparent',
       "&:hover": {
         boxShadow: "0px 0px 4px 0px black",
       },
     },
-
     head: {
       color: c2,
-      backgroundColor: mainGrey,
+      // backgroundColor: mainWhite,
       "& .Mui-expanded": {
         color: primaryColor,
       },
     },
     heading: {
-      fontSize: width < 550 ? "12px" : "22px",
+      fontSize: width < 550 ? "14px" : "22px",
       transition: "all linear 0.2s",
       flexBasis: "100%",
       margin: "0.09rem auto",
       textAlign: "left",
     },
-
     details: {
+      fontSize: width < 550 ? "11px" : "18px",
       textAlign: "left",
     },
   }));
@@ -81,7 +80,7 @@ export default function ControlledAccordions() {
       <Accordion
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
-        className={classes.expanded}
+        className={classes.acc}
       >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -106,7 +105,7 @@ export default function ControlledAccordions() {
       </Accordion>
       <Accordion
         expanded={expanded === "panel2"}
-        className={classes.expanded}
+        className={classes.acc}
         onChange={handleChange("panel2")}
       >
         <AccordionSummary
@@ -130,7 +129,7 @@ export default function ControlledAccordions() {
       </Accordion>
       <Accordion
         expanded={expanded === "panel3"}
-        className={classes.expanded}
+        className={classes.acc}
         onChange={handleChange("panel3")}
       >
         <AccordionSummary

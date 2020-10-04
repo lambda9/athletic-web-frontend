@@ -5,7 +5,7 @@ import HomePageFAQ from './HomePageFAQ'
 class FAQ extends Component {
     render() {
         return (
-            <div>
+            <div className='faq-page'>
                 <h1>Im from FAQ</h1>
 
                 <HomePageFAQ />
