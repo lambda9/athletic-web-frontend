@@ -50,7 +50,7 @@ const dt = [
 
 const ProgramCarousel = ({
 	data = dt,
-	autoStart = false,
+	autoStart = true,
 	transitionDelay,
 	transitionDuration,
 }) => {
