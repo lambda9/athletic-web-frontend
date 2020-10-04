@@ -1,0 +1,25 @@
+.home-enquiry-main-div {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-top: 2px solid var(--primaryRed);
+    border-bottom: 2px solid var(--primaryRed);
+    
+}
+
+.home-enquiry-left-div {
+    width: 100%;
+}
+
+.home-enquiry-right-div {
+    width: 95%;
+}
+
+@media screen and (min-width: 550px) {
+    .home-enquiry-main-div {
+        flex-direction: row;
+    }
+}
