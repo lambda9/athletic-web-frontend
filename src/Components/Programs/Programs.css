@@ -19,7 +19,7 @@
 }
 
 .pro-car-img-div > div {
-	padding: 3em;
+	padding: 3vw;
 	z-index: 0;
 }
 
@@ -27,7 +27,7 @@
 	width: 100%;
 }
 
-.img-div > img {
+.slide-container > img {
 	transition: transform ease-in-out 0.5s;
 }
 /* .pro-car-img-div img{
@@ -97,6 +97,6 @@
 	}
 
 	.pro-car-img-div > div {
-		padding: 2em;
+		padding: 0 6vw;
 	}
 }

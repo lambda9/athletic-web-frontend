@@ -4,7 +4,7 @@ import Slide from "./Slide";
 
 const Slider = ({
 	images,
-	animate,
+	transition,
 	activeIndex,
 	transitionDelay,
 	width,
@@ -13,7 +13,8 @@ const Slider = ({
 }) => {
 	const style = {
 		// transition: "tranform ease-in-out 0.5s",
-		transition: animate ? `transform ease-in-out 0.5s` : "none",
+		// transition: animate ? `transform ease-in-out 0.5s` : "none",
+		transition: transition,
 		transform: `translateX(${translate}vw)`,
 	};
 
@@ -26,7 +27,7 @@ const Slider = ({
 			{images.map((item, index) => {
 				return (
 					<Slide
-						key={item.img}
+						key={item.id}
 						item={item}
 						width={`${width}vw`}
 						active={index === activeIndex}
