@@ -37,6 +37,20 @@
   transition: var(--mainTransition);
 } */
 
+.programs-image-overlay {
+	text-align: left;
+	bottom: 0%;
+	left: 0%;
+	width: 100%;
+	background-color: #c13434e0;
+}
+
+.programs-image-overlay * {
+	margin: 0.7rem;
+	font-family: "Spartan";
+	color: var(--offWhite);
+}
+
 .pro-car-img-unactive {
 	transform: scale(0.9);
 	box-shadow: 0 0 11px 0px #313131;
@@ -98,5 +112,17 @@
 
 	.pro-car-img-div > div {
 		padding: 0 6vw;
+	}
+
+	.programs-image-overlay * {
+		margin: 0.5rem;
+	}
+
+	.programs-image-overlay > h3 {
+		font-size: 0.7rem;
+	}
+
+	.programs-image-overlay > p {
+		font-size: 0.2rem;
 	}
 }

@@ -11,14 +11,24 @@ const Slide = ({ item, active, width, transition }) => {
 				e.stopPropagation();
 			}}
 		>
-			<img
+			<div
 				className={active ? "pro-car-img-active" : "pro-car-img-unactive "}
-				src={item.img}
-				alt={item.title}
 				style={{
 					transition: transition,
+					position: "relative",
 				}}
-			></img>
+			>
+				<img src={item.img} alt={item.title}></img>
+				<div
+					className="programs-image-overlay"
+					style={{
+						position: "absolute",
+					}}
+				>
+					<h3>{item.title}</h3>
+					<p>{item.desc}</p>
+				</div>
+			</div>
 		</div>
 	);
 };

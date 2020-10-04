@@ -12,32 +12,39 @@ const dt = [
 	{
 		id: 0,
 		img: img1,
-		title: "title",
+		title: "Cardio",
+		desc:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",
 	},
 	{
 		id: 1,
 		img: img2,
-		title: "title",
+		title: "Zumba",
+		desc: "Are you increased weight and below bottom high five",
 	},
 	{
 		id: 2,
 		img: img3,
-		title: "title",
+		title: "Yoga",
+		desc: "Are you increased weight and below bottom high five",
 	},
 	{
 		id: 3,
 		img: img4,
-		title: "title",
+		title: "Weight Loss",
+		desc: "increase you weight loss in less than hour",
 	},
 	{
 		id: 4,
 		img: img5,
-		title: "title",
+		title: "Weight Gain",
+		desc: "did weight stop you from getting gf get here and we'll share",
 	},
 	{
 		id: 5,
 		img: img6,
-		title: "title",
+		title: "Strength",
+		desc: "increase stamina strength to by building a weight",
 	},
 ];
 
