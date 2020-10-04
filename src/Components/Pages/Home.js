@@ -20,20 +20,8 @@ function Home() {
 				width={100}
 				heightToWidthRatio={0.43}
 				slideDelay={2000}
-				transitionDelay={1000}
+				transitionDelay={500}
 			/>
-			<div
-				className="our-programs-title"
-				style={{
-					padding: "2em 0em",
-				}}
-			>
-				<Title>Our Programs</Title>
-			</div>
-			<ProgramCarousel transitionDelay={2000} transitionDuration={500} />
-			<Link to="/programs" className="button-primary">
-				Checkout More
-			</Link>
 			<CardGroup />
 		</div>
 	);
