@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormLabel from "@material-ui/core/FormLabel";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import "../FreeTrial/FreeTrial.css";
 import "./HomeEnquiry.css";
+
+const PRIME_COLOR = "#459fb6"
 
 const useStyles = (theme) => ({
   root: {
@@ -24,10 +19,22 @@ const useStyles = (theme) => ({
 const CssTextField = withStyles({
   root: {
     "& label.Mui-focused": {
-      color: "#459fb6",
+      color: PRIME_COLOR,
     },
     "& .MuiInput-underline:after": {
-      borderBottomColor: "#459fb6",
+      borderBottomColor: PRIME_COLOR,
+    },
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "black",
+      },
+      "&:hover fieldset": {
+      color: PRIME_COLOR,
+      borderColor: PRIME_COLOR,
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: PRIME_COLOR,
+      },
     },
   },
 })(TextField);
@@ -52,17 +59,19 @@ class HomePageEnquiry extends Component {
     });
   };
 
-  handleSubmitt = () => {
+  handleSubmit = (event) => {
     console.log(this.state);
   };
 
-  handleReset = () => {
+  handleReset = (event) => {
     this.setState({
       name: "",
       email: "",
       phoneNum: "",
       subject: "",
     });
+    event.preventDefault()
+
   };
 
   render() {
@@ -72,7 +81,7 @@ class HomePageEnquiry extends Component {
         <div className="home-enquiry-left-div">
           <span>Interested</span>
           <h2>Any query</h2>
-          <h3>Fill out the form we will reach as soon...</h3>
+          <h3>Fill out the form and we will reach you as soon as possible...</h3>
         </div>
 
         <div className="home-enquiry-right-div">
@@ -118,19 +127,21 @@ class HomePageEnquiry extends Component {
               onChange={this.handleChange}
             />
 
-            <button
-              onClick={this.handleSubmitt}
-              className="button-primary btn-margin"
-              type="submitt"
-            >
-              Submitt
-            </button>
-            <button
-              onClick={this.handleReset}
-              className="button-primary  btn-margin cancel-btn"
-            >
-              reset
-            </button>
+            <div className="home-enquiry-btn-container">
+              <button
+                onClick={this.handleSubmit}
+                className="button-primary"
+                type="submit"
+              >
+                Submit
+              </button>
+              <button
+                onClick={this.handleReset}
+                className="button-primary  cancel-btn"
+              >
+                reset
+              </button>
+            </div>
           </form>
         </div>
       </div>

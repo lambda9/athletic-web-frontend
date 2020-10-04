@@ -47,7 +47,7 @@ const useStyles = (theme) => ({
   },
 
   temp: {
-    borderBottomColor: '#459fb6',
+    borderBottomColor: "#459fb6",
   },
 
   selectEmpty: {
@@ -77,29 +77,29 @@ const SelectField = withStyles({
   },
   input: {
     borderRadius: 4,
-    position: 'relative',
-    border: '1px solid #ced4da',
+    position: "relative",
+    border: "1px solid #ced4da",
     fontSize: 16,
-    padding: '10px 26px 10px 12px',
+    padding: "10px 26px 10px 12px",
     // Use the system font instead of the default Roboto font.
     fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
+      "-apple-system",
+      "BlinkMacSystemFont",
       '"Segoe UI"',
-      'Roboto',
+      "Roboto",
       '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
+      "Arial",
+      "sans-serif",
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
-    ].join(','),
-    '&:focus': {
+    ].join(","),
+    "&:focus": {
       borderRadius: 4,
-      borderColor: '#80bdff',
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
+      borderColor: "#80bdff",
+      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.25)",
     },
-  }
+  },
 })(Select);
 
 class FreeTrialEntryFields extends Component {
@@ -130,7 +130,7 @@ class FreeTrialEntryFields extends Component {
     });
   };
 
-  handleSubmitt = () => {
+  handleSubmit = () => {
     console.log(this.state);
   };
 
@@ -141,7 +141,7 @@ class FreeTrialEntryFields extends Component {
         <form
           className={classes.root}
           autoComplete="nope"
-          onSubmit={this.handleSubmitt}
+          onSubmit={this.handleSubmit}
         >
           <CssTextField
             required
@@ -173,7 +173,7 @@ class FreeTrialEntryFields extends Component {
           />
 
           <CssTextField
-          required
+            required
             label="Date"
             name="date"
             type="date"
@@ -210,28 +210,31 @@ class FreeTrialEntryFields extends Component {
                 required
                 native
                 name="program"
-                defaultValue='None'
+                defaultValue="None"
                 className={classes.temp}
                 value={this.state.program}
                 onChange={this.handleChange}
               >
-                <option aria-label="None" value="none">None</option>
+                <option aria-label="None" value="none">
+                  None
+                </option>
                 <option value={"Cardio"}>Cardio</option>
                 <option value={"weightLoss"}>Weight Loss</option>
                 <option value={"muscleGain"}>Muscle Gain</option>
               </SelectField>
             </FormControl>
           </div>
-
-          <button className="button-primary btn-margin" type="submitt">
-            Submitt
-          </button>
-          <button
-            onClick={this.props.back}
-            className="button-primary  cancel-btn"
-          >
-            Cancel
-          </button>
+          <div className="free-trial-btn-container">
+            <button className="button-primary btn-margin" type="submit">
+              Submit
+            </button>
+            <button
+              onClick={this.props.back}
+              className="button-primary  cancel-btn"
+            >
+              Cancel
+            </button>
+          </div>
         </form>
       </div>
     );

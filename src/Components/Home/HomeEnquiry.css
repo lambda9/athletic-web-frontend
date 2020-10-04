@@ -1,6 +1,6 @@
 .home-enquiry-main-div {
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0rem;
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -12,14 +12,43 @@
 
 .home-enquiry-left-div {
     width: 100%;
+    /* background-color: wheat; */
 }
 
 .home-enquiry-right-div {
-    width: 95%;
+    width: 100%;
+    /* background-color: rgb(170, 115, 12); */
+
 }
 
-@media screen and (min-width: 550px) {
+.home-enquiry-btn-container {
+    margin: 0.5rem auto;
+    /* background-color: whitesmoke; */
+}
+
+.home-enquiry-btn-container button {
+    margin: 0.2rem 1rem;
+}
+
+@media screen and (min-width: 700px) {
     .home-enquiry-main-div {
+        padding: 1rem 0rem;
         flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .home-enquiry-left-div {
+        width: 55%;
+    }
+
+    .home-enquiry-btn-container {
+        font-size: 0.2em;
+    }
+
+    .home-enquiry-btn-container button {
+        margin: 0.2rem 1.7rem;
+    }
+    .home-enquiry-right-div {
+        width: 40%;
     }
 }

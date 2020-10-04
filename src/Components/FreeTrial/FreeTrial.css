@@ -43,23 +43,8 @@
   margin: 0;
 }
 
-.entry-fields-submitt-btn {
-  display: inline-block;
-  text-decoration: none;
-  letter-spacing: var(--mainSpacing);
-  color: var(--mainBlack);
-  background: var(--primaryColor);
-  outline: none;
-  font-size: 12px;
-  padding: 0.3rem 0.6rem;
-  border: 2px solid var(--primaryColor);
-  transition: var(--mainTransition);
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
 .btn-margin {
-  margin: 1rem 1rem 0.1rem;
+  margin: 0rem 1rem 0.1rem;
 }
 
 .cancel-btn {
@@ -75,6 +60,10 @@
   
 }
 
+.free-trial-btn-container {
+  margin: 1.2rem auto 0.2rem
+
+}
 
 .free-buttons {
   display: flex;
@@ -89,7 +78,7 @@
   }
 
   .btn-margin {
-    margin: 2rem 2rem 0.2rem;
+    margin: 0.2rem 2rem 0.2rem;
   }
 
   .free-trial-head-text {
@@ -101,4 +90,8 @@
     width: 60%;
     padding: 2rem;
   }
+  .btn-margin {
+    margin: 0.2rem 2rem 0.2rem;
+  }
+
 }

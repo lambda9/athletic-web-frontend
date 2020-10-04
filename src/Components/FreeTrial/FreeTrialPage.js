@@ -1,6 +1,6 @@
 import React from "react";
 import "./FreeTrial.css";
-import{ Link }from 'react-router-dom'
+import { Link } from "react-router-dom";
 import FreeTrialEntryFields from "./FreeTrialEntryFields";
 import { useHistory } from "react-router-dom";
 
@@ -11,7 +11,12 @@ function FreeTrialPage() {
       <div className="free-trial-head-text">
         TRY US - FILL OUT THE FORM BELOW & WE’LL EMAIL YOU A FREE 7-DAY PASS!
       </div>
-      <FreeTrialEntryFields back={() => history.goBack()} />
+      <FreeTrialEntryFields
+        back={(event) => {
+          history.goBack();
+          event.preventDefault();
+        }}
+      />
       <Link className="free-trial-terms-text">
         *By clicking on the submitt button you agree to our terms and conditions
       </Link>
