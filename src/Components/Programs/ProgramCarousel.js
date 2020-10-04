@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import img1 from "../../Images/im4.jpg";
 import img2 from "../../Images/im5.jpg";
 import img3 from "../../Images/im9.jpg";
@@ -6,147 +6,190 @@ import img4 from "../../Images/im10.jpg";
 import img5 from "../../Images/im20.jpg";
 import img6 from "../../Images/im21.jpg";
 import "./Programs.css";
-import Slide from "./Slide";
 import Slider from "./Slider";
 
 const dt = [
 	{
 		id: 0,
 		img: img1,
-		title: "title",
+		title: "Cardio",
+		desc:
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor",
 	},
 	{
 		id: 1,
 		img: img2,
-		title: "title",
+		title: "Zumba",
+		desc: "Are you increased weight and below bottom high five",
 	},
 	{
 		id: 2,
 		img: img3,
-		title: "title",
+		title: "Yoga",
+		desc: "Are you increased weight and below bottom high five",
 	},
 	{
 		id: 3,
 		img: img4,
-		title: "title",
+		title: "Weight Loss",
+		desc: "increase you weight loss in less than hour",
 	},
 	{
 		id: 4,
 		img: img5,
-		title: "title",
+		title: "Weight Gain",
+		desc: "did weight stop you from getting gf get here and we'll share",
 	},
 	{
 		id: 5,
 		img: img6,
-		title: "title",
+		title: "Strength",
+		desc: "increase stamina strength to by building a weight",
 	},
 ];
 
-class ProgramCarousel extends Component {
-	constructor(props) {
-		super();
-		let windowWidth = window.innerWidth;
-		this.state = {
-			currentIndex: 1,
-			indexOffset: windowWidth < 900 ? 0 : 1,
-			direction: 0,
-			temp: this.rotateRight(dt, 2),
-			transition: "transform ease-in-out 0.5s",
-			width: windowWidth < 900 ? 60 : 33,
-			offset: windowWidth < 900 ? -40.5 : 0,
-		};
-	}
+const ProgramCarousel = ({
+	data = dt,
+	autoStart = true,
+	transitionDelay,
+	transitionDuration,
+}) => {
+	const currentIndex = useRef(0);
 
-	handleWindowResize = () => {
+	const [state, setState] = useState({
+		data: [],
+		transition: 0,
+		activeIndex: 2,
+		direction: 0,
+	});
+	const [size, setSize] = useState({
+		width: window.innerWidth < 900 ? 60 : 33,
+		offset: window.innerWidth < 900 ? -40.5 : 0,
+	});
+
+	const handleResize = () => {
 		if (window.innerWidth < 900) {
-			this.setState({
+			setSize({
 				width: 60,
 				offset: -40.5,
-				indexOffset: 0,
 			});
 		} else {
-			this.setState({
+			setSize({
 				width: 33,
 				offset: 0,
-				indexOffset: 1,
 			});
 		}
 	};
 
-	nextImg = () => {
-		this.setState((state) => ({
-			currentIndex: state.currentIndex + 1,
-			direction: 1,
-		}));
-	};
+	useEffect(() => {
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	});
 
-	prevImg = () => {
-		this.setState((state) => ({
-			currentIndex: state.currentIndex - 1,
-			direction: -1,
-		}));
-	};
-
-	componentDidMount() {
-		window.addEventListener("resize", this.handleWindowResize);
-	}
-
-	componentWillUnmount() {
-		window.removeEventListener("resize", this.handleWindowResize);
-	}
-
-	rotateLeft = (arr) => {
-		let tempArr = [...arr];
-		let first = tempArr[0];
-		tempArr.push(first);
-		tempArr.shift();
-		return tempArr;
-	};
-
-	rotateRight = (arr, n = 1) => {
-		let tempArr = [...arr];
-		for (let i = 0; i < n; i++) {
-			tempArr.unshift(tempArr.pop());
+	useEffect(() => {
+		if (autoStart && state.transition === 0) {
+			const timeout = setTimeout(nextImg, transitionDelay);
+			return () => {
+				clearTimeout(timeout);
+			};
 		}
-		return tempArr;
-	};
+	}, [state.transition, autoStart, transitionDelay]);
 
-	onTransitionEnd = () => {
-		let newTemp;
-		if (this.state.direction === 1) {
-			newTemp = this.rotateLeft(this.state.temp);
-		} else if (this.state.direction === -1) {
-			newTemp = this.rotateRight(this.state.temp);
+	useEffect(() => {
+		setState((state) => ({
+			...state,
+			data: getWindow(data, currentIndex.current, 2),
+		}));
+	}, [data]);
+
+	useEffect(() => {
+		if (state.direction === 1) {
+			currentIndex.current = (currentIndex.current + 1) % data.length;
+		} else if (state.direction === -1) {
+			currentIndex.current = currentIndex.current - 1;
+			if (currentIndex.current < 0) {
+				currentIndex.current = data.length - 1;
+			}
 		}
-		this.setState({
-			temp: newTemp,
-			direction: 0,
-			currentIndex: 1,
+	}, [state.direction, data]);
+
+	const nextImg = () => {
+		setState((state) => {
+			return {
+				...state,
+				transition: transitionDuration,
+				activeIndex: state.activeIndex + 1,
+				direction: 1,
+			};
 		});
 	};
 
-	render() {
-		return (
-			<div className="pro-car-main-div">
-				<Slider
-					images={this.state.temp}
-					animate={this.state.currentIndex !== 1}
-					activeIndex={this.state.currentIndex + 1}
-					translate={
-						-this.state.currentIndex * this.state.width + this.state.offset
-					}
-					width={this.state.width}
-					onTransitionEnd={this.onTransitionEnd}
-				/>
-				<div className="pro-car-nextBtn" onClick={this.nextImg}>
-					&#8250;
-				</div>
-				<div className="pro-car-prevBtn" onClick={this.prevImg}>
-					&#8249;
-				</div>
+	const prevImg = () => {
+		setState((state) => {
+			return {
+				...state,
+				activeIndex: state.activeIndex - 1,
+				transition: transitionDuration,
+				direction: -1,
+			};
+		});
+	};
+
+	const getWindow = (arr, middleIndex, offset) => {
+		let startIndex = middleIndex - 2;
+		if (startIndex < 0) {
+			startIndex += arr.length;
+		}
+		let newArr = [];
+		for (let i = 0; i < offset * 2 + 1; i++) {
+			newArr.push(arr[startIndex]);
+			startIndex = (startIndex + 1) % arr.length;
+		}
+		return newArr;
+	};
+
+	const onTransitionEnd = () => {
+		setState({
+			...state,
+			transition: 0,
+			data: getWindow(data, currentIndex.current, 2),
+			activeIndex: 2,
+			direction: 0,
+		});
+	};
+
+	return (
+		<div className="pro-car-main-div">
+			<Slider
+				images={state.data}
+				transition={`transform ease-in-out ${state.transition / 1000}s`}
+				activeIndex={state.activeIndex}
+				translate={-(state.activeIndex - 1) * size.width + size.offset}
+				width={size.width}
+				onTransitionEnd={onTransitionEnd}
+			/>
+			<div
+				className="pro-car-nextBtn"
+				style={{
+					display: autoStart ? "none" : "block",
+				}}
+				onClick={nextImg}
+			>
+				&#8250;
 			</div>
-		);
-	}
-}
+			<div
+				className="pro-car-prevBtn"
+				style={{
+					display: autoStart ? "none" : "block",
+				}}
+				onClick={prevImg}
+			>
+				&#8249;
+			</div>
+		</div>
+	);
+};
 
 export default ProgramCarousel;

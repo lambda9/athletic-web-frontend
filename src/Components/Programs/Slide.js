@@ -1,22 +1,34 @@
 import React from "react";
 
-const Slide = ({ item, active, width }) => {
-	let className = active ? "active-img-div" : "inactive-img-div";
+const Slide = ({ item, active, width, transition }) => {
 	return (
 		<div
-			className={`${className} img-div`}
+			className={"slide-container"}
 			style={{
 				width: width,
 			}}
+			onTransitionEnd={(e) => {
+				e.stopPropagation();
+			}}
 		>
-			<img
+			<div
 				className={active ? "pro-car-img-active" : "pro-car-img-unactive "}
-				src={item.img}
-				alt={item.title}
-				onTransitionEnd={(e) => {
-					e.stopPropagation();
+				style={{
+					transition: transition,
+					position: "relative",
 				}}
-			></img>
+			>
+				<img src={item.img} alt={item.title}></img>
+				<div
+					className="programs-image-overlay"
+					style={{
+						position: "absolute",
+					}}
+				>
+					<h3>{item.title}</h3>
+					<p>{item.desc}</p>
+				</div>
+			</div>
 		</div>
 	);
 };
