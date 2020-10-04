@@ -29,6 +29,17 @@ function FreeTrialPage() {
           </Link>
         </div>
       </div>
+
+      <FreeTrialEntryFields
+        back={(event) => {
+          history.goBack();
+          event.preventDefault();
+        }}
+      />
+      <Link className="free-trial-terms-text">
+        *By clicking on the submitt button you agree to our terms and conditions
+      </Link>
+
     </div>
   );
 }

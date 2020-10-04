@@ -49,7 +49,7 @@
 }
 
 .btn-margin {
-  margin: 1rem 1rem 0.1rem;
+  margin: 0rem 1rem 0.1rem;
 }
 
 .cancel-btn {
@@ -63,6 +63,11 @@
   color: var(--primaryRed);
   border: 2px solid var(--primaryRed);
   
+}
+
+.free-trial-btn-container {
+  margin: 1.2rem auto 0.2rem
+
 }
 
 .free-trial-join-today-div {
@@ -89,7 +94,7 @@
   }
 
   .btn-margin {
-    margin: 2rem 2rem 0.2rem;
+    margin: 0.2rem 2rem 0.2rem;
   }
 
   .free-trial-head-text {
@@ -115,6 +120,10 @@
     padding: 2rem;
   }
 
+  .btn-margin {
+    margin: 0.2rem 2rem 0.2rem;
+  }
+
   .free-trial-join-today-div {
     width: 75%;
   }
@@ -123,4 +132,5 @@
     width: 80%;
     font-size: 1.8em;
   }
+
 }
