@@ -1,19 +1,29 @@
 .free-trial-main-div {
-    width: 95%;
-    margin: 5rem auto;
-    padding: 0.8rem 0.1rem;
-    border: 2px solid black;
-    transition: var(--mainTransition);
+  width: 100%;
+}
+
+
+.free-trial-form-div {
+  width: 95%;
+  margin: 5rem auto;
+  padding: 0.8rem 0.1rem;
+  box-shadow: 0px 0px 10px 0px #000000;
+  border-radius: 4px;
+  transition: var(--mainTransition);
 }
 
 .free-trial-head-text {
-    width: 90%;
-    font-size: 16px;
-    margin: 0rem auto 2rem;
+  width: 95%;
+  font-size: 1.1em;
+  margin: 0rem auto 1rem;
 }
 
-.temp {
+.entry-fields-main-div {
   margin-top: -1rem;
+}
+
+.entry-fields-main-div input {
+  font-size: 0.9em;
 }
 
 .free-trial-entry-fields-selection {
@@ -23,15 +33,10 @@
   justify-content: center;
 }
 
-.free-trial-terms-text, .free-trial-terms-text:hover {
-    font-size: 12px;
-    text-decoration: none;
-}
-
-.free-modal {
-  margin: 0 auto;
-  text-align: left;
-  /* background-color: chocolate; */
+.free-trial-terms-text,
+.free-trial-terms-text:hover {
+  font-size: 0.25em;
+  text-decoration: none;
 }
 
 .free-input {
@@ -43,26 +48,79 @@
   margin: 0;
 }
 
-.free-buttons {
-  display: flex;
-  justify-content: space-evenly;
-  width: 90%;
+.btn-margin {
+  margin: 1rem 1rem 0.1rem;
 }
 
-@media screen and (min-width: 800px) {
-    .free-trial-main-div {
-        width: 65%;
-        padding: 2rem;
-    }
+.cancel-btn {
+  background: var(--primaryRed);
+  color: white;
+  border: 2px solid var(--primaryRed);
+}
+
+.cancel-btn:hover {
+  background: transparent;
+  color: var(--primaryRed);
+  border: 2px solid var(--primaryRed);
+  
+}
+
+.free-trial-join-today-div {
+  width: 95%;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.free-trial-join-today-div span {
+  margin: 0rem auto;
+  text-align: left;
+  font-size: 1em;
+}
+
+.free-trial-join-today-btn {
+  margin: 0.8rem auto 1rem;
 }
 
 @media screen and (min-width: 600px) {
-    .free-trial-main-div {
-        width: 75%;
-        padding: 1.3rem;
-    }
+  .free-trial-form-div {
+    width: 80%;
+    padding: 1.3rem;
+  }
 
-    .free-trial-head-text {
-        font-size: 18px;
-    }
+  .btn-margin {
+    margin: 2rem 2rem 0.2rem;
+  }
+
+  .free-trial-head-text {
+    font-size: 1.6em;
+  }
+
+  .free-trial-join-today-div {
+    flex-direction: row;
+  }
+
+  .free-trial-join-today-btn {
+    margin: auto;
+  }
+  .free-trial-join-today-div span {
+    margin: 0.8rem auto;
+    font-size: 1.5em;
+    width: 70%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .free-trial-form-div {
+    width: 60%;
+    padding: 2rem;
+  }
+
+  .free-trial-join-today-div {
+    width: 75%;
+  }
+
+  .free-trial-join-today-div span {
+    width: 80%;
+    font-size: 1.8em;
+  }
 }
