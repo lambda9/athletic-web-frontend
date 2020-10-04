@@ -12,3 +12,25 @@
 .active {
     color: "#1ca9c9";
 }
+
+.home-page-faq-btn-div {
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+
+.home-page-faq-btn-div a {
+    width: fit-content;
+    margin: 0rem auto 0.6rem;
+}
+
+@media screen and (min-width: 550px) {
+
+    .home-page-faq-btn-div {
+    flex-direction: column;
+
+    }
+    .home-page-faq-btn-div a {
+        margin: 0rem 0rem 0.8rem auto;
+    }
+}
