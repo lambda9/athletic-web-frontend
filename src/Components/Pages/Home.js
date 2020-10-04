@@ -9,6 +9,8 @@ import img3 from "../../Images/Carousel/img3.jpg";
 import img4 from "../../Images/Carousel/img4.jpg";
 import Title from "../Title/Title";
 import ProgramCarousel from "../../Components/Programs/ProgramCarousel";
+import HomePageEnquiry from '../Home/HomePageEnquiry'
+
 
 function Home() {
 	const images = [img1, img2, img3, img4];
@@ -23,6 +25,7 @@ function Home() {
 				transitionDelay={500}
 			/>
 			<CardGroup />
+			<HomePageEnquiry />
 		</div>
 	);
 }
