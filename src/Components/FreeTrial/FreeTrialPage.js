@@ -11,7 +11,7 @@ function FreeTrialPage() {
       <div className="free-trial-head-text">
         TRY US - FILL OUT THE FORM BELOW & WE’LL EMAIL YOU A FREE 7-DAY PASS!
       </div>
-      <FreeTrialEntryFields toggle={() => history.goBack()} />
+      <FreeTrialEntryFields back={() => history.goBack()} />
       <Link className="free-trial-terms-text">
         *By clicking on the submitt button you agree to our terms and conditions
       </Link>

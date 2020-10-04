@@ -1,19 +1,24 @@
 .free-trial-main-div {
-    width: 95%;
-    margin: 5rem auto;
-    padding: 0.8rem 0.1rem;
-    border: 2px solid black;
-    transition: var(--mainTransition);
+  width: 95%;
+  margin: 5rem auto;
+  padding: 0.8rem 0.1rem;
+  box-shadow: 0px 0px 10px 0px #000000;
+  border-radius: 4px;
+  transition: var(--mainTransition);
 }
 
 .free-trial-head-text {
-    width: 90%;
-    font-size: 16px;
-    margin: 0rem auto 2rem;
+  width: 95%;
+  font-size: 1.1em;
+  margin: 0rem auto 1rem;
 }
 
-.temp {
+.entry-fields-main-div {
   margin-top: -1rem;
+}
+
+.entry-fields-main-div input {
+  font-size: 0.9em;
 }
 
 .free-trial-entry-fields-selection {
@@ -23,15 +28,10 @@
   justify-content: center;
 }
 
-.free-trial-terms-text, .free-trial-terms-text:hover {
-    font-size: 12px;
-    text-decoration: none;
-}
-
-.free-modal {
-  margin: 0 auto;
-  text-align: left;
-  /* background-color: chocolate; */
+.free-trial-terms-text,
+.free-trial-terms-text:hover {
+  font-size: 0.25em;
+  text-decoration: none;
 }
 
 .free-input {
@@ -43,26 +43,62 @@
   margin: 0;
 }
 
+.entry-fields-submitt-btn {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainBlack);
+  background: var(--primaryColor);
+  outline: none;
+  font-size: 12px;
+  padding: 0.3rem 0.6rem;
+  border: 2px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-margin {
+  margin: 1rem 1rem 0.1rem;
+}
+
+.cancel-btn {
+  background: var(--primaryRed);
+  color: white;
+  border: 2px solid var(--primaryRed);
+}
+
+.cancel-btn:hover {
+  background: transparent;
+  color: var(--primaryRed);
+  border: 2px solid var(--primaryRed);
+  
+}
+
+
 .free-buttons {
   display: flex;
   justify-content: space-evenly;
   width: 90%;
 }
 
-@media screen and (min-width: 800px) {
-    .free-trial-main-div {
-        width: 65%;
-        padding: 2rem;
-    }
-}
-
 @media screen and (min-width: 600px) {
-    .free-trial-main-div {
-        width: 75%;
-        padding: 1.3rem;
-    }
+  .free-trial-main-div {
+    width: 85%;
+    padding: 1.3rem;
+  }
 
-    .free-trial-head-text {
-        font-size: 18px;
-    }
+  .btn-margin {
+    margin: 2rem 2rem 0.2rem;
+  }
+
+  .free-trial-head-text {
+    font-size: 1.6em;
+  }
+}
+@media screen and (min-width: 900px) {
+  .free-trial-main-div {
+    width: 60%;
+    padding: 2rem;
+  }
 }

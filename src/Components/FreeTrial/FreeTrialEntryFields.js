@@ -15,7 +15,7 @@ const useStyles = (theme) => ({
   root: {
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
-      width: "90%",
+      width: "95%",
     },
   },
 
@@ -26,7 +26,7 @@ const useStyles = (theme) => ({
     "&:hover": {
       backgroundColor: "transparent",
       color: "#c13434",
-      outline: 'none'
+      outline: "none",
     },
   },
 
@@ -46,30 +46,14 @@ const useStyles = (theme) => ({
     marginBottom: "-5px",
   },
 
+  temp: {
+    borderBottomColor: '#459fb6',
+  },
+
   selectEmpty: {
     marginTop: theme.spacing(1),
   },
 });
-
-const ColorButton = withStyles((theme) => ({
-  root: {
-    margin: "1rem 1rem 0.1rem",
-    fontSize: "16px",
-    letterSpacing: "1.4px",
-    padding: "0.3rem 0.6rem",
-    border: "2px solid #459fb6",
-    textTransform: "uppercase",
-    textDecoration: "none",
-    backgroundColor: "#459fb6",
-    color: "black",
-    transition: "all 0.3s linear",
-    "&:hover": {
-      backgroundColor: "transparent",
-      color: "#459fb6",
-    },
-    
-  },
-}))(Button);
 
 const CssTextField = withStyles({
   root: {
@@ -82,17 +66,52 @@ const CssTextField = withStyles({
   },
 })(TextField);
 
+const SelectField = withStyles({
+  root: {
+    "label + &": {
+      color: "#459fb6",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "#459fb6",
+    },
+  },
+  input: {
+    borderRadius: 4,
+    position: 'relative',
+    border: '1px solid #ced4da',
+    fontSize: 16,
+    padding: '10px 26px 10px 12px',
+    // Use the system font instead of the default Roboto font.
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:focus': {
+      borderRadius: 4,
+      borderColor: '#80bdff',
+      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
+    },
+  }
+})(Select);
+
 class FreeTrialEntryFields extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      modal: false,
       name: "",
       email: "",
       phoneNum: "",
       time: "morning",
-      program: "cardio",
+      program: "none",
       date: this.getNextDate(),
     };
   }
@@ -115,14 +134,10 @@ class FreeTrialEntryFields extends Component {
     console.log(this.state);
   };
 
-  handleCancel = () => {
-     
-  }
-
   render() {
     const { classes } = this.props;
     return (
-      <div className="temp">
+      <div className="entry-fields-main-div">
         <form
           className={classes.root}
           autoComplete="nope"
@@ -158,6 +173,7 @@ class FreeTrialEntryFields extends Component {
           />
 
           <CssTextField
+          required
             label="Date"
             name="date"
             type="date"
@@ -188,27 +204,34 @@ class FreeTrialEntryFields extends Component {
               </RadioGroup>
             </FormControl>
 
-            <FormControl>
+            <FormControl className={classes.root}>
               <InputLabel htmlFor="select-program">Program</InputLabel>
-              <Select
+              <SelectField
                 required
                 native
                 name="program"
+                defaultValue='None'
+                className={classes.temp}
                 value={this.state.program}
                 onChange={this.handleChange}
               >
-                <option aria-label="None" value="" />
+                <option aria-label="None" value="none">None</option>
                 <option value={"Cardio"}>Cardio</option>
                 <option value={"weightLoss"}>Weight Loss</option>
                 <option value={"muscleGain"}>Muscle Gain</option>
-              </Select>
+              </SelectField>
             </FormControl>
           </div>
 
-          <ColorButton type="submitt">Submitt</ColorButton>
-          <ColorButton onClick={this.props.toggle} className={classes.cancelButton}>
+          <button className="button-primary btn-margin" type="submitt">
+            Submitt
+          </button>
+          <button
+            onClick={this.props.back}
+            className="button-primary  cancel-btn"
+          >
             Cancel
-          </ColorButton>
+          </button>
         </form>
       </div>
     );
