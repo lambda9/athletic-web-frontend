@@ -22,8 +22,8 @@ html {
   --darkGrey: #cfcfcf;
   --mainTransition: all 0.4s linear;
   --fastTransition: all 0.3s linear;
-  --mainSpacing: 1.4px;
-  --mobileSpacing: 1.1px;
+  --mainSpacing: 0;
+  --mobileSpacing: 0;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --minWidthMob: 550px;
@@ -53,7 +53,7 @@ body {
   padding-top: 100px;
 }
 
-h1 h2 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Alata', sans-serif;
 }
 
