@@ -1,56 +1,76 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-
-const primaryColor= '#459fb6';
-const mainWhite= '#ffffff';
-const primaryRed= '#c13434';
-const offWhite= '#e0e0e0';
-const mainBlack= '#222';
-const mainGrey= '#ececec';
-const darkGrey= '#cfcfcf'
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "90%",
-    margin: "1rem auto",
-    "& .MuiAccordion-rounded": {
-      margin: '1rem auto',
-    },
-    "&:hover .MuiAccordion-rounded": {
-
-    },
-    "& .Mui-expanded": {
-    },
-  },
-
-  expanded: {
-    transition: 'all linear 0.2s',
-    "&:hover": {
-      boxShadow: '0px 0px 4px 0px black',
-    },
-  },
-  heading: {
-    fontSize: theme.typography.pxToRem(20),
-    flexBasis: "100%",
-    textAlign: "left",
-    flexShrink: 0,
-  },
-  head: {
-    backgroundColor: mainGrey,
-  },
-  details: {
-    textAlign: 'left'
-  }
-}));
+import "./HomePageFAQ.css";
+const primaryColor = "#459fb6";
+const mainWhite = "#ffffff";
+const primaryRed = "#c13434";
+const offWhite = "#e0e0e0";
+const mainBlack = "#222";
+const mainGrey = "#ececec";
+const darkGrey = "#cfcfcf";
+const c1 = "#126d82";
+const c2 = "#1ca9c9";
 
 export default function ControlledAccordions() {
+  const [width, setwidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    console.log(window.innerWidth);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+
+  const handleWindowResize = () => {
+    setwidth(window.innerWidth)
+  }
+
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      width: "90%",
+      margin: "1rem auto",
+      "& .MuiAccordion-rounded": {
+        margin: "0.5rem auto",
+      },
+      "& .Mui-expanded": {},
+    },
+
+    expanded: {
+      transition: "all linear 0.2s",
+      "&:hover": {
+        boxShadow: "0px 0px 4px 0px black",
+      },
+    },
+
+    head: {
+      color: c2,
+      backgroundColor: mainGrey,
+      "& .Mui-expanded": {
+        color: primaryColor,
+      },
+    },
+    heading: {
+      fontSize: width < 550 ? "12px" : "22px",
+      transition: "all linear 0.2s",
+      flexBasis: "100%",
+      margin: "0.09rem auto",
+      textAlign: "left",
+    },
+
+    details: {
+      textAlign: "left",
+    },
+  }));
+
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -70,7 +90,7 @@ export default function ControlledAccordions() {
           className={classes.head}
         >
           <Typography className={classes.heading}>
-            WHO ARE YOU AND HOW LONG HAVE YOU BEEN AROUND?
+            Who are you and how long have you been around?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>

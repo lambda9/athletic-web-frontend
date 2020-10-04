@@ -1,0 +1,10 @@
+.heading, .active{
+    font-size: 2em;
+    color: "#126d82";
+    transition: var(--fastTransition);
+    text-align: left;
+}
+
+.active {
+    color: "#1ca9c9";
+}
