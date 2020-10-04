@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Hero from "../Hero";
-import Banner from "../Banner";
 import bgImg from "../../Images/im8.jpg";
 import ProgramCarousel from "./ProgramCarousel";
 class OurPrograms extends Component {
@@ -13,7 +12,7 @@ class OurPrograms extends Component {
 					description="keep your energy up and burn calories"
 				></Hero>
 
-				<ProgramCarousel />
+				<ProgramCarousel transitionDelay={2000} transitionDuration={500} />
 			</div>
 		);
 	}

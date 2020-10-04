@@ -1,19 +1,15 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 import Slide from "./Slide";
 
 const Slider = ({
 	images,
 	transition,
 	activeIndex,
-	transitionDelay,
 	width,
 	translate,
 	onTransitionEnd,
 }) => {
 	const style = {
-		// transition: "tranform ease-in-out 0.5s",
-		// transition: animate ? `transform ease-in-out 0.5s` : "none",
 		transition: transition,
 		transform: `translateX(${translate}vw)`,
 	};
@@ -30,6 +26,7 @@ const Slider = ({
 						key={item.id}
 						item={item}
 						width={`${width}vw`}
+						transition={transition}
 						active={index === activeIndex}
 					/>
 				);
