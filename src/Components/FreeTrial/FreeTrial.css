@@ -1,4 +1,9 @@
 .free-trial-main-div {
+  width: 100%;
+}
+
+
+.free-trial-form-div {
   width: 95%;
   margin: 5rem auto;
   padding: 0.8rem 0.1rem;
@@ -43,21 +48,6 @@
   margin: 0;
 }
 
-.entry-fields-submitt-btn {
-  display: inline-block;
-  text-decoration: none;
-  letter-spacing: var(--mainSpacing);
-  color: var(--mainBlack);
-  background: var(--primaryColor);
-  outline: none;
-  font-size: 12px;
-  padding: 0.3rem 0.6rem;
-  border: 2px solid var(--primaryColor);
-  transition: var(--mainTransition);
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
 .btn-margin {
   margin: 1rem 1rem 0.1rem;
 }
@@ -75,16 +65,26 @@
   
 }
 
-
-.free-buttons {
+.free-trial-join-today-div {
+  width: 95%;
+  margin: 0 auto 2rem;
   display: flex;
-  justify-content: space-evenly;
-  width: 90%;
+  flex-direction: column;
+}
+
+.free-trial-join-today-div span {
+  margin: 0rem auto;
+  text-align: left;
+  font-size: 1em;
+}
+
+.free-trial-join-today-btn {
+  margin: 0.8rem auto 1rem;
 }
 
 @media screen and (min-width: 600px) {
-  .free-trial-main-div {
-    width: 85%;
+  .free-trial-form-div {
+    width: 80%;
     padding: 1.3rem;
   }
 
@@ -95,10 +95,32 @@
   .free-trial-head-text {
     font-size: 1.6em;
   }
+
+  .free-trial-join-today-div {
+    flex-direction: row;
+  }
+
+  .free-trial-join-today-btn {
+    margin: auto;
+  }
+  .free-trial-join-today-div span {
+    margin: 0.8rem auto;
+    font-size: 1.5em;
+    width: 70%;
+  }
 }
 @media screen and (min-width: 900px) {
-  .free-trial-main-div {
+  .free-trial-form-div {
     width: 60%;
     padding: 2rem;
+  }
+
+  .free-trial-join-today-div {
+    width: 75%;
+  }
+
+  .free-trial-join-today-div span {
+    width: 80%;
+    font-size: 1.8em;
   }
 }

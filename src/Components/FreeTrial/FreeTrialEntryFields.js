@@ -228,7 +228,7 @@ class FreeTrialEntryFields extends Component {
           </button>
           <button
             onClick={this.props.back}
-            className="button-primary  cancel-btn"
+            className="button-primary btn-margin cancel-btn"
           >
             Cancel
           </button>
