@@ -1,7 +1,7 @@
 .pro-car-main-div {
 	position: relative;
 	width: 100%;
-	height: 600px;
+	height: 32vw;
 	display: flex;
 	margin: auto;
 	align-items: center;
@@ -107,7 +107,7 @@
 	.pro-car-main-div {
 		width: 99vw;
 		background-color: whitesmoke;
-		height: 80vw;
+		height: 55vw;
 	}
 
 	.pro-car-img-div > div {

@@ -54,7 +54,6 @@ const ProgramCarousel = ({
 	transitionDelay,
 	transitionDuration,
 }) => {
-	// console.log("render");
 	const currentIndex = useRef(0);
 
 	const [state, setState] = useState({
