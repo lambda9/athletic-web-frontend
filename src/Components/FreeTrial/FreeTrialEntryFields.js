@@ -235,6 +235,7 @@ class FreeTrialEntryFields extends Component {
               Cancel
             </button>
           </div>
+
         </form>
       </div>
     );
