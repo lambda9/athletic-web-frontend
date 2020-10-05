@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Spartan&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-  height: 100%;
+	height: 100%;
 }
 
 :root {
@@ -33,7 +33,7 @@ html {
 }
 
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 body {
@@ -46,11 +46,11 @@ body {
 }
 
 #root {
-  height: 100%;
+	height: 100%;
 }
 
 .main-content {
-  padding-top: 100px;
+	padding-top: 100px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,97 +58,97 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
-  line-height: 1;
-  margin-bottom: 0.5em;
+	font-size: 3em;
+	line-height: 1;
+	margin-bottom: 0.5em;
 }
 h2 {
-  font-size: 2em;
-  margin-bottom: 0.75em;
+	font-size: 2em;
+	margin-bottom: 0.75em;
 }
 h3 {
-  font-size: 1.5em;
-  line-height: 1;
-  margin-bottom: 1em;
+	font-size: 1.5em;
+	line-height: 1;
+	margin-bottom: 1em;
 }
 h4 {
-  font-size: 1.2em;
-  line-height: 1.25;
-  margin-bottom: 1.25em;
+	font-size: 1.2em;
+	line-height: 1.25;
+	margin-bottom: 1.25em;
 }
 h5 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 1.5em;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 1.5em;
 }
 h6 {
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 1.5em;
+	font-size: 1em;
+	font-weight: bold;
+	margin-bottom: 1.5em;
 }
 
 p {
-  font-size: 12px;
+	font-size: 12px;
 }
 
 a {
-  text-decoration: none;  
+	text-decoration: none;
 }
 
 .button-primary {
-  display: inline-block;
-  text-decoration: none;
-  letter-spacing: var(--mainSpacing);
-  color: var(--mainBlack);
-  background: var(--primaryColor);
-  outline: none;
-  font-size: 12px;
-  padding: 0.3rem 0.6rem;
-  border: 2px solid var(--primaryColor);
-  transition: var(--mainTransition);
-  text-transform: uppercase;
-  cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	letter-spacing: var(--mainSpacing);
+	color: var(--mainBlack);
+	background: var(--primaryColor);
+	outline: none;
+	font-size: 12px;
+	padding: 0.3rem 0.6rem;
+	border: 2px solid var(--primaryColor);
+	transition: var(--mainTransition);
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .button-primary:hover {
-  background: transparent;
-  text-decoration: none;
-  border: 2px solid var(--primaryColor);
-  color: var(--primaryColor);
+	background: transparent;
+	text-decoration: none;
+	border: 2px solid var(--primaryColor);
+	color: var(--primaryColor);
 }
 
 .hero-back-drop {
-  display: flex;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  align-items: center;
-  justify-content: center;
-  transition: var(--mainTransition);
-  background-color: lavender;
-  min-height: calc(50vh - 60px);
+	display: flex;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	align-items: center;
+	justify-content: center;
+	transition: var(--mainTransition);
+	background-color: lavender;
+	min-height: calc(50vh - 60px);
 }
 
 @media screen and (min-width: 550px) {
-  .button-primary {
-    font-size: 16px;
-    padding: 0.35rem 0.7rem;
-  }
+	.button-primary {
+		font-size: 16px;
+		padding: 0.35rem 0.7rem;
+	}
 
-  .hero-back-drop {
-    min-height: calc(80vh - 60px);
-  }
+	.hero-back-drop {
+		min-height: calc(80vh - 60px);
+	}
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+	width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primaryColor);
+	background: var(--primaryColor);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #347b8d;
+	background: #347b8d;
 }
