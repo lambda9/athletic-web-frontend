@@ -4,7 +4,7 @@ const NavToggleButton = (props) => {
 	return (
 		<div
 			className={`nav-toggle-container ${props.isOpen ? "change" : ""}`}
-			style={{ display: props.isVisible ? "block" : "none" }}
+			// style={{ display: props.isVisible ? "block" : "none" }}
 			onClick={props.onClick}
 		>
 			<div className="bar bar1"></div>

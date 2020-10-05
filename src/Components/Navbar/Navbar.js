@@ -21,6 +21,8 @@ const Navbar = () => {
 	const [bottomNavOpen, setBottomNavOpen] = useState(false);
 	const [btnGroupVisible, setBtnGroupVisible] = useState(true);
 
+	const prevScroll = useRef(0);
+
 	const links = [
 		["/", "home"],
 		["/programs", "programs"],
@@ -33,11 +35,11 @@ const Navbar = () => {
 	const location = useLocation();
 
 	const handleWindowResize = () => {
-		// setWindowWidth(window.innerWidth);
+		setWindowWidth(window.innerWidth);
 	};
 
 	const handleWindowScroll = () => {
-		// setScroll(window.scrollY);
+		setScroll(window.scrollY);
 	};
 
 	const onLinkClick = () => {
@@ -53,34 +55,41 @@ const Navbar = () => {
 		};
 	}, []);
 
-	// useEffect(() => {
-	// 	if (windowWidth < 1000) {
-	// 		setLogoSize(SMALL_LOGO);
-	// 		setNavWidth(SMALL);
-	// 		document.querySelector(".main-content").style.paddingTop = "0";
-	// 	} else {
-	// 		setNavWidth(LARGE);
-	// 		setBottomNavOpen(false);
-	// 		if (scroll > 300) {
-	// 			setLogoSize(SMALL_LOGO);
-	// 			document.querySelector(".main-content").style.paddingTop = "0";
-	// 		} else {
-	// 			setLogoSize(LARGE_LOGO);
-	// 			document.querySelector(".main-content").style.paddingTop = "0";
-	// 		}
-	// 	}
-	// 	if (windowWidth < 500) {
-	// 		setBtnGroupVisible(false);
-	// 	} else {
-	// 		setBtnGroupVisible(true);
-	// 	}
-	// }, [windowWidth, scroll]);
+	useEffect(() => {
+		console.log("prev", prevScroll.current, scroll);
+		prevScroll.current = scroll;
+		if (windowWidth < 1000) {
+			setLogoSize(SMALL_LOGO);
+			setNavWidth(SMALL);
+			// document.querySelector(".main-content").style.paddingTop = "0";
+		} else {
+			setNavWidth(LARGE);
+			setBottomNavOpen(false);
+			if (scroll > 300) {
+				setLogoSize(SMALL_LOGO);
+				// document.querySelector(".main-content").style.paddingTop = "0";
+			} else {
+				setLogoSize(LARGE_LOGO);
+				// document.querySelector(".main-content").style.paddingTop = "0";
+			}
+		}
+		if (windowWidth < 500) {
+			setBtnGroupVisible(false);
+		} else {
+			setBtnGroupVisible(true);
+		}
+	}, [windowWidth, scroll]);
 
 	return (
-		<nav className="nav-container">
+		<nav
+			className="nav-container"
+			style={{
+				top: scroll > 300 && scroll > prevScroll.current ? "-10%" : "0%",
+			}}
+		>
 			<div className="top-nav">
 				<Logo width={logoSize} />
-				{/* <TextLogo isVisible={navWidth !== LARGE ? true : false} /> */}
+				<TextLogo isVisible={navWidth !== LARGE ? true : false} />
 				<div className="right-nav">
 					<NavLinkGroup
 						isVisible={true}
@@ -89,24 +98,22 @@ const Navbar = () => {
 						className={"nav-link-group"}
 					/>
 					{/* <ButtonGroup isVisible={true} /> */}
+					<ButtonGroup />
 					<NavToggleButton
 						onClick={() => {
 							setBottomNavOpen(!bottomNavOpen);
 						}}
 						isOpen={bottomNavOpen}
-						isVisible={false}
+						isVisible={true}
 					/>
-					<ButtonGroup />
 				</div>
 			</div>
-
-			{/* <div className="nav-bottom"></div> */}
-			{/* <BottomNav
+			<BottomNav
 				links={links}
 				currentLink={location.pathname}
 				visible={bottomNavOpen}
 				onLinkClick={onLinkClick}
-			/> */}
+			/>
 		</nav>
 	);
 };

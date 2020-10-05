@@ -4,7 +4,7 @@ const TextLogo = (props) => {
 	return (
 		<div
 			className="text-logo"
-			style={{ display: props.isVisible ? "block" : "none" }}
+			// style={{ display: props.isVisible ? "block" : "none" }}
 		>
 			athletic
 		</div>
