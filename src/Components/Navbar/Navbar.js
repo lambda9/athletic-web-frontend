@@ -53,28 +53,28 @@ const Navbar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (windowWidth < 1000) {
-      setLogoSize(SMALL_LOGO);
-      setNavWidth(SMALL);
-      document.querySelector(".main-content").style.paddingTop = "65px";
-    } else {
-      setNavWidth(LARGE);
-      setBottomNavOpen(false);
-      if (scroll > 300) {
-        setLogoSize(SMALL_LOGO);
-        document.querySelector(".main-content").style.paddingTop = "65px";
-      } else {
-        setLogoSize(LARGE_LOGO);
-        document.querySelector(".main-content").style.paddingTop = "100px";
-      }
-    }
-    if (windowWidth < 500) {
-      setBtnGroupVisible(false);
-    } else {
-      setBtnGroupVisible(true);
-    }
-  }, [windowWidth, scroll]);
+	useEffect(() => {
+		if (windowWidth < 1000) {
+			setLogoSize(SMALL_LOGO);
+			setNavWidth(SMALL);
+			document.querySelector(".main-content").style.paddingTop = "0";
+		} else {
+			setNavWidth(LARGE);
+			setBottomNavOpen(false);
+			if (scroll > 300) {
+				setLogoSize(SMALL_LOGO);
+				document.querySelector(".main-content").style.paddingTop = "0";
+			} else {
+				setLogoSize(LARGE_LOGO);
+				document.querySelector(".main-content").style.paddingTop = "0";
+			}
+		}
+		if (windowWidth < 500) {
+			setBtnGroupVisible(false);
+		} else {
+			setBtnGroupVisible(true);
+		}
+	}, [windowWidth, scroll]);
 
   return (
     <nav className="top-nav-container">

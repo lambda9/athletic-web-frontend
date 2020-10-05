@@ -1,0 +1,18 @@
+.hero-image {
+  background-image: url("../../Images/landingBackdrop.png");
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+@media screen and (max-width: 550px) {
+  
+  .hero-image {
+    height: 75vh;
+  }
+
+}
+

@@ -7,23 +7,18 @@ import img1 from "../../Images/Carousel/img1.jpg";
 import img2 from "../../Images/Carousel/img2.jpg";
 import img3 from "../../Images/Carousel/img3.jpg";
 import img4 from "../../Images/Carousel/img4.jpg";
+import landingBackdrop from "../../Images/landingBackdrop.png";
+import HeroSection from "../HeroSection/HeroSection";
 import Title from "../Title/Title";
 import ProgramCarousel from "../../Components/Programs/ProgramCarousel";
-import HomePageEnquiry from '../Home/HomePageEnquiry'
-
+import HomePageEnquiry from '../Home/HomePageEnquiry';
 
 function Home() {
-	const images = [img1, img2, img3, img4];
+	
 
 	return (
 		<div>
-			<Carousel
-				images={images}
-				width={100}
-				heightToWidthRatio={0.43}
-				slideDelay={2000}
-				transitionDelay={500}
-			/>
+			<HeroSection />
 			<CardGroup />
 			<HomePageEnquiry />
 		</div>
