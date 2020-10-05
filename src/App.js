@@ -7,7 +7,7 @@ import Home from "./Components/Pages/Home";
 import Programs from "./Components/Programs/ProgramsPage";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import AboutUs from "./Components/AboutUs/AboutUs";
-import FAQ from "./Components/Pages/FAQ";
+import FAQ from "./Components/FAQ/FAQ";
 import Gallery from "./Components/Pages/Gallery";
 import Membership from "./Components/Membership/Membership";
 import Error from "./Components/Pages/Error";
