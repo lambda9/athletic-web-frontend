@@ -76,7 +76,7 @@ export default function ControlledAccordions() {
       },
     },
     heading: {
-      fontSize: width < 550 ? "15px" : "22px",
+      fontSize: width < 550 ? "16px" : "22px",
       transition: "all linear 0.2s",
       flexBasis: "100%",
       margin: "0.09rem auto",
@@ -84,7 +84,7 @@ export default function ControlledAccordions() {
     },
     details: {
       margin: "-0.5rem auto 0rem orem",
-      fontSize: width < 550 ? "11px" : "16px",
+      fontSize: width < 550 ? "12px" : "16px",
       textAlign: "left",
     },
   }));

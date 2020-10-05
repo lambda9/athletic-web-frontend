@@ -17,8 +17,10 @@ const c2 = "#1ca9c9";
 const useStyles = (theme) => ({
   root: {
     "& .MuiTextField-root": {
-      margin: theme.spacing(1.2),
+      margin: theme.spacing(1.5),
+      marginTop: "0rem",
       width: "90%",
+      padding: 0,
     },
   },
 });

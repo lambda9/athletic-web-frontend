@@ -23,9 +23,9 @@ export class ContactUsComp extends Component {
           </div>
 
           <div className="cont-comp-right-div">
-            <Link to="/franchise">Franchise</Link>
-            <Link>Advertise</Link>
-            <Link>Business Related</Link>
+            <Link to="/franchise"> Want to own a Franchise?</Link>
+            <Link>Advertise with us</Link>
+            <Link>Other Business Related queries</Link>
           </div>
         </div>
       </div>
