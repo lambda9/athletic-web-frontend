@@ -57,6 +57,12 @@
 	justify-content: space-evenly;
 }
 
+.button-primary {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
 .nav-toggle-container {
 	padding: 0.5em;
 }
