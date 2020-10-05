@@ -10,8 +10,8 @@ import ButtonGroup from "./ButtonGroup";
 import "./Navbar.css";
 const SMALL = 0;
 const LARGE = 1;
-const SMALL_LOGO = "4em";
-const LARGE_LOGO = "7em";
+const SMALL_LOGO = "5em";
+const LARGE_LOGO = "5em";
 
 const Navbar = () => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);

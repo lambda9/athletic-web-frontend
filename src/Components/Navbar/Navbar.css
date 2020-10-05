@@ -19,6 +19,7 @@
 }
 
 .nav-logo img {
+	width: 5rem;
 	transition: width ease-in-out 0.5s;
 }
 
@@ -154,6 +155,12 @@
 
 	.nav-logo {
 		margin-left: 0.5rem;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.nav-logo img {
+		width: 3rem;
 	}
 }
 
