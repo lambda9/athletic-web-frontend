@@ -12,6 +12,7 @@ import HeroSection from "../HeroSection/HeroSection";
 import Title from "../Title/Title";
 import ProgramCarousel from "../../Components/Programs/ProgramCarousel";
 import HomePageEnquiry from '../Home/HomePageEnquiry';
+import HomePageFAQ from '../FAQ/HomePageFAQ'
 
 function Home() {
 	
@@ -21,6 +22,7 @@ function Home() {
 			<HeroSection />
 			<CardGroup />
 			<HomePageEnquiry />
+			<HomePageFAQ />
 		</div>
 	);
 }
