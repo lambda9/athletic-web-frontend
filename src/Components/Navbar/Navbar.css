@@ -18,8 +18,8 @@
 	margin-left: 3rem;
 }
 
-.nav-logo > img {
-	transition: width ease-in-out 0.3s;
+.nav-logo img {
+	transition: width ease-in-out 0.5s;
 }
 
 .right-nav {
