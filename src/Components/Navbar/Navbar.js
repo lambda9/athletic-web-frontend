@@ -1,9 +1,5 @@
-/** @jsx jsx */
-
 import React, { useEffect, useRef, useState } from "react";
-import { jsx } from "@emotion/core";
 import { Link, useLocation } from "react-router-dom";
-import "./Navbar.css";
 import NavToggleButton from "./NavToggleButton";
 import BottomNav from "./BottomNav";
 import Logo from "./Logo";
@@ -11,6 +7,7 @@ import TextLogo from "./TextLogo";
 import NavLinkGroup from "./NavLinkGroup";
 import ButtonGroup from "./ButtonGroup";
 
+import "./Navbar.css";
 const SMALL = 0;
 const LARGE = 1;
 const SMALL_LOGO = "4em";
@@ -80,45 +77,29 @@ const Navbar = () => {
 	// }, [windowWidth, scroll]);
 
 	return (
-		<nav
-			className="top-nav-container"
-			css={{
-				width: "100%",
-			}}
-		>
-			<div
-				className="top-nav"
-				css={{
-					display: "flex",
-					alignContent: "center",
-				}}
-			>
-				<Logo
-					width={logoSize}
-					css={{
-						width: "fit-content",
-					}}
-				/>
+		<nav className="nav-container">
+			<div className="top-nav">
+				<Logo width={logoSize} />
 				{/* <TextLogo isVisible={navWidth !== LARGE ? true : false} /> */}
-				<NavLinkGroup
-					isVisible={true}
-					currentLink={location.pathname}
-					links={links}
-					className={"nav-link-group"}
-					css={{
-						display: "flex",
-						alignItems: "center",
-					}}
-				/>
-				{/* <ButtonGroup isVisible={btnGroupVisible} /> */}
-				<NavToggleButton
-					onClick={() => {
-						setBottomNavOpen(!bottomNavOpen);
-					}}
-					isOpen={bottomNavOpen}
-					isVisible={true}
-				/>
+				<div className="right-nav">
+					<NavLinkGroup
+						isVisible={true}
+						currentLink={location.pathname}
+						links={links}
+						className={"nav-link-group"}
+					/>
+					{/* <ButtonGroup isVisible={true} /> */}
+					<NavToggleButton
+						onClick={() => {
+							setBottomNavOpen(!bottomNavOpen);
+						}}
+						isOpen={bottomNavOpen}
+						isVisible={false}
+					/>
+					<ButtonGroup />
+				</div>
 			</div>
+
 			{/* <div className="nav-bottom"></div> */}
 			{/* <BottomNav
 				links={links}

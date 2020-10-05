@@ -3,9 +3,9 @@
 import React from "react";
 import { jsx } from "@emotion/core";
 import { Link } from "react-router-dom";
+import ButtonGroup from "./ButtonGroup";
 
 const NavLinkGroup = (props) => {
-	console.log(props);
 	return (
 		<div className={props.className}>
 			{props.links.map((value, index) => {
