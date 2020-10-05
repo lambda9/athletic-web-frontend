@@ -1,0 +1,51 @@
+.cont-comp-main-div {
+    width: 100%;
+    margin: 2rem auto;
+    border: 2px solid green;
+}
+
+.cont-comp-form-text-div {
+    width: 90%;
+    margin: 0.5rem auto;
+}
+
+.cont-comp-form-text-div h1{
+    font-size: 18px;
+}
+
+.cont-comp-form-text-div span{
+    margin: -1rem auto 0.2rem;
+    font-size: 12px;
+}
+
+.cont-comp-left-div {
+    width: 100%;
+    margin: auto;
+    background-color: burlywood;
+}
+
+.cont-comp-right-div {
+    width: 100%;
+    margin: 0rem auto;
+    background-color: cornflowerblue;
+}
+
+.cont-comp-form-type-div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.cont-comp-form-div {
+    margin: 1rem auto;
+}
+
+.cont-comp-form-btn-container {
+    margin: 0.5rem auto;
+    /* background-color: whitesmoke; */
+}
+
+.cont-comp-form-btn-container button {
+    margin: 0.2rem 1rem;
+}

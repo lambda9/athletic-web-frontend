@@ -6,6 +6,7 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./HomePageFAQ.css";
+
 const primaryColor = "#459fb6";
 const mainWhite = "#ffffff";
 const primaryRed = "#c13434";
