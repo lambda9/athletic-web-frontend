@@ -1,26 +1,29 @@
-.cont-comp-main-div {
+/* git => get in touch */
+
+
+.cont-git-main-div {
   width: 100%;
   margin: 2rem auto;
   transition: var(--fastTransition);
   border: 2px solid green;
 }
 
-.cont-comp-form-text-div {
+.cont-git-text-div {
   width: 90%;
   margin: 0.5rem auto 0;
   /* background-color: burlywood; */
 }
 
-.cont-comp-form-text-div h1 {
+.cont-git-text-div h1 {
   font-size: 18px;
 }
 
-.cont-comp-form-text-div span {
+.cont-git-text-div span {
   transition: var(--fastTransition);
   font-size: 12px;
 }
 
-.cont-comp-form-type-div {
+.cont-git-form-div {
   width: 90%;
   display: flex;
   margin: 1rem auto;
@@ -28,20 +31,20 @@
   flex-direction: column;
 }
 
-.cont-comp-left-div {
+.cont-git-left-div {
   /* background-color: rgb(165, 65, 65); */
   width: 100%;
   margin: auto;
 }
 
-.cont-comp-right-div {
+.cont-git-right-div {
   width: 100%;
   text-align: left;
   /* background-color: blanchedalmond; */
   margin: 0rem auto;
 }
 
-.cont-comp-right-div a {
+.cont-git-right-div a {
   transition: var(--fastTransition);
   display: block;
   margin: 1rem auto 0rem 1.3rem;
@@ -49,60 +52,60 @@
   color: blue;
 }
 
-.cont-comp-right-div a:hover {
+.cont-git-right-div a:hover {
   color: var(--primaryColor);
 }
 
-.cont-comp-form-div {
+.cont-git-form-div {
   margin: 1rem auto;
 }
 
-.cont-comp-form-btn-container {
+.cont-git-form-btn-container {
   margin: 0.5rem auto;
   /* background-color: whitesmoke; */
 }
 
-.cont-comp-form-btn-container button {
+.cont-git-form-btn-container button {
   margin: 0.2rem 1rem;
 }
 
 @media screen and (min-width: 550px) {
-  .cont-comp-form-type-div {
+  .cont-git-form-div {
     flex-direction: row;
     margin: 1.5rem auto;
     margin-top: 0.5rem;
   }
 
-  .cont-comp-left-div {
+  .cont-git-left-div {
     width: 60%;
   }
 
-  .cont-comp-right-div {
+  .cont-git-right-div {
     justify-items: center;
     padding-top: 2.5rem;
     width: 40%;
   }
 
-  .cont-comp-form-text-div span {
+  .cont-git-text-div span {
     margin: 1rem auto 0.5rem;
     font-size: 16px;
   }
 }
 
 @media screen and (min-width: 800px) {
-  .cont-comp-form-type-div {
+  .cont-git-form-div {
     width: 85%;
   }
 
-  .cont-comp-left-div {
+  .cont-git-left-div {
     width: 50%;
   }
 
-  .cont-comp-right-div {
+  .cont-git-right-div {
     width: 40%;
   }
 
-  .cont-comp-right-div a {
+  .cont-git-right-div a {
       font-size: 18px;
   }
 }

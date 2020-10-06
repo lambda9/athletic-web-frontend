@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Hero from "../Hero";
 import bgImg from "../../Images/im9.jpg";
-import ContactUsComp from "./ContactUsComp";
+import GetInTouchComp from "./GetInTouchComp";
 
 class ContactUs extends Component {
   render() {
@@ -13,7 +13,7 @@ class ContactUs extends Component {
           description="Mail, call, text or meet on-site"
         ></Hero>
 
-        <ContactUsComp />
+        <GetInTouchComp />
       </div>
     );
   }
