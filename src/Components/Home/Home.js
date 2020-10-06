@@ -10,8 +10,8 @@ import img4 from "../../Images/Carousel/img4.jpg";
 import landingBackdrop from "../../Images/landingBackdrop.png";
 import HeroSection from "../HeroSection/HeroSection";
 import Title from "../Title/Title";
-import ProgramCarousel from "../../Components/Programs/ProgramCarousel";
-import HomePageEnquiry from '../Home/HomePageEnquiry';
+import ProgramCarousel from "../Programs/ProgramCarousel";
+import HomePageEnquiry from './HomePageEnquiry';
 import HomePageFAQ from '../FAQ/HomePageFAQ'
 import WhyJoinUs from '../WhyJoinUs/WhyJoinUs'
 
