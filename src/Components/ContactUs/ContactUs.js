@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Hero from "../Hero";
 import bgImg from "../../Images/im9.jpg";
-import AddressComp from "./AddressComp";
 import ReachUs from "./ReachUs";
 import GetInTouchComp from "./GetInTouchComp";
 

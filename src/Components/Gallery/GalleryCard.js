@@ -1,21 +1,16 @@
 import React, { useState } from "react";
 import ImageSlides from "./ImageSlides";
 import img1 from "../../Images/im1.jpg";
-import img2 from "../../Images/im2.jpg";
-import img3 from "../../Images/im3.jpg";
 import img4 from "../../Images/im4.jpg";
 import img5 from "../../Images/im5.jpg";
-import img6 from "../../Images/im6.jpg";
 import "./Gallery.css";
 
 const images = [img1, img4, img5, img1, img4, img5];
 
 const GalleryCard = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(0);
 
   const onImageSelected = (index) => {
-    setPrevIndex(currentIndex);
     setCurrentIndex(index);
   };
 

@@ -1,8 +1,6 @@
 import React from 'react'
 import Triangle from "../Shapes/Triangle";
-import Square from "../Shapes/Square";
 import Circle from "../Shapes/Circle";
-import Line from '../Shapes/Line';
 import Dots from '../Shapes/Dots'
 
 

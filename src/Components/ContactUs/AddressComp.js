@@ -1,7 +1,6 @@
 import React from "react";
 import "./ContactUs.css";
 import { SiGooglemaps } from "react-icons/all";
-import Title from "../Title/Title";
 // add => address
 
 function AddressComp() {

@@ -5,8 +5,6 @@ import "./News.css";
 import backDropImg from "../../Images/im5.jpg";
 import img1 from "../../Images/im7.jpg";
 
-const desc =
-  " We want to help you live a fit and healthy lifestyle! We do this by helping you find the most suitable equipment for your home gym, studio or commercial gym, keeping your budget, lifestyle and fitness goals in mind.";
 function NewsCard() {
   return (
     <div className="news-page">
