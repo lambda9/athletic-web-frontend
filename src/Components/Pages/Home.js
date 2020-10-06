@@ -15,7 +15,6 @@ import HomePageEnquiry from '../Home/HomePageEnquiry';
 
 function Home() {
 	
-
 	return (
 		<div>
 			<HeroSection />
