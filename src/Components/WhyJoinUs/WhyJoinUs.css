@@ -1,19 +1,19 @@
 .wju-main-div {
   width: 100%;
   position: relative;
-  min-height: 700px;
+  height: 700px;
   background-color: rgb(222, 247, 247);
 }
-
+#drawspace { 
+    background: #000;
+    width: 100%;
+}
 .wju-card {
   width: 200px;
-  position: relative;
   height: 200px;
+  position: relative;
   overflow: hidden;
-  background-color: red;
-  animation-name: example;
-  animation-iteration-count: infinite;
-  animation-duration: 4s;
+  background-color: firebrick;
   border-radius: 50%;
 }
 

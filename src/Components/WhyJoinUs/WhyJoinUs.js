@@ -6,10 +6,7 @@ import './WhyJoinUs.css'
 export class WhyJoinUs extends Component {
   render() {
     return (
-      <div className="wju-main-div">
-        <Title>Why join us</Title>
-        <WhyJoinCard />
-      </div>
+      <WhyJoinCard />
     );
   }
 }
