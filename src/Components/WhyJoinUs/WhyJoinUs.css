@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   height: 600px;
+  display: flex;
   background-color: rgb(222, 247, 247);
 }
 #drawspace { 
