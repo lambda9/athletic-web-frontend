@@ -1,0 +1,29 @@
+
+.program-card {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 170px;
+    margin: 0.5em;
+    padding: 0.4rem 0;
+    /* background-color: lightcoral; */
+    background-image:url("../../Images/im9.jpg");
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    max-width: 250px;
+   
+    color: whitesmoke;
+  }
+  .media {
+    height: 0;
+    paddingTop: '56.25%'; 
+  }
+  
+  .text {
+    display:flex;
+    flex-direction:column;
+    
+  }
+  .image{
+      max-height: 90px;
+  }
