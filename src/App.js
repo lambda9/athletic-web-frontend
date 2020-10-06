@@ -15,7 +15,9 @@ import JoinNow from "./Components/Pages/JoinNow";
 import Footer from "./Components/Footer/Footer";
 import ScrollToTop from "./Components/ScrollToTop";
 import FreeTrialPage from './Components/FreeTrial/FreeTrialPage'
-import NewsCard from "./Components/NewsBlog/NewsCard";
+import NewsCard from "./Components/NewsBlog/NewsCard"
+import FranchisePage from './Components/Franchise/FranchisePage'
+
 class App extends Component {
   render() {
     return (
@@ -35,6 +37,7 @@ class App extends Component {
             <Route exact path="/joinNow/:slug" component={JoinNow} />
             <Route exact path='/freetrial/' component={FreeTrialPage} />
             <Route exact path='/news/' component={NewsCard} />
+            <Route exact path='/franchise/' component={FranchisePage} />
             <Route component={Error} />
           </Switch>
         </div>
