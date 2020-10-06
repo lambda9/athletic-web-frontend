@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Hero from "../Hero";
 import bgImg from "../../Images/im9.jpg";
+import AddressComp from "./AddressComp";
+import ReachUs from "./ReachUs";
 
 class ContactUs extends Component {
   render() {
@@ -11,6 +13,8 @@ class ContactUs extends Component {
           title="Contact us"
           description="Mail, call, text or meet on-site"
         ></Hero>
+
+        <ReachUs />
       </div>
     );
   }
