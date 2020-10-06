@@ -97,23 +97,23 @@ const Navbar = () => {
 						links={links}
 						className={"nav-link-group"}
 					/>
-					{/* <ButtonGroup isVisible={true} /> */}
-					<ButtonGroup />
+					<ButtonGroup isVisible={true} />
+					{/* <ButtonGroup />
 					<NavToggleButton
 						onClick={() => {
 							setBottomNavOpen(!bottomNavOpen);
 						}}
 						isOpen={bottomNavOpen}
 						isVisible={true}
-					/>
+					/> */}
 				</div>
 			</div>
-			<BottomNav
+			{/* <BottomNav
 				links={links}
 				currentLink={location.pathname}
 				visible={bottomNavOpen}
 				onLinkClick={onLinkClick}
-			/>
+			/> */}
 		</nav>
 	);
 };
