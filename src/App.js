@@ -8,7 +8,7 @@ import Programs from "./Components/Programs/ProgramsPage";
 import ContactUs from "./Components/ContactUs/ContactUs";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import FAQ from "./Components/FAQ/FAQ";
-import Gallery from "./Components/Pages/Gallery";
+import Gallery from "./Components/Gallery/Gallery";
 import Membership from "./Components/Membership/Membership";
 import Error from "./Components/Pages/Error";
 import JoinNow from "./Components/Pages/JoinNow";
