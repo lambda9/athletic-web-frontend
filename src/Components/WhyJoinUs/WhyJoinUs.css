@@ -1,0 +1,28 @@
+.wju-main-div {
+  width: 100%;
+  position: relative;
+  height: 600px;
+  display: flex;
+  background-color: rgb(222, 247, 247);
+}
+#drawspace { 
+    background: #000;
+    width: 100%;
+}
+.wju-card {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background-color: firebrick;
+  border-radius: 50%;
+}
+
+.wju-card p {
+  color: white;
+  font-size: 22px;
+}
+
+.wju-card img {
+  width: 200px;
+}
