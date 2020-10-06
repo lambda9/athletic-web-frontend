@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
@@ -23,19 +24,22 @@ export default function ControlledAccordions() {
       id: "faq_1",
       expanded: "panel1",
       ques: "Who are you and how long have you been around?",
-      ans: "Gym and Fitness has been around since 2016. We have gone from   strength to strength in that time and now pride ourselves in being one of the largest fitness center in Jodhpur. have years of combined fitness experience across all of our  staff.",
+      ans:
+        "Gym and Fitness has been around since 2016. We have gone from   strength to strength in that time and now pride ourselves in being one of the largest fitness center in Jodhpur. have years of combined fitness experience across all of our  staff.",
     },
     {
       id: "faq_2",
       expanded: "panel2",
       ques: "Do you have water or should I bring my own?",
-      ans: " All our branches are zero single-use plastic free and we provide reusable stainless bottles to borrow for your session. If you’d prefer to bring your own bottle, we also have water stations available.",
+      ans:
+        " All our branches are zero single-use plastic free and we provide reusable stainless bottles to borrow for your session. If you’d prefer to bring your own bottle, we also have water stations available.",
     },
     {
       id: "faq_3",
       expanded: "panel3",
       ques: "Do you have lockers?",
-      ans: "Absolutely, and a lot of them. No need to bring a lock, we operate on a code combination setup.",
+      ans:
+        "Absolutely, and a lot of them. No need to bring a lock, we operate on a code combination setup.",
     },
   ];
 
@@ -98,28 +102,40 @@ export default function ControlledAccordions() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      {faqDt.map((item) => {
-        return (
-          <Accordion
-            expanded={expanded === item.expanded}
-            onChange={handleChange(item.expanded)}
-            className={classes.acc}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls={item.expanded + "bh-content"}
-              id={item.expanded + "bh-header"}
-              className={classes.head}
+    <div>
+      <div className={classes.root}>
+        {faqDt.map((item) => {
+          return (
+            <Accordion
+              expanded={expanded === item.expanded}
+              onChange={handleChange(item.expanded)}
+              className={classes.acc}
             >
-              <Typography className={classes.heading}>{item.ques} </Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography className={classes.details}>{item.ans} </Typography>
-            </AccordionDetails>
-          </Accordion>
-        );
-      })}
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls={item.expanded + "bh-content"}
+                id={item.expanded + "bh-header"}
+                className={classes.head}
+              >
+                <Typography className={classes.heading}>
+                  {item.ques}{" "}
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography className={classes.details}>{item.ans} </Typography>
+              </AccordionDetails>
+            </Accordion>
+          );
+        })}
+      </div>
+      <div className="home-page-faq-btn-div">
+        <Link to="/faq" className="button-primary">
+          checkout more
+        </Link>
+        <Link to="/" className="button-primary">
+          Ask Your Question
+        </Link>
+      </div>
     </div>
   );
 }
