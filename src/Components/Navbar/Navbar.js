@@ -55,9 +55,7 @@ const Navbar = () => {
 					ref={rightNav}
 					className="right-nav"
 					onMouseEnter={(e) => {
-						console.log(e.clientX);
 						let rect = rightNav.current.getBoundingClientRect();
-						console.log(rect);
 						if (e.clientX > rect.left && e.clientX < rect.left + 150) {
 							rightNav.current.scrollLeft = 0;
 						} else if (e.clientX < rect.right && e.clientX > rect.right - 150) {
