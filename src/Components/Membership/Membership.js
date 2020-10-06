@@ -143,6 +143,7 @@ class Membership extends Component {
         <div className="plan-bg-container">
           <MembershipBG />
         </div>
+        
         <div className="plan-container-center">
           <div className="plan-selectMembership-title">
             <Title>Select membership plan</Title>
