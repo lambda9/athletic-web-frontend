@@ -1,11 +1,10 @@
-import React, { useEffect, useRef, useState, findDOMNode } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Logo from "./Logo";
 import NavLinkGroup from "./NavLinkGroup";
 import ButtonGroup from "./ButtonGroup";
 
 import "./Navbar.css";
-import { Mouse } from "@material-ui/icons";
 const Navbar = () => {
 	const [scroll, setScroll] = useState(window.scrollY);
 	const prevScroll = useRef(0);
@@ -66,27 +65,12 @@ const Navbar = () => {
 						}
 					}}
 				>
-					{/* <div
-						className="nav-left-scroll"
-						onMouseOver={() => {
-							console.log("mouse enter", rightNav.current);
-							// let dom = findDOMNode(rightNav);
-							// console.log("doem", dom);
-							rightNav.current.scrollLeft += 100;
-						}}
-					>
-						Left
-					</div> */}
 					<NavLinkGroup
-						isVisible={true}
 						currentLink={location.pathname}
 						links={links}
 						className={"nav-link-group"}
 					/>
-					<ButtonGroup isVisible={true} />
-					{/* <div className="nav-right-scroll" onMouseOver={() => {
-						rightNav.current.scrollLeft = 0;
-					}}>Right</div> */}
+					<ButtonGroup />
 				</div>
 			</div>
 		</nav>
