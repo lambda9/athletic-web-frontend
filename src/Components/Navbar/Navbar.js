@@ -1,27 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import NavToggleButton from "./NavToggleButton";
-import BottomNav from "./BottomNav";
+import React, { useEffect, useRef, useState, findDOMNode } from "react";
+import { useLocation } from "react-router-dom";
 import Logo from "./Logo";
-import TextLogo from "./TextLogo";
 import NavLinkGroup from "./NavLinkGroup";
 import ButtonGroup from "./ButtonGroup";
 
 import "./Navbar.css";
-const SMALL = 0;
-const LARGE = 1;
-const SMALL_LOGO = "5em";
-const LARGE_LOGO = "5em";
-
+import { Mouse } from "@material-ui/icons";
 const Navbar = () => {
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 	const [scroll, setScroll] = useState(window.scrollY);
-	const [navWidth, setNavWidth] = useState(SMALL);
-	const [logoSize, setLogoSize] = useState(LARGE_LOGO);
-	const [bottomNavOpen, setBottomNavOpen] = useState(false);
-	const [btnGroupVisible, setBtnGroupVisible] = useState(true);
-
 	const prevScroll = useRef(0);
+	const rightNav = useRef(null);
 
 	const links = [
 		["/", "home"],
@@ -34,63 +22,61 @@ const Navbar = () => {
 
 	const location = useLocation();
 
-	const handleWindowResize = () => {
-		setWindowWidth(window.innerWidth);
-	};
-
 	const handleWindowScroll = () => {
 		setScroll(window.scrollY);
 	};
 
-	const onLinkClick = () => {
-		setBottomNavOpen(false);
-	};
-
 	useEffect(() => {
-		window.addEventListener("resize", handleWindowResize);
 		window.addEventListener("scroll", handleWindowScroll);
 		return () => {
-			window.removeEventListener("resize", handleWindowResize);
 			window.removeEventListener("scroll", handleWindowScroll);
 		};
 	}, []);
 
 	useEffect(() => {
-		console.log("prev", prevScroll.current, scroll);
 		prevScroll.current = scroll;
-		if (windowWidth < 1000) {
-			setLogoSize(SMALL_LOGO);
-			setNavWidth(SMALL);
-			// document.querySelector(".main-content").style.paddingTop = "0";
-		} else {
-			setNavWidth(LARGE);
-			setBottomNavOpen(false);
-			if (scroll > 300) {
-				setLogoSize(SMALL_LOGO);
-				// document.querySelector(".main-content").style.paddingTop = "0";
-			} else {
-				setLogoSize(LARGE_LOGO);
-				// document.querySelector(".main-content").style.paddingTop = "0";
-			}
-		}
-		if (windowWidth < 500) {
-			setBtnGroupVisible(false);
-		} else {
-			setBtnGroupVisible(true);
-		}
-	}, [windowWidth, scroll]);
+	}, [scroll]);
 
 	return (
 		<nav
 			className="nav-container"
 			style={{
 				top: scroll > 200 && scroll > prevScroll.current ? "-15%" : "0%",
+				background:
+					scroll > 200
+						? ""
+						: "linear-gradient(180deg, #000000, rgba(0, 0, 0, 0))",
+				backgroundColor: scroll > 200 ? "black" : "",
+				boxShadow: scroll > 200 ? "0 0 12px 0px #141414" : "",
 			}}
 		>
 			<div className="top-nav">
-				<Logo width={logoSize} />
-				<TextLogo isVisible={navWidth !== LARGE ? true : false} />
-				<div className="right-nav">
+				<Logo />
+				<div
+					ref={rightNav}
+					className="right-nav"
+					onMouseEnter={(e) => {
+						console.log(e.clientX);
+						let rect = rightNav.current.getBoundingClientRect();
+						console.log(rect);
+						if (e.clientX > rect.left && e.clientX < rect.left + 100) {
+							rightNav.current.scrollLeft = 0;
+						} else if (e.clientX < rect.right && e.clientX > rect.right - 100) {
+							rightNav.current.scrollLeft = 200;
+						}
+					}}
+				>
+					{/* <div
+						className="nav-left-scroll"
+						onMouseOver={() => {
+							console.log("mouse enter", rightNav.current);
+							// let dom = findDOMNode(rightNav);
+							// console.log("doem", dom);
+							rightNav.current.scrollLeft += 100;
+						}}
+					>
+						Left
+					</div> */}
 					<NavLinkGroup
 						isVisible={true}
 						currentLink={location.pathname}
@@ -98,22 +84,11 @@ const Navbar = () => {
 						className={"nav-link-group"}
 					/>
 					<ButtonGroup isVisible={true} />
-					{/* <ButtonGroup />
-					<NavToggleButton
-						onClick={() => {
-							setBottomNavOpen(!bottomNavOpen);
-						}}
-						isOpen={bottomNavOpen}
-						isVisible={true}
-					/> */}
+					{/* <div className="nav-right-scroll" onMouseOver={() => {
+						rightNav.current.scrollLeft = 0;
+					}}>Right</div> */}
 				</div>
 			</div>
-			{/* <BottomNav
-				links={links}
-				currentLink={location.pathname}
-				visible={bottomNavOpen}
-				onLinkClick={onLinkClick}
-			/> */}
 		</nav>
 	);
 };

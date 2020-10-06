@@ -1,9 +1,5 @@
-/** @jsx jsx */
-
 import React from "react";
-import { jsx } from "@emotion/core";
 import { Link } from "react-router-dom";
-import ButtonGroup from "./ButtonGroup";
 
 const NavLinkGroup = (props) => {
 	return (
@@ -19,10 +15,6 @@ const NavLinkGroup = (props) => {
 					</Link>
 				);
 			})}
-			{/* <Link to="/freetrial" className="button-primary">
-				free trial
-			</Link>
-			<Link className="button-primary">login</Link> */}
 		</div>
 	);
 };

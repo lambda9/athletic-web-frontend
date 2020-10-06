@@ -10,8 +10,8 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 0.5rem 0rem;
-	background: linear-gradient(180deg, #000000, rgba(0, 0, 0, 0.726));
-	box-shadow: 0 0 12px 0px #141414;
+	/* background: linear-gradient(180deg, #000000, rgba(0, 0, 0, 0));
+	/* box-shadow: 0 0 12px 0px #141414; */
 }
 
 .nav-logo {
@@ -26,11 +26,15 @@
 
 .right-nav {
 	display: flex;
+	position: relative;
 	flex-grow: 0.5;
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
 	justify-content: space-evenly;
 	/* overflow: scroll; */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none;
+	scroll-behavior: smooth;
 }
 
 .right-nav::-webkit-scrollbar {
@@ -46,13 +50,12 @@
 	/* margin-right: 3rem; */
 }
 
-.nav-link-group a,
-.bottom-nav-link-container a {
+.nav-link-group a {
 	text-decoration: none;
 	text-transform: capitalize;
 	color: var(--mainGrey);
 	font-size: 1rem;
-	/* font-weight: 800; */
+	font-weight: 800;
 	transition: var(--fastTransition);
 	letter-spacing: var(--mainSpacing);
 	white-space: nowrap;
@@ -60,15 +63,27 @@
 	margin-right: 8px;
 }
 
-.nav-link-group a:hover,
-.bottom-nav-link-container a:hover,
-.side-nav a:hover {
+.nav-link-group a:hover {
 	color: var(--primaryColor);
 	cursor: pointer;
 }
 
-.bottom-nav-link-container a {
-	width: fit-content;
+.nav-left-scroll {
+	position: absolute;
+	color: whitesmoke;
+	left: 0%;
+	width: 30%;
+	height: 100%;
+	border: 1px solid white;
+}
+
+.nav-right-scroll {
+	position: absolute;
+	color: whitesmoke;
+	right: 0%;
+	width: 30%;
+	height: 100%;
+	border: 1px solid white;
 }
 
 .nav-btn-grp {
@@ -138,35 +153,27 @@
 	align-items: center;
 }
 
+/* @media screen and (max-width: 900px) {
+	
+} */
+
 @media screen and (max-width: 900px) {
 	.top-nav {
-		background-color: #000000d7;
+		background-color: #000000;
 	}
 
-	/*.nav-btn-grp {
-		display: none;
+	.main-content {
+		padding-top: 79px;
 	}
-
-	.right-nav {
-		flex-grow: 0;
+	.nav-logo img {
+		width: 3rem;
 	}
-
-	.nav-toggle-container {
-		display: block;
-	}
-
-	.text-logo {
-		display: block;
-		font-size: 1.8rem;
-	}*/
 	.nav-logo {
 		margin-left: 0.5rem;
 	}
-}
 
-@media screen and (max-width: 550px) {
-	.nav-logo img {
-		width: 3rem;
+	.main-content {
+		padding-top: 54px;
 	}
 
 	.right-nav {
