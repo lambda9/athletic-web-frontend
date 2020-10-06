@@ -59,10 +59,10 @@ const Navbar = () => {
 						console.log(e.clientX);
 						let rect = rightNav.current.getBoundingClientRect();
 						console.log(rect);
-						if (e.clientX > rect.left && e.clientX < rect.left + 100) {
+						if (e.clientX > rect.left && e.clientX < rect.left + 150) {
 							rightNav.current.scrollLeft = 0;
-						} else if (e.clientX < rect.right && e.clientX > rect.right - 100) {
-							rightNav.current.scrollLeft = 200;
+						} else if (e.clientX < rect.right && e.clientX > rect.right - 150) {
+							rightNav.current.scrollLeft = 400;
 						}
 					}}
 				>
