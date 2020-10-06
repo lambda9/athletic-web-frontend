@@ -84,7 +84,7 @@ const Navbar = () => {
 		<nav
 			className="nav-container"
 			style={{
-				top: scroll > 0 && scroll > prevScroll.current ? "-15%" : "0%",
+				top: scroll > 200 && scroll > prevScroll.current ? "-15%" : "0%",
 			}}
 		>
 			<div className="top-nav">

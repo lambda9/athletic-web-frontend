@@ -27,8 +27,9 @@
 .right-nav {
 	display: flex;
 	flex-grow: 0.5;
-	margin-left: 1rem;
-	margin-right: 1rem;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	justify-content: space-evenly;
 	/* overflow: scroll; */
 }
 
@@ -40,8 +41,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 100%;
-	min-width: 450px;
+	width: 70%;
+	/* min-width: 450px; */
 	/* margin-right: 3rem; */
 }
 
@@ -54,6 +55,9 @@
 	/* font-weight: 800; */
 	transition: var(--fastTransition);
 	letter-spacing: var(--mainSpacing);
+	white-space: nowrap;
+	margin-left: 8px;
+	margin-right: 8px;
 }
 
 .nav-link-group a:hover,
@@ -86,7 +90,8 @@
 }
 
 #nav-link-active {
-	padding: 0.2em 0;
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
 	border-bottom: 3px solid var(--primaryColor);
 	color: var(--mainWhite);
 }
@@ -127,7 +132,7 @@
 .bottom-nav-link-container {
 	display: flex;
 	justify-content: space-evenly;
-	height: 100%;
+	height: 80%;
 	min-height: 300px;
 	flex-direction: column;
 	align-items: center;
@@ -135,7 +140,7 @@
 
 @media screen and (max-width: 900px) {
 	.top-nav {
-		background-color: #dfdfdfd7;
+		background-color: #000000d7;
 	}
 
 	/*.nav-btn-grp {
@@ -166,6 +171,49 @@
 
 	.right-nav {
 		overflow: scroll;
+		justify-content: flex-start;
+		mask-image: -webkit-linear-gradient(
+			to right,
+			transparent,
+			black 20px,
+			black 90%,
+			transparent
+		);
+		mask-image: -moz-linear-gradient(
+			to right,
+			transparent,
+			black 20px,
+			black 90%,
+			transparent
+		);
+		mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 20px,
+			black 90%,
+			transparent
+		);
+		-webkit-mask-image: -webkit-linear-gradient(
+			to right,
+			transparent,
+			black 20px,
+			black 90%,
+			transparent
+		);
+		-webkit-mask-image: -moz-linear-gradient(
+			to right,
+			transparent,
+			black 20px,
+			black 90%,
+			transparent
+		);
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 20px,
+			black 90%,
+			transparent
+		);
 	}
 
 	.right-nav a {
@@ -174,6 +222,10 @@
 
 	#nav-link-active {
 		border-bottom: 2px solid var(--primaryColor);
+	}
+
+	.nav-link-group {
+		width: fit-content;
 	}
 }
 
