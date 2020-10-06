@@ -1,0 +1,50 @@
+.wju-main-div {
+  width: 100%;
+  position: relative;
+  min-height: 700px;
+  background-color: rgb(222, 247, 247);
+}
+
+.wju-card {
+  width: 200px;
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background-color: red;
+  animation-name: example;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  border-radius: 50%;
+}
+
+.wju-card p {
+  color: white;
+  font-size: 22px;
+}
+
+.wju-card img {
+  width: 200px;
+}
+
+@keyframes example {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: 500px;
+    top: 0px;
+  }
+  50% {
+    left: 500px;
+    top: 400px;
+  }
+  75% {
+    left: 0px;
+    top: 400px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}

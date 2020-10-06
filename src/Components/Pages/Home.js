@@ -12,6 +12,7 @@ import HeroSection from "../HeroSection/HeroSection";
 import Title from "../Title/Title";
 import ProgramCarousel from "../../Components/Programs/ProgramCarousel";
 import HomePageEnquiry from '../Home/HomePageEnquiry';
+import WhyJoinUs from '../WhyJoinUs/WhyJoinUs'
 
 function Home() {
 	
@@ -20,6 +21,7 @@ function Home() {
 		<div>
 			<HeroSection />
 			<CardGroup />
+			<WhyJoinUs />
 			<HomePageEnquiry />
 		</div>
 	);
