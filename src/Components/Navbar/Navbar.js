@@ -1,109 +1,80 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./Navbar.css";
-import NavToggleButton from "./NavToggleButton";
-import BottomNav from "./BottomNav";
+import { useLocation } from "react-router-dom";
 import Logo from "./Logo";
-import TextLogo from "./TextLogo";
 import NavLinkGroup from "./NavLinkGroup";
 import ButtonGroup from "./ButtonGroup";
 
-const SMALL = 0;
-const LARGE = 1;
-const SMALL_LOGO = "4em";
-const LARGE_LOGO = "7em";
-
+import "./Navbar.css";
 const Navbar = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [scroll, setScroll] = useState(window.scrollY);
-  const [navWidth, setNavWidth] = useState(SMALL);
-  const [logoSize, setLogoSize] = useState(LARGE_LOGO);
-  const [bottomNavOpen, setBottomNavOpen] = useState(false);
-  const [btnGroupVisible, setBtnGroupVisible] = useState(true);
+	const [scroll, setScroll] = useState(window.scrollY);
+	const prevScroll = useRef(0);
+	const rightNav = useRef(null);
 
-  const links = [
-    ["/", "home"],
-    ["/programs", "programs"],
-    ["/membership", "membership"],
-    ["/gallery", "gallery"],
-    ["/aboutUs", "about us"],
-    ["/contactUs", "contact us"],
-  ];
+	const links = [
+		["/", "home"],
+		["/programs", "programs"],
+		["/membership", "membership"],
+		["/gallery", "gallery"],
+		["/aboutUs", "about us"],
+		["/contactUs", "contact us"],
+	];
 
-  const location = useLocation();
+	const location = useLocation();
 
-  const handleWindowResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  const handleWindowScroll = () => {
-    setScroll(window.scrollY);
-  };
-
-  const onLinkClick = () => {
-    setBottomNavOpen(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
-    window.addEventListener("scroll", handleWindowScroll);
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-      window.removeEventListener("scroll", handleWindowScroll);
-    };
-  }, []);
+	const handleWindowScroll = () => {
+		setScroll(window.scrollY);
+	};
 
 	useEffect(() => {
-		if (windowWidth < 1000) {
-			setLogoSize(SMALL_LOGO);
-			setNavWidth(SMALL);
-			document.querySelector(".main-content").style.paddingTop = "0";
-		} else {
-			setNavWidth(LARGE);
-			setBottomNavOpen(false);
-			if (scroll > 300) {
-				setLogoSize(SMALL_LOGO);
-				document.querySelector(".main-content").style.paddingTop = "0";
-			} else {
-				setLogoSize(LARGE_LOGO);
-				document.querySelector(".main-content").style.paddingTop = "0";
-			}
-		}
-		if (windowWidth < 500) {
-			setBtnGroupVisible(false);
-		} else {
-			setBtnGroupVisible(true);
-		}
-	}, [windowWidth, scroll]);
+		window.addEventListener("scroll", handleWindowScroll);
+		return () => {
+			window.removeEventListener("scroll", handleWindowScroll);
+		};
+	}, []);
 
-  return (
-    <nav className="top-nav-container">
-      <div className="top-nav">
-        <Logo width={logoSize} />
-        <TextLogo isVisible={navWidth !== LARGE ? true : false} />
-        <NavLinkGroup
-          isVisible={navWidth === LARGE ? true : false}
-          currentLink={location.pathname}
-          links={links}
-        />
-        <ButtonGroup isVisible={btnGroupVisible} />
-        <NavToggleButton
-          onClick={() => {
-            setBottomNavOpen(!bottomNavOpen);
-          }}
-          isOpen={bottomNavOpen}
-          isVisible={navWidth === SMALL ? true : false}
-        />
-      </div>
-      <div className="nav-bottom"></div>
-      <BottomNav
-        links={links}
-        currentLink={location.pathname}
-        visible={bottomNavOpen}
-        onLinkClick={onLinkClick}
-      />
-    </nav>
-  );
+	useEffect(() => {
+		prevScroll.current = scroll;
+	}, [scroll]);
+
+	return (
+		<nav
+			className="nav-container"
+			style={{
+				top: scroll > 200 && scroll > prevScroll.current ? "-15%" : "0%",
+				background:
+					scroll > 200
+						? ""
+						: "linear-gradient(180deg, #000000, rgba(0, 0, 0, 0))",
+				backgroundColor: scroll > 200 ? "black" : "",
+				boxShadow: scroll > 200 ? "0 0 12px 0px #141414" : "",
+			}}
+		>
+			<div className="top-nav">
+				<Logo />
+				<div
+					ref={rightNav}
+					className="right-nav"
+					onMouseEnter={(e) => {
+						console.log(e.clientX);
+						let rect = rightNav.current.getBoundingClientRect();
+						console.log(rect);
+						if (e.clientX > rect.left && e.clientX < rect.left + 150) {
+							rightNav.current.scrollLeft = 0;
+						} else if (e.clientX < rect.right && e.clientX > rect.right - 150) {
+							rightNav.current.scrollLeft = 400;
+						}
+					}}
+				>
+					<NavLinkGroup
+						currentLink={location.pathname}
+						links={links}
+						className={"nav-link-group"}
+					/>
+					<ButtonGroup />
+				</div>
+			</div>
+		</nav>
+	);
 };
 
 export default Navbar;

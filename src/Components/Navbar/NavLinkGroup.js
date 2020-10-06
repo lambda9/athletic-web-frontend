@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 
 const NavLinkGroup = (props) => {
 	return (
-		<div
-			className="nav-links-container"
-			style={{ display: props.isVisible ? "flex" : "none" }}
-		>
+		<div className={props.className}>
 			{props.links.map((value, index) => {
 				return (
 					<Link
@@ -18,7 +15,6 @@ const NavLinkGroup = (props) => {
 					</Link>
 				);
 			})}
-			
 		</div>
 	);
 };
