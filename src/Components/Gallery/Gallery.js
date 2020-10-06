@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Hero from "../Hero";
-import Banner from "../Banner";
 import bgImg from "../../Images/im4.jpg";
 import GalleryCard from "./GalleryCard";
 import "./Gallery.css";

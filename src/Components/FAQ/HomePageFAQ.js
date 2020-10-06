@@ -9,13 +9,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./HomePageFAQ.css";
 
 const primaryColor = "#459fb6";
-const mainWhite = "#ffffff";
-const primaryRed = "#c13434";
-const offWhite = "#e0e0e0";
-const mainBlack = "#222";
-const mainGrey = "#ececec";
-const darkGrey = "#cfcfcf";
-const c1 = "#126d82";
 const c2 = "#1ca9c9";
 
 export default function ControlledAccordions() {
@@ -112,6 +105,7 @@ export default function ControlledAccordions() {
               className={classes.acc}
             >
               <AccordionSummary
+                key={item.id}
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls={item.expanded + "bh-content"}
                 id={item.expanded + "bh-header"}

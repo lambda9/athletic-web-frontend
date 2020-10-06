@@ -1,7 +1,4 @@
 import React from "react";
-import Title from "../Title/Title";
-import { Link } from "react-router-dom";
-import Banner from "../Banner";
 import Hero from "../Hero";
 import bgImg from '../../Images/im2.jpg'
 

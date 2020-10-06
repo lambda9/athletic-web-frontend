@@ -1,18 +1,10 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import "../FreeTrial/FreeTrial.css";
 
 const PRIME_COLOR = "#459fb6";
-const mainWhite = "#ffffff";
-const primaryRed = "#c13434";
-const offWhite = "#e0e0e0";
-const mainBlack = "#222";
-const mainGrey = "#ececec";
-const darkGrey = "#cfcfcf";
-const c1 = "#126d82";
-const c2 = "#1ca9c9";
+
 
 const useStyles = (theme) => ({
   root: {

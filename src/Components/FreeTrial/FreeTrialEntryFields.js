@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -8,7 +7,7 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import "./FreeTrial.css";
 
 const useStyles = (theme) => ({
@@ -81,19 +80,6 @@ const SelectField = withStyles({
     border: "1px solid #ced4da",
     fontSize: 16,
     padding: "10px 26px 10px 12px",
-    // Use the system font instead of the default Roboto font.
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
     "&:focus": {
       borderRadius: 4,
       borderColor: "#80bdff",

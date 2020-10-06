@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import "../FreeTrial/FreeTrial.css";
 import "./HomeEnquiry.css";
 
@@ -88,7 +87,6 @@ class HomePageEnquiry extends Component {
           <form className={classes.root} autoComplete="nope">
             <CssTextField
               required
-              keyboard={false}
               type="text"
               name="name"
               value={this.state.name}

@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { SiInstagram, SiFacebook, BiPhoneCall, SiGooglemaps, FaFacebook } from "react-icons/all";
+import { SiInstagram, BiPhoneCall, SiGooglemaps, FaFacebook } from "react-icons/all";
 
 export class SocialMedia extends Component {
   render() {
     return (
       <div className="footer-social-media">
         <div className="footer-social-media-cont">
-          <Link>
+          <Link to='/'>
             <FaFacebook />
           </Link>
-          <Link>
+          <Link to='/'>
             <SiInstagram />
           </Link>
-          <Link>
+          <Link to='/'>
             <BiPhoneCall />
           </Link>
-          <Link>
+          <Link to='/'>
             <SiGooglemaps />
           </Link>
         </div>

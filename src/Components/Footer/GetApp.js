@@ -7,10 +7,10 @@ function GetApp() {
     <div className="footer-get-app">
       <div className="footer-get-app-cont">
         <span>Get app</span>
-        <Link>
+        <Link to="/">
           <FaGooglePlay />
         </Link>
-        <Link>
+        <Link to="/">
           <FaApple />
         </Link>
       </div>

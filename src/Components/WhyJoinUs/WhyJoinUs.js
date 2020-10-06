@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Title from "../Title/Title";
 import WhyJoinCard from "./WhyJoinCard";
 import './WhyJoinUs.css'
 
