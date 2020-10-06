@@ -1,21 +1,113 @@
 .Entry-Form {
   background-color: rgb(255, 249, 249);
-  /* background-image: url(/static/media/im5.7b9adf91.jpg); */
   display: block;
-  /* margin-top: 0px; */
-  /* margin-bottom: 15px; */
   padding: 20px;
-
-  /* flex-direction: column; */
 }
 
-input {
-  /* background-color: cyan; */
+.cont-add-comp-div {
+  text-align: left;
+  color: grey;
+  margin: 1rem auto;
+}
+
+.cont-add-comp-div h1 {
+  font-size: 26px;
+  color: black;
+}
+
+.cont-add-comp-div span {
+  margin-top: 1rem;
   display: flex;
-  border: 2px solid rgb(1, 146, 146);
-  border-radius: 8px;
-  flex-direction: column;
-  width: 35%;
-  margin: 55px auto;
-  padding: 20px;
+  font-size: 20px;
+}
+.add-comp-icon {
+  margin-top: 0.15rem;
+  font-size: 17px;
+}
+
+.add-comp-rest-add {
+  margin-left: 0.4rem;
+  font-size: 16px;
+}
+
+.add-comp-rest-add-phone {
+  font-size: 20px;
+  margin: 1rem 0 1rem 0;
+}
+
+.cont-add-comp-div {
+  width: fit-content;
+  display: block;
+}
+
+.cont-reach-main-div {
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+
+
+.cont-reach-add-map-div {
+  display: flex;
+  margin: auto;
+  width: 90%;
+  flex-direction: column-reverse;
+}
+
+.cont-reach-left-div,
+.cont-reach-right-div {
+  width: 100%;
+  margin: 0.5rem auto;
+}
+.cont-reach-right-div {
+  display: flex;
+  border: 2px solid black;
+  margin-top: 2rem;
+  height: 200px;
+}
+
+.cont-reach-right-div > div {
+  margin: auto;
+}
+
+@media screen and (min-width: 650px) {
+  .cont-reach-add-map-div {
+    flex-direction: row;
+  }
+
+  .cont-reach-left-div,
+  .cont-reach-right-div {
+    width: 50%;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+
+  .cont-reach-text {
+    font-size: 22px;
+  }
+
+  .cont-add-comp-div h1 {
+    font-size: 32px;
+  }
+
+  .cont-add-comp-div span {
+    margin-top: 1.5rem;
+    font-size: 24px;
+  }
+  .add-comp-icon {
+    margin-top: 0.05rem;
+    font-size: 22px;
+  }
+
+  .add-comp-rest-add {
+    margin-left: 0.5rem;
+    font-size: 20px;
+  }
+
+  .add-comp-rest-add-phone {
+    font-size: 24px;
+    margin: 1.5rem 0 1.5rem 0;
+  }
 }
