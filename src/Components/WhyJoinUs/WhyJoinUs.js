@@ -84,10 +84,3 @@ export class WhyJoinUs extends Component {
 
 export default WhyJoinUs;
 
-// <img
-// src={it.img}
-// data-aos-delay={`${it.count*100}`}
-// data-aos-anchor-placement="top-bottom"
-// data-aos="fade-up"
-// data-aos-duration="1000"
-// ></img>
