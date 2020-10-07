@@ -2,7 +2,12 @@
 
 
 .blog-page {
-  height: 1000px;
+  height: auto;
+}
+.blog-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;   
 }
 
 .blog-wrapper {
@@ -78,5 +83,14 @@
 
 
 @media screen and (max-width: 550px) {
-
+    .blog-grid{
+        display:flex;
+        flex-direction: column;
+    }
+    .blog-wrapper{
+        margin:auto;
+    }
+    .blog-post{
+        width:90%;
+    }
 }
