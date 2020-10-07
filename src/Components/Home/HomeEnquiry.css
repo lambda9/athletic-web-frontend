@@ -1,6 +1,11 @@
+.custom {
+  height: 850px;
+  /* background-color: blue; */
+}
+
 .div {
   width: 100%;
-  height: 800px;
+  height: 600px;
   background-image: url("../../Images/im10.jpg");
   border: 2px solid black;
   background-size: cover;
@@ -13,22 +18,25 @@
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
 }
 
 .home-enquiry-main-div {
-  width: 85%;
+  width: 80%;
   margin: auto;
+  padding: 1.5rem;
   background-color: white;
   box-shadow: 0 0 11px 0px #313131;
-  transform: translateY(-40px);
+  /* background-color: aquamarine; */
 }
 
 .home-enquiry-left-div {
   width: 100%;
-  margin: auto;
+  margin: 4rem auto;
   color: white;
   height: fit-content;
+  /* background-color: aquamarine; */
 }
 
 .home-enquiry-left-div span {
@@ -46,11 +54,6 @@
   font-size: 18px;
 }
 
-.home-enquiry-right-div {
-  width: 100%;
-  margin: auto;
-}
-
 .home-enquiry-btn-container {
   margin: 0.5rem auto;
 }
@@ -59,19 +62,28 @@
   margin: auto 1rem;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 850px) {
+  .custom {
+    height: fit-content;
+  }
   .div {
     height: 500px;
   }
 
+  .div2 {
+    flex-direction: row;
+  }
+
   .home-enquiry-main-div {
-    min-width: 600px;
-    width: 35%;
-    padding: 1rem;
+    width: 40%;
+    min-width: 450px;
+    transform: translateY(-45px);
+    padding: 2rem;
     border-radius: 5px;
   }
 
   .home-enquiry-left-div {
+    margin: auto;
     width: 45%;
   }
 
@@ -90,16 +102,11 @@
     font-size: 28px;
   }
 
-  .home-enquiry-right-div {
-    margin: 1rem auto;
-    width: 100%;
-  }
-
   .home-enquiry-btn-container {
-    /* font-size: 0.2em; */
+    font-size: 0.2em;
   }
 
   .home-enquiry-btn-container button {
-    /* margin: 0.2rem 1.7rem; */
+    margin: 0.2rem 1.7rem;
   }
 }
