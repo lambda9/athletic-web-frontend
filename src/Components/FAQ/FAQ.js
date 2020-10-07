@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "./FAQ.css";
+import QuesAns from "./FAQQuesAns";
 
 class FAQ extends Component {
   
   render() {
+    const FAQtype = ["type1","type2","type3"];
     return (
       <div className = "faq-page">
         <div className = "faq-hero">
@@ -18,6 +20,15 @@ class FAQ extends Component {
               <input type = "text" placeholder = "Enter keywords to search"></input>
             </div>
           </div>
+        </div>
+        <div className = "faq-main">
+          {
+            FAQtype.map ( (item) => {
+              return (
+                <QuesAns type={item}></QuesAns>
+              );
+            })
+          }
         </div>
       </div>
     );

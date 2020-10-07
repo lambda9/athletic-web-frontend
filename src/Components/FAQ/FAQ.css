@@ -1,6 +1,6 @@
 .faq-hero {
-  color: var(--accentColor);
-  background-color: var(--mainGrey);
+  background-color: var(--accentColor);
+  color: var(--mainGrey);
 }
 
 .faq-hero-child1 {
@@ -34,4 +34,35 @@
   width: 75%;
   font-size: 1em;
   padding-left: 1em;
+}
+
+.faq-qa-main {
+  display: flex;
+  padding: 3em;
+  color: var(--accentColor);
+}
+
+.faq-type-head {
+  font-size: 3em;
+  width: 50%;
+  font-family: "Alata", sans-serif;
+}
+
+.faq-accordion {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+  .faq-hero-text {
+    font-size: 3rem;
+  }
+  .faq-qa-main {
+    flex-direction: column;
+    padding: 1em;
+  }
+  .faq-type-head {
+    width: 100%;
+    padding: 1em;
+  }
 }
