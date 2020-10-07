@@ -1,83 +1,29 @@
 import React from "react";
-import "./WhyJoinUs.css";
-import img1 from "../../Images/im8.jpg";
-import Title from "../Title/Title";
-import { Component } from "react";
+import img from "../../Images/im3.jpg";
 
-export class WhyJoinCard extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      x: this.props.x,
-      y: this.props.y,
-    };
-  }
-
-  componentDidMount() {
-    // this.element = document.getElementById("myDiv");
-    this.circRad = 200;
-    this.dx = 1;
-    this.dy = 1;
-    this.drawCirc();
-  }
-
-  componentDidUpdate() {
-    window.addEventListener("resize", this.handleWindowResize);
-  }
-
-  handleWindowResize = () => {
-    var tempWidth = window.innerWidth;
-    var tempHeight = window.innerHeight;
-
-    if (this.x > tempWidth) {
-      this.setState({
-        x: tempWidth,
-      });
-    }
-
-    if (this.y > tempHeight) {
-      this.setState({
-        y: tempHeight,
-      });
-    }
-  };
-
-  drawCirc = () => {
-    // if (
-    //   this.state.x < 0 ||
-    //   this.state.x > this.element.offsetWidth - this.circRad
-    // ) {
-    //   this.dx = -this.dx;
-    // }
-    if (
-      this.state.y < 0 ||
-      this.state.y > 600 - this.circRad
-    ) {
-      this.dy = -this.dy;
-    }
-
-    this.setState({
-      //   x: this.state.x + this.dx,
-      y: this.state.y + this.dy,
-    });
-    window.requestAnimationFrame(this.drawCirc);
-  };
-
-  render() {
-    return (
-        <div
-          className="wju-card"
+function WhyJoinCard(props) {
+  return (
+    <div>
+      <div
+        className="wju-card"
+        data-aos-delay={`${props.key * 200}`}
+        data-aos-anchor-placement="top-bottom"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        style={{
+          width: `${props.w}px`,
+          height: `${props.h}px`,
+        }}
+      >
+        <img
+          src={props.bgImg}
           style={{
-            top: `${this.state.y}px`,
-            left: `${this.state.x}px`,
+            width: `${props.w}px`,
           }}
-        >
-          <img src={img1}></img>
-          <p>Hey this is text</p>
-        </div>
-    );
-  }
+        ></img>
+      </div>
+    </div>
+  );
 }
 
 export default WhyJoinCard;

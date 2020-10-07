@@ -1,21 +1,64 @@
 .wju-main-div {
   width: 100%;
+  padding: 1rem 0.5rem;
   position: relative;
-  height: 600px;
+  height: fit-content;
   display: flex;
   background-color: rgb(222, 247, 247);
 }
-#drawspace { 
-    background: #000;
-    width: 100%;
+
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
 }
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+#drawspace {
+  background: #000;
+  width: 100%;
+}
+
 .wju-card {
-  width: 200px;
-  height: 200px;
   position: relative;
   overflow: hidden;
+  margin: 0.5rem;
+  border: 1px solid gray;
   background-color: firebrick;
-  border-radius: 50%;
 }
 
 .wju-card p {
@@ -24,5 +67,5 @@
 }
 
 .wju-card img {
-  width: 200px;
+  width: 250px;
 }
