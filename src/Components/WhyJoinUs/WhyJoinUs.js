@@ -9,7 +9,6 @@ import img5 from "../../Images/im11.jpg";
 import img6 from "../../Images/im8.jpg";
 import img7 from "../../Images/im9.jpg";
 import img8 from "../../Images/im6.jpg";
-import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
 export class WhyJoinUs extends Component {
   dt = [

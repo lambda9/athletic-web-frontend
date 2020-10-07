@@ -17,13 +17,11 @@ import ScrollToTop from "./Components/ScrollToTop";
 import FreeTrialPage from "./Components/FreeTrial/FreeTrialPage";
 import NewsCard from "./Components/NewsBlog/NewsCard";
 import FranchisePage from "./Components/Franchise/FranchisePage";
-import { ParallaxProvider } from "react-scroll-parallax";
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <ParallaxProvider>
           <ScrollToTop />
           <Navbar />
           <div className="main-content">
@@ -43,7 +41,6 @@ class App extends Component {
             </Switch>
           </div>
           <Footer />
-        </ParallaxProvider>
       </Router>
     );
   }

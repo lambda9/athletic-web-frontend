@@ -75,88 +75,86 @@ class HomePageEnquiry extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div className="custom-class">
-        <div className="div">
-        <div className='div2'>
+      <div className="div">
+        <div className="div2">
           <div className="home-enquiry-left-div">
-            <span>I   N   T   E   R   E   S   T   E   D</span>
+            <span>I N T E R E S T E D</span>
             <h2>A N Y Q U E R Y ?</h2>
             <p>
               Fill out the form and we will reach you as soon as possible...
             </p>
           </div>
+          <div className="home-enquiry-main-div">
+            <div className="home-enquiry-right-div">
+              <form className={classes.root} autoComplete="nope">
+                <CssTextField
+                  required
+                  type="text"
+                  name="name"
+                  value={this.state.name}
+                  autoComplete="nope"
+                  label="Name"
+                  variant="outlined"
+                  onChange={this.handleChange}
+                />
+                <CssTextField
+                  required
+                  type="email"
+                  value={this.state.email}
+                  name="email"
+                  autoComplete="nope"
+                  label="E-mail"
+                  variant="outlined"
+                  onChange={this.handleChange}
+                />
+                <CssTextField
+                  required
+                  value={this.state.phoneNum}
+                  type="tel"
+                  autoComplete="nope"
+                  name="phoneNum"
+                  label="Phone Number"
+                  variant="outlined"
+                  onChange={this.handleChange}
+                />
+                <CssTextField
+                  required
+                  value={this.state.subject}
+                  type="text"
+                  name="subject"
+                  label="Subject"
+                  variant="outlined"
+                  onChange={this.handleChange}
+                />
+                <CssTextField
+                  required
+                  value={this.state.subject}
+                  type="textarea"
+                  name="subject"
+                  multiline
+                  rows={6}
+                  label="Message"
+                  variant="outlined"
+                  onChange={this.handleChange}
+                />
 
-          </div>
-          </div>
-
-        <div className="home-enquiry-main-div">
-          <div className="home-enquiry-right-div">
-            <form className={classes.root} autoComplete="nope">
-              <CssTextField
-                required
-                type="text"
-                name="name"
-                value={this.state.name}
-                autoComplete="nope"
-                label="Name"
-                variant="outlined"
-                onChange={this.handleChange}
-              />
-              <CssTextField
-                required
-                type="email"
-                value={this.state.email}
-                name="email"
-                autoComplete="nope"
-                label="E-mail"
-                variant="outlined"
-                onChange={this.handleChange}
-              />
-              <CssTextField
-                required
-                value={this.state.phoneNum}
-                type="tel"
-                autoComplete="nope"
-                name="phoneNum"
-                label="Phone Number"
-                variant="outlined"
-                onChange={this.handleChange}
-              />
-              <CssTextField
-                required
-                value={this.state.subject}
-                type="text"
-                name="subject"
-                label="Subject"
-                variant="outlined"
-                onChange={this.handleChange}
-              />
-              <CssTextField
-                required
-                value={this.state.subject}
-                type="text"
-                name="subject"
-                label="Message"
-                variant="outlined"
-                onChange={this.handleChange}
-              />
-
-              <div className="home-enquiry-btn-container">
-                <button
-                  onClick={this.handleSubmit}
-                  className="button-primary"
-                  type="submit"
-                >
-                  Submit
-                </button>
-                <button
-                  onClick={this.handleReset}
-                  className="button-primary  cancel-btn"
-                >
-                  reset
-                </button>
-              </div>
-            </form>
+                <div className="home-enquiry-btn-container">
+                  <button
+                    onClick={this.handleSubmit}
+                    className="button-primary"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                  <button
+                    onClick={this.handleReset}
+                    className="button-primary  cancel-btn"
+                  >
+                    reset
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
