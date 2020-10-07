@@ -1,19 +1,30 @@
-.wju-main-div {
+/* .div {
   width: 100%;
-  padding: 1rem 0.5rem;
-  position: relative;
-  height: fit-content;
+  height: 500px;
+  background-image: url('../../Images/im10.jpg');
+  background-size: cover;
   display: flex;
-  background-color: rgb(222, 247, 247);
+  background-attachment: fixed;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: khaki;
 }
+
+.custom-class{
+  overflow: hidden;
+  height: 800px;
+  background-color: lavender;
+  
+} */
 
 .row {
   width: 80%;
-  margin: auto;
   background-color: gray;
   display: flex;
   flex-wrap: wrap;
   padding: 8px 16px;
+  margin: 4rem auto;
 }
 
 .column {
@@ -53,4 +64,12 @@
 .wju-card p {
   color: white;
   font-size: 22px;
+}
+.wju-main-div {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  position: relative;
+  height: 400px;
+  display: flex;
+  background-color: rgb(222, 247, 247);
 }

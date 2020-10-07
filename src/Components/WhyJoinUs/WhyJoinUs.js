@@ -9,6 +9,7 @@ import img5 from "../../Images/im11.jpg";
 import img6 from "../../Images/im8.jpg";
 import img7 from "../../Images/im9.jpg";
 import img8 from "../../Images/im6.jpg";
+import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
 export class WhyJoinUs extends Component {
   dt = [
@@ -62,25 +63,36 @@ export class WhyJoinUs extends Component {
     ],
   ];
 
+  // componentDidMount() {
+  //   window.addEventListener('scroll', this.handleScroll)
+  // }
+
+  handleScroll = () => {
+    var offset = window.pageYOffset;
+    var element = document.getElementById("dd");
+    if (element) {
+      element.style.backgroundPositionY = -offset * 0.2 + "px";
+      console.log(offset, "offset", offset * 0.9);
+    }
+  };
+
   render() {
     return (
-      <div className="row">
-      {this.dt.map((item) => {
-        return (
-          <div className="column">
-            {item.map((it) => {
-              console.log(it)
-              return (
-                <WhyJoinCard bgImg={it.img} idx={it.count}/>
-              );
-            })}
-          </div>
-        );
-      })}
-      </div>
+      
+        <div className="row">
+          {this.dt.map((item) => {
+            return (
+              <div className="column">
+                {item.map((it) => {
+                  console.log(it);
+                  return <WhyJoinCard bgImg={it.img} idx={it.count} />;
+                })}
+              </div>
+            );
+          })}
+        </div>
     );
   }
 }
 
 export default WhyJoinUs;
-

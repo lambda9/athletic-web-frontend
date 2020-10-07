@@ -11,7 +11,6 @@ function Home() {
 		<div>
 			<HeroSection />
 			<CardGroup />
-			<WhyJoinUs />
 			<HomePageEnquiry />
 			<HomePageFAQ />
 		</div>
