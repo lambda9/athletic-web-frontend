@@ -1,0 +1,37 @@
+.faq-hero {
+  color: var(--accentColor);
+  background-color: var(--mainGrey);
+}
+
+.faq-hero-child1 {
+  padding-top: 4em;
+  font-size: 2em;
+}
+
+.faq-hero-child2 {
+  display: flex;
+  margin-top: 2em;
+}
+
+.faq-hero-text {
+  font-family: "Alata", sans-serif;
+  width: 50%;
+  font-size: 8rem;
+  letter-spacing: 0.3em;
+}
+
+.faq-hero-search {
+  display: flex;
+  align-items: center;
+  float: left;
+  width: 50%;
+}
+
+.faq-hero-search input[type=text] {
+  border: none;
+  border-bottom: 3px solid var(--accentColor);
+  line-height: 3em;
+  width: 75%;
+  font-size: 1em;
+  padding-left: 1em;
+}
