@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+
+
+.blog-wrapper {
+    margin-top:20%;
+    margin-bottom:20%;
+    margin-left:-20%;
+}
+
+.blog-post {
+  position: relative;
+  padding: 2rem 2rem 2rem 2rem;
+  background: #fff;
+  max-width: 40%;
+  top: 0%;
+  left: 30%;
+  
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+}
+
+.blog-category-container {
+  width:12%;
+  background: linear-gradient(90deg, #66f5ff, #38c5f0);
+  z-index: 1;
+ transform: translate(-90%,-100%);
+  position: relative;
+}
+
+.blog-category {
+font-size:1.2rem;
+  position: relative;
+  transform: translate(0%, 0%);
+font-weight: bold;  
+}
+
+.blog-date {
+  margin: 0 0 0.5rem 0;
+  color: #999;
+  font-size: 1.2rem;
+}
+.blog-author{
+    color: #999;
+  font-size: 1.2rem;
+}
+
+.blog-heading {
+  margin: 0 0 1rem 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+.blog-p {
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.blog-btn_primary {
+  border: none;
+  outline: none;
+  background: linear-gradient(90deg, #66f5ff, #38c5f0);
+  padding: 0.5rem 0.5rem;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+.blog-btn_primary:hover {
+  box-shadow: 0px 5px 1rem rgba(112, 234, 255, 0.5);
+}

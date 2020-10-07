@@ -4,7 +4,6 @@ import AboutUsBg from "../AboutUs/AboutUsBg";
 import "./News.css";
 import backDropImg from "../../Images/im5.jpg";
 import img1 from "../../Images/im7.jpg";
-
 function NewsCard() {
   return (
     <div className="news-page">
@@ -27,7 +26,7 @@ You’ve Probably Heard Of Intermittent Fasting. Celebrities Like Jennifer Lopez
         </div>
        
        </div>
-      
+
     </div>
   );
 }
