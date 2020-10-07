@@ -7,7 +7,6 @@
   background-color: rgb(222, 247, 247);
 }
 
-
 .row {
   width: 80%;
   margin: auto;
@@ -17,15 +16,13 @@
   padding: 8px 16px;
 }
 
-/* Create four equal columns that sits next to each other */
 .column {
   flex: 25%;
   max-width: 25%;
-  /* padding: 0 2px; */
 }
 
 .column img {
-  /* margin-top: 4px; */
+  justify-items: center;
   vertical-align: middle;
   width: 100%;
 }
@@ -46,24 +43,14 @@
   }
 }
 
-#drawspace {
-  background: #000;
-  width: 100%;
-}
 
 .wju-card {
   position: relative;
   overflow: hidden;
-  margin: 0.5rem;
-  border: 1px solid gray;
-  background-color: firebrick;
+  max-height: 350px;
 }
 
 .wju-card p {
   color: white;
   font-size: 22px;
-}
-
-.wju-card img {
-  width: 250px;
 }

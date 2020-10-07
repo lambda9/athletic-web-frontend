@@ -71,13 +71,7 @@ export class WhyJoinUs extends Component {
             {item.map((it) => {
               console.log(it)
               return (
-                <img
-                  src={it.img}
-                  data-aos-delay={`${it.count*100}`}
-                  data-aos-anchor-placement="top-bottom"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                ></img>
+                <WhyJoinCard bgImg={it.img} idx={it.count}/>
               );
             })}
           </div>
@@ -90,4 +84,10 @@ export class WhyJoinUs extends Component {
 
 export default WhyJoinUs;
 
-
+// <img
+// src={it.img}
+// data-aos-delay={`${it.count*100}`}
+// data-aos-anchor-placement="top-bottom"
+// data-aos="fade-up"
+// data-aos-duration="1000"
+// ></img>
