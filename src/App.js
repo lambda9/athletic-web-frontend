@@ -18,6 +18,7 @@ import FreeTrialPage from './Components/FreeTrial/FreeTrialPage'
 import NewsCard from "./Components/NewsBlog/NewsCard"
 import FranchisePage from './Components/Franchise/FranchisePage'
 import BlogPage from "./Components/NewsBlog/BlogPage"
+import FullBlogPage from "./Components/NewsBlog/FullBlogPage";
 class App extends Component {
   render() {
     return (
@@ -39,6 +40,8 @@ class App extends Component {
             <Route exact path='/news/' component={NewsCard} />
             <Route exact path='/franchise/' component={FranchisePage} />
             <Route exact path='/blog/' component={BlogPage} />
+            <Route exact path='/fullblog/' component={FullBlogPage} />
+
             <Route component={Error} />
           </Switch>
         </div>

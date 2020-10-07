@@ -1,5 +1,6 @@
 import React from "react";
 import "./BlogCard.css";
+import {Link} from "react-router-dom";
 function BlogCard() {
   return (
       <div>
@@ -25,9 +26,7 @@ function BlogCard() {
               
             </p>
           </div>
-          <a className="blog-btn_primary" href="#">
-            Read More
-          </a>
+            <Link to="/fullblog"><button className="blog-btn-primary">Read More</button></Link>
         </div>
 
 
@@ -49,9 +48,7 @@ function BlogCard() {
               diet? 
             </p>
           </div>
-          <a className="blog-btn_primary" href="#">
-            Read More
-          </a>
+          <Link to="/fullblog"><button className="blog-btn-primary">Read More</button></Link>
         </div>
        
 
@@ -77,9 +74,8 @@ function BlogCard() {
               diseases.
             </p>
           </div>
-          <a className="blog-btn_primary" href="#">
-            Read More
-          </a>
+          <Link to="/fullblog"><button className="blog-btn-primary">Read More</button></Link>
+         
         </div>
         </div>
         </div>

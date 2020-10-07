@@ -1,106 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
 
 
-.blog-page {
-  height: auto;
-}
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(2,auto);
-    place-content: center;
-    align-items: stretch;   
-}
-
-.blog-wrapper {
-  margin: 10rem 4rem;
-  background-color: greenyellow;
-  width:100%;
-}
-
-.blog-post {
-  margin: 2rem;
-  position: relative;
-  padding: 2rem 2rem 2rem 2rem;
-  background: #fff;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
-}
-
-.blog-category-container {
-  position: absolute;
-  top: 7%;
-  left: -1.7rem;
-}
-
-.blog-category-container span {
-  padding: 8px 14px;
-  background: linear-gradient(90deg, #66f5ff, #38c5f0);
-}
-
-
-.blog-category {
-  font-size: 1.2rem;
-  position: relative;
-  transform: translate(0%, 0%);
-  font-weight: bold;
-}
-
-.blog-date {
-  margin: 0 0 0.5rem 0;
-  color: #999;
-  font-size: 1.2rem;
-}
-.blog-author {
-  color: #999;
-  font-size: 1.2rem;
-}
-
-.blog-heading {
-  margin: 0 0 1rem 0;
-  font-size: 1.8rem;
-  letter-spacing: 0.5px;
-  color: #333;
-}
-
-.blog-p {
-  margin: 0 0 2rem 0;
-  font-size: 1rem;
-  color: #333;
-}
-
-.blog-btn-primary {
-  border: none;
-  outline: none;
-  text-decoration: none;
-  background: linear-gradient(90deg, #66f5ff, #38c5f0);
-  padding: 0.5rem 0.5rem;
-  color: rgb(0, 0, 0);
-  font-size: 1rem;
-}
-
-.blog-btn-primary:hover {
-  text-decoration: none;
-  box-shadow: 0px 5px 1rem rgba(112, 234, 255, 0.5);
-}
-
-
-@media screen and (max-width: 550px) {
-    .blog-grid{
-        display:flex;
-        flex-direction: column;
-    }
-    .blog-wrapper{
-        margin:auto;
-    }
-    .blog-post{
-        width:90%;
-    }
-}
-
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
-
-
 .full-blog-page {
   height: auto;
 }
@@ -123,7 +23,7 @@
   padding: 2rem 2rem 2rem 2rem;
   background: #fff;
   width: 100%;
-  max-width: 1200px ;
+  max-width: 1000px ;
   box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
 }
 
