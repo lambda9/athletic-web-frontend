@@ -53,7 +53,7 @@ function BlogCard() {
             Read More
           </a>
         </div>
-        </div>
+       
 
 
 
@@ -82,7 +82,7 @@ function BlogCard() {
           </a>
         </div>
         </div>
-
+        </div>
       </div>
   );
 }

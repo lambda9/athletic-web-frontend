@@ -5,14 +5,16 @@
   height: auto;
 }
 .blog-grid {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    place-content: center;
     align-items: stretch;   
 }
 
 .blog-wrapper {
   margin: 10rem 4rem;
   background-color: greenyellow;
+  width:100%;
 }
 
 .blog-post {
