@@ -4,25 +4,55 @@ import QuesAns from "./FAQQuesAns";
 
 class FAQ extends Component {
 
+  FAQtype = [
+    {
+      type: "type1",
+      keyword: ["type1", "type1ques"]
+    },
+    {
+      type: "type2",
+      keyword: ["type2", "type2ques"]
+    },
+    {
+      type: "type3",
+      keyword: ["type3", "type3ques"]
+    },
+  ];
+
+  input = "";
+
   state = {
-    inputValue: " "
+    searched: "false"
+  }
+
+
+  inputKeyword = (e) => {
+    this.input = e.target.value;
   }
   
+  searchKeyword = () => {
+    let key = this.input;
+    let indexArr = 0;
+    this.FAQtype.forEach ((item)=> {
+      let index = item.keyword.indexOf(key);
+      if (index != -1) {
+        let temp = this.FAQtype[0];
+        this.FAQtype[0] = this.FAQtype[indexArr];
+        this.FAQtype[indexArr] = temp;
+        console.log(this.FAQtype);
+        this.setState (
+          {
+            searched: "true"
+          }
+        )
+      };
+      indexArr++;
+    })
+    
+  }
+
   render() {
-    const FAQtype = [
-      {
-        type: "type1",
-        keyword: ["type1", "type1ques"]
-      },
-      {
-        type: "type2",
-        keyword: ["type2", "type2ques"]
-      },
-      {
-        type: "type3",
-        keyword: ["type3", "type3ques"]
-      },
-    ];
+    
     return (
       <div className = "faq-page">
         <div className = "faq-hero">
@@ -34,14 +64,14 @@ class FAQ extends Component {
               FAQ
             </div>
             <div className = "faq-hero-search">
-              <input type = "text" placeholder = "Enter keywords to search" ></input>
-              <button id = "faq-search-button"> Search </button>
+              <input type = "text" placeholder = "Enter keywords to search" onChange = {this.inputKeyword.bind(this)}></input>
+              <button id = "faq-search-button" onClick = {this.searchKeyword.bind(this)}> Search </button>
             </div>
           </div>
         </div>
         <div className = "faq-main">
           {
-            FAQtype.map ( (item) => {
+            this.FAQtype.map ( (item) => {
               return (
                 <QuesAns type={item.type}></QuesAns>
               );
