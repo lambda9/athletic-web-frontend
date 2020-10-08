@@ -16,13 +16,9 @@ const useStyles = makeStyles((theme) => ({
   question: {
     fontFamily: '"Monteserrat", sans-serif',
     fontWeight: 'bold',
-    '&:hover': {
-      textDecoration: 'underline var(--primaryColor) solid',
-    }
   },
   details: {
-    backgroundColor: 'var(--accentColor)',
-    color: 'var(--mainGrey)'
+    borderBottom: '0.15em solid var(--accentColor)'
   },
   answer: {
     fontFamily: '"Monteserrat", sans-serif',
