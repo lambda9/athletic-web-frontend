@@ -1,0 +1,28 @@
+.subs-main-div {
+    background-image: url('../../Images/bg3.jpeg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    color: white;
+}
+
+.subs-home-field-cont {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    /* background-color: lavenderblush; */
+}
+
+.subs-home-btn {
+    border-radius: 0 3px 3px 0;
+    padding: 1rem 2rem;
+}
+
+
+.subs-home-btn:hover {
+    text-decoration: none;
+}
+
