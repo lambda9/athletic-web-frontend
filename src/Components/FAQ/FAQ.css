@@ -1,5 +1,5 @@
 .faq-hero {
-  background-color: var(--accentColor);
+  background-color: var(--mainBlack);
   color: var(--mainGrey);
 }
 
@@ -16,7 +16,7 @@
 .faq-hero-text {
   font-family: "Alata", sans-serif;
   width: 50%;
-  font-size: 8rem;
+  font-size: 8.5rem;
   letter-spacing: 0.3em;
 }
 
@@ -27,42 +27,96 @@
   width: 50%;
 }
 
-.faq-hero-search input[type=text] {
+.faq-hero-search input[type=text],
+.faq-hero-search input[type=text]:focus {
   border: none;
-  border-bottom: 3px solid var(--accentColor);
+  outline: none;
   line-height: 3em;
   width: 75%;
   font-size: 1em;
   padding-left: 1em;
 }
 
+#faq-search-button {
+  outline: none;
+  border: none;
+  background-color: var(--primaryColor);
+  color: var(--accentColor);
+  line-height: 3em;
+  padding: 0 1em;
+}
+
+#faq-search-button:hover {
+  background-color: var(--accentColor);
+  color: var(--mainGrey);
+}
+
 .faq-qa-main {
   display: flex;
   padding: 3em;
-  color: var(--accentColor);
 }
 
 .faq-type-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   font-size: 3em;
   width: 50%;
   font-family: "Alata", sans-serif;
+  color: var(--mainBlack);
+}
+
+.separator {
+  margin-top: 0.5em;
+  width: 1.5em;
+  height: 0.15em;
+  background-color: var(--primaryColor);
+  border: none;
 }
 
 .faq-accordion {
   display: block;
   width: 100%;
+  color: var(--accentColor);
 }
 
 @media screen and (max-width: 550px) {
+  .faq-hero-child1 {
+    font-size: 1em;
+    padding-top: 1.5em;
+  }
+  .faq-hero-child2 {
+    margin-top: 1em;
+    flex-direction: column;
+    text-align: center;
+  }
+  .faq-hero-search {
+    padding: 1em 2em;
+    justify-content: center;
+    width: 100%;
+  }
   .faq-hero-text {
+    width: 100%;
     font-size: 3rem;
+  }
+  .faq-hero-search input[type=text],
+  .faq-hero-search input[type=text]:focus,
+  #faq-search-button {
+    line-height: 2em;
   }
   .faq-qa-main {
     flex-direction: column;
-    padding: 1em;
+    padding: 0;
   }
   .faq-type-head {
     width: 100%;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em ;
+    font-size: 2em;
+  }
+  .faq-accordion {
     padding: 1em;
+    font-size: 1em;
   }
 }

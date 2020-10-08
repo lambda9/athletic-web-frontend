@@ -3,9 +3,26 @@ import "./FAQ.css";
 import QuesAns from "./FAQQuesAns";
 
 class FAQ extends Component {
+
+  state = {
+    inputValue: " "
+  }
   
   render() {
-    const FAQtype = ["type1","type2","type3"];
+    const FAQtype = [
+      {
+        type: "type1",
+        keyword: ["type1", "type1ques"]
+      },
+      {
+        type: "type2",
+        keyword: ["type2", "type2ques"]
+      },
+      {
+        type: "type3",
+        keyword: ["type3", "type3ques"]
+      },
+    ];
     return (
       <div className = "faq-page">
         <div className = "faq-hero">
@@ -17,7 +34,8 @@ class FAQ extends Component {
               FAQ
             </div>
             <div className = "faq-hero-search">
-              <input type = "text" placeholder = "Enter keywords to search"></input>
+              <input type = "text" placeholder = "Enter keywords to search" ></input>
+              <button id = "faq-search-button"> Search </button>
             </div>
           </div>
         </div>
@@ -25,7 +43,7 @@ class FAQ extends Component {
           {
             FAQtype.map ( (item) => {
               return (
-                <QuesAns type={item}></QuesAns>
+                <QuesAns type={item.type}></QuesAns>
               );
             })
           }

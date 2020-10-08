@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-var arrQuesAns = [
+const arrQuesAns = [
   {
     type: "type1",
     ques: "lorem ipsum ?",
@@ -98,6 +98,7 @@ const QuesAns = (props) => {
     <div className = "faq-qa-main">
       <div className = "faq-type-head">
         {props.type}
+        <div className = "separator"/>
       </div>
       <div className = "faq-accordion">
       {
