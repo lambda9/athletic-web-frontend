@@ -1,14 +1,69 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
 
-
+.blog-hero{
+  background-color: var(--mainBlack);
+  color:var(--mainGrey);
+  height:65vh;
+}
+.blog-hero h1{
+padding-top:18vh;
+}
+.blog-hero h6{
+  padding-top:1vh;
+}
+.blog-hero p{
+width:30vw;
+margin:auto;
+margin-left:35vw;
+}
 .blog-page {
   height: auto;
+  width:100%;
+}
+.blog-overlap-card{
+  
+  position: relative;
+  transform: translateY(-50%);
+  z-index:3;
+  margin-left:10%;
+  padding: 2rem 2rem 2rem 2rem;
+  background:linear-gradient(to left,rgb(21, 146, 168),rgb(246, 180, 255));
+  color:rgb(5, 5, 5);
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 30%;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  height:50vh;
+  width:100vw;
+  
+}
+.blog-overlap-card-box{
+  width:23vw;
+  margin:auto;
+}
+.blog-overlap-card h1{
+  width:23vw;
+  margin:auto;
+  background:rgba(255, 255, 255, 0.8);
+  color:rgb(0, 0, 0);
+  mix-blend-mode: screen;
+  font-weight:900;
+  margin:auto;
+}
+.blog-overlap-card p{
+  width:23vw;
+  padding-top:7%;
+  color:rgb(0, 0, 0);
+  font-weight:900;
 }
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(2,auto);
     place-content: center;
-    align-items: stretch;   
+    align-items: baseline;
 }
 
 .blog-wrapper {
@@ -86,6 +141,30 @@
 
 
 @media screen and (max-width: 550px) {
+  .blog-hero{
+    background-color: var(--mainBlack);
+    color:var(--mainGrey);
+    height: 50vh;
+    width:100%;
+  }
+  .blog-hero h1{
+  padding-top:4vh;
+  font-size:4vh;
+  }
+  .blog-hero h6{
+    padding-top:1vh;
+    font-size:3vh;
+  }
+  .blog-hero p{
+  width:90%;
+  font-size:2vh;
+  margin:auto;
+  
+  }
+  .blog-page{
+    display:flex;
+    flex-direction: column;
+  }
     .blog-grid{
         display:flex;
         flex-direction: column;
@@ -94,8 +173,49 @@
         margin:auto;
     }
     .blog-post{
-        width:90%;
+        width:80%;
     }
+
+
+    .blog-overlap-card{
+  
+      position: relative;
+      
+      z-index:3;
+      margin:auto;
+      transform: translateY(-20%);
+      padding:0;
+    
+      max-width: 80%;
+      box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+      height:auto;
+      
+      
+    }
+    .blog-overlap-card-box{
+      width:100vw;
+      margin:auto;
+      max-width: 90%;
+    }
+    .blog-overlap-card h1{
+      width:100%;
+      max-width: 100%;
+      margin:auto;
+      background:rgba(255, 255, 255, 0.8);
+      color:rgb(0, 0, 0);
+      mix-blend-mode: screen;
+      font-weight:900;
+    }
+    .blog-overlap-card p{
+      width:100vw;
+      max-width: 90%;
+      padding-top:7%;
+      color:rgb(0, 0, 0);
+      font-weight:900;
+    }
+
+
+
 }
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
@@ -141,6 +261,7 @@
  width:100%;
  position: relative;
  padding-bottom:2rem;
+ 
 }
 
 
