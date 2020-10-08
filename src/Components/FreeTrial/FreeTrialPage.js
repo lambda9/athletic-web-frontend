@@ -3,22 +3,22 @@ import "./FreeTrial.css";
 import { Link } from "react-router-dom";
 import FreeTrialEntryFields from "./FreeTrialEntryFields";
 import { useHistory } from "react-router-dom";
-import FreeTrialBG from "./FreeTrialBG"
+import FreeTrialBG from "./FreeTrialBG";
 function FreeTrialPage() {
   const history = useHistory();
   return (
     <div className="free-trial-page">
-    <div className="free-trial-main-div">
-          <FreeTrialBG />
+      <div className="free-trial-main-div">
+        <div className="free-trial-main-head-text">7-Days Free Trial</div>
       </div>
-       <div className="free-trial-form-div">
-        <div className="free-trial-head-text">
+      <div className="free-trial-form-div">
+      <div className="free-trial-head-text">
           TRY US - FILL OUT THE FORM BELOW & WE’LL EMAIL YOU A FREE 7-DAY PASS!
         </div>
         <FreeTrialEntryFields back={() => history.goBack()} />
         <Link className="free-trial-terms-text">
           *By clicking on the submit button you agree to our terms and
-          conditions
+          conditions.
         </Link>
       </div>
       <div className="free-trial-join-today-div">
@@ -31,9 +31,8 @@ function FreeTrialPage() {
             Join Today
           </Link>
         </div>
-        </div>
       </div>
-   
+    </div>
   );
 }
 
