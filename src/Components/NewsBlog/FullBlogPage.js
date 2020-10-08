@@ -1,5 +1,6 @@
 import React from 'react'
 import "./BlogCard.css"
+import bgImg from "../../Images/im4.jpg";
 function FullBlogPage() {
     return (
         <div>
@@ -12,7 +13,7 @@ function FullBlogPage() {
               Benefits and Advantages of going Vegetarian
             </h1>
             <h3 className="full-blog-author">Written by Unknown</h3>
-            <hr/>
+            <img src={bgImg}/>
             <p className="full-blog-p">
               Thinking about reducing or eliminating animal products from your
               diet? Whether you want to go vegan or simply add more plant-based
