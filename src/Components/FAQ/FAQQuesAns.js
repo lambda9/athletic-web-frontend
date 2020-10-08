@@ -16,22 +16,30 @@ const useStyles = makeStyles((theme) => ({
   question: {
     fontFamily: '"Monteserrat", sans-serif',
     fontWeight: 'bold',
+    '&:hover': {
+      textDecoration: 'underline var(--primaryColor) solid',
+    }
+  },
+  details: {
+    backgroundColor: 'var(--accentColor)',
+    color: 'var(--mainGrey)'
   },
   answer: {
     fontFamily: '"Monteserrat", sans-serif',
+    textAlign: 'Left'
   }
 }));
 
 const arrQuesAns = [
   {
     type: "type1",
-    ques: "lorem ipsum ?",
-    ans: "lorem ipsum"
+    ques: "Do you have lockers?",
+    ans: "Absolutely, and a lot of them. No need to bring a lock, we operate on a code combination setup."
   },
   {
     type: "type1",
-    ques: "lorem ipsum ?",
-    ans: "lorem ipsum"
+    ques: "Do you have water or should I bring my own?",
+    ans: "All our branches are zero single-use plastic free and we provide reusable stainless bottles to borrow for your session. If you’d prefer to bring your own bottle, we also have water stations available."
   },
   {
     type: "type1",
@@ -97,8 +105,7 @@ const QuesAns = (props) => {
   return (
     <div className = "faq-qa-main">
       <div className = "faq-type-head">
-        {props.type}
-        <div className = "separator"/>
+        <div id = "type-head">{props.type}</div>
       </div>
       <div className = "faq-accordion">
       {
@@ -108,12 +115,17 @@ const QuesAns = (props) => {
             <Accordion
               className={classes.accordion}
             >
-              <AccordionSummary>
+              <AccordionSummary
+                className={classes.summary}
+                expandIcon={<ExpandMoreIcon />}
+              >
                 <Typography className={classes.question}> 
                   {item.ques} 
                 </Typography>
               </AccordionSummary>
-              <AccordionDetails>
+              <AccordionDetails
+                className={classes.details}
+              >
                 <Typography className={classes.answer}>
                   {item.ans}
                 </Typography>

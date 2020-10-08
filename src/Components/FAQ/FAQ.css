@@ -67,12 +67,25 @@
   color: var(--mainBlack);
 }
 
-.separator {
-  margin-top: 0.5em;
-  width: 1.5em;
-  height: 0.15em;
+#type-head {
+    position: relative;
+}
+
+#type-head:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height:  0.15em;
+  bottom: 0;
+  left: 0;
   background-color: var(--primaryColor);
-  border: none;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+#type-head:hover:before {
+  visibility: visible;
+  width: 100%;
 }
 
 .faq-accordion {
