@@ -1,15 +1,18 @@
 import React, { Component } from "react";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import "../FreeTrial/FreeTrial.css";
 import "./HomeEnquiry.css";
 
 const PRIME_COLOR = "#459fb6";
 
+// const matches = useMediaQuery("(min-width: 850px)")
+
 const useStyles = (theme) => ({
   root: {
     "& .MuiTextField-root": {
-      margin: "0 auto 1.2rem",
+      margin: `0 auto ${1.2}rem`,
       width: "100%",
     },
   },
@@ -17,21 +20,12 @@ const useStyles = (theme) => ({
 
 const CssTextField = withStyles({
   root: {
-    "& label.Mui-focused": {
-      color: PRIME_COLOR,
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: PRIME_COLOR,
-    },
-    'label + &': {
-      backgroundColor: 'blue',
-    },
     "& .MuiOutlinedInput-root": {
-      
-
+      fontSize: "14px",
       "& fieldset": {
         borderColor: PRIME_COLOR,
       },
+
       "&:hover fieldset": {
         color: PRIME_COLOR,
         borderColor: PRIME_COLOR,
@@ -39,6 +33,17 @@ const CssTextField = withStyles({
       "&.Mui-focused fieldset": {
         borderColor: PRIME_COLOR,
       },
+    },
+    "& .MuiOutlinedInput-input ": {
+      padding: "12px 16px",
+    },
+    "& .MuiInputLabel-outlined": {
+      transform: "translate(14px, 12px) scale(1)",
+      // backgroundColor: 'red',
+    },
+    "& .MuiInputLabel-shrink": {
+      transform: "translate(14px, -6px) scale(0.75)",
+      // backgroundColor: 'green',
     },
   },
 })(TextField);
@@ -48,12 +53,33 @@ class HomePageEnquiry extends Component {
     super(props);
 
     this.state = {
+      smallerWindow: false,
       name: "",
       email: "",
       phoneNum: "",
       subject: "",
     };
   }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  handleResize = () => {
+    var width = window.innerWidth();
+
+    if (width < 850) {
+      this.setState({
+        smallerWindow: true,
+      });
+
+      return;
+    }
+
+    this.setState({
+      smallerWindow: false,
+    });
+  };
 
   handleChange = (event) => {
     const name = event.target.name;
@@ -137,7 +163,7 @@ class HomePageEnquiry extends Component {
                   type="textarea"
                   name="subject"
                   multiline
-                  rows={6}
+                  rows={2}
                   label="Message"
                   variant="outlined"
                   onChange={this.handleChange}
