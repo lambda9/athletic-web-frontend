@@ -1,65 +1,69 @@
 .wju-main-div {
-  width: 100%;
-  height: fit-content;
-  background-image: url("../../Images/wju1.jpg");
-  background-size: cover;
-  margin: 4rem auto;
-  background-attachment: fixed;
+	width: 100%;
+	height: fit-content;
+	background-image: url("../../Images/aa/wju1.jpg");
+	background-size: cover;
+	margin: 4rem auto;
+	background-attachment: fixed;
 }
 
 .wju-text-div {
- text-align: start;
+	text-align: start;
+	padding-top: 2rem;
 }
 
 .wju-text-div span {
-  font-size: 9vw;
-  color: gray;
-  margin: 1rem 1rem;
-  font-weight: 900;
-  line-height: 0.9;
-
+	font-size: 7vw;
+	color: gray;
+	margin: 1rem 1rem;
+	font-weight: 900;
+	line-height: 0.9;
 }
 
 .wju-below-text-line {
-  background-color: gray;
-  height: 10px;
-
+	background-color: gray;
+	height: 10px;
 }
 
 .wju-card-div {
-  transform: translateY(-5vw);
-  position: relative;
-  /* width: fit-content; */
+	/* transform: translateY(-5vw); */
+	position: relative;
+	/* width: fit-content; */
 }
 
 .wju-card-slider {
-  margin-left: 8rem;
-  display: grid;
-  justify-items: center;
-  row-gap: 2rem;
-  column-gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    /* background-color: indianred; */
+	margin: auto;
+	padding: 2em;
+	display: grid;
+	justify-items: center;
+	row-gap: 2rem;
+	column-gap: 2rem;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .wju-card {
-  width: 200px;
-  height: 300px;
-  /* margin: 2rem 2rem 0; */
-  background-color: azure;
-
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	font-size: 1rem;
+	/* height: fit-content; */
+	padding: 2rem;
+	width: 80%;
+	background: linear-gradient(45deg, #3992a0d4 30%, #2bd2dba6 0%);
+	text-align: left;
 }
 
+.wju-card h1 {
+	font-size: 2em;
+}
 
 .wju-card p {
-  color: white;
-  font-size: 22px;
+	font-size: 1em;
 }
 
-
 .cont {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  background-color: antiquewhite;
+	position: relative;
+	width: 300px;
+	height: 300px;
+	background-color: antiquewhite;
 }
