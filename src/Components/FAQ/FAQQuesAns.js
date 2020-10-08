@@ -14,11 +14,11 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '1em'
   },
   question: {
-    fontFamily: '"Spartan", sans-serif',
+    fontFamily: '"Monteserrat", sans-serif',
     fontWeight: 'bold',
   },
   answer: {
-    fontFamily: '"Spartan", sans-serif',
+    fontFamily: '"Monteserrat", sans-serif',
   }
 }));
 

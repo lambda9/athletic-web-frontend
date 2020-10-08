@@ -81,40 +81,52 @@
   color: var(--accentColor);
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 650px) {
+
   .faq-hero-child1 {
     font-size: 1em;
     padding-top: 1.5em;
   }
+
   .faq-hero-child2 {
     margin-top: 1em;
     flex-direction: column;
     text-align: center;
   }
+
   .faq-hero-search {
     padding: 1em 2em;
     justify-content: center;
     width: 100%;
   }
+
   .faq-hero-text {
     width: 100%;
     font-size: 3rem;
   }
+
   .faq-hero-search input[type=text],
   .faq-hero-search input[type=text]:focus,
   #faq-search-button {
     line-height: 2em;
+    font-size: 0.75em;
   }
+
   .faq-qa-main {
     flex-direction: column;
     padding: 0;
+    margin: 0;
   }
+
   .faq-type-head {
-    width: 100%;
+    width: 30% ;
+    align-items: center;
+    text-align: center;
     padding-bottom: 0.5em;
     padding-top: 0.5em ;
     font-size: 2em;
   }
+
   .faq-accordion {
     padding: 1em;
     font-size: 1em;
