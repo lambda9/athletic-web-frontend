@@ -15,8 +15,7 @@ function FreeTrialPage() {
           <span className="free-trial-card-text">Trial</span>
         </div>
         <div className="free-trial-main-head-text">
-          <span>Start Your</span>
-          <span>Free Trial</span>
+          <span>Start Your Fitness Journey Today</span>
         </div>
       </div>
       <div className='free-trial-content-div'>
