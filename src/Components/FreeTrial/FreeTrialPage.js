@@ -10,9 +10,9 @@ function FreeTrialPage() {
     <div className="free-trial-page">
       <div className="free-trial-banner-div">
         <div className="free-trial-card">
-          <span className="free-trial-card-text">7-Days</span>
-          <span className="free-trial-card-text">Free</span>
-          <span className="free-trial-card-text">Trial</span>
+          <span className="free-trial-card-text">7-DAYS</span>
+          <span className="free-trial-card-text">FREE</span>
+          <span className="free-trial-card-text">TRIAL</span>
         </div>
         <div className="free-trial-main-head-text">
           <span>Start Your Fitness Journey Today</span>
