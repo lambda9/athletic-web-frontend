@@ -1,24 +1,29 @@
 import React, { Component, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import "../FreeTrial/FreeTrial.css";
 import "./HomeEnquiry.css";
 
 const PRIME_COLOR = "#459fb6";
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   root: {
     "& .MuiTextField-root": {
-      margin: `0 auto ${1.2}rem`,
+      margin: `0 auto 1rem`,
+      ["@media (min-width:750px)"]: {
+        margin: "0 auto 1.4rem",
+      },
       width: "100%",
     },
   },
 
-  inputRoot: (props) => ({
+  inputRoot: {
     "& .MuiOutlinedInput-root": {
       fontSize: "14px",
+      ["@media (min-width:750px)"]: {
+        fontSize: "18px",
+      },
       "& fieldset": {
-        borderColor: props.temp,
+        borderColor: PRIME_COLOR,
       },
       "&:hover fieldset": {
         color: PRIME_COLOR,
@@ -29,18 +34,32 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     "& .MuiOutlinedInput-input ": {
-      padding: "12px 16px",
+      padding: "12px 10px",
+      ["@media (min-width:750px)"]: {
+        padding: "18px 14px",
+      },
     },
-    "& .MuiInputLabel-outlined": {
-      transform: "translate(14px, 12px) scale(1)",
-      // backgroundColor: 'red',
+
+    ["@media (max-width:750px)"]: {
+      "& .MuiInputLabel-outlined": {
+        transform: "translate(14px, 12px) scale(1)",
+      },
+      "& .MuiInputLabel-shrink": {
+        transform: "translate(14px, -6px) scale(0.75)",
+      },
     },
-    "& .MuiInputLabel-shrink": {
-      transform: "translate(14px, -6px) scale(0.75)",
-      // backgroundColor: 'green',
+    ["@media (min-width:750px)"]: {
+      "& .MuiInputLabel-outlined": {
+        transform: "translate(14px, 20px) scale(1)",
+      },
     },
-  }),
-}));
+    ["@media (min-width:750px)"]: {
+      "& .MuiInputLabel-shrink": {
+        transform: "translate(14px, -6px) scale(0.75)",
+      },
+    },
+  },
+});
 
 function HomePageEnquiry() {
   const [entryData, setentryData] = useState({});
@@ -50,7 +69,7 @@ function HomePageEnquiry() {
       id: "id_1",
       type: "text",
       name: "name",
-      label: "label",
+      label: "Name",
       value: entryData.name,
     },
     {
@@ -83,6 +102,7 @@ function HomePageEnquiry() {
     },
   ];
 
+
   const handleChange = (event) => {
     var name = event.target.name;
     var value = event.target.value;
@@ -96,6 +116,8 @@ function HomePageEnquiry() {
   };
 
   const handleReset = (event) => {
+    setentryData({});
+
     event.preventDefault();
   };
 
@@ -118,13 +140,15 @@ function HomePageEnquiry() {
                   <TextField
                     className={classes.inputRoot}
                     required
-                    temp={"red"}
-                    type={item.type}
+                    temp="red"
+                    type='text'
                     name={item.name}
                     value={item.value}
                     autoComplete="nope"
                     label={item.label}
                     variant="outlined"
+                    multiline={item.type === 'textarea' ? true : false}
+                    rows={2}
                     onChange={handleChange}
                   />
                 );
