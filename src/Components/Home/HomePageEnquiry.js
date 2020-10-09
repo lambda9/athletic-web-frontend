@@ -6,67 +6,93 @@ import "../FreeTrial/FreeTrial.css";
 import "./HomeEnquiry.css";
 
 const PRIME_COLOR = "#459fb6";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiTextField-root": {
+      margin: `0 auto ${1.2}rem`,
+      width: "100%",
+    },
+  },
+
+  inputRoot: (props) => ({
+    "& .MuiOutlinedInput-root": {
+      fontSize: "14px",
+      "& fieldset": {
+        borderColor: props.temp,
+      },
+      "&:hover fieldset": {
+        color: PRIME_COLOR,
+        borderColor: PRIME_COLOR,
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: PRIME_COLOR,
+      },
+    },
+    "& .MuiOutlinedInput-input ": {
+      padding: "12px 16px",
+    },
+    "& .MuiInputLabel-outlined": {
+      transform: "translate(14px, 12px) scale(1)",
+      // backgroundColor: 'red',
+    },
+    "& .MuiInputLabel-shrink": {
+      transform: "translate(14px, -6px) scale(0.75)",
+      // backgroundColor: 'green',
+    },
+  }),
+}));
 
 function HomePageEnquiry() {
-  const [entryData, setentryData] = useState({
- 
-  });
+  const [entryData, setentryData] = useState({});
 
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      "& .MuiTextField-root": {
-        margin: `0 auto ${1.2}rem`,
-        width: "100%",
-      },
+  const inputDt = [
+    {
+      id: "id_1",
+      type: "text",
+      name: "name",
+      label: "label",
+      value: entryData.name,
     },
-  }));
-
-  const CssTextField = withStyles({
-    root: {
-      "& .MuiOutlinedInput-root": {
-        fontSize: "14px",
-        "& fieldset": {
-          borderColor: PRIME_COLOR,
-        },
-
-        "&:hover fieldset": {
-          color: PRIME_COLOR,
-          borderColor: PRIME_COLOR,
-        },
-        "&.Mui-focused fieldset": {
-          borderColor: PRIME_COLOR,
-        },
-      },
-      "& .MuiOutlinedInput-input ": {
-        padding: "12px 16px",
-      },
-      "& .MuiInputLabel-outlined": {
-        transform: "translate(14px, 12px) scale(1)",
-        // backgroundColor: 'red',
-      },
-      "& .MuiInputLabel-shrink": {
-        transform: "translate(14px, -6px) scale(0.75)",
-        // backgroundColor: 'green',
-      },
+    {
+      id: "id_1",
+      type: "email",
+      name: "email",
+      label: "Email",
+      value: entryData.email,
     },
-  })(TextField);
-
-  const handleResize = () => {
-    var width = window.innerWidth();
-
-    return;
-  };
+    {
+      id: "id_1",
+      type: "tel",
+      name: "phoneNum",
+      label: "Phone Number",
+      value: entryData.phoneNum,
+    },
+    {
+      id: "id_1",
+      type: "text",
+      name: "subject",
+      label: "Subject",
+      value: entryData.subject,
+    },
+    {
+      id: "id_1",
+      type: "textarea",
+      name: "message",
+      label: "Message",
+      value: entryData.message,
+    },
+  ];
 
   const handleChange = (event) => {
     var name = event.target.name;
     var value = event.target.value;
     console.log(name, value);
-    setentryData({...entryData, name: value})
+    setentryData({ ...entryData, [name]: value });
     event.preventDefault();
   };
 
   const handleSubmit = (event) => {
-    console.log(entryData);
+    // console.log(entryData);
   };
 
   const handleReset = (event) => {
@@ -87,56 +113,22 @@ function HomePageEnquiry() {
           </div>
           <div className="home-enquiry-main-div">
             <form className={classes.root} autoComplete="nope">
-              <CssTextField
-                required
-                type="text"
-                name="name"
-                value={entryData.name}
-                autoComplete="nope"
-                label="Name"
-                variant="outlined"
-                onChange={(e) => handleChange}
-              />
-              <CssTextField
-                required
-                type="email"
-                value={entryData.email}
-                name="email"
-                autoComplete="nope"
-                label="E-mail"
-                variant="outlined"
-                onChange={(e) => handleChange}
-              />
-              <CssTextField
-                required
-                value={entryData.phoneNum}
-                type="tel"
-                autoComplete="nope"
-                name="phoneNum"
-                label="Phone Number"
-                variant="outlined"
-                onChange={(e) => handleChange}
-              />
-              <CssTextField
-                required
-                value={entryData.subject}
-                type="text"
-                name="subject"
-                label="Subject"
-                variant="outlined"
-                onChange={(e) => handleChange}
-              />
-              <CssTextField
-                required
-                value={entryData.subject}
-                type="textarea"
-                name="subject"
-                multiline
-                rows={2}
-                label="Message"
-                variant="outlined"
-                onChange={(e) => handleChange}
-              />
+              {inputDt.map((item) => {
+                return (
+                  <TextField
+                    className={classes.inputRoot}
+                    required
+                    temp={"red"}
+                    type={item.type}
+                    name={item.name}
+                    value={item.value}
+                    autoComplete="nope"
+                    label={item.label}
+                    variant="outlined"
+                    onChange={handleChange}
+                  />
+                );
+              })}
 
               <div className="home-enquiry-btn-container">
                 <button
