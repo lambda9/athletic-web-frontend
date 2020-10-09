@@ -1,6 +1,7 @@
 .wju-main-div {
 	width: 100%;
 	height: fit-content;
+	/* font-size: 10%; */
 	background-image: url("../../Images/aa/wju1.jpg");
 	background-size: cover;
 	margin: 4rem auto;
@@ -33,11 +34,12 @@
 
 .wju-card-slider {
 	margin: auto;
+	font-size: 0.8rem;
+	width: 80%;
 	padding: 2em;
 	display: grid;
 	justify-items: center;
-	row-gap: 2rem;
-	column-gap: 2rem;
+	gap: 2em;
 	grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -45,20 +47,27 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	font-size: 1rem;
-	/* height: fit-content; */
-	padding: 2rem;
-	width: 80%;
+	font-size: 1em;
+	padding: 1.5em;
+	width: 100%;
 	background: linear-gradient(45deg, #3992a0d4 30%, #2bd2dba6 0%);
 	text-align: left;
 }
 
+.wju-card * {
+	padding: 0;
+	margin: 0;
+}
+
 .wju-card h1 {
 	font-size: 2em;
+	padding-bottom: 0.75em;
+	font-weight: 500;
 }
 
 .wju-card p {
-	font-size: 1em;
+	font-size: 1.3em;
+	/* font-weight: 400; */
 }
 
 .cont {
@@ -66,4 +75,12 @@
 	width: 300px;
 	height: 300px;
 	background-color: antiquewhite;
+}
+
+@media screen and (max-width: 600px) {
+	.wju-card-slider {
+		grid-template-columns: 1fr 1fr;
+		font-size: 0.5rem;
+		width: 100%;
+	}
 }
