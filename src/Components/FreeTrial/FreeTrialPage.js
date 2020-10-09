@@ -8,12 +8,21 @@ function FreeTrialPage() {
   const history = useHistory();
   return (
     <div className="free-trial-page">
-      <div className="free-trial-main-div">
-        
-        <div className="free-trial-main-head-text">7-Days Free Trial</div>
+      <div className="free-trial-banner-div">
+        <div className="free-trial-card">
+          <span className="free-trial-card-text">7-Days</span>
+          <span className="free-trial-card-text">Free</span>
+          <span className="free-trial-card-text">Trial</span>
+        </div>
+        <div className="free-trial-main-head-text">
+          <span>Start Your</span>
+          <span>Free Trial</span>
+        </div>
       </div>
+      <div className='free-trial-content-div'>
+
       <div className="free-trial-form-div">
-      <div className="free-trial-head-text">
+        <div className="free-trial-head-text">
           TRY US - FILL OUT THE FORM BELOW & WE’LL EMAIL YOU A FREE 7-DAY PASS!
         </div>
         <FreeTrialEntryFields back={() => history.goBack()} />
@@ -33,6 +42,8 @@ function FreeTrialPage() {
           </Link>
         </div>
       </div>
+      </div>
+
     </div>
   );
 }
