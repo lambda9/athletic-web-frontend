@@ -41,7 +41,10 @@
 }
 
 .free-trial-card-text {
+  height: fit-content;
+  margin-top: 23px;
   padding-left: 20px;
+  line-height: 1.0;
   text-align: left;
   font-size: 65px;
   font-weight: bold;
@@ -185,6 +188,12 @@
 }
 
 @media screen and (max-width: 900px) {
+
+  .free-trial-banner-div {
+   /* background-color: red; */
+   height: 350px;
+  }
+
   .free-trial-card {
     position: absolute;
     top: 20%;
@@ -196,7 +205,7 @@
   .free-trial-main-head-text {
     height: fit-content;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 120px;
     font-size: 40px;
     font-weight: 400;
     position: absolute;
