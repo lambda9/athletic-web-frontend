@@ -26,7 +26,7 @@ function FreeTrialPage() {
         </div>
         <FreeTrialEntryFields back={() => history.goBack()} />
         <Link className="free-trial-terms-text">
-          *By clicking on the submit button you agree to our terms and
+          *By submitting this form you agree to our terms and
           conditions.
         </Link>
       </div>
