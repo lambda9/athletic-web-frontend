@@ -9,6 +9,7 @@ function FreeTrialPage() {
   return (
     <div className="free-trial-page">
       <div className="free-trial-main-div">
+        
         <div className="free-trial-main-head-text">7-Days Free Trial</div>
       </div>
       <div className="free-trial-form-div">
