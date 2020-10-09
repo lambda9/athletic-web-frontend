@@ -1,5 +1,51 @@
-.review-home-comp {
-    width: 100%;
-    height: 300px;
-    background-color: thistle;
+.home-review-comp {
+  margin: auto;
+    width: 50%;
+  position: relative;
+  height: 500px;
+  background-color: thistle;
+}
+
+.home-review-card-slider {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  transition: var(--mainTransition);
+  display: flex;
+  width: fit-content;
+  background-color: grey;
+}
+
+.review-card-main-div {
+  background-color: green;
+  width: 50vw;
+  padding: 10px 20px;
+  margin: 1rem 0rem;
+}
+
+.review-card-star {
+  color: gold;
+  margin: 2px;
+}
+
+.review-card-text-div {
+  margin: auto;
+  width: 90%;
+}
+
+.review-card-text-div h2 {
+  text-transform: capitalize;
+}
+.review-card-user-img {
+  background-color: tomato;
+  width: 120px;
+  height: 120px;
+  margin: 1rem auto;
+  border-radius: 150px;
+  overflow: hidden;
+}
+
+.review-card-user-img img {
+  width: 120px;
+  height: 120px;
 }
