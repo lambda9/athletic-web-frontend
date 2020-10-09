@@ -19,9 +19,6 @@ const useStyles = makeStyles({
   inputRoot: {
     "& .MuiOutlinedInput-root": {
       fontSize: "14px",
-      ["@media (min-width:750px)"]: {
-        fontSize: "18px",
-      },
       "& fieldset": {
         borderColor: PRIME_COLOR,
       },
@@ -33,27 +30,35 @@ const useStyles = makeStyles({
         borderColor: PRIME_COLOR,
       },
     },
-    "& .MuiOutlinedInput-input ": {
-      padding: "12px 10px",
-      ["@media (min-width:750px)"]: {
-        padding: "18px 14px",
-      },
+    "& .MuiOutlinedInput-multiline": {
+      padding: "0",
     },
 
     ["@media (max-width:750px)"]: {
+      "& .MuiFormLabel-root": {
+        fontSize: "12px",
+      },
+      "& .MuiOutlinedInput-input ": {
+        padding: "12px 10px",
+      },
       "& .MuiInputLabel-outlined": {
-        transform: "translate(14px, 12px) scale(1)",
+        transform: "translate(14px, 14px) scale(1)",
       },
       "& .MuiInputLabel-shrink": {
         transform: "translate(14px, -6px) scale(0.75)",
       },
     },
     ["@media (min-width:750px)"]: {
+      "& .MuiOutlinedInput-input ": {
+        padding: "18px 14px",
+      },
+      "& .MuiOutlinedInput-root": {
+        fontSize: "18px",
+      },
       "& .MuiInputLabel-outlined": {
         transform: "translate(14px, 20px) scale(1)",
       },
-    },
-    ["@media (min-width:750px)"]: {
+
       "& .MuiInputLabel-shrink": {
         transform: "translate(14px, -6px) scale(0.75)",
       },
@@ -62,7 +67,11 @@ const useStyles = makeStyles({
 });
 
 function HomePageEnquiry() {
-  const [entryData, setentryData] = useState({});
+  const [entryData, setentryData] = useState({name: "",
+  email: "",
+  phoneNum: "",
+  subject: "",
+  message: "",});
 
   const inputDt = [
     {
@@ -73,35 +82,34 @@ function HomePageEnquiry() {
       value: entryData.name,
     },
     {
-      id: "id_1",
+      id: "id_2",
       type: "email",
       name: "email",
       label: "Email",
       value: entryData.email,
     },
     {
-      id: "id_1",
+      id: "id_3",
       type: "tel",
       name: "phoneNum",
       label: "Phone Number",
       value: entryData.phoneNum,
     },
     {
-      id: "id_1",
+      id: "id_4",
       type: "text",
       name: "subject",
       label: "Subject",
       value: entryData.subject,
     },
     {
-      id: "id_1",
+      id: "id_5",
       type: "textarea",
       name: "message",
       label: "Message",
       value: entryData.message,
     },
   ];
-
 
   const handleChange = (event) => {
     var name = event.target.name;
@@ -112,11 +120,17 @@ function HomePageEnquiry() {
   };
 
   const handleSubmit = (event) => {
-    // console.log(entryData);
+    console.log(entryData);
   };
 
   const handleReset = (event) => {
-    setentryData({});
+    setentryData({
+      name: "",
+      email: "",
+      phoneNum: "",
+      subject: "",
+      message: "",
+    });
 
     event.preventDefault();
   };
@@ -138,18 +152,18 @@ function HomePageEnquiry() {
               {inputDt.map((item) => {
                 return (
                   <TextField
+                    key={item.id}
                     className={classes.inputRoot}
                     required
-                    temp="red"
-                    type='text'
+                    autoComplete="nope"
+                    variant="outlined"
+                    onChange={handleChange}
+                    type={item.type}
                     name={item.name}
                     value={item.value}
-                    autoComplete="nope"
                     label={item.label}
-                    variant="outlined"
-                    multiline={item.type === 'textarea' ? true : false}
-                    rows={2}
-                    onChange={handleChange}
+                    multiline={item.type === "textarea" ? true : false}
+                    rows={3}
                   />
                 );
               })}
