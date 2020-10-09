@@ -1,22 +1,20 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/alt-text */
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { css, jsx } from "@emotion/core";
 
 const imgCss = css`
 	position: absolute;
+	top: 0%;
+	left: 0%;
 	width: 100%;
 `;
 
-const CrossFadeImage = ({ image, time }) => {
+const CrossFadeImage = ({ image, width, height, time }) => {
 	const [prevImage, setPrevImage] = useState(image);
 	const [animate, setAnimate] = useState(false);
+	const opacity = useProgress(animate, time);
 
-	const updatePrevImage = () => {
-		setPrevImage(image);
-	};
-	const callback = useCallback(updatePrevImage, [image]);
-	const opacity = useProgress(animate, time, callback);
 	useEffect(() => {
 		if (image !== prevImage) {
 			setAnimate(true);
@@ -25,13 +23,20 @@ const CrossFadeImage = ({ image, time }) => {
 		}
 	}, [image, prevImage]);
 
+	useEffect(() => {
+		if (opacity >= 1) {
+			setPrevImage(image);
+		}
+	}, [opacity, image]);
+
 	return (
 		<div
 			className="crossfade-div"
 			css={{
 				position: "relative",
-				width: "60%",
-				height: "300px",
+				width: `${width}`,
+				height: `${height}`,
+				overflow: "hidden",
 			}}
 		>
 			<img
@@ -43,7 +48,7 @@ const CrossFadeImage = ({ image, time }) => {
 	);
 };
 
-let useProgress = (animate, time, callback) => {
+let useProgress = (animate, time) => {
 	let [progress, setProgress] = useState(0);
 	useEffect(() => {
 		if (animate) {
@@ -57,19 +62,16 @@ let useProgress = (animate, time, callback) => {
 				setProgress(progress);
 				if (progress < time) {
 					rafId = requestAnimationFrame(step);
-				} else {
-					callback();
 				}
 			};
 			rafId = requestAnimationFrame(step);
 			return () => {
 				cancelAnimationFrame(rafId);
 			};
+		} else {
+			setProgress(0);
 		}
-	}, [animate, time, callback]);
-	if (!animate) {
-		return 0;
-	}
+	}, [animate, time]);
 	return Math.min(progress / time, time);
 };
 
