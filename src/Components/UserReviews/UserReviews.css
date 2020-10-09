@@ -1,41 +1,19 @@
 .home-review-main-div {
-    background-color: gray;
-    width: 100%;
-    height: fit-content;
+  background-color: gray;
+  width: 100%;
+  margin: 1.5rem auto;
+  height: fit-content;
 }
 
 .home-review-comp {
-  margin: auto;
-  width: 70%;
+  margin: 0 auto;
+  width: 90vw;
   overflow: hidden;
   position: relative;
-  height: 275px;
-  min-height: max-content;
-  justify-items: center;
-  background-color: thistle;
-}
-
-.sliderBtn {
-  font-size: 42px;
-  z-index: 3;
-  position: absolute;
-  top: 50%;
-  color: white;
-  border: none;
-  transform: translateY(-50%);
-}
-
-.nextBtn {
-    right: 0;
-}
-
-.prevBtn {
-    left: 0;
 }
 
 .home-review-card-slider {
-  position: absolute;
-  z-index: 1;
+  position: relative;
   display: flex;
   transition: var(--mainTransition);
   width: fit-content;
@@ -43,28 +21,29 @@
 }
 
 .review-card-main-div {
-  width: 70vw;
-  padding: 10px 20px;
+  width: 90vw;
+  padding: 1.2rem 2rem;
 }
 
 .review-card-star {
   color: gold;
-  margin: 2px;
+  margin: 0 2px;
 }
 
 .review-card-text-div {
   margin: auto;
-  width: 90%;
+  margin-top: 0.8rem;
+  width: 95%;
 }
 
 .review-card-text-div h2 {
+  margin: 0.8rem auto;
   text-transform: capitalize;
 }
 .review-card-user-img {
-  background-color: tomato;
   width: 120px;
   height: 120px;
-  margin: 1rem auto;
+  margin: 0 auto;
   border-radius: 150px;
   overflow: hidden;
 }
@@ -72,4 +51,40 @@
 .review-card-user-img img {
   width: 120px;
   height: 120px;
+}
+
+@media screen and (max-width: 700px) {
+
+    .home-review-comp, .review-card-main-div {
+        width: 100vw;
+    }
+
+  .review-card-main-div {
+    /* padding: 0.8rem 1rem; */
+  }
+
+  .review-card-star {
+    margin: 0 2px;
+  }
+
+  .review-card-text-div {
+    margin-top: 0.6rem;
+    font-size: 12px;
+    width: 100%;
+  }
+
+  .review-card-text-div h2 {
+    font-size: 18px;
+    margin: 0.6rem auto;
+  }
+  .review-card-user-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+  }
+
+  .review-card-user-img img {
+    width: 80px;
+    height: 80px;
+  }
 }

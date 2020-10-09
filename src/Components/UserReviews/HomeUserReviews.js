@@ -1,17 +1,8 @@
 import UserReviewCard from "./UserReviewCard";
 import "./UserReviews.css";
-import React, { useState } from "react";
-
-import {
-  FcNext,
-  GrNext,
-  GrPrevious,
-  ImNext,
-  MdNavigateNext,
-} from "react-icons/all";
+import React, { useState, useEffect } from "react";
 
 function HomeUserReviews() {
-  console.log("rendre");
   const items = [
     {
       id: 1,
@@ -31,39 +22,37 @@ function HomeUserReviews() {
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [check, setCheck] = useState(window.innerWidth);
 
   const next = () => {
     console.log("active index", activeIndex);
     setActiveIndex((activeIndex) => (activeIndex + 1) % items.length);
   };
 
-  const previous = () => {
-    setActiveIndex((activeIndex) => {
-      activeIndex -= 1;
-      if (activeIndex < 0) {
-        activeIndex = items.length - 1;
-      }
-      return activeIndex;
-    });
-  };
+  useEffect(() => {
+    const interval = setInterval(next, 4000);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearInterval(interval);
+    };
+  }, []);
 
-  const goToIndex = (newIndex) => {
-    setActiveIndex(newIndex);
+  const handleResize = () => {
+    setCheck(window.innerWidth)
   };
 
   return (
-      <div className='home-review-main-div'>
-    <div className="home-review-comp">
-      <GrPrevious className="sliderBtn prevBtn" onClick={previous} />
-      <GrNext className="sliderBtn nextBtn" onClick={next} />
-      <div
-        className="home-review-card-slider"
-        style={{
-          transform: `translateX(${-activeIndex * 70}vw)`,
-        }}
-      >
-        {items.map((item) => item.comp)}
-      </div>
+    <div className="home-review-main-div">
+      <div className="home-review-comp">
+        <div
+          className="home-review-card-slider"
+          style={{
+            transform: `translateX(${-activeIndex * (check < 700 ? 100 : 90)}vw)`,
+          }}
+        >
+          {items.map((item) => item.comp)}
+        </div>
       </div>
     </div>
   );
