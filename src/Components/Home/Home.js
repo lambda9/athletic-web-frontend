@@ -4,6 +4,7 @@ import HeroSection from "../HeroSection/HeroSection";
 import HomePageEnquiry from './HomePageEnquiry';
 import HomePageFAQ from '../FAQ/HomePageFAQ'
 import WhyJoinUs from '../WhyJoinUs/WhyJoinUs'
+import HomeUserReviews from "../UserReviews/HomeUserReviews";
 
 function Home() {
 	
@@ -14,6 +15,7 @@ function Home() {
 			<WhyJoinUs />
 			<HomePageEnquiry />
 			<HomePageFAQ />
+			<HomeUserReviews />
 		</div>
 	);
 }
