@@ -1,12 +1,13 @@
-import React from 'react'
-import './WhyJoinUs.css'
+import React from "react";
+import "./WhyJoinUs.css";
 
-function WJUcard() {
-    return (
-        <div className='wju-card' data-aos='fade-left' data-aos-duration='2000'>
-            
-        </div>
-    )
+function WJUcard({ heading, content }) {
+	return (
+		<div className="wju-card">
+			<h1>{heading}</h1>
+			<p>{content}</p>
+		</div>
+	);
 }
 
-export default WJUcard
+export default WJUcard;
