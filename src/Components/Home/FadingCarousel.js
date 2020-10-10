@@ -41,7 +41,7 @@ const FadingCarousel = () => {
 				image={images[currentIndex]}
 				width="100vw"
 				height="55vw"
-				time={500}
+				time={1000}
 			/>
 			<h3 css={[headingsStyle, { top: "10%" }]}>
 				This is nothing special about it

@@ -2,9 +2,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useEffect, useState } from "react";
 import { css, jsx } from "@emotion/core";
-import React from "react";
-
-import Image from "./Image";
 
 const imgCss = css`
 	position: absolute;
@@ -13,26 +10,25 @@ const imgCss = css`
 	width: 100%;
 `;
 
-const CrossFadeImage = React.memo(({ image, width, height, time }) => {
-	console.log("render again");
+const CrossFadeImage = ({ image, width, height, time }) => {
 	const [prevImage, setPrevImage] = useState(image);
-	const [animate, setAnimate] = useState(false);
-	const progress = useProgress(animate, time);
+	const [opacity, setOpacity] = useState(1);
+	const [transition, setTransition] = useState(0);
 
 	useEffect(() => {
 		if (image !== prevImage) {
-			setAnimate(true);
+			setOpacity(0);
+			setTransition(time);
 		} else {
-			setAnimate(false);
+			setOpacity(1);
+			setTransition(0);
 		}
-	}, [image, prevImage]);
+	}, [image, prevImage, time]);
 
-	useEffect(() => {
-		console.log("opactiry", progress);
-		if (progress >= 1) {
-			setPrevImage(image);
-		}
-	}, [progress, image]);
+	const onTransitionEnd = () => {
+		console.log("transend");
+		setPrevImage(image);
+	};
 
 	return (
 		<div
@@ -44,12 +40,19 @@ const CrossFadeImage = React.memo(({ image, width, height, time }) => {
 				overflow: "hidden",
 			}}
 		>
-			<Image
+			<img
 				src={prevImage}
-				css={[imgCss, { opacity: 1 - progress, zIndex: 1 }]}
-				id={0}
+				css={[
+					imgCss,
+					{
+						zIndex: 1,
+						transition: `opacity ease-in-out ${transition / 1000}s`,
+						opacity: opacity,
+					},
+				]}
+				onTransitionEnd={onTransitionEnd}
 			/>
-			<Image src={image} css={[imgCss, { zIndex: 0 }]} id={1} />
+			<img src={image} css={[imgCss, { zIndex: 0 }]} />
 			<div
 				css={{
 					position: "absolute",
@@ -59,42 +62,11 @@ const CrossFadeImage = React.memo(({ image, width, height, time }) => {
 					left: "0%",
 					zIndex: 2,
 					backgroundImage:
-						"linear-gradient(to right,#000000d4 2%,transparent ,#000000d1 98%)",
+						"linear-gradient(to right,#000000d4 10%,transparent ,#000000d1 90%)",
 				}}
 			></div>
 		</div>
 	);
-});
-
-let useProgress = (animate, time) => {
-	let [progress, setProgress] = useState(0);
-	useEffect(() => {
-		if (animate) {
-			let rafId = null;
-			let start = null;
-			let step = (timestamp) => {
-				if (!start) {
-					start = timestamp;
-				}
-				let progress = timestamp - start;
-				setProgress(progress);
-				if (progress < time) {
-					rafId = requestAnimationFrame(step);
-				}
-			};
-			rafId = requestAnimationFrame(step);
-			return () => {
-				cancelAnimationFrame(rafId);
-			};
-		} else {
-			setProgress(1);
-		}
-	}, [animate, time]);
-	if (animate) {
-		return Math.min(progress / time, time);
-	} else {
-		return 0;
-	}
 };
 
 export default CrossFadeImage;
