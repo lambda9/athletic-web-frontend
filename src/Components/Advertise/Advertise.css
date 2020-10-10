@@ -1,0 +1,191 @@
+.advertise-page{
+    height:auto; 
+    width:100%;
+}
+.advertise-hero {
+    background-color: var(--mainBlack);
+    color: var(--mainGrey);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1.2px;
+  }
+  
+  .advertise-hero-text-div {
+    width: 60%;
+    display: flex;
+    /* background-color: aqua; */
+  }
+  
+  .advertise-hero-text {
+    width: 80%;
+    margin: auto;
+    height: fit-content;
+  }
+  
+  .advertise-hero-text span {
+    font-size: 45px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .advertise-overlap-card {
+    padding: 1.6rem 1.6rem;
+    height: fit-content;
+    width: 355px;
+    position: relative;
+    bottom: -10rem;
+    left: 4%;
+    z-index: 3;
+    background: linear-gradient(to left, rgb(21, 172, 199), rgb(215, 90, 231));
+    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  }
+  
+  .advertise-overlap-card-headings {
+    display: flex;
+    text-align: left;
+    margin: auto;
+    flex-direction: column;
+  }
+  
+  .advertise-overlap-card-headings span{
+    font-size: 45px;
+    font-weight: bold;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 0rem 1.6rem;
+    mix-blend-mode: screen;
+    text-transform: uppercase;
+  }
+  
+  #overlap-card-head-line2 {
+    margin-top: -0.6rem;
+    padding-bottom: 0.8rem;
+  }
+  
+  #overlap-card-head-line1 {
+    padding-top: 0.8rem;
+  }
+  
+  .advertise-overlap-card p {
+    color: rgb(255, 255, 255);
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 18px;
+  
+  }
+  .advertise-medium-container{
+    margin-top: 5.1rem;
+    margin-bottom:2rem;
+    position: relative;
+    padding: 1rem 2rem 1.5rem;
+    background: #fff;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid green;
+  }
+  .advertise-medium-container h3{
+      color:var(--primaryRed);
+  }
+  .advertise-medium{
+      column-count: 2;
+      column-width:100px;
+      column-rule: 1px solid #757575;
+      padding: 1rem 2rem 1.5rem;
+      background:rgb(248, 248, 248);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  .advertise-medium ul{
+list-style-position: inside;
+list-style-type: circle;
+text-align: justify;
+  }
+
+  @media screen and (max-width: 900px) {
+    .advertise-hero {
+      flex-direction: column-reverse;
+      justify-items: center;
+      vertical-align: middle;
+    }
+  
+    .advertise-hero-text-div {
+      width: 100%;
+      position: absolute;
+      top: 20%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    .advertise-hero-text {
+      width: 90%;
+    }
+  
+    .advertise-overlap-card {
+      position: relative;
+      margin: auto;
+      left: 0;
+    }
+}
+    @media screen and (max-width: 550px) {
+        .advertise-hero {
+          height: 350px;
+          padding: 0;
+        }
+      
+        .advertise-hero-text-div {
+          top: 25%;
+        }
+        .advertise-medium{
+            column-count: 1;
+        }
+        .advertise-hero-text-div span {
+          font-size: 26px;
+        }
+        .advertise-hero-text-div h6 {
+          font-size: 14px;
+        }
+      
+        .advertise-overlap-card {
+          padding: 1rem;
+          width: 300px;
+          bottom: -9rem;
+        }
+      
+        .advertise-overlap-card-headings {
+          display: flex;
+          text-align: left;
+          margin: auto;
+          flex-direction: column;
+        }
+      
+        .advertise-overlap-card-headings span {
+          font-size: 38px;
+          padding: 0rem 1rem;
+        }
+      
+        #overlap-card-head-advertise {
+          margin-top: -0.6rem;
+          padding-bottom: 0.4rem;
+        }
+      
+        #overlap-card-head-line1,
+        #overlap-card-head-line2 {
+          padding-top: 0.4rem;
+        }
+      
+        .advertise-overlap-card p {
+          color: rgb(255, 255, 255);
+          margin-top: 0.8rem;
+          margin-bottom: 0;
+          font-size: 12px;
+        }
+      
+        .advertise-page {
+          display: flex;
+          flex-direction: column;
+        }  
+    }

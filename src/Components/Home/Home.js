@@ -5,17 +5,21 @@ import HomePageEnquiry from './HomePageEnquiry';
 import HomePageFAQ from '../FAQ/HomePageFAQ'
 import WhyJoinUs from '../WhyJoinUs/WhyJoinUs'
 import HomeUserReviews from "../UserReviews/HomeUserReviews";
+import HomeSubscribe from "../SubscribeNewsLetter/HomeSubscribe";
+import FadingCarousel from "./FadingCarousel";
+
 
 function Home() {
-	
 	return (
 		<div>
-			<HeroSection />
+			<FadingCarousel />
 			<CardGroup />
 			<WhyJoinUs />
 			<HomePageEnquiry />
 			<HomePageFAQ />
 			<HomeUserReviews />
+			<HomeSubscribe />
+
 		</div>
 	);
 }
