@@ -16,7 +16,7 @@
   justify-content: center;
   height: 400px;
   font-family: "Montserrat", sans-serif;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.8px;
 }
 
 .blog-hero-text-div {
@@ -25,13 +25,13 @@
 }
 
 .blog-hero-text {
-  width: 80%;
+  width: 75%;
   margin: auto;
   height: fit-content;
 }
 
 .blog-hero-text span {
-  font-size: 55px;
+  font-size: 52px;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -40,10 +40,10 @@
 .blog-overlap-card {
   padding: 1.6rem 1.6rem;
   height: fit-content;
-  width: 342px;
+  width: 355px;
   position: relative;
   bottom: -10rem;
-  left: 4%;
+  left: 3%;
   z-index: 3;
   background: linear-gradient(to left, rgb(21, 172, 199), rgb(215, 90, 231));
   box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
@@ -61,7 +61,7 @@
   font-weight: bold;
   background: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  padding: 0rem 1.1rem;
+  padding: 0rem 0.8rem;
   mix-blend-mode: screen;
   text-transform: uppercase;
 }
@@ -215,7 +215,7 @@
   }
 
   .blog-overlap-card {
-    padding: 1.2rem;
+    padding: 1.4rem;
     width: 250px;
     bottom: -9rem;
   }
@@ -228,7 +228,7 @@
   }
 
   .blog-overlap-card-headings span {
-    font-size: 40px;
+    font-size: 38px;
     padding: 0rem 1rem;
   }
 
