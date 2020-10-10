@@ -8,6 +8,9 @@ const imgCss = css`
 	top: 0%;
 	left: 0%;
 	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
 `;
 
 const CrossFadeImage = ({ image, width, height, time }) => {
@@ -39,11 +42,25 @@ const CrossFadeImage = ({ image, width, height, time }) => {
 				overflow: "hidden",
 			}}
 		>
-			<img
-				css={[imgCss, { zIndex: 3, opacity: 1 - opacity }]}
-				src={prevImage}
+			<div
+				css={[
+					imgCss,
+					{
+						zIndex: 3,
+						opacity: 1 - opacity,
+						backgroundImage: `linear-gradient(180deg, black, transparent), url(${prevImage})`,
+					},
+				]}
 			/>
-			<img css={[imgCss, { zIndex: 0 }]} src={image} />
+			<div
+				css={[
+					imgCss,
+					{
+						zIndex: 0,
+						backgroundImage: `linear-gradient(180deg, black, transparent), url(${image})`,
+					},
+				]}
+			/>
 		</div>
 	);
 };

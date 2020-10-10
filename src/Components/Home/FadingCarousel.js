@@ -30,7 +30,7 @@ const FadingCarousel = () => {
 			<CrossFadeImage
 				image={images[currentIndex]}
 				width="100vw"
-				height="45vw"
+				height="55vw"
 				time={500}
 			/>
 			<h3 css={[headingsStyle, { top: "10%" }]}>
