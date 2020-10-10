@@ -8,7 +8,6 @@ function BlogPage() {
   return (
     <div className="blog-page">
       <BlogPageBanner />
-      <BannerOverlapCard />
       <div className="blog-grid">
         {BlogDt.map((item) => {
           return <BlogCard key={item.id} obj={item} />;

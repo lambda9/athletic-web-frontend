@@ -1,18 +1,20 @@
 import React from "react";
+import BlogOverlapCard from "./BannerOverlapCard";
 
 function BlogPageBanner() {
   return (
     <div className="blog-hero">
-      <h1>NEWS AND FITNESS BLOGS</h1>
-      <h6>
-        News articles and blogs to help you stay motivated throughout your
-        journey!
-      </h6>
-      <p>
-        Discover the latest views and news on health and fitness, nutrition and
-        weight loss that will help fast track you on your way to achieving your
-        fitness goals.
-      </p>
+      <BlogOverlapCard />
+
+      <div className="blog-hero-text-div">
+        <div className="blog-hero-text">
+          <span>Stay updated </span>
+          <h5>
+            Our latest news, articles and blogs to help you stay motivated
+            throughout your journey!
+          </h5>
+        </div>
+      </div>
     </div>
   );
 }
