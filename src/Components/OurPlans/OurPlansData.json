@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "tag": "regular",
+    "price": "12000",
+    "discount": 0,
+    "durationUnit": "yearly",
+    "duration": 1,
+    "features": [
+      "Unlimited access to the gym",
+      "Locker Facility",
+      "Free merchandise Products"
+    ]
+  },
+  {
+    "id": 2,
+    "tag": "premium",
+    "priceNum": 12000,
+    "price": "12000",
+    "discount": 10,
+    "durationUnit": "months",
+    "duration": 6,
+    "features": [
+      "Unlimited access to the gym",
+      "Personal trainer for copmlete course",
+      "complete diet and nutrition plan",
+      "Locker Facility",
+      "Free merchandise Products"
+    ]
+  },
+  {
+    "id": 3,
+    "tag": "advanced",
+    "price": "22000",
+    "discount": 0,
+    "durationUnit": "yearly",
+    "duration": 1,
+    "features": [
+      "Unlimited access to the gym",
+      "Personal trainer for copmlete course",
+      "complete diet and nutrition plan",
+      "Complete rigorous training",
+      "Locker Facility",
+      "Free merchandise Products"
+    ]
+  }
+]

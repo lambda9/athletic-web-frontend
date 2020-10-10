@@ -4,7 +4,16 @@ import Triangle from "../Shapes/Triangle";
 import { Link } from "react-router-dom";
 import { BsStarFill, FaRupeeSign } from "react-icons/all";
 
-function OurPlanCard() {
+function OurPlanCard(props) {
+  const {
+    
+    tag,
+    price,
+    discount,
+    durationUnit,
+    duration,
+    features,
+  } = props.obj;
   return (
     <div className="plan-card-main-div">
       <Triangle
@@ -13,32 +22,33 @@ function OurPlanCard() {
         w1={30}
         w2={30}
         w3={30}
-        color={"rgb(255, 0, 0)"}
+        color={"#c13434"}
         angle={45}
       />
       <BsStarFill className="plan-card-star" />
-      <div className="plan-card-discount">40% OFF</div>
+      {discount === 0 ? null : (
+        <div className="plan-card-discount">{discount}% OFF</div>
+      )}
       <div className="plan-card-main-text">
-        <h4>premium</h4>
+        <h4>{tag}</h4>
         <div className="plan-card-price-div">
           <div>
             <FaRupeeSign id="rupee-sign" />
-            <h2>22</h2>
+            <h2>{price}</h2>
           </div>
-          <span>monthly</span>
+          <span>
+            {duration === 1 ? " " : duration} {durationUnit}
+          </span>
         </div>
         <ul>
-          <li>feature 1</li>
-          <li>feature 2</li>
-          <li>feature 3</li>
-        
+          {features.map((item) => (
+            <li>{item}</li>
+          ))}
         </ul>
-
-        
       </div>
-      <Link to="/" className="button-primary">
-          join now
-        </Link>
+      <Link to="/" className="button-primary plan-card-btn">
+        join now
+      </Link>
     </div>
   );
 }

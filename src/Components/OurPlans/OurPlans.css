@@ -2,33 +2,67 @@
 
 .plans-main-comp {
   width: 100%;
-  height: 500px;
-  background-color: lightcyan;
+  margin: 5rem auto;
+  padding: 60px 0 50px;
+  background: url("../../Images/wju2.jpg");
+  background-color: rgba(0, 0, 0, 0.356);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.plan-main-comp-text {
+}
+
+.plan-main-comp-text h2 {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.plan-main-comp-text p {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 400;
+  text-align: center;
+  line-height: 24px;
+  margin: 0 0 45px 0;
 }
 
 .plan-card-main-div * {
   font-family: "Oswald", sans-serif;
 }
 
+.plan-main-cards-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .plan-card-main-div {
-  margin: 1rem 5rem;
-  width: 300px;
+  margin: auto 1rem;
+  width: 370px;
+  min-width: 340px;
   height: 500px;
-  background: #ffffff;
+  background: var(--mainWhite);
   text-align: center;
-  padding: 15px 0 20px;
+  padding: 45px 0 50px;
   color: #272727;
+  overflow: hidden;
+  position: relative;
 }
 
 .plan-card-star {
   position: absolute;
   top: 2px;
   right: 3px;
-  color: white;
+  color: var(--mainWhite);
 }
 
 .plan-card-premium-logo {
-  background-color: red;
+  background-color: var(--primaryRed);
   position: absolute;
   top: 0;
   width: 50px;
@@ -38,30 +72,26 @@
 
 .plan-card-discount {
   position: absolute;
-  top: 2%;
   font-size: 18px;
-  left: -15.2%;
-  background-color: rgb(209, 0, 0);
+  top: 2%;
+  left: 0;
+  background-color: var(--primaryRed);
   padding: 0.1rem 0.5rem;
-  color: white;
-
-}
-
-.plan-card-main-text {
-    border: 1px solid red;
+  color: var(--mainWhite);
 }
 
 .plan-card-main-text h4 {
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 20px;
+  line-height: 1.2px;
+  margin-bottom: 34px;
+  font-size: 24px;
 }
 
 .plan-card-price-div > div:first-child {
   margin: 1rem auto;
   width: fit-content;
   display: flex;
-  /* background-color: yellow; */
 }
 
 #rupee-sign {
@@ -70,49 +100,48 @@
   font-size: 22px;
 }
 
-.plan-card-price-div {
-  width: 100%;
-  /* background-color: beige; */
-}
-
 .plan-card-price-div h2 {
-  color: #272727;
   font-size: 64px;
-
   font-weight: 700;
   line-height: 0.7;
   position: relative;
   margin-bottom: 10px;
-  display: inline-block;
 }
 
 .plan-card-price-div span {
   text-transform: uppercase;
   margin-bottom: 2rem;
   font-size: 16px;
-  color: #272727;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 2px;
 }
 
 .plan-card-main-text ul {
-    margin-top: 1rem;
-  margin-bottom: 35px;
-  display: block;
+  margin-top: 1.5rem;
   list-style-type: disc;
-
 }
 
 .plan-card-main-text ul li {
-    list-style: none;
-    font-size: 16px;
-    color: #272727;
-    line-height: 32px;
+  list-style: none;
+  font-size: 16px;
+  line-height: 32px;
 }
 
 .plan-card-main-div a {
-  position: relative;
-  margin: auto;
-  margin-bottom: 0;
-  
+  position: absolute;
+  bottom: 0;
+  font-family: "Montserrat", sans-serrif;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.plan-card-btn {
+  background-color: var(--primaryRed);
+  border: 2px solid var(--primaryRed);
+  color: var(--mainWhite);
+}
+
+.plan-card-btn:hover {
+  color: var(--primaryRed);
+  border: 2px solid var(--primaryRed);
 }
