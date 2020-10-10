@@ -19,10 +19,13 @@ import NewsCard from "./Components/NewsBlog/NewsCard"
 import FranchisePage from './Components/Franchise/FranchisePage'
 import BlogPage from "./Components/NewsBlog/BlogPage"
 import FullBlogPage from "./Components/NewsBlog/FullBlogPage";
+import AdvertisePage from "./Components/Advertise/AdvertisePage"
+
 class App extends Component {
   render() {
     return (
       <Router>
+
         <ScrollToTop />
         <Navbar />
         <div className="main-content">
@@ -41,11 +44,12 @@ class App extends Component {
             <Route exact path='/franchise/' component={FranchisePage} />
             <Route exact path='/blog/' component={BlogPage} />
             <Route exact path='/fullblog/' component={FullBlogPage} />
-
+            <Route exact path='/advertise/' component={AdvertisePage} />
             <Route component={Error} />
           </Switch>
         </div>
         <Footer />
+
       </Router>
     );
   }
