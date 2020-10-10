@@ -18,10 +18,12 @@ import FreeTrialPage from './Components/FreeTrial/FreeTrialPage'
 import NewsCard from "./Components/NewsBlog/NewsCard"
 import FranchisePage from './Components/Franchise/FranchisePage'
 import AdvertisePage from "./Components/Advertise/AdvertisePage"
+
 class App extends Component {
   render() {
     return (
       <Router>
+
         <ScrollToTop />
         <Navbar />
         <div className="main-content">
@@ -44,6 +46,7 @@ class App extends Component {
           </Switch>
         </div>
         <Footer />
+
       </Router>
     );
   }
