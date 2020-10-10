@@ -1,16 +1,16 @@
 import React from "react";
-import CardGroup from "../CardGroup/CardGroup";
 import HeroSection from "../HeroSection/HeroSection";
 import HomePageEnquiry from './HomePageEnquiry';
 import HomePageFAQ from '../FAQ/HomePageFAQ'
 import WhyJoinUs from '../WhyJoinUs/WhyJoinUs'
+import OurPlans from "../OurPlans/OurPlans";
 
 function Home() {
 	
 	return (
 		<div>
 			<HeroSection />
-			<CardGroup />
+			<OurPlans />
 			<WhyJoinUs />
 			<HomePageEnquiry />
 			<HomePageFAQ />
