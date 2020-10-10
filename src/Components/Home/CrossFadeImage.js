@@ -10,7 +10,7 @@ const imgCss = css`
 	width: 100%;
 `;
 
-const CrossFadeImage = ({ image, width, height, time }) => {
+const CrossFadeImage = ({ image, width, height, time, onImageSet }) => {
 	const [prevImage, setPrevImage] = useState(image);
 	const [opacity, setOpacity] = useState(1);
 	const [transition, setTransition] = useState(0);
@@ -26,8 +26,8 @@ const CrossFadeImage = ({ image, width, height, time }) => {
 	}, [image, prevImage, time]);
 
 	const onTransitionEnd = () => {
-		console.log("transend");
 		setPrevImage(image);
+		onImageSet();
 	};
 
 	return (
@@ -62,7 +62,7 @@ const CrossFadeImage = ({ image, width, height, time }) => {
 					left: "0%",
 					zIndex: 2,
 					backgroundImage:
-						"linear-gradient(to right,#000000d4 10%,transparent ,#000000d1 90%)",
+						"linear-gradient(to right,#000000d4 10%,#0000004d ,#000000d1 90%)",
 				}}
 			></div>
 		</div>
