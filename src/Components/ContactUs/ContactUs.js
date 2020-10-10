@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Hero from "../Hero";
 import bgImg from "../../Images/im9.jpg";
 import ReachUs from "./ReachUs";
-import GetInTouchComp from "./GetInTouchComp";
+import RequestCallBackComp from './RequestCallBackComp';
 
 class ContactUs extends Component {
   render() {
@@ -15,7 +15,7 @@ class ContactUs extends Component {
         ></Hero>
       
         <ReachUs />
-        <GetInTouchComp />
+        <RequestCallBackComp />
 
       </div>
     );
