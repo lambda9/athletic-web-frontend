@@ -2,14 +2,15 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { css, jsx } from "@emotion/core";
 
-import { useState } from "react";
-import img1 from "../../Images/landingBackdrop.png";
-import img2 from "../../Images/Carousel/img2.jpg";
-import img3 from "../../Images/Carousel/img3.jpg";
-import img4 from "../../Images/Carousel/img4.jpg";
+import { useEffect, useState } from "react";
+import img1 from "../../Images/HomeBackdrop/im1.jpg";
+import img2 from "../../Images/HomeBackdrop/im2.jpg";
+import img3 from "../../Images/HomeBackdrop/im3.jpg";
+import img4 from "../../Images/HomeBackdrop/im4.jpg";
+import img5 from "../../Images/HomeBackdrop/im5.jpg";
 import CrossFadeImage from "./CrossFadeImage";
 
-const images = [img1, img2, img3, img4];
+const images = [img1, img2, img3, img4, img5];
 
 const headingsStyle = css`
 	position: absolute;
@@ -20,6 +21,15 @@ const headingsStyle = css`
 
 const FadingCarousel = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setCurrentIndex((currentIndex) => (currentIndex + 1) % images.length);
+		}, 3000);
+		return () => {
+			clearTimeout(timeout);
+		};
+	});
 
 	return (
 		<div
@@ -36,9 +46,13 @@ const FadingCarousel = () => {
 			<h3 css={[headingsStyle, { top: "10%" }]}>
 				This is nothing special about it
 			</h3>
-			<h2 css={[headingsStyle, { top: "50%" }]}>Main Heading</h2>
+			<h2 css={[headingsStyle, { top: "50%" }]}>Work Hard</h2>
+			<h2 css={headingsStyle}>JOIN US</h2>
 			<h4 css={[headingsStyle, { top: "70%" }]}>This is small heading</h4>
 			<button
+				css={{
+					zIndex: 4,
+				}}
 				onClick={() => {
 					setCurrentIndex((currentIndex) => (currentIndex + 1) % images.length);
 				}}

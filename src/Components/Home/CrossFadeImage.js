@@ -2,21 +2,22 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useEffect, useState } from "react";
 import { css, jsx } from "@emotion/core";
+import React from "react";
+
+import Image from "./Image";
 
 const imgCss = css`
 	position: absolute;
 	top: 0%;
 	left: 0%;
 	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
 `;
 
-const CrossFadeImage = ({ image, width, height, time }) => {
+const CrossFadeImage = React.memo(({ image, width, height, time }) => {
+	console.log("render again");
 	const [prevImage, setPrevImage] = useState(image);
 	const [animate, setAnimate] = useState(false);
-	const opacity = useProgress(animate, time);
+	const progress = useProgress(animate, time);
 
 	useEffect(() => {
 		if (image !== prevImage) {
@@ -27,10 +28,11 @@ const CrossFadeImage = ({ image, width, height, time }) => {
 	}, [image, prevImage]);
 
 	useEffect(() => {
-		if (opacity >= 1) {
+		console.log("opactiry", progress);
+		if (progress >= 1) {
 			setPrevImage(image);
 		}
-	}, [opacity, image]);
+	}, [progress, image]);
 
 	return (
 		<div
@@ -42,28 +44,27 @@ const CrossFadeImage = ({ image, width, height, time }) => {
 				overflow: "hidden",
 			}}
 		>
-			<div
-				css={[
-					imgCss,
-					{
-						zIndex: 3,
-						opacity: 1 - opacity,
-						backgroundImage: `linear-gradient(180deg, black, transparent), url(${prevImage})`,
-					},
-				]}
+			<Image
+				src={prevImage}
+				css={[imgCss, { opacity: 1 - progress, zIndex: 1 }]}
+				id={0}
 			/>
+			<Image src={image} css={[imgCss, { zIndex: 0 }]} id={1} />
 			<div
-				css={[
-					imgCss,
-					{
-						zIndex: 0,
-						backgroundImage: `linear-gradient(180deg, black, transparent), url(${image})`,
-					},
-				]}
-			/>
+				css={{
+					position: "absolute",
+					width: "100%",
+					height: "100%",
+					top: "0%",
+					left: "0%",
+					zIndex: 2,
+					backgroundImage:
+						"linear-gradient(to right,#000000d4 2%,transparent ,#000000d1 98%)",
+				}}
+			></div>
 		</div>
 	);
-};
+});
 
 let useProgress = (animate, time) => {
 	let [progress, setProgress] = useState(0);
@@ -86,10 +87,14 @@ let useProgress = (animate, time) => {
 				cancelAnimationFrame(rafId);
 			};
 		} else {
-			setProgress(0);
+			setProgress(1);
 		}
 	}, [animate, time]);
-	return Math.min(progress / time, time);
+	if (animate) {
+		return Math.min(progress / time, time);
+	} else {
+		return 0;
+	}
 };
 
 export default CrossFadeImage;
