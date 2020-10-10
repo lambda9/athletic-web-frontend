@@ -6,6 +6,8 @@
   width: 100%;
 }
 
+/* blog page banner */
+
 .blog-hero {
   background-color: var(--mainBlack);
   color: var(--mainGrey);
@@ -20,7 +22,6 @@
 .blog-hero-text-div {
   width: 70%;
   display: flex;
-  /* background-color: aqua; */
 }
 
 .blog-hero-text {
@@ -35,6 +36,7 @@
   font-weight: 500;
 }
 
+/* blog page banner overlap card */
 .blog-overlap-card {
   padding: 1.6rem 1.6rem;
   height: fit-content;
@@ -80,22 +82,22 @@
   font-size: 18px;
 }
 
-/* Blog page main content cards */
+/* Blog page main space */
 
 .blog-page-cards-row {
   margin: 8rem auto;
   width: fit-content;
   display: flex;
   padding: 0 4px;
-  /* background-color: beige; */
 }
 
 .blog-page-cards-col {
   width: fit-content;
   height: fit-content;
   margin: 0 3rem;
-  /* background-color: bisque; */
 }
+
+/* blog page main content cards */
 
 .blog-card-main-div {
   margin-top: 5.1rem;
@@ -159,11 +161,7 @@
   text-decoration: none;
   box-shadow: 0px 5px 1rem rgba(112, 234, 255, 0.5);
 }
-.blog-wrapper {
-  margin: 10rem 3rem;
-  background-color: greenyellow;
-  width: 100%;
-}
+
 
 @media screen and (max-width: 900px) {
   .blog-hero {
@@ -206,7 +204,7 @@
   }
 
   .blog-hero-text-div {
-    top: 30%;
+    top: 25%;
   }
 
   .blog-hero-text-div span {
