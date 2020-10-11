@@ -143,7 +143,7 @@ const FadingCarousel = () => {
 		>
 			<CrossFadeImage
 				image={images[currentIndex]}
-				width="100vw"
+				width="100%"
 				height="55vw"
 				time={1000}
 				onImageSet={onImageSet}
