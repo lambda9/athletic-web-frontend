@@ -80,10 +80,11 @@
 	background-color: antiquewhite;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
 	.wju-card-slider {
 		grid-template-columns: 1fr 1fr;
 		font-size: 0.5rem;
 		width: 100%;
 	}
 }
+
