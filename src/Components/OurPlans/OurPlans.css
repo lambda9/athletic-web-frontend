@@ -29,16 +29,16 @@
   margin: 0 0 45px 0;
 }
 
-.plan-card-main-div * {
-  font-family: "Oswald", sans-serif;
-}
-
 .plan-main-cards-container {
   width: 100%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.plan-card-main-div * {
+  font-family: "Oswald", sans-serif;
 }
 
 /*plan card  */
@@ -51,6 +51,7 @@
   text-align: center;
   padding: 35px 0 40px;
   color: #272727;
+  border: 0.2px solid var(--primaryRed);
   position: relative;
 }
 
