@@ -7,41 +7,38 @@ const PRIMARY_COLOR = "#1ca9c9";
 const useStyles = makeStyles({
   root: {
     width: "300",
+
     "& .MuiSlider-root": {
       width: "700px",
       height: "20px",
-      color: "whtite"
     },
     "&  .MuiSlider-markLabel": {
-      color: 'white',
+      color: "white",
       fontSize: "18px",
       fontWeight: "bold",
     },
     "& .MuiSlider-rail": {
       backgroundColor: "white",
       color: "white",
-      opacity: "0.9",
-      height: "5px",
+      opacity: "0.8",
+      height: "8px",
     },
     "& .MuiSlider-track": {
       backgroundColor: PRIMARY_RED,
-      height: "5px",
+      height: "8px",
     },
     "& .MuiSlider-thumb": {
-      width: "15px",
-      height: "15px",
+      width: "18px",
+      height: "18px",
       backgroundColor: PRIMARY_RED,
     },
     "& .MuiSlider-mark": {
-      width: "3px",
-      height: "3px",
+      width: "8px",
+      height: "8px",
+      backgroundColor: "white",
     },
-
-    "& PrivateValueLabel-circle-5": {
-      width: "36px",
-      height: "36px",
-      backgroundColor: "yellow",
-    },
+    "& .PrivateValueLabel-thumb-2": {},
+    
   },
 });
 const marks = [
@@ -67,22 +64,26 @@ function valuetext(value) {
 }
 
 function valueLabelFormat(value) {
-  return "value Months";
+  return value;
 }
-function PlanDurationSlider() {
+function PlanDurationSlider(props) {
+
+ 
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <Slider
-        defaultValue={20}
+        defaultValue={3}
         min={1}
         max={12}
+        colorSecondary
         valueLabelFormat={valueLabelFormat}
         getAriaValueText={valuetext}
         aria-labelledby="discrete-slider-restrict"
         step={null}
         valueLabelDisplay="auto"
         marks={marks}
+        onChange={props.handleDuration}
       />
     </div>
   );

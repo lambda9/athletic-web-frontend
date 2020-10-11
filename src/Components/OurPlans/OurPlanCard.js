@@ -38,7 +38,7 @@ function OurPlanCard(props) {
           </div>
 
           <span>
-            {duration === 1 ? " " : duration} {durationUnit}
+            {duration === 1 || duration === 12 ? " " : duration} {durationUnit}
           </span>
         </div>
         <ul>
