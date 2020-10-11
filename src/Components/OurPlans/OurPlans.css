@@ -3,12 +3,22 @@
 .plans-main-comp {
   width: 100%;
   margin: 5rem auto;
-  padding: 60px 0 50px;
-  background: url("../../Images/im22.jpeg");
+  background-image: url("../../Images/bg6.jpg");
   background-color: rgba(0, 0, 0, 0.356);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+#plan-main-comp-tint {
+  padding: 60px 0 50px;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.530707351299895) 7%,
+    rgba(0, 0, 0, 0) 75%,
+    rgba(0, 0, 0, 0) 91%
+  );
 }
 
 /* our plans heading */
@@ -34,17 +44,50 @@
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  /* overflow-x: scroll; */
+  justify-content: center;
 }
 
 .plan-card-main-div * {
   font-family: "Oswald", sans-serif;
 }
 
+.plans-comp-btn-group {
+  display: flex;
+  padding: 0 0.5rem;
+  width: fit-content;
+  margin: 0.1rem auto 2rem;
+}
+
+.plans-comp-btn-group div {
+  padding: 0.5rem 0;
+  min-width: 160px;
+  color: grey;
+  margin: auto 0;
+  height: fit-content;
+  text-transform: uppercase;
+  font-size: 18px;
+  border: 2px solid grey;
+}
+
+.plans-comp-btn-group div:hover {
+  cursor: pointer;
+}
+
+#plan-comp-btn-active {
+  font-size: 20px;
+  color: white;
+  background-color: rgba(16, 134, 158, 0.18);
+  transform: scale(1.02);
+  border: 2.5px solid var(--primaryColor);
+  box-shadow: 0px 0px 2px 0px var(--primaryColor);
+}
+
 /*plan card  */
 .plan-card-main-div {
   margin: 1rem;
   width: 340px;
+  min-width: 340px;
   display: inline-block;
   height: 500px;
   background: var(--mainWhite);
@@ -82,7 +125,7 @@
   font-size: 24px;
 }
 
-                       /* price div */
+/* price div */
 .plan-card-price-div > div:first-child {
   margin: 0rem auto 1.4rem;
   width: fit-content;
@@ -100,6 +143,7 @@
   font-size: 56px;
   font-weight: 700;
   line-height: 0.85;
+  width: fit-content;
   position: relative;
 }
 
@@ -153,27 +197,54 @@
   border: 2px solid var(--primaryRed);
 }
 
+@media screen and (max-width: 700px) {
+  .plans-comp-btn-group div {
+    padding: 0.35rem 0.5rem;
+    font-size: 14px;
+    min-width: 110px;
+    border: 2px solid grey;
+  }
+  #plan-comp-btn-active {
+    font-size: 16px;
+    transform: scale(1.01);
+  }
+}
+
 @media screen and (max-width: 550px) {
   .plans-main-comp {
     margin: 5rem auto;
     padding: 30px 0 20px;
   }
-  /* our plans heading */
-.plan-main-comp-text h2 {
-  font-size: 34px;
-  font-weight: 500;
-  margin-bottom: 18px;
-}
 
-.plan-main-comp-text p {
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0 0 25px 0;
-}
+  .plans-comp-btn-group {
+    flex-direction: column;
+  }
+  .plans-comp-btn-group div {
+    padding: 0.35rem 0.7rem;
+    font-size: 16px;
+    min-width: 140px;
+  }
+  #plan-comp-btn-active {
+    font-size: 18px;
+    transform: scale(1.01);
+  }
+  /* our plans heading */
+  .plan-main-comp-text h2 {
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+
+  .plan-main-comp-text p {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 0 25px 0;
+  }
 
   .plan-card-main-div {
     margin: 1rem;
-    width: 280px;
+    width: 300px;
+    min-width: 300px;
     height: 430px;
     padding: 35px 0 40px;
   }

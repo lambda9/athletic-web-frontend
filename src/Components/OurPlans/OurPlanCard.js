@@ -29,9 +29,7 @@ function OurPlanCard(props) {
         <div className="plan-card-price-div">
           <div>
             <FaRupeeSign id="rupee-sign" />
-            <div className="plan-card-price-div-h2">
-              {discount === 0 ?  price  :  discountedPrice }
-            </div>
+            <div className="plan-card-price-div-h2">{discount === 0 ? price : discountedPrice}</div>
             {discount === 0 ? null : (
               <div className="plan-card-price-disc-active">{price}</div>
             )}

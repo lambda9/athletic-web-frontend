@@ -7,17 +7,15 @@ import PlanDurationSlider from "./PlanDurationSlider";
 function OurPlans() {
   const [duration, setDuration] = useState(3);
 
-  const handleChange = (event, newValue) => {
-    console.log("event fired")
+  const handleChange = (newValue) => {
     setDuration(newValue);
   };
 
   const newData = OurPlanData.filter((item) => item.duration === duration);
 
-  console.log(newData);
-
   return (
-    <div className="plans-main-comp">
+    <div className="plans-main-comp" >
+    <div id='plan-main-comp-tint'>
       <div className="plan-main-comp-text">
         <h2>Our Pricing Plans</h2>
         <p>
@@ -25,12 +23,13 @@ function OurPlans() {
           Plans
         </p>
       </div>
-      <PlanDurationSlider handleDuration={handleChange} />
+      <PlanDurationSlider duration={duration} handleDuration={handleChange} />
       <div className="plan-main-cards-container">
         {newData.map((item) => {
           return <OurPlanCard key={item.id} obj={item} />;
         })}
       </div>
+    </div>
     </div>
   );
 }
