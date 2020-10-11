@@ -129,6 +129,7 @@ text-align: justify;
       margin: auto;
       left: 0;
     }
+    
 }
     @media screen and (max-width: 550px) {
         .advertise-hero {
@@ -188,4 +189,82 @@ text-align: justify;
           display: flex;
           flex-direction: column;
         }  
+    }
+    .advertise-card-container{
+      margin-top: 5.1rem;
+      margin-bottom:2rem;
+      position: relative;
+      
+      background: #fff;
+      width: 100%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      border: 2px solid green;
+    }
+    .advertise-card-container span{
+      color: var(--primaryRed);
+    }
+    .advertise-card-center{
+      width: 80%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
+      
+    }
+    .advertise-card-item-container{
+      margin: 5px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 170px;
+      margin: 1.5em;
+      padding: 0.4rem 0;
+      background: linear-gradient( to top,#86f3ee, #ffc9fc);
+      box-shadow: rgba(0, 0, 0, 0.3);
+      color: black;
+  
+    }
+    .advertise-card-item-container h4{
+      color:var(--primaryColor);
+      text-align: center;
+      margin:auto;
+      font-weight:900;
+    }
+    .advertise-card-item-container p{
+      width:80%;
+      text-align: center;
+      margin:auto;
+      font-weight:900;
+    }
+    .advertise-card-item-icon {
+      font-size: 64px;
+      color: var(--primaryRed);
+      margin: 0.2rem auto 0.2rem;
+    }
+    @media screen and (max-width: 550px) {
+      .advertise-card-center {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+        grid-row-gap: 0.3rem;
+        grid-column-gap: 0.4rem;
+        justify-items: center;
+        align-items: stretch;
+      }
+    }
+    @media screen and (max-width: 900px) {
+      .advertise-card-center {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+        grid-row-gap: 0.3rem;
+        grid-column-gap: 0.4rem;
+        justify-items: center;
+        align-items: stretch;
+      }
     }
