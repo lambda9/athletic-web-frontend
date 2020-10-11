@@ -10,7 +10,7 @@ const imgCss = css`
 	width: 100%;
 `;
 
-const CrossFadeImage = ({ image, width, height, time, onImageSet }) => {
+const CrossFadeImage = ({ image, width, height, time }) => {
 	const [prevImage, setPrevImage] = useState(image);
 	const [opacity, setOpacity] = useState(1);
 	const [transition, setTransition] = useState(0);
@@ -27,7 +27,6 @@ const CrossFadeImage = ({ image, width, height, time, onImageSet }) => {
 
 	const onTransitionEnd = () => {
 		setPrevImage(image);
-		onImageSet();
 	};
 
 	return (

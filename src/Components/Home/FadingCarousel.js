@@ -19,14 +19,20 @@ const headings = [
 	"now",
 ];
 
-const headingsStyle = css`
-	position: absolute;
-	z-index: 3;
-	left: 10%;
-	color: white;
-`;
+const headingsBaseStyle = css({
+	position: "absolute",
+	opacity: 0,
+	bottom: "0%",
+	zIndex: 3,
+	left: "50%",
+	color: "whitesmoke",
+	fontFamily: "Montserrat",
+	textTransform: "uppercase",
+	animationFillMode: "forwards",
+	animationTimingFunction: "ease-in-out",
+});
 
-const moveFromDownSub = keyframes`
+const moveUp = (height) => keyframes`
     0% {
 			bottom: 0%;
 			opacity: 0;
@@ -34,8 +40,8 @@ const moveFromDownSub = keyframes`
 		5% {
 			opacity: 0%;
 		}
-		20%, 80% {
-			bottom: 70%;
+		25%, 75% {
+			bottom: ${height}%;
 			opacity: 1;
 		}
 		90% {
@@ -47,93 +53,39 @@ const moveFromDownSub = keyframes`
 		}
 `;
 
-const moveFromDown = keyframes`
-	0% {
-		bottom: 0%;
-		opacity: 0;
-	}
-	5% {
-			opacity: 0%;
-		}
-	20%, 80% {
-		bottom: 50%;
-		opacity: 1;
-	}
-	90% {
-		opacity: 0;
-	}
-	100% {
-		bottom: 100%;
-		opacity: 0;
-	}
-`;
-
-const moveToUp = keyframes`
-  from {
-		bottom: 50%;
-		opacity: 1;
-	}
-	to {
-		bottom 100%;
-		opacity: 0;
-	}
-`;
-
 const centerTextCss = css`
-	position: absolute;
-	opacity: 0;
+	${headingsBaseStyle};
 	font-size: 5vw;
-	bottom: 0%;
-	left: 50%;
-	transform: translateX(-50%);
-	color: whitesmoke;
-	font-family: "Montserrat";
-	background-color: #ff7500a0;
-	padding: 0.5rem;
-	z-index: 5;
-	text-transform: uppercase;
-	animation-name: ${moveFromDown};
+	transform: translate(-50%, 50%);
+	background-color: #ff7500e0;
+	padding: 0.5vw 1vw;
+	animation-name: ${moveUp(50)};
 	animation-delay: 1s;
 	animation-duration: 6s;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease-in-out;
 `;
 
 const subHeadCss = css`
-  position: absolute;
-	opacity: 0;
+	${headingsBaseStyle};
 	font-size: 2vw;
-	bottom: 0%;
-	left: 50%;
 	transform: translateX(-50%);
-	color: whitesmoke;
-	font-family: "Montserrat";
-	padding: 0.5rem;
-	z-index: 5;
-	text-transform: uppercase;
-	animation-name: ${moveFromDownSub};
+	padding: 0.5vw;
+	animation-name: ${moveUp(70)};
 	animation-duration: 6s;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease-in-out;n
+`;
+
+const bottomSubHeadCss = css`
+	${headingsBaseStyle};
+	font-size: 2vw;
+	// color: black;
+	transform: translateX(-50%);
+	padding: 0.5vw;
+	animation-name: ${moveUp(24)};
+	animation-delay: 2s;
+	animation-duration: 6s;
 `;
 
 const FadingCarousel = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const [key, setKey] = useState(0);
-
-	const onImageSet = () => {
-		console.log("image set");
-		setKey((key) => key + 1);
-	};
-
-	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setCurrentIndex((currentIndex) => (currentIndex + 1) % images.length);
-		}, 6000);
-		return () => {
-			clearTimeout(timeout);
-		};
-	});
 
 	return (
 		<div
@@ -146,15 +98,24 @@ const FadingCarousel = () => {
 				width="100%"
 				height="55vw"
 				time={1000}
-				onImageSet={onImageSet}
 			/>
-			<h3 key={currentIndex} css={subHeadCss}>
+			<h2 key={currentIndex} css={subHeadCss}>
 				This is nothing special about it
-			</h3>
-			<h2 key={currentIndex + 1} css={centerTextCss}>
-				{headings[currentIndex]}
 			</h2>
-			{/* <h2 css={subHeadCss}>JOIN US</h2> */}
+			<h3 key={currentIndex + 1} css={centerTextCss}>
+				{headings[currentIndex]}
+			</h3>
+			<h2
+				key={currentIndex + 2}
+				css={bottomSubHeadCss}
+				className={"button-primary"}
+				onAnimationEnd={() => {
+					console.log("animation ended");
+					setCurrentIndex((currentIndex) => (currentIndex + 1) % images.length);
+				}}
+			>
+				join us >>
+			</h2>
 		</div>
 	);
 };
