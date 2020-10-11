@@ -61,7 +61,7 @@ const CrossFadeImage = ({ image, width, height, time }) => {
 					left: "0%",
 					zIndex: 2,
 					backgroundImage:
-						"linear-gradient(to right,#000000d4 10%,#0000004d ,#000000d1 90%)",
+						"linear-gradient(to right,#000000a6 ,#00000063 ,#000000a6)",
 				}}
 			></div>
 		</div>
