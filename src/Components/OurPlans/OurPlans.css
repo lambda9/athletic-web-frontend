@@ -4,13 +4,11 @@
   width: 100%;
   margin: 5rem auto;
   padding: 60px 0 50px;
-  background: url("../../Images/wju2.jpg");
+  background: url("../../Images/im22.jpeg");
   background-color: rgba(0, 0, 0, 0.356);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-}
-.plan-main-comp-text {
 }
 
 .plan-main-comp-text h2 {
@@ -48,7 +46,7 @@
   height: 500px;
   background: var(--mainWhite);
   text-align: center;
-  padding: 45px 0 50px;
+  padding: 35px 0 40px;
   color: #272727;
   overflow: hidden;
   position: relative;
@@ -87,31 +85,49 @@
   margin-bottom: 34px;
   font-size: 24px;
 }
-
+.plan-card-price-div {
+}
 .plan-card-price-div > div:first-child {
-  margin: 1rem auto;
+  margin: 1.2rem auto 0.8rem;
   width: fit-content;
   display: flex;
+  position: relative;
 }
 
 #rupee-sign {
   position: relative;
-  top: 0;
+  top: 2px;
   font-size: 22px;
 }
 
-.plan-card-price-div h2 {
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 0.7;
+.rupee-sign-active {
+  font-size: 10px;
+  bottom: 0;
+  top:1rem;
   position: relative;
-  margin-bottom: 10px;
 }
+
+.plan-card-price-div-h2 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 0.85;
+  position: relative;
+}
+
+.plan-card-price-disc-active {
+  font-size: 32px;
+  margin-left: 5px;
+  position: relative;
+  color: gray;
+  top:1.4rem;
+  text-decoration: line-through;
+}
+
 
 .plan-card-price-div span {
   text-transform: uppercase;
   margin-bottom: 2rem;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 2px;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import OurPlanCard from "./OurPlanCard";
 import "./OurPlans.css";
 import OurPlanData from "./OurPlansData.json";
+import PlanDurationSlider from "./PlanDurationSlider";
 
 function OurPlans() {
   return (
@@ -10,6 +11,7 @@ function OurPlans() {
         <h2>Our Pricing Plans</h2>
         <p>Start your ftiness journey today with our wide range of Membership Plans</p>
       </div>
+      <PlanDurationSlider />
       <div className='plan-main-cards-container'>
         {OurPlanData.map((item) => {
           return <OurPlanCard key={item.id} obj={item} />;

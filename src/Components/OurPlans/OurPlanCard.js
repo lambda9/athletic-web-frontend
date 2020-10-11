@@ -5,15 +5,10 @@ import { Link } from "react-router-dom";
 import { BsStarFill, FaRupeeSign } from "react-icons/all";
 
 function OurPlanCard(props) {
-  const {
-    
-    tag,
-    price,
-    discount,
-    durationUnit,
-    duration,
-    features,
-  } = props.obj;
+  const { tag, price, discount, durationUnit, duration, features } = props.obj;
+
+  const discountedPrice = Math.floor(price - (discount * price) / 100);
+
   return (
     <div className="plan-card-main-div">
       <Triangle
@@ -34,8 +29,14 @@ function OurPlanCard(props) {
         <div className="plan-card-price-div">
           <div>
             <FaRupeeSign id="rupee-sign" />
-            <h2>{price}</h2>
+            <h2 className="plan-card-price-div-h2">
+              {discount === 0 ?  price  :  discountedPrice }
+            </h2>
+            {discount === 0 ? null : (
+              <span className="plan-card-price-disc-active">{price}</span>
+            )}
           </div>
+
           <span>
             {duration === 1 ? " " : duration} {durationUnit}
           </span>
