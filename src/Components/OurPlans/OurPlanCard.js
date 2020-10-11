@@ -12,8 +12,8 @@ function OurPlanCard(props) {
   return (
     <div className="plan-card-main-div">
       <Triangle
-        top={-6}
-        right={-20}
+        top={-4.5}
+        right={-19.5}
         w1={30}
         w2={30}
         w3={30}
@@ -29,11 +29,11 @@ function OurPlanCard(props) {
         <div className="plan-card-price-div">
           <div>
             <FaRupeeSign id="rupee-sign" />
-            <h2 className="plan-card-price-div-h2">
+            <div className="plan-card-price-div-h2">
               {discount === 0 ?  price  :  discountedPrice }
-            </h2>
+            </div>
             {discount === 0 ? null : (
-              <span className="plan-card-price-disc-active">{price}</span>
+              <div className="plan-card-price-disc-active">{price}</div>
             )}
           </div>
 

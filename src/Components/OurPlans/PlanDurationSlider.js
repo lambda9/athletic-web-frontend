@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     "&  .MuiSlider-markLabel": {
       color: "white",
       fontSize: "18px",
-      fontWeight: "bold",
+      fontWeight: "500",
     },
     "& .MuiSlider-rail": {
       backgroundColor: "white",
@@ -38,7 +38,42 @@ const useStyles = makeStyles({
       backgroundColor: "white",
     },
     "& .PrivateValueLabel-thumb-2": {},
-    
+    ["@media (max-width:750px)"]: {
+      "& .MuiSlider-root": {
+        width: "440px",
+      },
+      "&  .MuiSlider-markLabel": {
+        fontSize: "14px",
+        fontWeight: "300",
+      },
+      "& .MuiSlider-rail": {
+        height: "6px",
+      },
+      "& .MuiSlider-track": {
+        height: "6px",
+      },
+      "& .MuiSlider-thumb": {
+        width: "14px",
+        height: "14px",
+      },
+      "& .MuiSlider-mark": {
+        width: "6px",
+        height: "6px",
+      },
+    },
+    ["@media (max-width:550px)"]: {
+      "& .MuiSlider-root": {
+        width: "310px",
+      },
+      "&  .MuiSlider-markLabel": {
+        fontSize: "12px",
+        marginTop: 0,
+        transform: "translate(-50%, -60%)"
+      },
+      "& .MuiSlider-marked": {
+        marginBottom: "0px",
+      }
+    }
   },
 });
 const marks = [
@@ -67,8 +102,6 @@ function valueLabelFormat(value) {
   return value;
 }
 function PlanDurationSlider(props) {
-
- 
   const classes = useStyles();
   return (
     <div className={classes.root}>
