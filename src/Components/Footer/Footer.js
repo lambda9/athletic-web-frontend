@@ -15,7 +15,8 @@ class Footer extends Component {
     ["contactUs", "contact us"],
     ["faq", "FAQ"],
     ["news","Latest News"],
-    ['blog', 'Blog']
+    ['blog', 'Blog'],
+    ['advertise', "Advertise With Us"]
   ];
 
   timmings = [

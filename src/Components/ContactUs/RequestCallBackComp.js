@@ -28,7 +28,7 @@ export class RequestCallBackComp extends Component {
 
           <div className="cont-rac-right-div">
             <Link to="/franchise"> Want to own a Franchise?</Link>
-            <Link>Advertise with us</Link>
+            <Link to='/advertise'>Advertise with us</Link>
             <Link>Other Business Related queries</Link>
           </div>
         </div>
