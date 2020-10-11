@@ -12,8 +12,8 @@ function OurPlanCard(props) {
   return (
     <div className="plan-card-main-div">
       <Triangle
-        top={-4.5}
-        right={-19.5}
+        top={-4.1}
+        right={-19.1}
         w1={30}
         w2={30}
         w3={30}
