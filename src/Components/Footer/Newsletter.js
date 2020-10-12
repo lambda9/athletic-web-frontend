@@ -13,10 +13,10 @@ const Newsletter = () => {
       <div className = "newsletter-input">
         <input 
           type = "text"
-          id = "newsletter-input-field" 
+          className = "newsletter-input-field" 
           placeholder = "Enter your mail here"
         />
-        <button id = "newsletter-button">Subscribe</button>
+        <button className = "newsletter-button">Subscribe</button>
       </div>
     </div>
 

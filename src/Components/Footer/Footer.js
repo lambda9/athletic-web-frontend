@@ -11,15 +11,16 @@ class Footer extends Component {
 
    links1 = [
     ["/", "Home"],
+    ['blog', 'Blog'],
     ["gallery", "Gallery"],
     ["programs", "Programs"],
     ["membership", "Membership"],
-    ["aboutUs", "About us"]
+    
   ];
 
   links2 = [
     ["faq", "FAQ"],
-    ['blog', 'Blog'],
+    ["aboutUs", "About us"],
     ["news","Latest News"],
     ["contactUs", "Contact Us"],
     ['advertise', "Advertise with us"]
@@ -34,27 +35,37 @@ class Footer extends Component {
           WORK HARD . PLAY HARD
         </div>
         <div className = "footer-main">
-          <div className = "footer-child">
-            <Footerhead head = "Stay connected" />
-            <div className = "footer-child-content">
-              <SocialMedia />
-            </div>
-          </div>
-          <div className = "footer-child">
-            <Footerhead head = "Quick links" />
-            <div className = "footer-child-content">
-              <div className = "footer-link-group">
-                <Quicklinks group = {this.links1} />
-                <Quicklinks group = {this.links2} />
-              </div>
-            </div>
-          </div>
-          <div className = "footer-child">
+          <div className = "footer-child child1">
             <Footerhead head = "Newsletter" />
             <div className = "footer-child-content">
               <Newsletter />
             </div>
           </div>
+          <div className = "footer-child child2">
+            <Footerhead head = "Quick links" />
+            <div className = "footer-child-content">
+              <div className = "footer-quicklink-group">
+                <Quicklinks group = {this.links1} />
+                <Quicklinks group = {this.links2} />
+              </div>
+            </div>
+          </div>
+          <div className = "footer-child child3">
+            <Footerhead head = "Stay connected" />
+            <div className = "footer-child-content">
+              <SocialMedia />
+            </div>
+            <Footerhead head = "Get our app" />
+            <div className = "footer-child-content">
+              <GetApp />
+            </div>
+          </div>
+        </div>
+        <div className="footer-copyright">
+          <div>
+            <FaCopyright /> Athletic gym and fitness center
+          </div>
+          <div>All rights reserved</div>
         </div>
       </div>
 
