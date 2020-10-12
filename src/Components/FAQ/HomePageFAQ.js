@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
-import Accordion from '@material-ui/core/Accordion'
+import Accordion from "@material-ui/core/Accordion";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
@@ -62,18 +62,14 @@ export default function ControlledAccordions() {
     acc: {
       transition: "all linear 0.2s",
       backgroundColor: "transparent",
-      "&:hover": {
-        boxShadow: "0px 0px 4px 0px black",
-      },
+      
     },
     head: {
-      color: c2,
       "& .Mui-expanded": {
-        color: primaryColor,
       },
     },
     heading: {
-      fontSize: width < 550 ? "16px" : "22px",
+      fontSize: width < 550 ? "16px" : "20px",
       transition: "all linear 0.2s",
       flexBasis: "100%",
       margin: "0.09rem auto",
