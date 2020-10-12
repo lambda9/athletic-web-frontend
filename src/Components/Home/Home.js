@@ -4,16 +4,21 @@ import HomePageEnquiry from './HomePageEnquiry';
 import HomePageFAQ from '../FAQ/HomePageFAQ'
 import WhyJoinUs from '../WhyJoinUs/WhyJoinUs'
 import OurPlans from "../OurPlans/OurPlans";
+import HomeUserReviews from "../UserReviews/HomeUserReviews";
+import HomeSubscribe from "../SubscribeNewsLetter/HomeSubscribe";
+import FadingCarousel from "./FadingCarousel";
+
 
 function Home() {
-	
 	return (
 		<div>
-			<HeroSection />
-			<OurPlans />
+			<FadingCarousel />
+      <OurPlans />
 			<WhyJoinUs />
 			<HomePageEnquiry />
 			<HomePageFAQ />
+			<HomeUserReviews />
+			<HomeSubscribe />
 		</div>
 	);
 }

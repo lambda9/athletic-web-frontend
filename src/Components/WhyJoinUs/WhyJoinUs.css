@@ -1,71 +1,90 @@
 .wju-main-div {
-  width: 100%;
-  padding: 1rem 0.5rem;
-  position: relative;
-  height: fit-content;
-  display: flex;
-  background-color: rgb(222, 247, 247);
+	width: 100%;
+	height: fit-content;
+	/* font-size: 10%; */
+	background-image: url("../../Images/wju1.jpg");
+	background-size: cover;
+	padding: 2em 0em;
+	background-attachment: fixed;
 }
 
-
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
+.wju-text-div {
+	text-align: start;
 }
 
-/* Create four equal columns that sits next to each other */
-.column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
+.wju-text-div span {
+	font-size: 5vw;
+	color: gray;
+	margin: 1rem 1rem;
+	font-weight: 900;
+	line-height: 0.9;
 }
 
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
+.wju-below-text-line {
+	background-color: gray;
+	height: 10px;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
+.wju-card-div {
+	/* transform: translateY(-5vw); */
+	position: relative;
+	/* width: fit-content; */
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
-#drawspace {
-  background: #000;
-  width: 100%;
+.wju-card-slider {
+	margin: auto;
+	font-size: 0.8rem;
+	width: 80%;
+	padding: 2em;
+	display: grid;
+	justify-items: center;
+	gap: 2em;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .wju-card {
-  position: relative;
-  overflow: hidden;
-  margin: 0.5rem;
-  border: 1px solid gray;
-  background-color: firebrick;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: space-evenly; */
+	font-size: 1em;
+	padding: 1.5em;
+	width: 100%;
+	background: linear-gradient(45deg, #3992a0d4 30%, #2bd2dba6 0%);
+	text-align: left;
+	transition: transform ease-in-out 0.4s;
+}
+
+.wju-card * {
+	padding: 0;
+	margin: 0;
+}
+
+.wju-card h1 {
+	font-size: 2em;
+	padding-bottom: 0.75em;
+	font-weight: 500;
 }
 
 .wju-card p {
-  color: white;
-  font-size: 22px;
+	font-size: 1.3em;
 }
 
-.wju-card img {
-  width: 250px;
+.wju-card:hover {
+	transform: translateY(-10px);
 }
+
+.cont {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	background-color: antiquewhite;
+}
+
+@media screen and (max-width: 900px) {
+	.wju-card-slider {
+		grid-template-columns: 1fr 1fr;
+		font-size: 0.5rem;
+		width: 100%;
+	}
+}
+
