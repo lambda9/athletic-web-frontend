@@ -11,7 +11,7 @@
 }
 
 #plan-main-comp-tint {
-  padding: 60px 0 50px;
+  padding: 60px 5px 50px;
 
   background: radial-gradient(
     circle,
@@ -61,7 +61,7 @@
 
 .plans-comp-btn-group div {
   padding: 0.5rem 0;
-  min-width: 160px;
+  min-width: 180px;
   color: grey;
   margin: auto 0;
   height: fit-content;
@@ -197,11 +197,11 @@
   border: 2px solid var(--primaryRed);
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .plans-comp-btn-group div {
     padding: 0.35rem 0.5rem;
     font-size: 14px;
-    min-width: 110px;
+    min-width: 120px;
     border: 2px solid grey;
   }
   #plan-comp-btn-active {
@@ -221,8 +221,8 @@
   }
   .plans-comp-btn-group div {
     padding: 0.35rem 0.7rem;
+    width: 170px;
     font-size: 16px;
-    min-width: 140px;
   }
   #plan-comp-btn-active {
     font-size: 18px;
