@@ -20,6 +20,14 @@ const headings = [
 	"don't quit",
 ];
 
+const subHeadings = [
+	"'Unless you puke, faint, or die, keep going.'",
+	"'Motivation is what gets you started. Habit is what keeps you going'",
+	"'I hate every minute of training. But i said, don’t quit. Suffer now and live the rest of your life as a champion.'",
+	"'Do today what others won’t so tomorrow you can do what others can’t.'",
+	"'Exercise is done against one’s wishes and maintained only because the alternative is worse.'",
+];
+
 const moveUp = (height) => keyframes`
     0% {
 			bottom: 10%;
@@ -60,7 +68,7 @@ const TopText = styled.h1`
 	font-size: 2vw;
 	transform: translateX(-50%);
 	padding: 0.5vw;
-	animation-name: ${moveUp(70)};
+	animation-name: ${moveUp(65)};
 	animation-duration: 5s;
 `;
 
@@ -100,7 +108,7 @@ const FadingCarousel = ({ animationDelay }) => {
 				height="55vw"
 				time={1000}
 			/>
-			<TopText key={currentIndex}>This is nothing special about it</TopText>
+			<TopText key={currentIndex}>{subHeadings[currentIndex]}</TopText>
 			<CenterText key={currentIndex + 1}>{headings[currentIndex]}</CenterText>
 			<BottomText
 				key={currentIndex + 2}
