@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ContactUsEntryFields from "./ContactUsEntryFields";
 import "./RequestCallBackComp.css";
 import Title from "../Title/Title";
-import AdvertiseComp from "./AdvertiseComp";
+import AdvertiseComp from "../Advertise/AdvertiseComp";
 
 // git => get in touch
 // rac => request a call back

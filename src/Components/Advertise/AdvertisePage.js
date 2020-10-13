@@ -1,13 +1,13 @@
 import React from "react";
 import AdvertiseBanner from "./AdvertiseBanner";
 import "./Advertise.css";
-import AdvertiseCard from "./AdvertiseCard";
+import AdvertiseComp from "./AdvertiseComp";
+
 function AdvertisePage() {
   return (
     <div className="advertise-page">
       <AdvertiseBanner />
-
-      <AdvertiseCard />
+      <AdvertiseComp />
     </div>
   );
 }

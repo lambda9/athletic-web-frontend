@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "./AdvertiseComp.css";
-import "./RequestCallBackComp.css";
 import { Link } from "react-router-dom";
 import AdvertiseContent from "./AdvertiseContent";
-import ContactUsEntryFields from "./ContactUsEntryFields";
+import ContactUsEntryFields from "../ContactUs/ContactUsEntryFields";
 import Title from "../Title/Title";
 
 class AdvertiseComp extends Component {
@@ -18,12 +17,8 @@ class AdvertiseComp extends Component {
           <div className="cont-rac-left-div">
             <ContactUsEntryFields />
           </div>
-
-          <div className="cont-rac-right-div">
-            <a href="#franchise" onClick={() => this.props.handleState('franchise')}> Want to own a Franchise?</a>
-            <a href="#rac" onClick={() => this.props.handleState("rac")}>
-              Enquire
-            </a>
+          <div className='cont-rac-right-div'>
+          Some relevant image
           </div>
         </div>
       </div>

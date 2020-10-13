@@ -3,8 +3,6 @@ import Hero from "../Hero";
 import bgImg from "../../Images/im9.jpg";
 import ReachUs from "./ReachUs";
 import RequestCallBackComp from "./RequestCallBackComp";
-import AdvertiseComp from "./AdvertiseComp";
-import FranchiseComp from "./FranchiseComp";
 
 class ContactUs extends Component {
   constructor(props) {
@@ -21,16 +19,6 @@ class ContactUs extends Component {
     });
   };
 
-  renderComp = () => {
-    if (this.state.activeState === "rac") {
-      return <RequestCallBackComp handleState={this.handleState} />;
-    } else if (this.state.activeState === "advertise") {
-      return <AdvertiseComp handleState={this.handleState} />;
-    } else if (this.state.activeState === "franchise") {
-      return <FranchiseComp handleState={this.handleState} />;
-    }
-  };
-
   render() {
     return (
       <div>
@@ -39,9 +27,8 @@ class ContactUs extends Component {
           title="Contact us"
           description="Mail, call, text or meet on-site"
         ></Hero>
-
         <ReachUs />
-        {this.renderComp()}
+        <RequestCallBackComp />{" "}
       </div>
     );
   }
