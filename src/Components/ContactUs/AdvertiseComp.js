@@ -4,13 +4,14 @@ import "./RequestCallBackComp.css";
 import { Link } from "react-router-dom";
 import AdvertiseContent from "./AdvertiseContent";
 import ContactUsEntryFields from "./ContactUsEntryFields";
+import Title from "../Title/Title";
 
 class AdvertiseComp extends Component {
   render() {
     return (
       <div className="ad-main-comp" id="advertise">
-        <div className="ad-reach-audience">Reach the Right Audience</div>
-        <div className="ad-right-msg">With Right Message at Right time</div>
+<Title>Reach the right audience</Title>
+      <div className="ad-right-msg">With Right Message at Right time</div>
 
         <AdvertiseContent />
         <div className="cont-rac-form-div">

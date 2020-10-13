@@ -4,13 +4,14 @@ import bgImg from "../../Images/im9.jpg";
 import ReachUs from "./ReachUs";
 import RequestCallBackComp from "./RequestCallBackComp";
 import AdvertiseComp from "./AdvertiseComp";
+import FranchiseComp from "./FranchiseComp";
 
 class ContactUs extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      activeState: "advertise",
+      activeState: "rac",
     };
   }
 
@@ -39,6 +40,7 @@ class ContactUs extends Component {
 
         <ReachUs />
         {this.renderComp()}
+        <FranchiseComp />
       </div>
     );
   }
