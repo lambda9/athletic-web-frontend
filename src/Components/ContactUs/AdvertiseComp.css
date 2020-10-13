@@ -1,0 +1,55 @@
+.ad-main-comp {
+  width: 100%;
+  /* background-color: rgb(189, 189, 189); */
+}
+
+.ad-reach-audience {
+  width: fit-content;
+  text-align: left;
+  margin: auto;
+  line-height: 1.2;
+  font-size: 72px;
+  font-weight: 500;
+  color: var(--primaryColor);
+}
+
+.ad-right-msg {
+  width: fit-content;
+  text-align: left;
+  margin: auto;
+  font-size: 32px;
+}
+
+.advertise-medium-container {
+  margin: 5.1rem auto 2rem;
+  position: relative;
+  width: 70%;
+  height: auto;
+  text-align: left;
+}
+
+.advertise-medium-container h3 {
+  font-size: 32px;
+  font-size: 400;
+}
+.advertise-medium {
+  column-count: 2;
+  column-width: 300px;
+  padding: 1rem 2rem 1.5rem 1rem;
+}
+.advertise-medium ul {
+  list-style-position: inside;
+  list-style-type: circle;
+  text-align: justify;
+}
+
+.ad-form-cont {
+    margin: auto;
+    width: 50%;
+}
+
+@media screen and (max-width: 550px) {
+  .advertise-medium {
+    column-count: 1;
+  }
+}
