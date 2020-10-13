@@ -1,11 +1,14 @@
 import React from "react";
 import Title from "../Title/Title";
 import "./FranchiseComp.css";
+import './ContactUs.css'
 import { BiWallet, FcProcess, FaHeadset } from "react-icons/all";
+import ContactUsEntryFields from './ContactUsEntryFields'
 
-function FranchiseComp() {
+
+function FranchiseComp(props) {
   return (
-    <div className="franchise-main-comp">
+    <div className="franchise-main-comp" id="franchise">
       <div className="franchise-head-div">
         <Title>Own your own franchise today</Title>
         <span>
@@ -33,7 +36,7 @@ function FranchiseComp() {
         <div>
           <div className="franchise-get-started">
             <div>
-              <BiWallet className="franchise-get-started-icon"/>
+              <BiWallet className="franchise-get-started-icon" />
               <h1>Low Cost Investment</h1>
               <p>
                 Anytime Fitness offers very affordable franchise and monthly
@@ -41,7 +44,7 @@ function FranchiseComp() {
               </p>
             </div>
             <div>
-              <FcProcess className="franchise-get-started-icon"/>
+              <FcProcess className="franchise-get-started-icon" />
               <h1>Simple Process</h1>
               <p>
                 We’ll guide you through every step to becoming a healthy, happy
@@ -49,7 +52,7 @@ function FranchiseComp() {
               </p>
             </div>
             <div>
-              <FaHeadset className="franchise-get-started-icon"/>
+              <FaHeadset className="franchise-get-started-icon" />
               <h1>360 support</h1>
               <p>
                 We’re here for you through the life of your club with customized
@@ -57,6 +60,18 @@ function FranchiseComp() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="cont-rac-form-div">
+        <div className="cont-rac-left-div">
+          <ContactUsEntryFields />
+        </div>
+
+        <div className="cont-rac-right-div">
+          <a href="#rac" onClick={() => props.handleState("rac")}>
+            Enquire
+          </a>
+          <a href='#advertise' onClick={() => props.handleState('advertise')}> Advertise with us</a>
         </div>
       </div>
     </div>

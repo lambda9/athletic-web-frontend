@@ -28,7 +28,7 @@ export class RequestCallBackComp extends Component {
           </div>
 
           <div className="cont-rac-right-div">
-            <Link > Want to own a Franchise?</Link>
+            <a href='#franchise' onClick={() => this.props.handleState('franchise')}>Want to own a Franchise?</a>
             <a href="#advertise" onClick={() => this.props.handleState('advertise')}>Advertise with us</a>
           </div>
         </div>

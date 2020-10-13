@@ -17,17 +17,19 @@ class ContactUs extends Component {
 
   handleState = (value) => {
     this.setState({
-      activeState: value
-    })
-  }
+      activeState: value,
+    });
+  };
 
   renderComp = () => {
     if (this.state.activeState === "rac") {
-      return <RequestCallBackComp handleState={this.handleState}/>;
+      return <RequestCallBackComp handleState={this.handleState} />;
     } else if (this.state.activeState === "advertise") {
-      return <AdvertiseComp handleState={this.handleState}/>;
+      return <AdvertiseComp handleState={this.handleState} />;
+    } else if (this.state.activeState === "franchise") {
+      return <FranchiseComp handleState={this.handleState} />;
     }
-  }
+  };
 
   render() {
     return (
@@ -40,7 +42,6 @@ class ContactUs extends Component {
 
         <ReachUs />
         {this.renderComp()}
-        <FranchiseComp />
       </div>
     );
   }
