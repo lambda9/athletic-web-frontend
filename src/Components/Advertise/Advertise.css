@@ -224,13 +224,14 @@ text-align: justify;
       min-height: 170px;
       margin: 1.5em;
       padding: 0.4rem 0;
-      background: linear-gradient( to top,#86f3ee, #ffc9fc);
+      background: linear-gradient( to top,#d6d6d6, #ffffff67);
       box-shadow: rgba(0, 0, 0, 0.3);
       color: black;
+      border:1px solid black;
   
     }
     .advertise-card-item-container h4{
-      color:var(--primaryColor);
+      color:var(--primaryRed);
       text-align: center;
       margin:auto;
       font-weight:900;
@@ -239,7 +240,7 @@ text-align: justify;
       width:80%;
       text-align: center;
       margin:auto;
-      font-weight:900;
+      font-weight:500;
     }
     .advertise-card-item-icon {
       font-size: 64px;
@@ -267,4 +268,8 @@ text-align: justify;
         justify-items: center;
         align-items: stretch;
       }
+    }
+    .advertise-card-column-icon{
+      color:black;
+      
     }

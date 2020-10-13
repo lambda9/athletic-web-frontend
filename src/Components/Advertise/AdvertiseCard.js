@@ -3,7 +3,7 @@ import "./Advertise.css";
 import AdvertiseCardColumn from "./AdvertiseCardColumn"
 import {
     HiSpeakerphone,
-    FcSalesPerformance,
+    BsGraphUp,
     FaDollarSign,
   } from "react-icons/all";
 function AdvertiseCard() {
@@ -15,7 +15,7 @@ function AdvertiseCard() {
             "Advertising provides a visibility boost to your brand and products. Ads appear in highl visible placements,within shopping results or on product detail pages.",
         },
         {
-          icon: <FcSalesPerformance  className="ourvalues-item-icon" />,
+          icon: <BsGraphUp  className="ourvalues-item-icon" />,
           title: "Increase Sales",
           info: "Many shoppers come to Amazon ready to buy. Advertising help you reach customers who are looking for products like yours.",
         },
