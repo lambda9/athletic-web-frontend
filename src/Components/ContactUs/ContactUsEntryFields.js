@@ -128,7 +128,7 @@ class UserContactForm extends Component {
           <div className="cont-comp-form-btn-container">
             <button
               onClick={this.handleSubmit}
-              className="button-primary"
+              className="button-primary btn-margin"
               type="submit"
             >
               Submit
