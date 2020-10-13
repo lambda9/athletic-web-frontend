@@ -96,74 +96,65 @@ const arrQuesAns = [
   },
 ];
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    margin: "1rem auto",
+    "& .MuiAccordion-rounded": {
+      margin: "0.8rem auto",
+    },
+    "& .Mui-expanded": {},
+    "& .MuiAccordionDetails-root": {
+      padding: "0 10px 12px 10px",
+    },
+    "& .MuiAccordionSummary-content.Mui-expanded ": {
+      margin: "10px 0",
+    },
+    "& .MuiAccordionSummary-content": {
+      margin: "10px 0",
+    },
+    "& .MuiAccordionSummary-root": {
+      padding: "0 10px",
+    },
+    "& .MuiAccordionSummary-root.Mui-expanded": {
+      minHeight: "0",
+    },
+  },
+  acc: {
+    transition: "all linear 0.2s",
+    backgroundColor: "transparent",
+  },
+  head: {
+    "& .Mui-expanded": {},
+  },
+  heading: {
+    fontSize: "20px",
+    transition: "all linear 0.2s",
+    flexBasis: "100%",
+    margin: "0rem auto",
+    textAlign: "left",
+    ["@media (max-width:650px)"]: {
+      fontSize: "16px",
+    },
+  },
+  details: {
+    fontSize: "16px",
+    textAlign: "left",
+    ["@media (max-width:650px)"]: {
+      fontSize: "12px",
+    },
+  },
+}));
+
 function QuesAns(props) {
-  const typeFilter = (e) => {
-    return e.type === props.type;
-  };
-
-  const [width, setwidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowResize);
-    console.log(window.innerWidth);
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
-
-  const handleWindowResize = () => {
-    setwidth(window.innerWidth);
-  };
-
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      width: "100%",
-      margin: "1rem auto",
-      "& .MuiAccordion-rounded": {
-        margin: "0.8rem auto",
-      },
-      "& .Mui-expanded": {},
-      "& .MuiAccordionDetails-root": {
-        padding: "0 10px 12px 10px",
-      },
-      "& .MuiAccordionSummary-content.Mui-expanded ": {
-        margin: "10px 0",
-      },
-      "& .MuiAccordionSummary-content": {
-        margin: "10px 0",
-      },
-      "& .MuiAccordionSummary-root": {
-        padding: "0 10px",
-      },
-      "& .MuiAccordionSummary-root.Mui-expanded": {
-        minHeight: "0",
-      },
-      
-    },
-    acc: {
-      transition: "all linear 0.2s",
-      backgroundColor: "transparent",
-    },
-    head: {
-      "& .Mui-expanded": {},
-    },
-    heading: {
-      fontSize: width < 650 ? "16px" : "20px",
-      transition: "all linear 0.2s",
-      flexBasis: "100%",
-      margin: "0rem auto",
-      textAlign: "left",
-    },
-    details: {
-      fontSize: width < 650 ? "12px" : "16px",
-      textAlign: "left",
-    },
-  }));
-
   const [expanded, setExpanded] = useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
+  };
+
+  const typeFilter = (e) => {
+    return e.type === props.type;
   };
 
   const classes = useStyles();
