@@ -13,7 +13,7 @@ const MainContainer = styled.div`
 `;
 
 const DetailDiv = styled.div`
-	width: 50%;
+	width: 40%;
 	text-align: left;
 `;
 
@@ -40,47 +40,13 @@ const Features = () => {
 					<li>getmostoutof it</li>
 				</FeaturesList>
 			</DetailDiv>
-			<div
-				css={css`
-					display: grid;
-					grid-template-columns: 1fr 1fr;
-					position: relative;
-				`}
-			>
-				<CrossFadeImage
-					css={{
-						position: "absolute",
-						zIndex: 10,
-						width: "50%",
-					}}
-					image={img5}
-					width={"100%"}
-					height={"100%"}
-					time={500}
-					showOverlay={false}
-				/>
-				<CrossFadeImage
-					image={img5}
-					width={"100%"}
-					height={"100%"}
-					time={500}
-					showOverlay={false}
-				/>
-				<CrossFadeImage
-					image={img5}
-					width={"100%"}
-					height={"100%"}
-					time={500}
-					showOverlay={false}
-				/>
-				<CrossFadeImage
-					image={img5}
-					width={"100%"}
-					height={"100%"}
-					time={500}
-					showOverlay={false}
-				/>
-			</div>
+			<CrossFadeImage
+				image={img5}
+				width={"60%"}
+				height={"100%"}
+				time={500}
+				showOverlay={false}
+			/>
 		</MainContainer>
 	);
 };
