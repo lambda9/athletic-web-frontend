@@ -1,4 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+/** @jsx jsx */
+/* eslint-disable jsx-a11y/alt-text */
+import { css, jsx } from "@emotion/core";
+import { useEffect, useRef, useState } from "react";
 import img1 from "../../Images/im4.jpg";
 import img2 from "../../Images/im5.jpg";
 import img3 from "../../Images/im9.jpg";
@@ -50,41 +53,21 @@ const dt = [
 const ProgramCarousel = ({
 	data = dt,
 	autoStart = true,
+	width = 100,
+	imageWidth = 29,
+	height = 40,
 	transitionDelay,
 	transitionDuration,
 }) => {
 	const currentIndex = useRef(0);
+
+	const offset = -(imageWidth - (width - imageWidth) / 2);
 
 	const [state, setState] = useState({
 		data: [],
 		transition: 0,
 		activeIndex: 2,
 		direction: 0,
-	});
-	const [size, setSize] = useState({
-		width: window.innerWidth < 900 ? 60 : 33,
-		offset: window.innerWidth < 900 ? -40.5 : 0,
-	});
-
-	const handleResize = () => {
-		if (window.innerWidth < 900) {
-			setSize({
-				width: 60,
-				offset: -40.5,
-			});
-		} else {
-			setSize({
-				width: 33,
-				offset: 0,
-			});
-		}
-	};
-
-	useEffect(() => {
-		window.addEventListener("resize", handleResize);
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
 	});
 
 	useEffect(() => {
@@ -160,13 +143,22 @@ const ProgramCarousel = ({
 	};
 
 	return (
-		<div className="pro-car-main-div">
+		<div
+			css={css`
+				width: ${width}vw;
+				height: ${height}vw;
+				display: flex;
+				align-items: center;
+				overflow: hidden;
+				margin: auto;
+			`}
+		>
 			<Slider
 				images={state.data}
 				transition={`transform ease-in-out ${state.transition / 1000}s`}
 				activeIndex={state.activeIndex}
-				translate={-(state.activeIndex - 1) * size.width + size.offset}
-				width={size.width}
+				translate={-(state.activeIndex - 1) * imageWidth + offset}
+				width={imageWidth}
 				onTransitionEnd={onTransitionEnd}
 			/>
 			<div

@@ -8,12 +8,14 @@ import HomeUserReviews from "../UserReviews/HomeUserReviews";
 import FadingCarousel from "./FadingCarousel";
 import Features from "./WhatWeProvide/Features";
 import Results from "./WhatWeProvide/Results";
+import Programs from "./Programs";
 
 function Home() {
 	return (
 		<div>
 			<FadingCarousel />
 			<Features />
+			<Programs />
 			<Results />
 			<OurPlans />
 			<WhyJoinUs />
