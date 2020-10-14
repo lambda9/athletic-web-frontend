@@ -10,7 +10,7 @@ function BMI() {
       </div>
       <div className="bmi-main-content">
         <div className="bmi-content-left-div">
-          <h4>BMI CALCULATOR CHART</h4>
+          <h4>BMI CHART</h4>
           <table>
             <tr>
               <th>BMI</th>

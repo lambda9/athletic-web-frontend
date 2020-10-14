@@ -2,17 +2,14 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  background-color: rgb(255, 204, 141);
+  /* background-color: rgb(255, 204, 141); */
 }
 
-.bmi-content-left-div {
-  width: 45%;
-  background-color: rgb(212, 149, 243);
-}
-
+.bmi-content-left-div,
 .bmi-content-right-div {
   width: 45%;
-  background-color: rgb(237, 224, 243);
+  margin: auto;
+  background-color: blanchedalmond;
 }
 
 .bmi-content-left-div table {
@@ -25,7 +22,6 @@
   height: 60px;
   text-transform: capitalize;
   border-bottom: 2px solid black;
-  /* background-color: darksalmon; */
 }
 
 .bmi-content-left-div td,
@@ -41,4 +37,20 @@ th {
 
 #no-right-border {
   border-right: none;
+}
+
+@media screen and (max-width: 650px) {
+  .bmi-main-content {
+    flex-direction: column;
+  }
+  .bmi-content-left-div {
+    width: 95%;
+    /* background-color: rgb(212, 149, 243); */
+  }
+
+  .bmi-content-right-div {
+    width: 95%;
+
+    /* background-color: rgb(237, 224, 243); */
+  }
 }

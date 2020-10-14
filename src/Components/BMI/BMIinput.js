@@ -10,12 +10,33 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 
+const PRIME_COLOR = "#459fb6";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch",
+      margin: "0.5rem",
+        width: "70%",
+        ["@media (min-width:750px)"]: {
+        },
+      "& label.Mui-focused": {
+        color: PRIME_COLOR,
+      },
+      "& .MuiInput-underline:after": {
+        borderBottomColor: PRIME_COLOR,
+      },
+    },
+  },
+
+  genderBtn: {
+    "& .MuiFormLabel-root": {
+      textAlign: "start",
+    },
+    "& .MuiFormLabel-root.Mui-focused": {
+      color: PRIME_COLOR,
+    },
+    "& legend": {
+      margin: "0",
     },
   },
 }));
@@ -24,11 +45,27 @@ function BMIinput() {
   const classes = useStyles();
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <form className={classes.root} autoComplete="off">
+      <FormControl>
+        <InputLabel htmlFor="standard-adornment-height">Height</InputLabel>
+        <Input
+          type="number"
+          id="standard-adornment-height"
+          endAdornment={<InputAdornment position="end">feet</InputAdornment>}
+        />
+      </FormControl>
+      <FormControl>
+        <InputLabel htmlFor="standard-adornment-weight">Weight</InputLabel>
+        <Input
+          type="number"
+          id="standard-adornment-weight"
+          endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+        />
+      </FormControl>
       <FormControl>
         <TextField label="Age" type="number" />
       </FormControl>
-      <FormControl component="fieldset">
+      <FormControl component="fieldset" className={classes.genderBtn}>
         <FormLabel component="legend">Gender</FormLabel>
         <RadioGroup
           row
@@ -48,30 +85,11 @@ function BMIinput() {
           />
         </RadioGroup>
       </FormControl>
-      <FormControl>
-        <InputLabel htmlFor="standard-adornment-password">Height</InputLabel>
-        <Input
-          id="standard-adornment-height"
-          endAdornment={<InputAdornment position="end">feet</InputAdornment>}
-          aria-describedby="standard-weight-helper-text"
-          inputProps={{
-            "aria-label": "height",
-          }}
-        />
-      </FormControl>
-      <FormControl>
-        <InputLabel htmlFor="standard-adornment-weight">Weight</InputLabel>
-        <Input
-          id="standard-adornment-weight"
-          endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
-          aria-describedby="standard-weight-helper-text"
-          inputProps={{
-            "aria-label": "weight",
-          }}
-        />
-      </FormControl>
-      <button type='submit' className='button-primary'>Calculate</button>
-      <button className='button-primary'>Clear</button>
+
+      <button type="submit" className="button-primary">
+        Calculate
+      </button>
+      <button className="button-primary">Clear</button>
     </form>
   );
 }
