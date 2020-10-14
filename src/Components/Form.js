@@ -7,12 +7,13 @@ const PRIME_COLOR = "#459fb6";
 const useStyles = makeStyles({
   root: {
     "& .MuiTextField-root": {
-      margin: `0 auto 0.9rem`,
+      margin: `0 auto 0.6rem`,
       ["@media (min-width:750px)"]: {
-        margin: "0 auto 1.4rem",
+        margin: "0 auto 0.5rem",
       },
-      width: "100%",
+      width: "95%",
     },
+
   },
 
   inputRoot: {
