@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -15,10 +15,11 @@ const PRIME_COLOR = "#459fb6";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
-      margin: "0.5rem",
-        width: "70%",
-        ["@media (min-width:750px)"]: {
-        },
+      margin: "0.5rem auto",
+      width: "70%",
+      ["@media (max-width:550px)"]: {
+        width: "85%",
+      },
       "& label.Mui-focused": {
         color: PRIME_COLOR,
       },
@@ -26,6 +27,10 @@ const useStyles = makeStyles((theme) => ({
         borderBottomColor: PRIME_COLOR,
       },
     },
+  },
+
+  height: {
+    width: "35%",
   },
 
   genderBtn: {
@@ -41,55 +46,136 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function BMIinput() {
+function BMIinput(props) {
+  const [entryDT, setEntryDT] = useState({
+    height: "",
+    weight: "",
+    age: "",
+    gender: "male",
+  });
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setEntryDT({ ...entryDT, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    const heightcm =
+      (entryDT.heightFt * 30.48 + entryDT.heightInch * 2.54) / 100;
+    let bmi = entryDT.weight / (heightcm * heightcm);
+    bmi = bmi.toFixed(2)
+
+    props.handleBMI(bmi);
+    event.preventDefault();
+  };
+
+  const handleClear = (event) => {
+    props.handleBMI(0);
+    setEntryDT({
+      heightFt: "",
+      heightInch: "",
+      weight: "",
+      age: "",
+      gender: "male",
+    });
+    event.preventDefault();
+  };
+
+  const calculateBMI = () => {};
+
   const classes = useStyles();
 
   return (
-    <form className={classes.root} autoComplete="off">
-      <FormControl>
-        <InputLabel htmlFor="standard-adornment-height">Height</InputLabel>
-        <Input
-          type="number"
-          id="standard-adornment-height"
-          endAdornment={<InputAdornment position="end">feet</InputAdornment>}
-        />
-      </FormControl>
+    <form className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
+      <div
+        className="bmi-height-entry-field"
+        style={{
+          display: "flex",
+          margin: "0 auto",
+          justifyContent: "space-between",
+        }}
+      >
+        <p>Height</p>
+        <FormControl className={classes.height}>
+          <InputLabel htmlFor="standard-adornment-height">Feet</InputLabel>
+          <Input
+            required
+            type="number"
+            name="heightFt"
+            value={entryDT.heightFt}
+            onChange={handleChange}
+            id="standard-adornment-height"
+          />
+        </FormControl>
+        <FormControl className={classes.height}>
+          <InputLabel htmlFor="standard-adornment-height">Inch</InputLabel>
+          <Input
+            required
+            type="number"
+            name="heightInch"
+            value={entryDT.heightInch}
+            onChange={handleChange}
+            id="standard-adornment-height"
+          />
+        </FormControl>
+      </div>
+
       <FormControl>
         <InputLabel htmlFor="standard-adornment-weight">Weight</InputLabel>
         <Input
+          required
           type="number"
+          name="weight"
+          value={entryDT.weight}
+          onChange={handleChange}
           id="standard-adornment-weight"
           endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
         />
       </FormControl>
       <FormControl>
-        <TextField label="Age" type="number" />
+        <TextField
+          label="Age"
+          required
+          name="age"
+          value={entryDT.age}
+          onChange={handleChange}
+          type="number"
+        />
       </FormControl>
       <FormControl component="fieldset" className={classes.genderBtn}>
         <FormLabel component="legend">Gender</FormLabel>
         <RadioGroup
+          required
+          value={entryDT.gender}
+          onChange={handleChange}
           row
-          aria-label="position"
-          name="position"
+          name="gender"
           defaultValue="top"
         >
           <FormControlLabel
             value="male"
-            control={<Radio color="primary" />}
+            control={<Radio color="secondary" />}
             label="Male"
           />
           <FormControlLabel
             value="female"
-            control={<Radio color="primary" />}
+            control={<Radio color="secondary" />}
             label="Female"
           />
         </RadioGroup>
       </FormControl>
-
-      <button type="submit" className="button-primary">
-        Calculate
-      </button>
-      <button className="button-primary">Clear</button>
+      <div className="bmi-btn-container">
+        <button type="submit" className="button-primary">
+          Calculate
+        </button>
+        <button
+          onClick={handleClear}
+          className="button-primary primary-red-btn"
+        >
+          Clear
+        </button>
+      </div>
     </form>
   );
 }
