@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Hero from "../Hero";
 import bgImg from "../../Images/im8.jpg";
 import ProgramCarousel from "./ProgramCarousel";
+import  OurProgramPage from "./OurProgramPage";
 class OurPrograms extends Component {
 	render() {
 		return (
@@ -13,6 +14,7 @@ class OurPrograms extends Component {
 				></Hero>
 
 				<ProgramCarousel transitionDelay={2000} transitionDuration={500} />
+				<OurProgramPage/>
 			</div>
 		);
 	}

@@ -1,0 +1,145 @@
+.our-program-backdrop{
+    background-color:var(--mainBlack);
+    height:100vh;
+    width:100%;
+}
+.our-program-category-card{
+    background:url(../../Images/Programs/img1.jpg);
+    background-size:cover;
+    background-attachment: fixed;
+    color:var(--mainGrey);
+    height:100vh;
+    clip-path: polygon(0% 0%,100% 0%,100% 60%, 50% 100%, 0% 60%);
+}
+.our-program-mini-container{
+ position: absolute;
+ width:80%;
+ display: grid;
+ grid-template-columns: repeat(3,auto);
+ grid-gap:0 40px;   
+  
+}
+.our-program-mini{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height:100vh;
+    position:relative;
+}
+.our-program-mini-box{
+    color:var(--mainGrey);
+    width:fit-content;
+    height:fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(to left,rgb(17, 12, 12) 50%,rgba(31, 31, 36, 0.7) 50%);
+    position: relative;
+    border:3px solid white;
+   
+}
+
+.our-program-mini-content{
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    height:auto;
+}
+
+
+.covid{
+    height:fit-content;
+    background:var(--mainBlack);
+    display: flex;
+    flex-direction: column;
+}
+.covid-icon{
+    width:100px;
+    height:100px;
+    margin:auto;
+    padding:10px;
+}
+.covid-grid{
+    width:100%;
+ display: grid;
+ grid-template-columns: repeat(4,auto);  
+ justify-content: space-evenly;
+ margin-top:2rem;
+ margin-bottom:2rem;
+
+}
+.covid-card{
+    display:flex;
+    flex-direction: column;
+   
+   box-shadow:var(--darkShadow);
+   width:200px;
+   height:200px;
+   background:linear-gradient(to left,rgb(187, 187, 187) 50%,rgb(247, 247, 247) 50%);
+
+   
+}
+.covid-card p{
+    font-size:1rem;
+    font-weight: 500;
+
+}
+.covid-desc{
+    font-size: 1.5rem;
+    width: 80%;
+    margin:auto;
+    color: white;
+}
+.covid h1{
+    font-size:4rem;
+    color: white;
+
+}
+
+
+
+
+.what-to-bring{
+    height:fit-content;
+    background:rgb(252, 252, 252);
+    margin:auto;
+}
+.what-to-bring-icon{
+    width:100px;
+    height:100px;
+    border: 4px solid var(--primaryColor);
+    border-radius: 10%;
+    margin:auto;
+    padding:10px;
+}
+.what-to-bring-grid{
+    width:100%;
+ display: grid;
+ grid-template-columns: repeat(4,auto);  
+ justify-content: space-evenly;
+ margin-top:2rem;
+ margin-bottom:2rem;
+}
+.what-to-bring-card{
+    display:flex;
+    flex-direction: column;
+   border:1px solid black;
+   box-shadow:var(--darkShadow);
+   width:200px;
+   height:200px;
+   background:linear-gradient(to left,rgb(187, 187, 187) 50%,rgb(247, 247, 247) 50%);
+   
+}
+.what-to-bring-card p{
+    font-size:1rem;
+    font-weight: 500;
+}
+.what-to-bring h1{
+    font-size:4rem;
+}
+.what-to-bring p{
+    font-size:1.4rem;
+}
