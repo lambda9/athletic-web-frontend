@@ -92,11 +92,17 @@ function AdvertiseComp() {
       <div className="ad-right-msg">With Right Message at Right time</div>
 
       <AdvertiseContent />
-      <div className="cont-rac-form-div">
-        <div className="cont-rac-left-div">
-          <Form inputDt={inputDt} handleChange={handleChange} handleSubmit={handleSubmit} handleReset={handleReset} />
+      <div className="ad-form-div">
+        <div className="ad-form-left-div">
+          <h1>Tell us about yourself</h1>
+          <Form
+            inputDt={inputDt}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            handleReset={handleReset}
+          />
         </div>
-        <div className="cont-rac-right-div">Some relevant image</div>
+        <div className="ad-form-right-div">Some relevant image</div>
       </div>
     </div>
   );

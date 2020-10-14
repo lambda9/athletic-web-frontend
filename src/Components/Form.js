@@ -20,14 +20,15 @@ const useStyles = makeStyles({
       color: PRIME_COLOR,
     },
     "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
-      borderBottomColor: PRIME_COLOR
+      borderBottomColor: PRIME_COLOR,
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: PRIME_COLOR,
     },
     "& .MuiInputBase-input": {
       padding: "6px 10px 7px",
     },
-    "& .MuiInput-underline:after": {
-        borderBottomColor: PRIME_COLOR,
-      },
+
     "& .MuiInputLabel-formControl": {
       left: "10px",
     },
@@ -49,7 +50,6 @@ function Form(props) {
 
   const classes = useStyles();
   return (
-    <div>
       <form className={classes.root} autoComplete="nope">
         {inputDt.map((item) => {
           return (
@@ -82,7 +82,6 @@ function Form(props) {
           </button>
         </div>
       </form>
-    </div>
   );
 }
 
