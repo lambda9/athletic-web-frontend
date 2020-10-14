@@ -73,6 +73,14 @@ a {
   text-decoration: none;
 }
 
+button:active {
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
 .button-primary {
   display: inline-block;
   text-decoration: none;

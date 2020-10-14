@@ -25,8 +25,8 @@
 .bmi-content-left-div td,
 th {
   margin: 2rem auto;
-
   border-right: 2px solid black;
+  transition: var(--fastTransition);
 }
 
 .bmi-height-entry-field {
@@ -69,6 +69,14 @@ th {
   .bmi-content-left-div {
     width: 95%;
     /* background-color: rgb(212, 149, 243); */
+  }
+
+  .bmi-content-left-div td {
+      font-size: 12px;
+  }
+
+  .bmi-content-left-div tr {
+      height: 40px;
   }
 
   .bmi-content-right-div {
