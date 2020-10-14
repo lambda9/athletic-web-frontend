@@ -26,22 +26,27 @@
 th {
   margin: 2rem auto;
   border-right: 2px solid black;
-  transition: var(--fastTransition);
+  transition: all 0.1s linear;
 }
 
 .bmi-height-entry-field {
-    align-items: flex-end;
+  display: flex;
+  margin: 0 auto;
+  background-color: cornsilk;
+  /* justify-content: space-between; */
+  align-items: flex-end;
 }
 
-.bmi-height-entry-field p{
-    color: rgba(0, 0, 0, 0.54);
-    padding: 0;
-    font-size: 1rem;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 400;
-    line-height: 1;
-    margin-bottom: 4px;
-    letter-spacing: 0.00938em;
+.bmi-height-entry-field p {
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0;
+  width: fit-content;
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 4px;
+  letter-spacing: 0.00938em;
 }
 
 #no-bottom-border {
@@ -72,11 +77,11 @@ th {
   }
 
   .bmi-content-left-div td {
-      font-size: 12px;
+    font-size: 12px;
   }
 
   .bmi-content-left-div tr {
-      height: 40px;
+    height: 40px;
   }
 
   .bmi-content-right-div {

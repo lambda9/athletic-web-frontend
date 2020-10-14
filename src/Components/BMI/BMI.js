@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./BMI.css";
 import BMIinput from "./BMIinput";
 import BMITable from "./BMITable";
+import BMIConclusion from './BMIConclusion'
 
 function BMI() {
   const [BMI, setBMI] = useState(0);
@@ -19,6 +20,7 @@ function BMI() {
         <div className="bmi-content-right-div">
           <h4>Calculate your BMI</h4>
           <BMIinput handleBMI={handleBMI} />
+          <BMIConclusion bmi={BMI}/>
         </div>
       </div>
     </div>

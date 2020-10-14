@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: "0.5rem auto",
       width: "70%",
+      backgroundColor: "pink",
       ["@media (max-width:550px)"]: {
         width: "85%",
       },
@@ -31,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
 
   height: {
     width: "35%",
+  },
+
+  temp: {
+    //   backgroundColor: "blue",
+    width: "100%",
   },
 
   genderBtn: {
@@ -64,7 +70,7 @@ function BMIinput(props) {
     const heightcm =
       (entryDT.heightFt * 30.48 + entryDT.heightInch * 2.54) / 100;
     let bmi = entryDT.weight / (heightcm * heightcm);
-    bmi = bmi.toFixed(2)
+    bmi = bmi.toFixed(2);
 
     props.handleBMI(bmi);
     event.preventDefault();
@@ -88,14 +94,7 @@ function BMIinput(props) {
 
   return (
     <form className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
-      <div
-        className="bmi-height-entry-field"
-        style={{
-          display: "flex",
-          margin: "0 auto",
-          justifyContent: "space-between",
-        }}
-      >
+      <div className="bmi-height-entry-field">
         <p>Height</p>
         <FormControl className={classes.height}>
           <InputLabel htmlFor="standard-adornment-height">Feet</InputLabel>
@@ -121,50 +120,59 @@ function BMIinput(props) {
         </FormControl>
       </div>
 
-      <FormControl>
-        <InputLabel htmlFor="standard-adornment-weight">Weight</InputLabel>
-        <Input
-          required
-          type="number"
-          name="weight"
-          value={entryDT.weight}
-          onChange={handleChange}
-          id="standard-adornment-weight"
-          endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
-        />
-      </FormControl>
-      <FormControl>
-        <TextField
-          label="Age"
-          required
-          name="age"
-          value={entryDT.age}
-          onChange={handleChange}
-          type="number"
-        />
-      </FormControl>
-      <FormControl component="fieldset" className={classes.genderBtn}>
-        <FormLabel component="legend">Gender</FormLabel>
-        <RadioGroup
-          required
-          value={entryDT.gender}
-          onChange={handleChange}
-          row
-          name="gender"
-          defaultValue="top"
-        >
-          <FormControlLabel
-            value="male"
-            control={<Radio color="secondary" />}
-            label="Male"
+      <div className="bmi-height-entry-field">
+        <p>Weight</p>
+        <FormControl>
+          <Input
+            required
+            className={classes.temp}
+            type="number"
+            name="weight"
+            value={entryDT.weight}
+            onChange={handleChange}
+            id="standard-adornment-weight"
+            endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
           />
-          <FormControlLabel
-            value="female"
-            control={<Radio color="secondary" />}
-            label="Female"
+        </FormControl>
+      </div>
+      <div className="bmi-height-entry-field">
+        <p>Age</p>
+        <FormControl>
+          <TextField
+            required
+            name="age"
+            value={entryDT.age}
+            onChange={handleChange}
+            type="number"
           />
-        </RadioGroup>
-      </FormControl>
+        </FormControl>
+      </div>
+
+      <div className="bmi-height-entry-field">
+        <p>Gender</p>
+        <FormControl component="fieldset" className={classes.genderBtn}>
+          <RadioGroup
+            required
+            value={entryDT.gender}
+            onChange={handleChange}
+            row
+            name="gender"
+            defaultValue="top"
+          >
+            <FormControlLabel
+              value="male"
+              control={<Radio color="secondary" />}
+              label="Male"
+            />
+            <FormControlLabel
+              value="female"
+              control={<Radio color="secondary" />}
+              label="Female"
+            />
+          </RadioGroup>
+        </FormControl>
+      </div>
+
       <div className="bmi-btn-container">
         <button type="submit" className="button-primary">
           Calculate
