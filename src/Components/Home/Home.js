@@ -6,6 +6,7 @@ import WhyJoinUs from '../WhyJoinUs/WhyJoinUs'
 import OurPlans from "../OurPlans/OurPlans";
 import HomeUserReviews from "../UserReviews/HomeUserReviews";
 import FadingCarousel from "./FadingCarousel";
+import BMI from "../BMI/BMI";
 
 
 function Home() {
@@ -17,6 +18,7 @@ function Home() {
 			<HomePageEnquiry />
 			<HomePageFAQ />
 			<HomeUserReviews />
+			<BMI />
 		</div>
 	);
 }

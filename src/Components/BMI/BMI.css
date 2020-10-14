@@ -1,0 +1,44 @@
+.bmi-main-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(255, 204, 141);
+}
+
+.bmi-content-left-div {
+  width: 45%;
+  background-color: rgb(212, 149, 243);
+}
+
+.bmi-content-right-div {
+  width: 45%;
+  background-color: rgb(237, 224, 243);
+}
+
+.bmi-content-left-div table {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.bmi-content-left-div tr {
+  margin: 2rem auto;
+  height: 60px;
+  text-transform: capitalize;
+  border-bottom: 2px solid black;
+  /* background-color: darksalmon; */
+}
+
+.bmi-content-left-div td,
+th {
+  margin: 2rem auto;
+
+  border-right: 2px solid black;
+}
+
+#no-bottom-border {
+  border-bottom: none;
+}
+
+#no-right-border {
+  border-right: none;
+}
