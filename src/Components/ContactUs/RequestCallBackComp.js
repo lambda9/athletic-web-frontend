@@ -11,7 +11,7 @@ import AdvertiseComp from "../Advertise/AdvertiseComp";
 export class RequestCallBackComp extends Component {
   render() {
     return (
-      <div className="cont-rac-main-div" id="rac">
+      <div className="cont-rac-main-div">
         <div className="cont-rac-text-div">
           <Title>Request a call back</Title>
           <span>We are always ready to hear from you</span>
@@ -28,8 +28,8 @@ export class RequestCallBackComp extends Component {
           </div>
 
           <div className="cont-rac-right-div">
-            <a href='#franchise' onClick={() => this.props.handleState('franchise')}>Want to own a Franchise?</a>
-            <a href="#advertise" onClick={() => this.props.handleState('advertise')}>Advertise with us</a>
+            <Link to='/franchise'>Want to own a Franchise?</Link>
+            <Link to='/advertise'>Advertise with us</Link>
           </div>
         </div>
       </div>
