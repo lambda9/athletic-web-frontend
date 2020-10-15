@@ -14,10 +14,9 @@ class Footer extends Component {
     ["aboutUs", "about us"],
     ["contactUs", "contact us"],
     ["faq", "FAQ"],
-    ["news","Latest News"],
-    ["franchise", "Franchise"]
-    ['blog', 'Blog'],
-    ['advertise', "Advertise With Us"]
+    ["news", "Latest News"],
+    ["franchise", "Franchise"][("blog", "Blog")],
+    ["advertise", "Advertise With Us"],
   ];
 
   timmings = [
@@ -34,7 +33,11 @@ class Footer extends Component {
               <div className="footer-quick-links-cont">
                 <span>Quick Links</span>
                 {this.links.map((item) => {
-                  return <Link to={`${item[0]}`} key={item[0]}>{item[1]}</Link>;
+                  return item ? (
+                    <Link to={`${item[0]}`} key={item[0]}>
+                      {item[1]}
+                    </Link>
+                  ) : null;
                 })}
               </div>
             </div>
