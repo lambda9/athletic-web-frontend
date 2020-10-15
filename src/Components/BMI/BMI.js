@@ -18,9 +18,9 @@ function BMI() {
 	const [health, setHealth] = useState(weightState.UNSET);
 
 	const getHealthState = (bmi) => {
-		if (bmi < 0) {
+		if (bmi <= 0) {
 			return weightState.UNSET;
-		} else if (bmi >= 0 && bmi < 18.5) {
+		} else if (bmi > 0 && bmi < 18.5) {
 			return weightState.UNDERWEIGHT;
 		} else if (bmi <= 24.9) {
 			return weightState.HEALTHY;
@@ -51,7 +51,7 @@ function BMI() {
 				</div>
 			</div>
 			<div className="bmi-concl-main-div">
-				{BMI === 0 ? null : <BMIConclusion bmi={BMI} health={health} />}
+				{BMI <= 0 ? null : <BMIConclusion bmi={BMI} health={health} />}
 			</div>
 		</div>
 	);

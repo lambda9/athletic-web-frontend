@@ -47,13 +47,13 @@ function BMIConclusion(props) {
 
   return (
     <div className="bmi-concl-content">
-      <img src={item.icon}></img>
-
-      <div>
-        <h4>You are {item.status}! </h4>
-        <div>BMI: {bmi}</div>
-        <div>{item.suggestion}</div>
+      <div className="bmi-concl-text-div">
+        <img src={item.icon}></img>
+        <h4 id="bmi-concl-margin">You are {item.status}! </h4>
+        <div  id="bmi-concl-margin">BMI: {bmi}</div>
       </div>
+
+      <div>{item.suggestion}</div>
     </div>
   );
 }

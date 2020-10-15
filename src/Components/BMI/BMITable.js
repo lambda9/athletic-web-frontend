@@ -33,7 +33,7 @@ function BMITable(props) {
 				/>
 				<BMITableRow
 					bmiLable={"30.0 - above"}
-					weightLable={"ubese"}
+					weightLable={"obese"}
 					active={weight === weightState.OBESE}
 					activeColor={"red"}
 				/>
