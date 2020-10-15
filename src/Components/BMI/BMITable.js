@@ -30,7 +30,6 @@ function BMITable(props) {
 					active={weight === healthState.OVERWEIGHT}
 				/>
 				<BMITableRow
-					id={"no-bottom-border"}
 					bmiLable={"30.0 - above"}
 					weightLable={"obese"}
 					active={weight === healthState.OBESE}

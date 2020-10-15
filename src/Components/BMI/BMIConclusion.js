@@ -1,7 +1,6 @@
 import React from "react";
 
 function BMIConclusion({ bmi, conclusion }) {
-	console.log(conclusion);
 	return (
 		<div className="bmi-concl-content">
 			<div className="bmi-concl-text-div">
