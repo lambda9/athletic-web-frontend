@@ -74,7 +74,7 @@ function BMI() {
 				<BMITable weight={state.health} />
 				<div className="bmi-content-right-div">
 					<h4>CALCULATE YOUR BMI</h4>
-					<BMIinput handleBMI={handleBMI} />s
+					<BMIinput handleBMI={handleBMI} />
 				</div>
 			</div>
 			<div className="bmi-concl-main-div">
