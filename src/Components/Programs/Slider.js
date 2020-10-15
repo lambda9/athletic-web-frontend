@@ -1,4 +1,6 @@
-import React from "react";
+/** @jsx jsx */
+/* eslint-disable jsx-a11y/alt-text */
+import { css, jsx } from "@emotion/core";
 import Slide from "./Slide";
 
 const Slider = ({
@@ -16,8 +18,26 @@ const Slider = ({
 
 	return (
 		<div
-			className="pro-car-img-div"
-			style={style}
+			css={css`
+				transition: ${transition};
+				transform: translateX(${translate}vw);
+				display: flex;
+				align-items: center;
+				width: fit-content;
+				height: 90%;
+				& > div {
+					padding: 3vw;
+					z-index: 0;
+				}
+				& img {
+					width: 100%;
+				}
+				@media (max-width: 900px) {
+					& > div {
+						padding: 0.5vw;
+					}
+				}
+			`}
 			onTransitionEnd={onTransitionEnd}
 		>
 			{images.map((item, index) => {

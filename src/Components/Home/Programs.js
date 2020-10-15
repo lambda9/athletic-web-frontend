@@ -15,7 +15,8 @@ const Programs = () => {
 				transitionDelay={2000}
 				transitionDuration={500}
 				width={80}
-				height={30}
+				imageWidth={30}
+				height={70}
 			/>
 		</div>
 	);

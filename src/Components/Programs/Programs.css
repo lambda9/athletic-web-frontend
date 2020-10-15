@@ -1,14 +1,3 @@
-.pro-car-main-div {
-	position: relative;
-	width: 100%;
-	height: 32vw;
-	display: flex;
-	margin: auto;
-	align-items: center;
-	overflow: hidden;
-	/* background-color: lightslategray; */
-}
-
 .pro-car-img-div {
 	display: flex;
 	align-items: center;

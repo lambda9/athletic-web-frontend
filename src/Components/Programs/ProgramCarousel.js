@@ -49,6 +49,7 @@ const dt = [
 		desc: "increase stamina strength to by building a weight",
 	},
 ];
+
 const getWindow = (arr, middleIndex, offset) => {
 	let startIndex = middleIndex - offset;
 	if (startIndex < 0) {
@@ -70,7 +71,6 @@ const reducer = (state, action) => {
 				currentIndex: (state.currentIndex + 1) % state.len,
 				transition: action.transitionDuration,
 				activeIndex: state.activeIndex + 1,
-				direction: 1,
 			};
 
 		case "prev":
@@ -80,18 +80,23 @@ const reducer = (state, action) => {
 					state.currentIndex - 1 < 0 ? state.len - 1 : state.currentIndex - 1,
 				transition: action.transitionDuration,
 				activeIndex: state.activeIndex - 1,
-				direction: -1,
 			};
 
 		case "update":
-			console.log("state", state.currentIndex, "data", action.data);
 			return {
 				...state,
 				transition: 0,
 				data: getWindow(action.data, state.currentIndex, 2),
 				activeIndex: 2,
-				direction: 0,
 			};
+
+		case "resize":
+			return {
+				...state,
+				imageWidth: action.imageWidth,
+				height: action.height,
+			};
+
 		default:
 			throw new Error();
 	}
@@ -101,74 +106,51 @@ const reducer = (state, action) => {
 // transitionDelay and transitionDuraction should be passed as milliseconds.
 const ProgramCarousel = ({
 	data = dt,
-	autoStart = false,
+	autoStart = true,
 	width = 100,
-	imageWidth = 29,
-	height = 40,
 	transitionDelay,
 	transitionDuration,
 }) => {
-	// const currentIndex = useRef(0);
-
-	const offset = -(imageWidth - (width - imageWidth) / 2);
-
 	const [state, dispatch] = useReducer(reducer, {
 		currentIndex: 0,
 		data: getWindow(data, 0, 2),
 		transition: 0,
 		activeIndex: 2,
-		direction: 0,
 		len: data.length,
+		imageWidth: window.innerWidth < 900 ? 65 : 30,
+		height: window.innerWidth < 900 ? 60 : 30,
+	});
+	const offset = -(state.imageWidth - (width - state.imageWidth) / 2);
+
+	useEffect(() => {
+		if (autoStart && state.transition === 0) {
+			const timeout = setTimeout(
+				() =>
+					dispatch({ type: "next", transitionDuration: transitionDuration }),
+				transitionDelay
+			);
+			return () => {
+				clearTimeout(timeout);
+			};
+		}
 	});
 
-	console.log(state);
-	// useEffect(() => {
-	// 	if (autoStart && state.transition === 0) {
-	// 		const timeout = setTimeout(nextImg, transitionDelay);
-	// 		return () => {
-	// 			clearTimeout(timeout);
-	// 		};
-	// 	}
-	// }, [state.transition, autoStart, nextImg, transitionDelay]);
-
-	// useEffect(() => {
-	// 	setState((state) => ({
-	// 		...state,
-	// 		data: getWindow(data, currentIndex.current, 2),
-	// 	}));
-	// }, [data]);
-
-	// useEffect(() => {
-	// 	if (state.direction === 1) {
-	// 		currentIndex.current = (currentIndex.current + 1) % data.length;
-	// 	} else if (state.direction === -1) {
-	// 		currentIndex.current = currentIndex.current - 1;
-	// 		if (currentIndex.current < 0) {
-	// 			currentIndex.current = data.length - 1;
-	// 		}
-	// 	}
-	// }, [state.direction, data]);
-
-	// const prevImg = () => {
-	// 	setState((state) => {
-	// 		return {
-	// 			...state,
-	// 			activeIndex: state.activeIndex - 1,
-	// 			transition: transitionDuration,
-	// 			direction: -1,
-	// 		};
-	// 	});
-	// };
-
-	const onTransitionEnd = () => {
-		dispatch({ type: "update", data: data });
+	const handleResize = () => {
+		let imgWidth = window.innerWidth < 900 ? 65 : 30;
+		let height = window.innerWidth < 900 ? 60 : 30;
+		dispatch({ type: "resize", imageWidth: imgWidth, height: height });
 	};
+
+	useEffect(() => {
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	});
 
 	return (
 		<div
 			css={css`
 				width: ${width}vw;
-				height: ${height}vw;
+				height: ${state.height}vw;
 				display: flex;
 				align-items: center;
 				overflow: hidden;
@@ -179,13 +161,12 @@ const ProgramCarousel = ({
 				images={state.data}
 				transition={`transform ease-in-out ${state.transition / 1000}s`}
 				activeIndex={state.activeIndex}
-				translate={-(state.activeIndex - 1) * imageWidth + offset}
-				width={imageWidth}
-				onTransitionEnd={onTransitionEnd}
+				translate={-(state.activeIndex - 1) * state.imageWidth + offset}
+				width={state.imageWidth}
+				onTransitionEnd={() => dispatch({ type: "update", data: data })}
 			/>
 			<div
-				className="pro-car-nextBtn"
-				style={{
+				css={{
 					display: autoStart ? "none" : "block",
 				}}
 				onClick={() =>
@@ -195,11 +176,12 @@ const ProgramCarousel = ({
 				&#8250;
 			</div>
 			<div
-				className="pro-car-prevBtn"
-				style={{
+				css={{
 					display: autoStart ? "none" : "block",
 				}}
-				// onClick={prevImg}
+				onClick={() =>
+					dispatch({ type: "prev", transitionDuration: transitionDuration })
+				}
 			>
 				&#8249;
 			</div>
