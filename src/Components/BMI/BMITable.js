@@ -1,17 +1,17 @@
 import React from "react";
 
 function BMITable(props) {
-  const { bmi } = props;
-  var clr1 = bmi < 18.5 && bmi > 0 ? "red" : "black";
-  var clr2 = 18.5 <= bmi && bmi <= 24.9 ? "green" : "black";
-  var clr3 = 24.9 < bmi && bmi <= 29.9 ? "red" : "black";
-  var clr4 = 29.9 < bmi ? "red" : "black";
+  const { health } = props;
+  let clr1 = health.underweight ? "red" : "black";
+  let clr2 = health.healthy ? "green" : "black";
+  let clr3 = health.overweight ? "red" : "black";
+  let clr4 = health.obese ? "red" : "black";
 
   const getStyle = (num, clr) => {
     if (num == 1 || num == 3 || num == 4) {
-      return { color: clr, transform: `scale(${clr === 'red' ? 1.3 : 1})` };
+      return { color: clr, transform: `scale(${clr === "red" ? 1.3 : 1})` };
     } else if (num == 2) {
-      return { color: clr, transform: `scale(${clr === 'green' ? 1.3 : 1})` };
+      return { color: clr, transform: `scale(${clr === "green" ? 1.3 : 1})` };
     }
   };
   return (
@@ -40,7 +40,7 @@ function BMITable(props) {
             overweight
           </td>
         </tr>
-        <tr id="no-bottom-border" >
+        <tr id="no-bottom-border">
           <td style={getStyle(4, clr4)}>30.0 - above</td>
           <td style={getStyle(4, clr4)} id="no-right-border">
             obese

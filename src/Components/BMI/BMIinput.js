@@ -15,7 +15,7 @@ const PRIME_COLOR = "#459fb6";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
-      margin: "0.5rem auto",
+      margin: "0.8rem auto",
       width: "70%",
       // backgroundColor: "pink"
       ["@media (max-width:550px)"]: {
@@ -53,7 +53,8 @@ const useStyles = makeStyles((theme) => ({
 
 function BMIinput(props) {
   const [entryDT, setEntryDT] = useState({
-    height: "",
+    heightFt: "",
+    heightInch: "",
     weight: "",
     age: "",
     gender: "male",
@@ -66,11 +67,12 @@ function BMIinput(props) {
   };
 
   const handleSubmit = (event) => {
-    const heightcm =
-      (entryDT.heightFt * 30.48 + entryDT.heightInch * 2.54) / 100;
+    let tempHeightFt = entryDT.heightFt === "" ? 0 : entryDT.heightFt;
+    let tempHeightInch = entryDT.heightInch === "" ? 0 : entryDT.heightInch;
+
+    const heightcm = (tempHeightFt * 30.48 + tempHeightInch * 2.54) / 100;
     let bmi = entryDT.weight / (heightcm * heightcm);
     bmi = bmi.toFixed(2);
-
     props.handleBMI(bmi);
     event.preventDefault();
   };
@@ -86,8 +88,6 @@ function BMIinput(props) {
     });
     event.preventDefault();
   };
-
-  const calculateBMI = () => {};
 
   const classes = useStyles();
 
@@ -111,7 +111,6 @@ function BMIinput(props) {
           </FormControl>
           <FormControl className={classes.height}>
             <Input
-              required
               type="number"
               name="heightInch"
               value={entryDT.heightInch}
@@ -144,7 +143,6 @@ function BMIinput(props) {
         <p>Age</p>
         <FormControl className={classes.temp}>
           <TextField
-            required
             name="age"
             value={entryDT.age}
             onChange={handleChange}
