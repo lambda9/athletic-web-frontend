@@ -1,0 +1,55 @@
+.franchise-main-comp {
+  margin-top: 4rem;
+}
+
+.franchise-head-div {
+  width: 100%;
+  /* background-color: lightblue; */
+  margin: auto;
+}
+
+.franchise-head-div span {
+  width: 90%;
+  max-width: 1000px;
+  display: inline-block;
+  /* background-color: khaki; */
+}
+
+.franchise-feature-main-div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 6rem auto;
+  justify-content: center;
+}
+
+.franchise-feature-div {
+    margin: 1rem 1rem;
+    min-width: 250px;
+    flex-wrap: wrap;   width: 360px;
+    /* background-color: lightcyan; */
+    text-transform: uppercase;
+}
+
+.franchise-feature-div div {
+    margin: 1rem 1rem;
+}
+
+.franchise-get-started {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+  margin: 2rem auto 4rem;
+  /* background-color: honeydew; */
+}
+
+.franchise-get-started div {
+  margin: 1rem 2rem;
+  width: 320px;
+  /* background-color: lightcyan; */
+  text-align: left;
+}
+
+.franchise-get-started-icon {
+  font-size: 42px;
+}
