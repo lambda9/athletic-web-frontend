@@ -8,9 +8,9 @@ function BMITable(props) {
   let clr4 = health.obese ? "red" : "black";
 
   const getStyle = (num, clr) => {
-    if (num == 1 || num == 3 || num == 4) {
+    if (num === 1 || num === 3 || num === 4) {
       return { color: clr, transform: `scale(${clr === "red" ? 1.3 : 1})` };
-    } else if (num == 2) {
+    } else if (num === 2) {
       return { color: clr, transform: `scale(${clr === "green" ? 1.3 : 1})` };
     }
   };

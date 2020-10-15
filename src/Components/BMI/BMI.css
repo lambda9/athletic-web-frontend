@@ -14,10 +14,12 @@
 }
 
 .bmi-content-left-div {
-  width: 55%;
+  width: 50%;
+  /* background-color: deepskyblue; */
 }
 
 .bmi-content-right-div {
+  /* background-color: rgb(199, 230, 89); */
   width: 45%;
 }
 
@@ -26,6 +28,7 @@
 }
 .bmi-content-left-div table {
   width: 80%;
+  max-width: 530px;
   margin: 2rem auto;
 }
 
@@ -106,12 +109,17 @@ th {
   margin: auto 1rem;
 }
 
+@media screen and (max-width: 900px) {
+}
+
 @media screen and (max-width: 750px) {
   .bmi-main-content {
     flex-direction: column;
   }
-  .bmi-content-left-div {
+  .bmi-content-left-div,
+  .bmi-content-right-div {
     width: 95%;
+    margin: auto;
     /* background-color: rgb(212, 149, 243); */
   }
 
@@ -127,9 +135,22 @@ th {
     height: 40px;
   }
 
-  .bmi-content-right-div {
-    width: 95%;
+  .bmi-btn-container {
+    justify-content: center;
+  }
 
-    /* background-color: rgb(237, 224, 243); */
+  .bmi-concl-content {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    flex-direction: column;
+  }
+
+  .bmi-concl-content > div {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .bmi-concl-content > div * {
+    margin: auto 1rem;
   }
 }

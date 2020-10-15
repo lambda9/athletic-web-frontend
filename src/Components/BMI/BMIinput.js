@@ -15,11 +15,11 @@ const PRIME_COLOR = "#459fb6";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
-      margin: "0.8rem auto",
+      margin: "1.5rem auto",
       width: "70%",
-      // backgroundColor: "pink"
       ["@media (max-width:550px)"]: {
         width: "85%",
+        margin: "0.8rem auto"
       },
       "& label.Mui-focused": {
         color: PRIME_COLOR,
@@ -69,9 +69,9 @@ function BMIinput(props) {
   const handleSubmit = (event) => {
     let tempHeightFt = entryDT.heightFt === "" ? 0 : entryDT.heightFt;
     let tempHeightInch = entryDT.heightInch === "" ? 0 : entryDT.heightInch;
-
     const heightcm = (tempHeightFt * 30.48 + tempHeightInch * 2.54) / 100;
     let bmi = entryDT.weight / (heightcm * heightcm);
+
     bmi = bmi.toFixed(2);
     props.handleBMI(bmi);
     event.preventDefault();
