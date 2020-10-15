@@ -1,5 +1,5 @@
 import React from "react";
-import { weightState } from "./BMI";
+import { healthState } from "./BMI";
 import BMITableRow from "./BMITableRow";
 
 function BMITable(props) {
@@ -16,26 +16,24 @@ function BMITable(props) {
 				<BMITableRow
 					bmiLable={"Below 18.5"}
 					weightLable={"underweight"}
-					active={weight === weightState.UNDERWEIGHT}
-					activeColor={"red"}
+					active={weight === healthState.UNDERWEIGHT}
 				/>
 				<BMITableRow
 					bmiLable={"18.5 - 24.9"}
 					weightLable={"healthy"}
-					active={weight === weightState.HEALTHY}
+					active={weight === healthState.HEALTHY}
 					activeColor={"green"}
 				/>
 				<BMITableRow
 					bmiLable={"25.0 - 29.95"}
 					weightLable={"overweight"}
-					active={weight === weightState.OVERWEIGHT}
-					activeColor={"red"}
+					active={weight === healthState.OVERWEIGHT}
 				/>
 				<BMITableRow
+					id={"no-bottom-border"}
 					bmiLable={"30.0 - above"}
 					weightLable={"obese"}
-					active={weight === weightState.OBESE}
-					activeColor={"red"}
+					active={weight === healthState.OBESE}
 				/>
 			</table>
 		</div>
