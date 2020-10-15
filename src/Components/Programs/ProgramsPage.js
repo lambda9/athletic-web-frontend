@@ -12,7 +12,6 @@ class OurPrograms extends Component {
 					description="keep your energy up and burn calories"
 				></Hero>
 
-				<ProgramCarousel transitionDelay={2000} transitionDuration={500} />
 			</div>
 		);
 	}
