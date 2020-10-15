@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;530;600;700&display=swap");
+
+.plans-main-comp {
+	width: 100%;
+	margin: 5rem auto;
+	background-color: var(--mainBlack);
+}
+
+#plan-main-comp-tint {
+	padding: 60px 5px 50px;
+}
+
+/* our plans heading */
+.plan-main-comp-text h2 {
+	color: #ffffff;
+	font-size: 48px;
+	font-weight: 600;
+	margin-bottom: 18px;
+	text-transform: uppercase;
+}
+
+.plan-main-comp-text p {
+	font-size: 18px;
+	color: #ffffff;
+	font-weight: 500;
+	text-align: center;
+	line-height: 24px;
+	margin: 0 0 45px 0;
+}
+
+.plan-main-cards-container {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	/* overflow-x: scroll; */
+	justify-content: center;
+}
+
+.plan-card-main-div * {
+	font-family: "Oswald", sans-serif;
+}
+
+.plans-comp-btn-group {
+	display: flex;
+	padding: 0 0.5rem;
+	width: fit-content;
+	margin: 0.1rem auto 2rem;
+}
+
+.plans-comp-btn-group div {
+	padding: 0.5rem 0;
+	min-width: 180px;
+	color: grey;
+	margin: auto 0;
+	height: fit-content;
+	text-transform: uppercase;
+	font-size: 18px;
+	border: 2px solid grey;
+}
+
+.plans-comp-btn-group div:hover {
+	cursor: pointer;
+}
+
+#plan-comp-btn-active {
+	font-size: 20px;
+	color: white;
+	background-color: rgba(16, 134, 158, 0.18);
+	transform: scale(1.02);
+	border: 2.5px solid var(--primaryColor);
+	box-shadow: 0px 0px 2px 0px var(--primaryColor);
+}
+
+/*plan card  */
+.plan-card-main-div {
+	margin: 1rem;
+	width: 340px;
+	min-width: 340px;
+	display: inline-block;
+	height: 500px;
+	background: var(--mainWhite);
+	text-align: center;
+	padding: 35px 0 40px;
+	color: #272727;
+	border: 0.2px solid var(--primaryRed);
+	position: relative;
+}
+
+.plan-card-star {
+	position: absolute;
+	top: 2px;
+	right: 3px;
+	color: var(--mainWhite);
+}
+
+.plan-card-discount {
+	position: absolute;
+	font-size: 18px;
+	top: 2%;
+	left: -1.4rem;
+	font-weight: 400;
+	background-color: var(--primaryRed);
+	padding: 0.15rem 0.3rem;
+	color: var(--mainWhite);
+}
+
+/* card tag */
+.plan-card-main-text h4 {
+	text-transform: uppercase;
+	font-weight: 500;
+	line-height: 1.2px;
+	margin-bottom: 34px;
+	font-size: 24px;
+}
+
+/* price div */
+.plan-card-price-div > div:first-child {
+	margin: 0rem auto 1.4rem;
+	width: fit-content;
+	display: flex;
+	position: relative;
+}
+
+#rupee-sign {
+	position: relative;
+	top: 2px;
+	font-size: 22px;
+}
+
+.plan-card-price-div-h2 {
+	font-size: 56px;
+	font-weight: 700;
+	line-height: 0.85;
+	width: fit-content;
+	position: relative;
+}
+
+/* discount active */
+.plan-card-price-disc-active {
+	font-size: 24px;
+	margin-left: 4px;
+	position: relative;
+	letter-spacing: 0.1px;
+	color: gray;
+	top: 1.2rem;
+	text-decoration: line-through;
+}
+
+/* monythly early */
+.plan-card-price-div span {
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+.plan-card-main-text ul {
+	margin-top: 1.5rem;
+	list-style-type: disc;
+}
+
+.plan-card-main-text ul li {
+	list-style: none;
+	font-size: 16px;
+	line-height: 32px;
+}
+
+.plan-card-main-div a {
+	position: absolute;
+	bottom: 0;
+	font-family: "Montserrat", sans-serrif;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.plan-card-btn {
+	background-color: var(--primaryRed);
+	border: 2px solid var(--primaryRed);
+	color: var(--mainWhite);
+}
+
+.plan-card-btn:hover {
+	color: var(--primaryRed);
+	border: 2px solid var(--primaryRed);
+}
+
+@media screen and (max-width: 750px) {
+	.plans-comp-btn-group div {
+		padding: 0.35rem 0.5rem;
+		font-size: 14px;
+		min-width: 120px;
+		border: 2px solid grey;
+	}
+	#plan-comp-btn-active {
+		font-size: 16px;
+		transform: scale(1.01);
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.plans-main-comp {
+		margin: 5rem auto;
+		padding: 30px 0 20px;
+	}
+
+	.plans-comp-btn-group {
+		flex-direction: column;
+	}
+	.plans-comp-btn-group div {
+		padding: 0.35rem 0.7rem;
+		width: 170px;
+		font-size: 16px;
+	}
+	#plan-comp-btn-active {
+		font-size: 18px;
+		transform: scale(1.01);
+	}
+	/* our plans heading */
+	.plan-main-comp-text h2 {
+		font-size: 34px;
+		font-weight: 500;
+		margin-bottom: 18px;
+	}
+
+	.plan-main-comp-text p {
+		font-size: 12px;
+		font-weight: 500;
+		margin: 0 0 25px 0;
+	}
+
+	.plan-card-main-div {
+		margin: 1rem;
+		width: 300px;
+		min-width: 300px;
+		height: 430px;
+		padding: 35px 0 40px;
+	}
+
+	.plan-card-star {
+		top: 2px;
+		right: 3px;
+	}
+
+	.plan-card-discount {
+		font-size: 14px;
+		padding: 0.1rem 0.2rem;
+	}
+	.plan-card-price-div > div:first-child {
+		margin: 0 auto 1.2rem;
+	}
+	.plan-card-main-text h4 {
+		font-weight: 500;
+		font-size: 18px;
+	}
+
+	#rupee-sign {
+		top: 0px;
+		font-size: 18px;
+	}
+
+	.plan-card-price-div-h2 {
+		font-size: 42px;
+	}
+
+	.plan-card-price-disc-active {
+		font-size: 22px;
+		top: 0.6rem;
+	}
+
+	.plan-card-price-div span {
+		margin-bottom: 0rem;
+		font-size: 18px;
+	}
+
+	.plan-card-main-text ul {
+		margin-top: 0.8rem;
+	}
+
+	.plan-card-main-text ul li {
+		font-size: 14px;
+		line-height: 28px;
+	}
+}

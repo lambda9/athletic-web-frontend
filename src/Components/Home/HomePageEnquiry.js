@@ -1,150 +1,193 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import TextField from "@material-ui/core/TextField";
-import { withStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import "../FreeTrial/FreeTrial.css";
 import "./HomeEnquiry.css";
 
-const PRIME_COLOR = "#459fb6"
+const PRIME_COLOR = "#459fb6";
+const useStyles = makeStyles({
+	root: {
+		"& .MuiTextField-root": {
+			margin: `0 auto 1rem`,
+			["@media (min-width:750px)"]: {
+				margin: "0 auto 1.4rem",
+			},
+			width: "100%",
+		},
+	},
 
-const useStyles = (theme) => ({
-  root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(1.2),
-      width: "90%",
-    },
-  },
+	inputRoot: {
+		"& .MuiOutlinedInput-root": {
+			fontSize: "14px",
+			"& fieldset": {
+				borderColor: PRIME_COLOR,
+			},
+			"&:hover fieldset": {
+				color: PRIME_COLOR,
+				borderColor: PRIME_COLOR,
+			},
+			"&.Mui-focused fieldset": {
+				borderColor: PRIME_COLOR,
+			},
+		},
+		"& .MuiOutlinedInput-multiline": {
+			padding: "0",
+		},
+
+		["@media (max-width:750px)"]: {
+			"& .MuiFormLabel-root": {
+				fontSize: "12px",
+			},
+			"& .MuiOutlinedInput-input ": {
+				padding: "12px 10px",
+			},
+			"& .MuiInputLabel-outlined": {
+				transform: "translate(14px, 14px) scale(1)",
+			},
+			"& .MuiInputLabel-shrink": {
+				transform: "translate(14px, -6px) scale(0.75)",
+			},
+		},
+		["@media (min-width:750px)"]: {
+			"& .MuiOutlinedInput-input ": {
+				padding: "18px 14px",
+			},
+			"& .MuiOutlinedInput-root": {
+				fontSize: "18px",
+			},
+			"& .MuiInputLabel-outlined": {
+				transform: "translate(14px, 20px) scale(1)",
+			},
+
+			"& .MuiInputLabel-shrink": {
+				transform: "translate(14px, -6px) scale(0.75)",
+			},
+		},
+	},
 });
 
-const CssTextField = withStyles({
-  root: {
-    "& label.Mui-focused": {
-      color: PRIME_COLOR,
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: PRIME_COLOR,
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "black",
-      },
-      "&:hover fieldset": {
-      color: PRIME_COLOR,
-      borderColor: PRIME_COLOR,
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: PRIME_COLOR,
-      },
-    },
-  },
-})(TextField);
+function HomePageEnquiry() {
+	const [entryData, setentryData] = useState({
+		name: "",
+		email: "",
+		phoneNum: "",
+		subject: "",
+		message: "",
+	});
 
-class HomePageEnquiry extends Component {
-  constructor(props) {
-    super(props);
+	const inputDt = [
+		{
+			id: "id_1",
+			type: "text",
+			name: "name",
+			label: "Name",
+			value: entryData.name,
+		},
+		{
+			id: "id_2",
+			type: "email",
+			name: "email",
+			label: "Email",
+			value: entryData.email,
+		},
+		{
+			id: "id_3",
+			type: "tel",
+			name: "phoneNum",
+			label: "Phone Number",
+			value: entryData.phoneNum,
+		},
+		{
+			id: "id_4",
+			type: "text",
+			name: "subject",
+			label: "Subject",
+			value: entryData.subject,
+		},
+		{
+			id: "id_5",
+			type: "textarea",
+			name: "message",
+			label: "Message",
+			value: entryData.message,
+		},
+	];
 
-    this.state = {
-      name: "",
-      email: "",
-      phoneNum: "",
-      subject: "",
-    };
-  }
+	const handleChange = (event) => {
+		var name = event.target.name;
+		var value = event.target.value;
+		setentryData({ ...entryData, [name]: value });
+		event.preventDefault();
+	};
 
-  handleChange = (event) => {
-    const name = event.target.name;
-    this.setState({
-      ...this.state,
-      [name]: event.target.value,
-    });
-  };
+	const handleSubmit = (event) => {};
 
-  handleSubmit = (event) => {
-    console.log(this.state);
-  };
+	const handleReset = (event) => {
+		setentryData({
+			name: "",
+			email: "",
+			phoneNum: "",
+			subject: "",
+			message: "",
+		});
 
-  handleReset = (event) => {
-    this.setState({
-      name: "",
-      email: "",
-      phoneNum: "",
-      subject: "",
-    });
-    event.preventDefault()
+		event.preventDefault();
+	};
 
-  };
+	const classes = useStyles();
+	return (
+		<div className="custom">
+			<div className="div">
+				<div className="div2">
+					<div className="home-enquiry-left-div">
+						<span>I N T E R E S T E D</span>
+						<h2>A N Y Q U E R Y ?</h2>
+						<p>
+							Fill out the form and we will reach you as soon as possible...
+						</p>
+					</div>
+					<div className="home-enquiry-main-div">
+						<form className={classes.root} autoComplete="nope">
+							{inputDt.map((item) => {
+								return (
+									<TextField
+										key={item.id}
+										className={classes.inputRoot}
+										required
+										autoComplete="nope"
+										variant="outlined"
+										onChange={handleChange}
+										type={item.type}
+										name={item.name}
+										value={item.value}
+										label={item.label}
+										multiline={item.type === "textarea" ? true : false}
+										rows={3}
+									/>
+								);
+							})}
 
-  render() {
-    const { classes } = this.props;
-    return (
-      <div className="home-enquiry-main-div">
-        <div className="home-enquiry-left-div">
-          <span>Interested</span>
-          <h2>Any query</h2>
-          <h3>Fill out the form and we will reach you as soon as possible...</h3>
-        </div>
-
-        <div className="home-enquiry-right-div">
-          <form className={classes.root} autoComplete="nope">
-            <CssTextField
-              required
-              type="text"
-              name="name"
-              value={this.state.name}
-              autoComplete="nope"
-              label="Name"
-              variant="outlined"
-              onChange={this.handleChange}
-            />
-            <CssTextField
-              required
-              type="email"
-              value={this.state.email}
-              name="email"
-              autoComplete="nope"
-              label="E-mail"
-              variant="outlined"
-              onChange={this.handleChange}
-            />
-            <CssTextField
-              required
-              value={this.state.phoneNum}
-              type="tel"
-              autoComplete="nope"
-              name="phoneNum"
-              label="Phone Number"
-              variant="outlined"
-              onChange={this.handleChange}
-            />
-            <CssTextField
-              required
-              value={this.state.subject}
-              type="text"
-              name="subject"
-              label="Subject"
-              variant="outlined"
-              onChange={this.handleChange}
-            />
-
-            <div className="home-enquiry-btn-container">
-              <button
-                onClick={this.handleSubmit}
-                className="button-primary"
-                type="submit"
-              >
-                Submit
-              </button>
-              <button
-                onClick={this.handleReset}
-                className="button-primary  cancel-btn"
-              >
-                reset
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    );
-  }
+							<div className="home-enquiry-btn-container">
+								<button
+									onClick={handleSubmit}
+									className="button-primary"
+									type="submit"
+								>
+									Submit
+								</button>
+								<button
+									onClick={handleReset}
+									className="button-primary  cancel-btn"
+								>
+									reset
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
 
-export default withStyles(useStyles)(HomePageEnquiry);
+export default HomePageEnquiry;

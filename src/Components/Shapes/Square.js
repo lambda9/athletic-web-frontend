@@ -11,7 +11,7 @@ function Square(props) {
     transform: `rotate(${props.angle}deg)`,
   };
 
-  return <div style={style} />;
+  return <div style={style} >{props.children} </div>;
 }
 
 export default Square;

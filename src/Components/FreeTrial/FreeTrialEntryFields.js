@@ -117,7 +117,6 @@ class FreeTrialEntryFields extends Component {
   };
 
   handleSubmit = () => {
-    console.log(this.state);
   };
 
   render() {
