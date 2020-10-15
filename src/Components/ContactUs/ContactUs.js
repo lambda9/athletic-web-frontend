@@ -2,9 +2,23 @@ import React, { Component } from "react";
 import Hero from "../Hero";
 import bgImg from "../../Images/im9.jpg";
 import ReachUs from "./ReachUs";
-import RequestCallBackComp from './RequestCallBackComp';
+import RequestCallBackComp from "./RequestCallBackComp";
 
 class ContactUs extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      activeState: "rac",
+    };
+  }
+
+  handleState = (value) => {
+    this.setState({
+      activeState: value,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -13,10 +27,8 @@ class ContactUs extends Component {
           title="Contact us"
           description="Mail, call, text or meet on-site"
         ></Hero>
-      
         <ReachUs />
-        <RequestCallBackComp />
-
+        <RequestCallBackComp />{" "}
       </div>
     );
   }

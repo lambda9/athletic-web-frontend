@@ -1,19 +1,19 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
+import "./AdvertiseComp.css";
 import { Link } from "react-router-dom";
-import "./RequestCallBackComp.css";
+import AdvertiseContent from "./AdvertiseContent";
+import ContactUsEntryFields from "../ContactUs/ContactUsEntryFields";
 import Title from "../Title/Title";
 import Form from "../Form";
 
-// git => get in touch
-// rac => request a call back
-
-function RequestCallBackComp() {
+function AdvertiseComp() {
   const [entryData, setentryData] = useState({
     name: "",
     email: "",
     phoneNum: "",
-    subject: "",
-    message: "",
+    companyName: "",
+    productName: "",
+    details: "",
   });
 
   const inputDt = [
@@ -41,16 +41,23 @@ function RequestCallBackComp() {
     {
       id: "id_4",
       type: "text",
-      name: "subject",
-      label: "Subject",
-      value: entryData.subject,
+      name: "companyName",
+      label: "Company Name",
+      value: entryData.companyName,
     },
     {
       id: "id_5",
+      type: "text",
+      name: "productName",
+      label: "Product Name/Type",
+      value: entryData.productName,
+    },
+    {
+      id: "id_6",
       type: "textarea",
-      name: "message",
-      label: "Message",
-      value: entryData.message,
+      name: "details",
+      label: "Details",
+      value: entryData.details,
     },
   ];
 
@@ -71,27 +78,23 @@ function RequestCallBackComp() {
       name: "",
       email: "",
       phoneNum: "",
-      subject: "",
-      message: "",
+      companyName: "",
+      productName: "",
+      details: "",
     });
 
     event.preventDefault();
   };
 
   return (
-    <div className="cont-rac-main-div">
-      <div className="cont-rac-text-div">
-        <Title>Request a call back</Title>
-        <span>We are always ready to hear from you</span>
-        <br></br>
-        <span>
-          Fill out this form and we'll reach you within 24 hours on weekdays and
-          48 hours on weekends
-        </span>
-      </div>
+    <div className="ad-main-comp" id="advertise">
+      <Title>Reach the right audience</Title>
+      <div className="ad-right-msg">With Right Message at Right time</div>
 
-      <div className="cont-rac-form-div">
-        <div className="cont-rac-left-div">
+      <AdvertiseContent />
+      <div className="ad-form-div">
+        <div className="ad-form-left-div">
+          <h1>Tell us about yourself</h1>
           <Form
             inputDt={inputDt}
             handleChange={handleChange}
@@ -99,14 +102,10 @@ function RequestCallBackComp() {
             handleReset={handleReset}
           />
         </div>
-
-        <div className="cont-rac-right-div">
-          <Link to="/franchise">Want to own a Franchise?</Link>
-          <Link to="/advertise">Advertise with us</Link>
-        </div>
+        <div className="ad-form-right-div">Some relevant image</div>
       </div>
     </div>
   );
 }
 
-export default RequestCallBackComp;
+export default AdvertiseComp;
