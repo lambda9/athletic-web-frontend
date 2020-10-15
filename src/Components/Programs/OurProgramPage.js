@@ -1,7 +1,7 @@
 import React from 'react'
 import "./OurProgram.css"
-import  WhatToBring from "./WhatToBring"
-import Covid from './Covid'
+import  WhatToBring from "../Covid/WhatToBring"
+import Covid from '../Covid/Covid'
 function OurProgramPage() {
     return (
         <div className="our-program">
