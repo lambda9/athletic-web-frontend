@@ -57,7 +57,6 @@ class FranchiseContForm extends Component {
   };
 
   handleSubmit = (event) => {
-    console.log(this.state);
   };
 
   handleReset = (event) => {

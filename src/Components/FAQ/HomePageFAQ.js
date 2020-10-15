@@ -40,7 +40,6 @@ export default function ControlledAccordions() {
 
   useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
-    console.log(window.innerWidth);
     return () => {
       window.removeEventListener("resize", handleWindowResize);
     };

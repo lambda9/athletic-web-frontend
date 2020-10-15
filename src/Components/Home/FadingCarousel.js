@@ -107,6 +107,7 @@ const FadingCarousel = ({ animationDelay }) => {
 				width="100%"
 				height="55vw"
 				time={1000}
+				showOverlay={true}
 			/>
 			<TopText key={currentIndex}>{subHeadings[currentIndex]}</TopText>
 			<CenterText key={currentIndex + 1}>{headings[currentIndex]}</CenterText>
