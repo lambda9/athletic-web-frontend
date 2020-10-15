@@ -16,7 +16,6 @@ class Footer extends Component {
     ["programs", "Programs"],
     ["membership", "Membership"],
     
-  ];
 
   links2 = [
     ["faq", "FAQ"],
@@ -39,6 +38,7 @@ class Footer extends Component {
             <Footerhead head = "Newsletter" />
             <div className = "footer-child-content">
               <Newsletter />
+
             </div>
           </div>
           <div className = "footer-child child2">

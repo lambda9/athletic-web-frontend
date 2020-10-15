@@ -26,7 +26,6 @@ const Slide = ({ item, active, width, transition }) => {
 					}}
 				>
 					<h3>{item.title}</h3>
-					<p>{item.desc}</p>
 				</div>
 			</div>
 		</div>

@@ -1,14 +1,15 @@
-import React from 'react'
+import React from "react";
 import AdvertiseBanner from "./AdvertiseBanner";
 import "./Advertise.css";
-import AdvertiseContent from './AdvertiseContent';
+import AdvertiseComp from "./AdvertiseComp";
+
 function AdvertisePage() {
-    return (
-        <div className="advertise-page">
-            <AdvertiseBanner/>
-            <AdvertiseContent/>
-        </div>
-    )
+  return (
+    <div className="advertise-page">
+      <AdvertiseBanner />
+      <AdvertiseComp />
+    </div>
+  );
 }
 
-export default AdvertisePage
+export default AdvertisePage;

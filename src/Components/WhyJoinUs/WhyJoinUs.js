@@ -30,7 +30,6 @@ export class WhyJoinUs extends Component {
 		var element = document.getElementById("dd");
 		if (element) {
 			element.style.backgroundPositionY = -offset * 0.2 + "px";
-			console.log(offset, "offset", offset * 0.9);
 		}
 	};
 
