@@ -11,7 +11,7 @@ function BMI() {
     setBMI(value);
   };
   return (
-    <div>
+    <div className='bmi-main-component'>
       <div>
         <h1>BMI CALCULATOR</h1>
       </div>

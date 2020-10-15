@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: "0.5rem auto",
       width: "70%",
-      backgroundColor: "pink",
+      // backgroundColor: "pink"
       ["@media (max-width:550px)"]: {
         width: "85%",
       },
@@ -31,11 +31,10 @@ const useStyles = makeStyles((theme) => ({
   },
 
   height: {
-    width: "35%",
+    width: "45%",
   },
 
   temp: {
-    //   backgroundColor: "blue",
     width: "100%",
   },
 
@@ -94,38 +93,44 @@ function BMIinput(props) {
 
   return (
     <form className={classes.root} autoComplete="off" onSubmit={handleSubmit}>
-      <div className="bmi-height-entry-field">
+      <div className="bmi-entry-field-div">
         <p>Height</p>
-        <FormControl className={classes.height}>
-          <InputLabel htmlFor="standard-adornment-height">Feet</InputLabel>
-          <Input
-            required
-            type="number"
-            name="heightFt"
-            value={entryDT.heightFt}
-            onChange={handleChange}
-            id="standard-adornment-height"
-          />
-        </FormControl>
-        <FormControl className={classes.height}>
-          <InputLabel htmlFor="standard-adornment-height">Inch</InputLabel>
-          <Input
-            required
-            type="number"
-            name="heightInch"
-            value={entryDT.heightInch}
-            onChange={handleChange}
-            id="standard-adornment-height"
-          />
-        </FormControl>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <FormControl className={classes.height}>
+            <Input
+              required
+              type="number"
+              name="heightFt"
+              value={entryDT.heightFt}
+              onChange={handleChange}
+              endAdornment={
+                <InputAdornment position="end">feet</InputAdornment>
+              }
+              id="standard-adornment-height"
+            />
+          </FormControl>
+          <FormControl className={classes.height}>
+            <Input
+              required
+              type="number"
+              name="heightInch"
+              value={entryDT.heightInch}
+              onChange={handleChange}
+              endAdornment={
+                <InputAdornment position="end">inch</InputAdornment>
+              }
+              id="standard-adornment-height"
+            />
+          </FormControl>
+        </div>
       </div>
 
-      <div className="bmi-height-entry-field">
+      <div className="bmi-entry-field-div">
         <p>Weight</p>
-        <FormControl>
+
+        <FormControl className={classes.temp}>
           <Input
             required
-            className={classes.temp}
             type="number"
             name="weight"
             value={entryDT.weight}
@@ -135,9 +140,9 @@ function BMIinput(props) {
           />
         </FormControl>
       </div>
-      <div className="bmi-height-entry-field">
+      <div className="bmi-entry-field-div">
         <p>Age</p>
-        <FormControl>
+        <FormControl className={classes.temp}>
           <TextField
             required
             name="age"
@@ -148,7 +153,7 @@ function BMIinput(props) {
         </FormControl>
       </div>
 
-      <div className="bmi-height-entry-field">
+      <div className="bmi-entry-field-div" id="bmi-align-center">
         <p>Gender</p>
         <FormControl component="fieldset" className={classes.genderBtn}>
           <RadioGroup

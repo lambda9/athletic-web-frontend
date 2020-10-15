@@ -1,6 +1,16 @@
+.bmi-main-component {
+  width: 100%;
+
+  background-image: url("../../Images/bg1.jpg");
+  background-position: center;
+  background-size: cover;
+
+}
+
 .bmi-main-content {
   width: 100%;
   display: flex;
+
   justify-content: center;
 }
 
@@ -10,6 +20,9 @@
   /* background-color: cornsilk; */
 }
 
+.bmi-content-right-div h4 {
+  margin-bottom: 2.5rem;
+}
 .bmi-content-left-div table {
   width: 80%;
   margin: 2rem auto;
@@ -29,18 +42,25 @@ th {
   transition: all 0.1s linear;
 }
 
-.bmi-height-entry-field {
+.bmi-entry-field-div {
   display: flex;
   margin: 0 auto;
-  background-color: cornsilk;
+  /* background-color: cornsilk; */
   /* justify-content: space-between; */
   align-items: flex-end;
 }
 
-.bmi-height-entry-field p {
+#bmi-align-center {
+  /* background-color: cyan; */
+  align-items: center;
+}
+
+.bmi-entry-field-div > p:first-child {
   color: rgba(0, 0, 0, 0.54);
+  text-align: left;
   padding: 0;
-  width: fit-content;
+  min-width: 90px;
+  /* background-color: crimson; */
   font-size: 1rem;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-weight: 400;
@@ -74,6 +94,10 @@ th {
   .bmi-content-left-div {
     width: 95%;
     /* background-color: rgb(212, 149, 243); */
+  }
+
+  .bmi-entry-field-div > p:first-child {
+    min-width: 75px;
   }
 
   .bmi-content-left-div td {
