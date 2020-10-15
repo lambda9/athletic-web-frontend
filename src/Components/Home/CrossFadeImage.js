@@ -10,7 +10,14 @@ const imgCss = css`
 	width: 100%;
 `;
 
-const CrossFadeImage = ({ image, width, height, time, onImageSet }) => {
+const CrossFadeImage = ({
+	image,
+	width,
+	height,
+	time,
+	showOverlay,
+	className,
+}) => {
 	const [prevImage, setPrevImage] = useState(image);
 	const [opacity, setOpacity] = useState(1);
 	const [transition, setTransition] = useState(0);
@@ -27,12 +34,11 @@ const CrossFadeImage = ({ image, width, height, time, onImageSet }) => {
 
 	const onTransitionEnd = () => {
 		setPrevImage(image);
-		onImageSet();
 	};
 
 	return (
 		<div
-			className="crossfade-div"
+			className={className}
 			css={{
 				position: "relative",
 				width: `${width}`,
@@ -52,19 +58,21 @@ const CrossFadeImage = ({ image, width, height, time, onImageSet }) => {
 				]}
 				onTransitionEnd={onTransitionEnd}
 			/>
-			<img src={image} css={[imgCss, { zIndex: 0 }]} />
-			<div
-				css={{
-					position: "absolute",
-					width: "100%",
-					height: "100%",
-					top: "0%",
-					left: "0%",
-					zIndex: 2,
-					backgroundImage:
-						"linear-gradient(to right,#000000d4 10%,#0000004d ,#000000d1 90%)",
-				}}
-			></div>
+			<img src={image} css={[imgCss, { position: "initial", zIndex: 0 }]} />
+			{showOverlay ? (
+				<div
+					css={{
+						position: "absolute",
+						width: "100%",
+						height: "100%",
+						top: "0%",
+						left: "0%",
+						zIndex: 2,
+						backgroundImage:
+							"linear-gradient(to right,#000000a6 ,#00000096 ,#000000a6)",
+					}}
+				></div>
+			) : null}
 		</div>
 	);
 };

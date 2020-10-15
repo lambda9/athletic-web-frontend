@@ -1,8 +1,9 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/alt-text */
 import { css, jsx, keyframes } from "@emotion/core";
+import styled from "@emotion/styled";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import img1 from "../../Images/HomeBackdrop/im1.jpg";
 import img2 from "../../Images/HomeBackdrop/im2.jpg";
 import img3 from "../../Images/HomeBackdrop/im3.jpg";
@@ -14,30 +15,32 @@ const images = [img1, img2, img3, img4, img5];
 const headings = [
 	"be the change",
 	"never give up",
-	"the pain",
-	"join us",
-	"now",
+	"one more",
+	"no excuses",
+	"don't quit",
 ];
 
-const headingsStyle = css`
-	position: absolute;
-	z-index: 3;
-	left: 10%;
-	color: white;
-`;
+const subHeadings = [
+	"'Unless you puke, faint, or die, keep going.'",
+	"'Motivation is what gets you started. Habit is what keeps you going'",
+	"'I hate every minute of training. But i said, don’t quit. Suffer now and live the rest of your life as a champion.'",
+	"'Do today what others won’t so tomorrow you can do what others can’t.'",
+	"'Exercise is done against one’s wishes and maintained only because the alternative is worse.'",
+];
 
-const moveFromDownSub = keyframes`
+const moveUp = (height) => keyframes`
     0% {
-			bottom: 0%;
+			bottom: 10%;
 			opacity: 0;
 		}
 		5% {
 			opacity: 0%;
 		}
-		20%, 80% {
-			bottom: 70%;
+		25%, 75% {
+			bottom: ${height}%;
 			opacity: 1;
 		}
+
 		90% {
 			opacity: 0;
 		}
@@ -47,93 +50,51 @@ const moveFromDownSub = keyframes`
 		}
 `;
 
-const moveFromDown = keyframes`
-	0% {
-		bottom: 0%;
-		opacity: 0;
-	}
-	5% {
-			opacity: 0%;
-		}
-	20%, 80% {
-		bottom: 50%;
-		opacity: 1;
-	}
-	90% {
-		opacity: 0;
-	}
-	100% {
-		bottom: 100%;
-		opacity: 0;
-	}
-`;
-
-const moveToUp = keyframes`
-  from {
-		bottom: 50%;
-		opacity: 1;
-	}
-	to {
-		bottom 100%;
-		opacity: 0;
-	}
-`;
-
-const centerTextCss = css`
+const headingsBaseStyle = css`
 	position: absolute;
 	opacity: 0;
-	font-size: 5vw;
 	bottom: 0%;
+	z-index: 3;
 	left: 50%;
-	transform: translateX(-50%);
 	color: whitesmoke;
-	font-family: "Montserrat";
-	background-color: #ff7500a0;
-	padding: 0.5rem;
-	z-index: 5;
+	font-family: Montserrat;
 	text-transform: uppercase;
-	animation-name: ${moveFromDown};
-	animation-delay: 1s;
-	animation-duration: 6s;
 	animation-fill-mode: forwards;
 	animation-timing-function: ease-in-out;
 `;
 
-const subHeadCss = css`
-  position: absolute;
-	opacity: 0;
+const TopText = styled.h1`
+	${headingsBaseStyle};
 	font-size: 2vw;
-	bottom: 0%;
-	left: 50%;
 	transform: translateX(-50%);
-	color: whitesmoke;
-	font-family: "Montserrat";
-	padding: 0.5rem;
-	z-index: 5;
-	text-transform: uppercase;
-	animation-name: ${moveFromDownSub};
-	animation-duration: 6s;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease-in-out;n
+	padding: 0.5vw;
+	animation-name: ${moveUp(65)};
+	animation-duration: 5s;
 `;
 
-const FadingCarousel = () => {
+const BottomText = styled.h1`
+	${headingsBaseStyle};
+	font-size: 2vw;
+	transform: translateX(-50%);
+	padding: 0.5vw;
+	animation-name: ${moveUp(24)};
+	animation-delay: 500ms;
+	animation-duration: 5s;
+`;
+
+const CenterText = styled.h1`
+	${headingsBaseStyle};
+	font-size: 5vw;
+	transform: translate(-50%, 50%);
+	background-color: #ff7500e0;
+	padding: 0.5vw 1vw;
+	animation-name: ${moveUp(50)};
+	animation-delay: 250ms;
+	animation-duration: 5s;
+`;
+
+const FadingCarousel = ({ animationDelay }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const [key, setKey] = useState(0);
-
-	const onImageSet = () => {
-		console.log("image set");
-		setKey((key) => key + 1);
-	};
-
-	useEffect(() => {
-		const timeout = setTimeout(() => {
-			setCurrentIndex((currentIndex) => (currentIndex + 1) % images.length);
-		}, 6000);
-		return () => {
-			clearTimeout(timeout);
-		};
-	});
 
 	return (
 		<div
@@ -146,15 +107,19 @@ const FadingCarousel = () => {
 				width="100%"
 				height="55vw"
 				time={1000}
-				onImageSet={onImageSet}
+				showOverlay={true}
 			/>
-			<h3 key={currentIndex} css={subHeadCss}>
-				This is nothing special about it
-			</h3>
-			<h2 key={currentIndex + 1} css={centerTextCss}>
-				{headings[currentIndex]}
-			</h2>
-			{/* <h2 css={subHeadCss}>JOIN US</h2> */}
+			<TopText key={currentIndex}>{subHeadings[currentIndex]}</TopText>
+			<CenterText key={currentIndex + 1}>{headings[currentIndex]}</CenterText>
+			<BottomText
+				key={currentIndex + 2}
+				className={"button-primary"}
+				onAnimationEnd={() => {
+					setCurrentIndex((currentIndex) => (currentIndex + 1) % images.length);
+				}}
+			>
+				{"join us >>"}
+			</BottomText>
 		</div>
 	);
 };
