@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import "./Covid.css";
 function WhatToBringCard({img,desc}) {
     return (
         <div className="what-to-bring-card">

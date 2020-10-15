@@ -6,7 +6,7 @@ function OurProgramPage() {
     return (
         <div className="our-program">
             <Covid/>
-            <div className="our-program-backdrop">
+            {/*<div className="our-program-backdrop">
                 <div className="our-program-category-car">
                         
                 </div>
@@ -41,7 +41,7 @@ function OurProgramPage() {
                     </div>
                     </div>
                     </div>
-            </div>
+    </div>*/}
             <WhatToBring/>
         </div>
     )
