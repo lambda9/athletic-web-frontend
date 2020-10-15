@@ -1,7 +1,7 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/alt-text */
 import { useEffect, useState } from "react";
-import { ClassNames, css, jsx } from "@emotion/core";
+import { css, jsx } from "@emotion/core";
 
 const imgCss = css`
 	position: absolute;
@@ -18,7 +18,6 @@ const CrossFadeImage = ({
 	showOverlay,
 	className,
 }) => {
-	console.log("classnames", css);
 	const [prevImage, setPrevImage] = useState(image);
 	const [opacity, setOpacity] = useState(1);
 	const [transition, setTransition] = useState(0);
