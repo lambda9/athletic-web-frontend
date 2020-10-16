@@ -22,22 +22,22 @@ function PTPage() {
         <div className="pt-explore-btn">
           <Link
             to="/"
-            className="button-primary"
-            style={{ margin: "0 0.5rem" }}
+            className="pt-bbold-link"
+            style={{ margin: "0.5rem" }}
           >
             Weight loss
           </Link>
           <Link
             to="/"
-            className="button-primary"
-            style={{ margin: "0 0.5rem" }}
+            className="pt-bbold-link"
+            style={{ margin: "0.5rem" }}
           >
             About us
           </Link>
           <Link
             to="/"
-            className="button-primary"
-            style={{ margin: "0 0.5rem" }}
+            className="pt-bbold-link"
+            style={{ margin: "0.5rem" }}
           >
             gallery
           </Link>

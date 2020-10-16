@@ -9,7 +9,7 @@ function PTPageBanner() {
         <h1>personal training</h1>
         <div id="bottom-red-line"></div>
         <p>
-          {" "}
+      
           Built with science and delivered with passion, our trainers will
           develop a personalized training program that fits your body, lifestyle
           and budget.

@@ -9,7 +9,7 @@ function PTImgCard(props) {
       </div>
       <div
         className="pt-foryou-card"
-        style={{ border: "none", margin: "0 auto", maxWidth: "95%" }}
+        style={{ border: "none", margin: "0 auto", maxWidth: "96%" }}
       >
         <h3>{heading}</h3>
         <p>{description}</p>
