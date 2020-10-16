@@ -1,39 +1,95 @@
 .programs-image-overlay {
-	text-align: left;
-	bottom: 0%;
-	left: 0%;
-	width: 100%;
+  text-align: left;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
 }
 
 .programs-image-overlay * {
-	margin: 0.7rem;
-	text-transform: uppercase;
-	width: -moz-fit-content;
-	width: fit-content;
-	background-color: #04181d9e;
-	padding: 0.2rem 0.5rem;
-	color: var(--offWhite);
+  margin: 0.7rem;
+  text-transform: uppercase;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #04181d9e;
+  padding: 0.2rem 0.5rem;
+  color: var(--offWhite);
 }
 
 .pro-car-img-unactive {
-	transform: scale(0.9);
-	box-shadow: 0 0 11px 0px #313131;
+  transform: scale(0.9);
+  box-shadow: 0 0 11px 0px #313131;
 }
 
 .pro-car-img-active {
-	transform: scale(1.5);
-	box-shadow: 0 0 11px 0px #313131;
+  transform: scale(1.5);
+  box-shadow: 0 0 11px 0px #313131;
 }
 
+.pro-ex-card-div {
+  padding: 2rem;
+  margin: 1rem auto;
+  background-color: rgb(235, 235, 235);
+  width: 80%;
+}
+
+.pro-ex-upper-div {
+  width: 100%;
+  /* background-color: darkorange; */
+  margin: auto;
+  /* padding: 2rem 0rem 2rem 2rem; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.pro-ex-left-div {
+  width: 50%;
+  display: flex;
+  /* margin: 1rem auto; */
+  /* background-color: darkred; */
+}
+
+.pro-ex-left-div img {
+  width: 100%;
+  margin: auto 0;
+}
+.pro-ex-right-div {
+  width: 46%;
+  text-align: start;
+  /* margin: auto; */
+  /* background-color: whitesmoke; */
+}
+
+.pro-ex-right-div li {
+	font-size: 14px;
+  margin-bottom: 1rem;
+}
+.pro-ex-right-div h1 {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.pro-ex-below-div {
+  width: 100%;
+  /* background-color: thistle; */
+  /* padding: 1rem 2rem; */
+  margin: auto;
+  margin-top: 2rem;
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.pro-ex-below-div img {
+  width: 20%;
+  margin: 0rem;
+  margin-right: 2rem;
+}
 
 @media screen and (max-width: 900px) {
-	
-	.programs-image-overlay * {
-		margin: 0.5rem;
-	}
+  .programs-image-overlay * {
+    margin: 0.5rem;
+  }
 
-	.programs-image-overlay > h3 {
-		font-size: 0.7rem;
-	}
-
+  .programs-image-overlay > h3 {
+    font-size: 0.7rem;
+  }
 }
