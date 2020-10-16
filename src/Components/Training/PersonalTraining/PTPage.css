@@ -73,17 +73,18 @@
 }
 
 .pt-foryou {
+  margin: 4rem auto;
   width: 100%;
-  background-color: antiquewhite;
 }
 
-.pt-foryou > div:first-child {
+.pt-foryou > div:first-child,
+.pt-got-covered-comp > div:first-child {
   font-size: 28px;
   text-transform: capitalize;
 }
 
 .pt-foryou-card-div,
-.pt-img-card-main-container {
+.pt-img-card-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -121,4 +122,23 @@ p {
 
 .pt-img-card-img-div img {
   width: 100%;
+}
+
+.pt-bbold-main-comp {
+    text-align: left;
+    margin: 2rem auto;
+}
+
+.pt-bbold-main-comp div {
+    font-size: 72px;
+    padding: 0 0.5rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    width: fit-content;
+    margin-left: 4rem;
+}
+#black-white {
+    color: white;
+    
+    background-color: black;
 }
