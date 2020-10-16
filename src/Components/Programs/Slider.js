@@ -1,7 +1,7 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/alt-text */
 import { css, jsx } from "@emotion/core";
-import Slide from "./Slide";
+import ProgramSlide from "./ProgramSlide";
 
 const Slider = ({
 	images,
@@ -11,11 +11,6 @@ const Slider = ({
 	translate,
 	onTransitionEnd,
 }) => {
-	const style = {
-		transition: transition,
-		transform: `translateX(${translate}vw)`,
-	};
-
 	return (
 		<div
 			css={css`
@@ -34,7 +29,7 @@ const Slider = ({
 				}
 				@media (max-width: 900px) {
 					& > div {
-						padding: 0.5vw;
+						padding: 5vw;
 					}
 				}
 			`}
@@ -42,13 +37,16 @@ const Slider = ({
 		>
 			{images.map((item, index) => {
 				return (
-					<Slide
+					<div
 						key={item.id}
-						item={item}
-						width={`${width}vw`}
-						transition={transition}
-						active={index === activeIndex}
-					/>
+						css={css`
+							width: ${width}vw;
+							transition: transform ease-in-out 0.5s;
+							transform: scale(${index === activeIndex ? "1.5" : "0.9"});
+						`}
+					>
+						<ProgramSlide css={{ width: "100%" }} {...item} />
+					</div>
 				);
 			})}
 		</div>
