@@ -4,7 +4,7 @@ import ptImg from "../../../Images/im11.jpg";
 function PTGotCovered() {
   return (
     <div className="pt-got-covered-comp">
-      <div>we got you covered</div> <div id="bottom-red-line" />
+      <div>we got you covered</div> <div id="bottom-blue-line" />
       <div className="pt-img-card-container">
         <PTImgCard
           ptImg={ptImg}

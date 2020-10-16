@@ -6,7 +6,7 @@ function PTPhilosophy() {
       <div id="linear-white-grad-rtl" className='pt-philosophy-content'>
         <div className="pt-philosophy-text">
           <h1>our training philosophy</h1>
-          <div id="bottom-red-line"></div>
+          <div id="bottom-blue-line"></div>
           <p>
             When you understand how the body works, nourish it with the right
             food and exercise, you will see better results – and you will live a

@@ -5,7 +5,7 @@ function PTForYou() {
   return (
     <div className="pt-foryou">
       <div>training plan for you</div>
-      <div id="bottom-blue-line" />
+      <div id="bottom-red-line" />
       <div className="pt-foryou-card-div">
         <PTForYouCard
           heading={"Areas of Focus"}

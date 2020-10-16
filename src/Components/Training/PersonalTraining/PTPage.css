@@ -125,20 +125,60 @@ p {
 }
 
 .pt-bbold-main-comp {
-    text-align: left;
-    margin: 2rem auto;
+  width: 90%;
+  text-align: left;
+  margin: 2rem auto;
+  margin-right: 0;
 }
 
 .pt-bbold-main-comp div {
-    font-size: 72px;
-    padding: 0 0.5rem;
-    text-transform: uppercase;
-    font-weight: bolder;
-    width: fit-content;
-    margin-left: 4rem;
+  font-size: 72px;
+  padding: 0 0.2rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  font-weight: bolder;
+  width: fit-content;
 }
 #black-white {
-    color: white;
-    
-    background-color: black;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 1rem;
+  font-size: 42px;
+  background-color: black;
+}
+
+.pt-bbold-link, .pt-still-q a {
+  font-size: 32px;
+  margin-top: 2rem;
+  color: var(--primaryColor);
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.pt-bbold-link:hover {
+  color: var(--primaryColor);
+  text-decoration: none;
+}
+
+.pt-explore {
+  padding: 3rem 0;
+  margin: 3rem auto;
+  text-transform: capitalize;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+}
+
+.pt-explore-btn {
+  display: flex;
+  padding: 1rem 0 0.3rem;
+  justify-content: center;
+}
+
+.pt-still-q {
+  margin-bottom: 2rem;
+}
+
+.pt-still-q > div {
+  font-size: 32px;
 }
