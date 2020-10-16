@@ -23,21 +23,21 @@ function PTPage() {
           <Link
             to="/"
             className="pt-bbold-link"
-            style={{ margin: "0.5rem" }}
+            style={{ margin: "1rem" }}
           >
             Weight loss
           </Link>
           <Link
             to="/"
             className="pt-bbold-link"
-            style={{ margin: "0.5rem" }}
+            style={{ margin: "1rem" }}
           >
             About us
           </Link>
           <Link
             to="/"
             className="pt-bbold-link"
-            style={{ margin: "0.5rem" }}
+            style={{ margin: "1rem" }}
           >
             gallery
           </Link>

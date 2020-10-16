@@ -58,7 +58,7 @@
 }
 
 .pt-philosophy-text h1 {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 #linear-white-grad-rtl {
@@ -177,7 +177,7 @@ p {
 }
 
 .pt-still-q {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .pt-still-q > div {
@@ -191,7 +191,7 @@ p {
 
   .pt-banner > div:first-child {
     margin: auto;
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .pt-banner-card {
@@ -285,10 +285,19 @@ p {
     margin: 2rem auto;
   }
 
+  .pt-explore h2 {
+    font-size: 24px;
+  }
+
   .pt-explore-btn {
     display: flex;
     flex-wrap: wrap;
-    padding: 1rem 0 0.3rem;
+    padding: 0;
     justify-content: center;
   }
+
+  .pt-still-q > div {
+    font-size: 20px;
+  }
+
 }
