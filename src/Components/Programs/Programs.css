@@ -34,9 +34,7 @@
 
 .pro-ex-upper-div {
   width: 100%;
-  /* background-color: darkorange; */
   margin: auto;
-  /* padding: 2rem 0rem 2rem 2rem; */
   display: flex;
   justify-content: space-between;
 }
@@ -44,8 +42,6 @@
 .pro-ex-left-div {
   width: 50%;
   display: flex;
-  /* margin: 1rem auto; */
-  /* background-color: darkred; */
 }
 
 .pro-ex-left-div img {
@@ -55,12 +51,16 @@
 .pro-ex-right-div {
   width: 46%;
   text-align: start;
-  /* margin: auto; */
-  /* background-color: whitesmoke; */
+}
+
+.pro-ex-right-div ul {
+  list-style-position: inside;
+  list-style-type: none;
+  text-align: justify;
 }
 
 .pro-ex-right-div li {
-	font-size: 14px;
+  font-size: 14px;
   margin-bottom: 1rem;
 }
 .pro-ex-right-div h1 {
@@ -70,12 +70,9 @@
 
 .pro-ex-below-div {
   width: 100%;
-  /* background-color: thistle; */
-  /* padding: 1rem 2rem; */
   margin: auto;
   margin-top: 2rem;
   display: flex;
-  /* justify-content: space-between; */
 }
 
 .pro-ex-below-div img {
@@ -91,5 +88,78 @@
 
   .programs-image-overlay > h3 {
     font-size: 0.7rem;
+  }
+
+  .pro-ex-card-div {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .pro-ex-upper-div {
+    flex-direction: column;
+  }
+
+  .pro-ex-left-div {
+    width: 60%;
+    margin: auto;
+  }
+  
+  .pro-ex-right-div {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .pro-ex-below-div {
+    margin-top: 0;
+  }
+
+  .pro-ex-below-div img {
+    width: 30%;
+  }
+
+  .pro-ex-right-div h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .pro-ex-right-div li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .pro-ex-card-div {
+    width: 95%;
+    padding: 0.5rem;
+  }
+
+  .pro-ex-left-div {
+    width: 60%;
+    margin: auto;
+  }
+  .pro-ex-right-div {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .pro-ex-below-div {
+    margin-top: 0;
+  }
+
+  .pro-ex-below-div img {
+    width: 30%;
+  }
+
+  .pro-ex-right-div h1 {
+	margin-bottom: 0.3rem;
+	font-size: 22px;
+  }
+
+  .pro-ex-right-div li {
+	margin-bottom: 0.5rem;
+	font-size: 10px;
+  }
+
+  .pro-ex-below-div img {
+	  margin: auto;
   }
 }
