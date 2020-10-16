@@ -21,9 +21,9 @@ function Home() {
 			<OurPlans />
 			<WhyJoinUs />
 			<HomePageEnquiry />
+			<BMI />
 			<HomePageFAQ />
 			<HomeUserReviews />
-			<BMI />
 		</div>
 	);
 }

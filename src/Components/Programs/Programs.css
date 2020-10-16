@@ -1,37 +1,8 @@
-.pro-car-img-div {
-	display: flex;
-	align-items: center;
-	width: fit-content;
-	height: 90%;
-	/* background-color: linen; */
-	/* transition: transform ease-in-out 0.5s; */
-}
-
-.pro-car-img-div > div {
-	padding: 3vw;
-	z-index: 0;
-}
-
-.pro-car-img-div img {
-	width: 100%;
-}
-
-/* .slide-container > img {
-	transition: transform ease-in-out 0.5s;
-} */
-/* .pro-car-img-div img{
-  width: 15vw;
-  height: auto;
-  margin: auto 50px;
-  transition: var(--mainTransition);
-} */
-
 .programs-image-overlay {
 	text-align: left;
 	bottom: 0%;
 	left: 0%;
 	width: 100%;
-	/* background-color: #c13434e0; */
 }
 
 .programs-image-overlay * {
@@ -39,18 +10,14 @@
 	text-transform: uppercase;
 	width: -moz-fit-content;
 	width: fit-content;
-	/* background-color: #082828cc; */
 	background-color: #04181d9e;
 	padding: 0.2rem 0.5rem;
-	/* font-family: "Spartan"; */
-	font-family: "Montserrat";
 	color: var(--offWhite);
 }
 
 .pro-car-img-unactive {
 	transform: scale(0.9);
 	box-shadow: 0 0 11px 0px #313131;
-	/* filter: blur(0.5em); */
 }
 
 .pro-car-img-active {
@@ -58,57 +25,9 @@
 	box-shadow: 0 0 11px 0px #313131;
 }
 
-.pro-car-nextBtn,
-.pro-car-prevBtn {
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	font-size: 32px;
-	background-color: lightyellow;
-	border-radius: 50%;
-	z-index: 3;
-}
-
-.pro-car-nextBtn {
-	right: 10px;
-}
-
-.pro-car-prevBtn {
-	left: 10px;
-}
-
-/* .pro-car-left-img {
-  margin: auto;
-  width: 20%;
-}
-.pro-car-main-img {
-  margin: auto;
-  width: 50%;
-}
-
-.pro-car-right-img {
-  width: 20%;
-  margin: auto;
-}
-
-.pro-car-left-img img,
-.pro-car-main-img img,
-.pro-car-right-img img {
-  margin: auto;
-  width: 100%;
-  height: auto;
-} */
 
 @media screen and (max-width: 900px) {
-	.pro-car-main-div {
-		width: 99vw;
-		height: 55vw;
-	}
-
-	.pro-car-img-div > div {
-		padding: 0 6vw;
-	}
-
+	
 	.programs-image-overlay * {
 		margin: 0.5rem;
 	}
@@ -117,7 +36,4 @@
 		font-size: 0.7rem;
 	}
 
-	.programs-image-overlay > p {
-		font-size: 0.2rem;
-	}
 }
