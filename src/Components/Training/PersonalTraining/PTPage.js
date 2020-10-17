@@ -8,6 +8,13 @@ import PTGotCovered from "./PTGotCovered";
 import BeBolder from "./BeBolder";
 import { Link } from "react-router-dom";
 import MiniTitle from "../../Title/MiniTitle";
+import ExploreMore from "../../ExploreMore/ExploreMore";
+
+const exploreLinks = [
+  ['/programs', "Weight Loss"],
+  ['/gallery', "Gallery"],
+  ['/aboutus', "About Us"]
+]
 
 function PTPage() {
   return (
@@ -17,35 +24,12 @@ function PTPage() {
       <PTForYou />
       <PTGotCovered />
       <BeBolder />
-      <div className="pt-explore">
-        <MiniTitle title={"explore more"}></MiniTitle>
-        <div className="pt-explore-btn">
-          <Link
-            to="/"
-            className="pt-bbold-link"
-            style={{ margin: "0.3rem 2rem" }}
-          >
-            Weight loss
-          </Link>
-          <Link
-            to="/"
-            className="pt-bbold-link"
-            style={{ margin: "0.3rem 2rem" }}
-          >
-            About us
-          </Link>
-          <Link
-            to="/"
-            className="pt-bbold-link"
-            style={{ margin: "0.3rem 2rem" }}
-          >
-            gallery
-          </Link>
-        </div>
-      </div>
+      <ExploreMore linksArr={exploreLinks} />
       <div className="pt-still-q">
         <div>Still have question? We can help.</div>
-        <Link to='/contactus' style={{fontSize: "18px"}} >Request Callback</Link>
+        <Link to="/contactus" style={{ fontSize: "18px" }}>
+          Request Callback
+        </Link>
       </div>
     </div>
   );
