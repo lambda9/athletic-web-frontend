@@ -3,8 +3,8 @@ import { css, jsx } from "@emotion/core";
 import area from "../../../Images/HomeWhatWeProvide/area.jpeg";
 import cooler from "../../../Images/HomeWhatWeProvide/cooler.jpeg";
 import sound from "../../../Images/HomeWhatWeProvide/sound.jpeg";
-import left from "../../../Images/HomeWhatWeProvide/left-arrow.png";
-import right from "../../../Images/HomeWhatWeProvide/right-arrow.png";
+// import left from "../../../Images/HomeWhatWeProvide/left-arrow.png";
+// import right from "../../../Images/HomeWhatWeProvide/right-arrow.png";
 import styled from "@emotion/styled";
 import SvgArea from "../Icons/SvgArea";
 import SvgAirConditioning from "../Icons/SvgAirConditioning";
@@ -19,11 +19,11 @@ export const MainContainer = styled.div`
 `;
 
 export const cardStyle = css`
-	margin-bottom: 1rem;
 	width: 30%;
 	box-shadow: 5px 5px 15px 0px #00000094;
 	@media screen and (max-width: 900px) {
 		width: 80vw;
+		margin-right: 10vw;
 	}
 `;
 
@@ -54,6 +54,7 @@ const reducer = (state, dispatch) => {
 	if (dispatch.type === "touchstart") {
 		return {
 			...state,
+			startTime: new Date().getMilliseconds(),
 			start: dispatch.x,
 			transition: 0,
 		};
@@ -65,23 +66,33 @@ const reducer = (state, dispatch) => {
 			transition: 0,
 		};
 	} else if (dispatch.type === "touchend") {
-		// console.log("end", dispatch);
-		if (state.translate < 0) {
-			if (Math.abs(state.translate) > dispatch.width / 2) {
+		let endTime = new Date().getMilliseconds();
+		if (state.translate < 0 && state.fixTranslate > -2 * dispatch.width) {
+			if (
+				(Math.abs(state.translate) > 10 && endTime - state.startTime < 250) ||
+				Math.abs(state.translate) > dispatch.width / 3
+			) {
 				return {
+					...state,
 					fixTranslate: state.fixTranslate - dispatch.width,
 					translate: 0,
 					start: 0,
-					transition: 0.2,
+					transition: 0.1,
+					startTime: 0,
 				};
 			}
-		} else {
-			if (Math.abs(state.translate) > dispatch.width / 2) {
+		} else if (state.translate >= 0 && state.fixTranslate < 0) {
+			if (
+				(Math.abs(state.translate) > 10 && endTime - state.startTime < 250) ||
+				Math.abs(state.translate) > dispatch.width / 3
+			) {
 				return {
+					...state,
 					fixTranslate: state.fixTranslate + dispatch.width,
 					translate: 0,
 					start: 0,
-					transition: 0.2,
+					transition: 0.1,
+					startTime: 0,
 				};
 			}
 		}
@@ -89,7 +100,7 @@ const reducer = (state, dispatch) => {
 			...state,
 			start: 0,
 			translate: 0,
-			transition: 0.2,
+			transition: 0.1,
 		};
 	} else {
 		throw new Error();
@@ -98,6 +109,7 @@ const reducer = (state, dispatch) => {
 
 const defaultState = {
 	start: 0,
+	startTime: 0,
 	translate: 0,
 	fixTranslate: 0,
 	transition: 0,
@@ -136,10 +148,13 @@ const Features = () => {
 		mainRef.current.addEventListener(
 			"touchend",
 			(e) => {
+				let margin = parseFloat(
+					window.getComputedStyle(divRef.current).marginRight
+				);
 				dispatch({
 					type: "touchend",
 					x: e.changedTouches[0].screenX,
-					width: divRef.current.clientWidth,
+					width: divRef.current.clientWidth + margin,
 				});
 			},
 			{ passive: true }
@@ -156,7 +171,8 @@ const Features = () => {
 					position: relative;
 					overflow: hidden;
 					margin: auto;
-					width: 80vw;
+					width: 100%;
+					padding: 2rem 10vw;
 					label: slider;
 				`}
 			>
@@ -192,7 +208,7 @@ const Features = () => {
 						<SvgSound css={svgStyle} />
 					</FeatureCard>
 				</FeaturesDiv>
-				<img
+				{/* <img
 					src={left}
 					css={[
 						arrowStyle,
@@ -211,7 +227,7 @@ const Features = () => {
 						`,
 					]}
 					alt="right-arrow"
-				/>
+				/> */}
 			</div>
 		</MainContainer>
 	);

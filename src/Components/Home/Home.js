@@ -1,5 +1,5 @@
 import React from "react";
-import HeroSection from "../HeroSection/HeroSection";
+// import HeroSection from "../HeroSection/HeroSection";
 import HomePageEnquiry from "./HomePageEnquiry";
 import HomePageFAQ from "../FAQ/HomePageFAQ";
 import WhyJoinUs from "../WhyJoinUs/WhyJoinUs";
@@ -10,7 +10,7 @@ import BMI from "../BMI/BMI";
 import Features from "./WhatWeProvide/Features";
 import Results from "./WhatWeProvide/Results";
 import Programs from "./Programs";
-import Equipments from "./WhatWeProvide/Equipments";
+// import Equipments from "./WhatWeProvide/Equipments";
 
 function Home() {
 	return (
