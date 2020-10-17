@@ -34,3 +34,13 @@
   font-size: 28px;
   text-transform: capitalize;
 }
+
+.wtl-slogan-div {
+    /* background-color: cornflowerblue; */
+}
+
+.wtl-slogan-div > div:first-child {
+    width: 60%;
+    margin: auto;
+    font-size: 20px;
+}

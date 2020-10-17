@@ -4,16 +4,27 @@ import "./WeightLoss.css";
 import PTImgCard from "../../Training/PersonalTraining/PTImgCard";
 import img from "../../../Images/im3.jpg";
 import wltImg from "../../../Images/wtl2.png";
-import nutrition from '../../../Images/nutrition1.jpg'
+import nutrition from "../../../Images/nutrition1.jpg";
+import { Link } from "react-router-dom";
 
 function WeightLoss() {
   return (
     <div className="wtl-main-comp">
-      <div  className='wtl-head-div' style={{width: "60%", margin:"3rem auto 1rem"}}>
-        <div >lose weight, live healthy</div>
+      <div
+        className="wtl-head-div"
+        style={{ width: "60%", margin: "4rem auto 1rem" }}
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <div>lose weight, live healthy</div>
         <div id="bottom-red-line" />
       </div>
-      <div className="pt-foryou-card-div" style={{marginBottom: "3rem"}}>
+      <div
+        className="pt-foryou-card-div"
+        style={{ marginBottom: "3rem" }}
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <PTForYouCard
           heading={"current situation"}
           description={
@@ -35,10 +46,10 @@ function WeightLoss() {
       </div>
 
       <div className="wtl-head-img-div">
-        <div className="wtl-img-div" style={{margin: "none"}}>
+        <div className="wtl-img-div" style={{ margin: "none" }}>
           <img src={wltImg}></img>
         </div>
-        <div className='wtl-head-div'>
+        <div className="wtl-head-div">
           <div>weight loss programs</div>
           <div id="bottom-red-line"></div>
           <span>
@@ -48,15 +59,20 @@ function WeightLoss() {
           </span>
         </div>
       </div>
-      <div className="pt-foryou-card-div" style={{margin: "3rem auto"}}>
+      <div
+        className="pt-foryou-card-div"
+        style={{ margin: "3rem auto" }}
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <PTImgCard
           ptImg={nutrition}
           heading={"nutrition coaching"}
           description={
             "Did you know 80% of results come from nutrition? Work with our Registered Dietitians and get a customized plan, supplement guides, recipes and more"
           }
-          styleProp={{width:"340px", minHeight: "450px"}}
-          styleImgDiv={{maxHeight:"250px"}}
+          styleProp={{ width: "340px", minHeight: "450px" }}
+          styleImgDiv={{ maxHeight: "250px" }}
         />
         <PTImgCard
           ptImg={img}
@@ -64,8 +80,8 @@ function WeightLoss() {
           description={
             "More than a trainer, they’ll be your coach, personal cheerleader and friend. Let them bring out the best in you, tap into your strength, help you gain confidence and see results."
           }
-          styleProp={{width:"340px", minHeight: "450px"}}
-          styleImgDiv={{maxHeight:"250px"}}
+          styleProp={{ width: "340px", minHeight: "450px" }}
+          styleImgDiv={{ maxHeight: "250px" }}
         />
         <PTImgCard
           ptImg={img}
@@ -73,14 +89,28 @@ function WeightLoss() {
           description={
             "Numbers don’t lie. From metabolism to glucose levels, our assessments and tests can reveal crucial insights for your weight loss plan."
           }
-          styleProp={{width:"340px", minHeight: "450px"}}
-          styleImgDiv={{maxHeight:"250px"}}
+          styleProp={{ width: "340px", minHeight: "450px" }}
+          styleImgDiv={{ maxHeight: "250px" }}
         />
       </div>
 
-      <div>
-        Our equipments, training processes and your dedication is more than
-        enough to make you fit and in good shape
+      <div
+        className="wtl-slogan-div"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+        <div>
+          Our equipments, training processes and your dedication is more than
+          enough to make you fit and in good shape. Why wait?
+          <Link
+            to="/membership"
+            className="pt-bbold-link"
+            style={{ fontSize: "20px" }}
+          >
+            {" "}
+            Let's get started.
+          </Link>
+        </div>
       </div>
     </div>
   );
