@@ -10,7 +10,8 @@ import SvgArea from "../Icons/SvgArea";
 import SvgAirConditioning from "../Icons/SvgAirConditioning";
 import SvgSound from "../Icons/SvgSound";
 import FeatureCard from "./FeatureCard";
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useReducer, useRef } from "react";
+import ActiveBars from "./ActiveBars";
 
 export const MainContainer = styled.div`
 	width: 100%;
@@ -59,7 +60,6 @@ const reducer = (state, dispatch) => {
 			transition: 0,
 		};
 	} else if (dispatch.type === "touchmove") {
-		// console.log("move", dispatch);
 		return {
 			...state,
 			translate: dispatch.x - state.start,
@@ -67,40 +67,32 @@ const reducer = (state, dispatch) => {
 		};
 	} else if (dispatch.type === "touchend") {
 		let endTime = new Date().getMilliseconds();
+		let fixTranslate = state.fixTranslate;
+		let nextIndex = state.index;
 		if (state.translate < 0 && state.fixTranslate > -2 * dispatch.width) {
 			if (
 				(Math.abs(state.translate) > 10 && endTime - state.startTime < 250) ||
 				Math.abs(state.translate) > dispatch.width / 3
 			) {
-				return {
-					...state,
-					fixTranslate: state.fixTranslate - dispatch.width,
-					translate: 0,
-					start: 0,
-					transition: 0.1,
-					startTime: 0,
-				};
+				fixTranslate = state.fixTranslate - dispatch.width;
+				nextIndex = state.index + 1;
 			}
 		} else if (state.translate >= 0 && state.fixTranslate < 0) {
 			if (
 				(Math.abs(state.translate) > 10 && endTime - state.startTime < 250) ||
 				Math.abs(state.translate) > dispatch.width / 3
 			) {
-				return {
-					...state,
-					fixTranslate: state.fixTranslate + dispatch.width,
-					translate: 0,
-					start: 0,
-					transition: 0.1,
-					startTime: 0,
-				};
+				fixTranslate = state.fixTranslate + dispatch.width;
+				nextIndex = state.index - 1;
 			}
 		}
 		return {
 			...state,
+			fixTranslate: fixTranslate,
 			start: 0,
 			translate: 0,
 			transition: 0.1,
+			index: nextIndex,
 		};
 	} else {
 		throw new Error();
@@ -113,52 +105,52 @@ const defaultState = {
 	translate: 0,
 	fixTranslate: 0,
 	transition: 0,
+	index: 0,
 };
 
 const Features = () => {
-	// const [start, setStart] = useState(0);
-	// const [translate, setTranslate] = useState(0);
-	// const [fixTranslate, setFixTranslate] = useState(0);
 	const [state, dispatch] = useReducer(reducer, defaultState);
 	const divRef = useRef(null);
 	const mainRef = useRef(null);
 
-	// console.log("start", start);
-	// console.log("translate", translate);
-	// console.log("fix", fixTranslate);
+	const handleTouchStart = (e) => {
+		dispatch({ type: "touchstart", x: e.changedTouches[0].screenX });
+	};
+
+	const handleTouchMove = (e) => {
+		dispatch({
+			type: "touchmove",
+			x: e.changedTouches[0].screenX,
+		});
+	};
+
+	const handleTouchEnd = (e) => {
+		let margin = parseFloat(
+			window.getComputedStyle(divRef.current).marginRight
+		);
+		dispatch({
+			type: "touchend",
+			x: e.changedTouches[0].screenX,
+			width: divRef.current.clientWidth + margin,
+		});
+	};
 
 	useEffect(() => {
-		mainRef.current.addEventListener(
-			"touchstart",
-			(e) => {
-				dispatch({ type: "touchstart", x: e.changedTouches[0].screenX });
-			},
-			{ passive: true }
-		);
-		mainRef.current.addEventListener(
-			"touchmove",
-			(e) => {
-				dispatch({
-					type: "touchmove",
-					x: e.changedTouches[0].screenX,
-				});
-			},
-			{ passive: true }
-		);
-		mainRef.current.addEventListener(
-			"touchend",
-			(e) => {
-				let margin = parseFloat(
-					window.getComputedStyle(divRef.current).marginRight
-				);
-				dispatch({
-					type: "touchend",
-					x: e.changedTouches[0].screenX,
-					width: divRef.current.clientWidth + margin,
-				});
-			},
-			{ passive: true }
-		);
+		mainRef.current.addEventListener("touchstart", handleTouchStart, {
+			passive: true,
+		});
+		mainRef.current.addEventListener("touchmove", handleTouchMove, {
+			passive: true,
+		});
+		mainRef.current.addEventListener("touchend", handleTouchEnd, {
+			passive: true,
+		});
+		let sliderRef = mainRef.current;
+		return () => {
+			sliderRef.removeEventListener("touchstart", handleTouchStart);
+			sliderRef.removeEventListener("touchmove", handleTouchMove);
+			sliderRef.removeEventListener("touchend", handleTouchEnd);
+		};
 	}, []);
 
 	return (
@@ -177,9 +169,11 @@ const Features = () => {
 				`}
 			>
 				<FeaturesDiv
-					style={{
+					css={{
 						transition: `transform ease-in-out ${state.transition}s`,
-						transform: `translateX(${state.fixTranslate + state.translate}px)`,
+						transform: `translate3D(${
+							state.fixTranslate + state.translate
+						}px, 0, 0)`,
 					}}
 				>
 					<FeatureCard
@@ -208,6 +202,16 @@ const Features = () => {
 						<SvgSound css={svgStyle} />
 					</FeatureCard>
 				</FeaturesDiv>
+				<ActiveBars
+					css={css`
+						display: none;
+						@media screen and (max-width: 550px) {
+							display: flex;
+						}
+					`}
+					count={3}
+					activeIndex={state.index}
+				/>
 				{/* <img
 					src={left}
 					css={[
