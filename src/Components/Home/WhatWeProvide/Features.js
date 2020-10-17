@@ -10,7 +10,7 @@ import SvgArea from "../Icons/SvgArea";
 import SvgAirConditioning from "../Icons/SvgAirConditioning";
 import SvgSound from "../Icons/SvgSound";
 import FeatureCard from "./FeatureCard";
-import { useRef, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 
 export const MainContainer = styled.div`
 	width: 100%;
@@ -50,60 +50,121 @@ const arrowStyle = css`
 	transform: translateY(-50%);
 `;
 
+const reducer = (state, dispatch) => {
+	if (dispatch.type === "touchstart") {
+		return {
+			...state,
+			start: dispatch.x,
+			transition: 0,
+		};
+	} else if (dispatch.type === "touchmove") {
+		// console.log("move", dispatch);
+		return {
+			...state,
+			translate: dispatch.x - state.start,
+			transition: 0,
+		};
+	} else if (dispatch.type === "touchend") {
+		// console.log("end", dispatch);
+		if (state.translate < 0) {
+			if (Math.abs(state.translate) > dispatch.width / 2) {
+				return {
+					fixTranslate: state.fixTranslate - dispatch.width,
+					translate: 0,
+					start: 0,
+					transition: 0.2,
+				};
+			}
+		} else {
+			if (Math.abs(state.translate) > dispatch.width / 2) {
+				return {
+					fixTranslate: state.fixTranslate + dispatch.width,
+					translate: 0,
+					start: 0,
+					transition: 0.2,
+				};
+			}
+		}
+		return {
+			...state,
+			start: 0,
+			translate: 0,
+			transition: 0.2,
+		};
+	} else {
+		throw new Error();
+	}
+};
+
+const defaultState = {
+	start: 0,
+	translate: 0,
+	fixTranslate: 0,
+	transition: 0,
+};
+
 const Features = () => {
-	const [start, setStart] = useState(0);
-	const [translate, setTranslate] = useState(0);
-	const [fixTranslate, setFixTranslate] = useState(0);
+	// const [start, setStart] = useState(0);
+	// const [translate, setTranslate] = useState(0);
+	// const [fixTranslate, setFixTranslate] = useState(0);
+	const [state, dispatch] = useReducer(reducer, defaultState);
 	const divRef = useRef(null);
+	const mainRef = useRef(null);
 
 	// console.log("start", start);
 	// console.log("translate", translate);
 	// console.log("fix", fixTranslate);
+
+	useEffect(() => {
+		mainRef.current.addEventListener(
+			"touchstart",
+			(e) => {
+				dispatch({ type: "touchstart", x: e.changedTouches[0].screenX });
+			},
+			{ passive: true }
+		);
+		mainRef.current.addEventListener(
+			"touchmove",
+			(e) => {
+				dispatch({
+					type: "touchmove",
+					x: e.changedTouches[0].screenX,
+				});
+			},
+			{ passive: true }
+		);
+		mainRef.current.addEventListener(
+			"touchend",
+			(e) => {
+				dispatch({
+					type: "touchend",
+					x: e.changedTouches[0].screenX,
+					width: divRef.current.clientWidth,
+				});
+			},
+			{ passive: true }
+		);
+	}, []);
 
 	return (
 		<MainContainer>
 			<h1>Building</h1>
 			<p>Our space let you feel comfortable and airy. Just do it</p>
 			<div
+				ref={mainRef}
 				css={css`
 					position: relative;
 					overflow: hidden;
-					padding: 2rem;
+					margin: auto;
 					width: 80vw;
 					label: slider;
 				`}
-				onTouchStart={(e) => {
-					console.log("touch", divRef.current.clientWidth);
-					console.log("toch start", setStart(e.changedTouches[0].screenX));
-				}}
-				onTouchEnd={() => {
-					if (translate < 0) {
-						if (Math.abs(translate) > divRef.current.clientWidth / 3) {
-							setFixTranslate(
-								(fixTranslate) => fixTranslate - divRef.current.clientWidth
-							);
-						}
-					} else {
-						if (Math.abs(translate) > divRef.current.clientWidth / 3) {
-							setFixTranslate(
-								(fixTranslate) => fixTranslate + divRef.current.clientWidth
-							);
-						}
-					}
-					setTranslate(0);
-					setStart(0);
-					// console.log("touch end", setStart(0));
-				}}
-				onTouchMove={(e) => {
-					setTranslate(e.changedTouches[0].screenX - start);
-					// console.log("touch ", e.changedTouches[0].screenX);
-				}}
 			>
 				<FeaturesDiv
-					css={css`
-						/* transition: transform ease-in-out 0.1s; */
-						transform: translateX(${fixTranslate + translate}px);
-					`}
+					style={{
+						transition: `transform ease-in-out ${state.transition}s`,
+						transform: `translateX(${state.fixTranslate + state.translate}px)`,
+					}}
 				>
 					<FeatureCard
 						refs={divRef}
