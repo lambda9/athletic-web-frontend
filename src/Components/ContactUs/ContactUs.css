@@ -6,33 +6,33 @@
 
 .cont-add-comp-div {
   text-align: left;
-  color: grey;
-  margin: 1rem auto;
+  margin: 1rem;
 }
 
 .cont-add-comp-div h1 {
-  font-size: 26px;
+  font-size: 32px;
   color: black;
 }
 
 .cont-add-comp-div span {
-  margin-top: 1rem;
   display: flex;
-  font-size: 20px;
+  margin-top: 1.5rem;
+  font-size: 24px;
 }
 .add-comp-icon {
-  margin-top: 0.15rem;
-  font-size: 17px;
+  margin-top: 0.4rem;
+  font-size: 20px;
 }
 
 .add-comp-rest-add {
-  margin-left: 0.4rem;
-  font-size: 16px;
+  margin-left: 0.5rem;
+  font-size: 20px;
 }
 
 .add-comp-rest-add-phone {
+  color: var(--primaryRed);
   font-size: 20px;
-  margin: 1rem 0 1rem 0;
+  margin: 1.5rem 0 1.5rem 0;
 }
 
 .cont-add-comp-div {
@@ -46,68 +46,140 @@
   width: 100%;
 }
 
-
 .cont-reach-add-map-div {
   display: flex;
+  position: relative;
+  flex-direction: column;
   margin: auto;
+  margin-top: 2rem;
   width: 90%;
-  flex-direction: column-reverse;
 }
 
-.cont-reach-left-div,
-.cont-reach-right-div {
-  width: 100%;
-  margin: 0.5rem auto;
+.cont-reach-gmap-div {
+  width: 95%;
+  margin: auto;
+  border: 2px solid black;
+  height: 450px;
 }
+
+.cont-reach-add-time-div {
+  display: flex;
+  box-shadow: 0px 0px 5px 0 rgb(226, 226, 226);
+  position: relative;
+  transform: translateY(-50%);
+  width: 85%;
+  margin: auto;
+
+}
+
+.cont-reach-left-div {
+  width: 40%;
+  min-width: 390px;
+  background-color: white;
+}
+
 .cont-reach-right-div {
   display: flex;
-  border: 2px solid black;
-  margin-top: 2rem;
-  height: 200px;
+  width: 60%;
+  text-align: left;
+  background-color: rgb(216, 216, 216);
 }
 
-.cont-reach-right-div > div {
-  margin: auto;
+.about-time-main-div {
+  padding: 1rem ;
 }
 
-@media screen and (min-width: 650px) {
-  .cont-reach-add-map-div {
-    flex-direction: row;
-  }
-
-  .cont-reach-left-div,
-  .cont-reach-right-div {
-    width: 50%;
-    margin-top: 1rem;
-  }
+.about-time-item {
+  text-align: left;
+  margin-top: 1rem;
 }
 
-@media screen and (min-width: 900px) {
-
-  .cont-reach-text {
+@media screen and (max-width: 900px) {
+  .cont-add-comp-div h1 {
     font-size: 22px;
   }
 
-  .cont-add-comp-div h1 {
-    font-size: 32px;
+  .cont-reach-left-div {
+    width: 30%;
+    min-width: 290px;
+    background-color: white;
   }
 
   .cont-add-comp-div span {
-    margin-top: 1.5rem;
-    font-size: 24px;
+    margin-top: 1rem;
+    font-size: 18px;
   }
   .add-comp-icon {
-    margin-top: 0.05rem;
-    font-size: 22px;
+    margin-top: 0.3rem;
+    font-size: 14px;
   }
 
   .add-comp-rest-add {
-    margin-left: 0.5rem;
-    font-size: 20px;
+    margin-left: 0.4rem;
+    font-size: 14px;
   }
 
   .add-comp-rest-add-phone {
-    font-size: 24px;
+    margin: 1rem 0 1rem 0;
+  }
+
+  .add-comp-rest-add-phone {
+    color: var(--primaryRed);
+    font-size: 16px;
     margin: 1.5rem 0 1.5rem 0;
   }
+  .about-time-main-div {
+    padding: 0.5rem ;
+  }
+  
+  .about-time-item {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .cont-reach-add-map-div {
+    flex-direction: column;
+  }
+
+  .cont-reach-gmap-div {
+    width: 100%;
+    height: 350px;
+  }
+
+  .cont-add-comp-div h1 {
+    font-size: 20px;
+  }
+  .cont-add-comp-div span {
+    margin-top: 0.5rem;
+  }
+
+  .add-comp-rest-add-phone {
+    color: var(--primaryRed);
+    font-size: 14px;
+    margin: 1rem 0 1rem 0;
+  }
+
+  .cont-reach-add-time-div {
+  transform: translateY(-30%);
+    flex-direction: column;
+    width: 90%;
+  }
+  
+
+  .cont-reach-left-div,
+  .cont-reach-right-div {
+    width: 100%;
+    text-align: left;
+  }
+
+  .about-time-main-div {
+    padding: 1rem ;
+  }
+
+  .about-time-item {
+    margin-top: 0.5rem;
+  }
+  
+ 
 }
