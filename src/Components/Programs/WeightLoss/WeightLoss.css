@@ -1,0 +1,12 @@
+.wtl-main-comp {
+    width: 100;
+}
+.wtl-head-div {
+    width: 60%;
+    margin: auto;
+}
+
+.wtl-head-div > div:first-child {
+    font-size: 28px;
+    text-transform: capitalize;
+}
