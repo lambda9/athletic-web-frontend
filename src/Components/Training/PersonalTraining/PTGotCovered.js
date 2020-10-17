@@ -1,10 +1,11 @@
 import React from "react";
 import PTImgCard from "./PTImgCard";
 import ptImg from "../../../Images/im11.jpg";
+import MiniTitle from "../../Title/MiniTitle";
 function PTGotCovered() {
   return (
     <div className="pt-got-covered-comp">
-      <div>we got you covered</div> <div id="bottom-blue-line" />
+      <MiniTitle title={'we got you covered'} bottomLineStyle={{backgroundColor: "#1ca9c9"}} />
       <div className="pt-img-card-container">
         <PTImgCard
           ptImg={ptImg}

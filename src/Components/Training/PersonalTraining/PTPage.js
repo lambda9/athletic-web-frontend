@@ -7,6 +7,7 @@ import PTForYou from "./PTForYou";
 import PTGotCovered from "./PTGotCovered";
 import BeBolder from "./BeBolder";
 import { Link } from "react-router-dom";
+import MiniTitle from "../../Title/MiniTitle";
 
 function PTPage() {
   return (
@@ -17,8 +18,7 @@ function PTPage() {
       <PTGotCovered />
       <BeBolder />
       <div className="pt-explore">
-        <div>explore more</div>
-        <div id="bottom-red-line" />
+        <MiniTitle title={"explore more"}></MiniTitle>
         <div className="pt-explore-btn">
           <Link
             to="/"

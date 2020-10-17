@@ -1,11 +1,11 @@
 import React from "react";
 import HeadDescBorderCard from "../../CardGroup/HeadDescBorderCard";
+import MiniTitle from "../../Title/MiniTitle";
 
 function PTForYou() {
   return (
     <div className="pt-foryou">
-      <div>training plan for you</div>
-      <div id="bottom-red-line" />
+      <MiniTitle title={"training plan for your"} />
       <div className="pt-foryou-card-div">
         <HeadDescBorderCard
           heading={"Areas of Focus"}

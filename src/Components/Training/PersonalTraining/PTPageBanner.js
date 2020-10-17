@@ -1,4 +1,5 @@
 import React from "react";
+import MiniTitle from "../../Title/MiniTitle";
 import "./PTPage.css";
 
 function PTPageBanner() {
@@ -6,8 +7,7 @@ function PTPageBanner() {
     <div className="pt-banner">
       <div>we get personal</div>
       <div className="pt-banner-card">
-        <h1>personal training</h1>
-        <div id="bottom-red-line"></div>
+        <MiniTitle title={"personal training"}/>
         <p>
       
           Built with science and delivered with passion, our trainers will
