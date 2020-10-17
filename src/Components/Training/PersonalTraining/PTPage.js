@@ -17,27 +17,27 @@ function PTPage() {
       <PTGotCovered />
       <BeBolder />
       <div className="pt-explore">
-        <h2>explore more</h2>
+        <div>explore more</div>
         <div id="bottom-red-line" />
         <div className="pt-explore-btn">
           <Link
             to="/"
             className="pt-bbold-link"
-            style={{ margin: "1rem" }}
+            style={{ margin: "0.3rem 2rem" }}
           >
             Weight loss
           </Link>
           <Link
             to="/"
             className="pt-bbold-link"
-            style={{ margin: "1rem" }}
+            style={{ margin: "0.3rem 2rem" }}
           >
             About us
           </Link>
           <Link
             to="/"
             className="pt-bbold-link"
-            style={{ margin: "1rem" }}
+            style={{ margin: "0.3rem 2rem" }}
           >
             gallery
           </Link>

@@ -79,7 +79,8 @@
 }
 
 .pt-foryou > div:first-child,
-.pt-got-covered-comp > div:first-child {
+.pt-got-covered-comp > div:first-child,
+.pt-explore > div:first-child {
   font-size: 28px;
   text-transform: capitalize;
 }
@@ -150,7 +151,7 @@ p {
 
 .pt-bbold-link,
 .pt-still-q a {
-  font-size: 32px;
+  font-size: 24px;
   margin-top: 2rem;
   color: var(--primaryColor);
   text-transform: capitalize;
@@ -244,7 +245,8 @@ p {
   }
 
   .pt-foryou > div:first-child,
-  .pt-got-covered-comp > div:first-child {
+  .pt-got-covered-comp > div:first-child,
+  .pt-explore > div:first-child {
     font-size: 24px;
   }
 
@@ -272,7 +274,7 @@ p {
 
   .pt-bbold-link,
   .pt-still-q a {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .pt-bbold-link:hover {
@@ -285,19 +287,15 @@ p {
     margin: 2rem auto;
   }
 
-  .pt-explore h2 {
-    font-size: 24px;
-  }
-
   .pt-explore-btn {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding: 0;
     justify-content: center;
   }
 
   .pt-still-q > div {
-    font-size: 20px;
+    font-size: 18px;
   }
 
 }
