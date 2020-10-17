@@ -10,12 +10,14 @@ import BMI from "../BMI/BMI";
 import Features from "./WhatWeProvide/Features";
 import Results from "./WhatWeProvide/Results";
 import Programs from "./Programs";
+import Equipments from "./WhatWeProvide/Equipments";
 
 function Home() {
 	return (
 		<div>
 			<FadingCarousel />
 			<Features />
+			{/* <Equipments /> */}
 			<Programs />
 			<Results />
 			<OurPlans />
