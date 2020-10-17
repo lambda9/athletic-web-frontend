@@ -68,7 +68,7 @@ const ProgramCarousel = ({
 	return (
 		<div
 			css={css`
-				width: ${width}vw;
+				width: ${width}%;
 				height: ${state.height}vw;
 				display: flex;
 				align-items: center;
