@@ -4,6 +4,7 @@ import bgImg from "../../Images/im8.jpg";
 import ProgramCarousel from "./ProgramCarousel";
 import ExcerciseCard from "./ExcerciseCard";
 import WeightLoss from "./WeightLoss/WeightLoss";
+import WeightGain from "./WeightGain/WeightGain";
 class OurPrograms extends Component {
 	render() {
 		return (
@@ -15,6 +16,7 @@ class OurPrograms extends Component {
 				></Hero>
 				<ExcerciseCard />
 				<WeightLoss />
+				<WeightGain />
 			</div>
 		);
 	}

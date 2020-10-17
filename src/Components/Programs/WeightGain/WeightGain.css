@@ -1,0 +1,45 @@
+.wtg-main-comp {
+ 
+ margin: 3rem auto;
+    background-color: rgb(233, 233, 233);
+}
+
+.wtg-step-ahead {
+    margin-left: 4rem;
+    display: flex;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 1.2;
+}
+
+.wtg-step-ahead > div:nth-child(2) {
+    background-color: var(--mainBlack);
+    color: white;
+    margin: 0 1rem;
+}
+
+.wtg-our-pro {
+    background: url('../../../Images/bg9.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.wtg-our-pro-right-div, .wtg-our-pro-left-div {
+    width: 40%;
+    margin: 0 1rem;
+    background-color: blanchedalmond;
+}
+
+.wtg-our-pro-left-div {
+    padding: 1rem;
+    padding-left: 3rem;
+}
+
+.wtg-our-pro-right-div img {
+    height: 110%;
+}
