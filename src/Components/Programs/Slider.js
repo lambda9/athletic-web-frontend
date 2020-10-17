@@ -27,11 +27,6 @@ const Slider = ({
 				& img {
 					width: 100%;
 				}
-				@media (max-width: 900px) {
-					& > div {
-						padding: 5vw;
-					}
-				}
 			`}
 			onTransitionEnd={onTransitionEnd}
 		>
@@ -42,7 +37,7 @@ const Slider = ({
 						css={css`
 							width: ${width}vw;
 							transition: transform ease-in-out 0.5s;
-							transform: scale(${index === activeIndex ? "1.5" : "0.9"});
+							transform: scale(${index === activeIndex ? 1 + 12 / width : 1});
 						`}
 					>
 						<ProgramSlide css={{ width: "100%" }} {...item} />

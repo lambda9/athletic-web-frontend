@@ -26,7 +26,7 @@ const getWindow = (arr, middleIndex, offset) => {
 const ProgramCarousel = ({
 	data = programs,
 	autoStart = false,
-	width = 100,
+	width,
 	transitionDelay,
 	transitionDuration,
 }) => {
@@ -36,7 +36,7 @@ const ProgramCarousel = ({
 		transition: 0,
 		activeIndex: 2,
 		len: data.length,
-		imageWidth: window.innerWidth < 900 ? (100 - 10) / 1.5 : (60 - 6) / 1.5,
+		imageWidth: window.innerWidth < 900 ? 60 : 30,
 		height: window.innerWidth < 900 ? 60 : 30,
 	});
 	const offset = -(state.imageWidth - (width - state.imageWidth) / 2);
@@ -55,7 +55,7 @@ const ProgramCarousel = ({
 	});
 
 	const handleResize = () => {
-		let imgWidth = window.innerWidth < 900 ? (100 - 10) / 1.5 : (60 - 6) / 1.5;
+		let imgWidth = window.innerWidth < 900 ? 60 : 30;
 		let height = window.innerWidth < 900 ? 60 : 30;
 		dispatch({ type: "resize", imageWidth: imgWidth, height: height });
 	};
