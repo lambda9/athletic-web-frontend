@@ -1,20 +1,20 @@
 import React from "react";
-import PTImgCard from "./PTImgCard";
 import ptImg from "../../../Images/im11.jpg";
 import MiniTitle from "../../Title/MiniTitle";
+import ImgHeadDescCard from "../../CardGroup/ImgHeadDescCard";
 function PTGotCovered() {
   return (
     <div className="pt-got-covered-comp">
       <MiniTitle title={'we got you covered'} bottomLineStyle={{backgroundColor: "#1ca9c9"}} />
       <div className="pt-img-card-container">
-        <PTImgCard
+        <ImgHeadDescCard
           ptImg={ptImg}
           heading={"private training"}
           description={
             "Built with science and deliverred with passion, out certified Personal Training professionals will developa personalized training plan that fits your body, lifestyle and budget"
           }
         />
-        <PTImgCard
+        <ImgHeadDescCard
           ptImg={ptImg}
           heading={"trainer for everyone"}
           description={

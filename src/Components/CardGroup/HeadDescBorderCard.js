@@ -1,6 +1,5 @@
 import React from "react";
-import './Card.css'
-
+import "./Card.css";
 
 function HeadDescBorderCard(props) {
   const { heading, description } = props;

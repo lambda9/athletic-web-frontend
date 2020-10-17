@@ -1,7 +1,7 @@
 import React from "react";
-import PTImgCard from "../../Training/PersonalTraining/PTImgCard";
 import img from "../../../Images/im3.jpg";
 import nutrition from "../../../Images/nutrition1.jpg";
+import ImgHeadDescCard from "../../CardGroup/ImgHeadDescCard";
 
 function WTLImgCards() {
   return (
@@ -11,7 +11,7 @@ function WTLImgCards() {
       data-aos="fade-up"
       data-aos-duration="1000"
     >
-      <PTImgCard
+      <ImgHeadDescCard
         ptImg={nutrition}
         heading={"nutrition coaching"}
         description={
@@ -20,7 +20,7 @@ function WTLImgCards() {
         styleProp={{ width: "340px", minHeight: "450px" }}
         styleImgDiv={{ maxHeight: "250px" }}
       />
-      <PTImgCard
+      <ImgHeadDescCard
         ptImg={img}
         heading={"personal training"}
         description={
@@ -29,7 +29,7 @@ function WTLImgCards() {
         styleProp={{ width: "340px", minHeight: "450px" }}
         styleImgDiv={{ maxHeight: "250px" }}
       />
-      <PTImgCard
+      <ImgHeadDescCard
         ptImg={img}
         heading={"assesments and test"}
         description={
