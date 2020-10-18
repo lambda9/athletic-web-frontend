@@ -119,13 +119,21 @@
   min-height: 610px;
   border: 1px solid grey;
   margin: 1rem;
+  transition: var(--fastTransition);
 }
+
+.img-head-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 0px 11px 2px rgb(226, 226, 226);
+}
+
 
 .img-head-card-img-div {
   width: 100%;
   max-height: 350px;
   overflow: hidden;
 }
+
 
 .img-head-card-img-div img {
   width: 100%;
@@ -136,11 +144,17 @@
   min-height: 200px;
   padding: 2rem 1rem;
   margin: 0 0.5rem;
-  transition: var(--fastTransition);
 }
 
-.icon-head-desc-main-div:hover {
-  transform: translateY(-8px);
+.icon-animate {
+  animation-name: example;
+  animation-duration: 0.5s;
+}
+
+@keyframes example {
+  0%   {transform: translateY(0px);}
+  50%  {transform: translateY(-8px);}
+  100% {transform: translateY(0px);}
 }
 
 .icon-head-desc-main-div img {

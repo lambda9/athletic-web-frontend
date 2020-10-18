@@ -24,8 +24,6 @@ function WeightLoss() {
       <WTLProgramComp />
 
       <WTLImgCards />
-
-      <WTLSlogan />
     </div>
   );
 }

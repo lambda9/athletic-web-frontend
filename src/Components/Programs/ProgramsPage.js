@@ -1,25 +1,36 @@
 import React, { Component } from "react";
+import {Link } from 'react-router-dom'
 import Hero from "../Hero";
 import bgImg from "../../Images/im8.jpg";
-import ProgramCarousel from "./ProgramCarousel";
-import ExcerciseCard from "./ExcerciseCard";
 import WeightLoss from "./WeightLoss/WeightLoss";
 import WeightGain from "./WeightGain/WeightGain";
+import ExploreMore from "../ExploreMore/ExploreMore";
 class OurPrograms extends Component {
-	render() {
-		return (
-			<div>
-				<Hero
-					bgImg={bgImg}
-					title="Our programs"
-					description="keep your energy up and burn calories"
-				></Hero>
-				<ExcerciseCard />
-				<WeightLoss />
-				<WeightGain />
-			</div>
-		);
-	}
+  exploreLinks = [
+    ["/pt", "Personal Training"],
+    ["/membership", "Membership"],
+  ];
+
+  render() {
+    return (
+      <div>
+        <Hero
+          bgImg={bgImg}
+          title="Our programs"
+          description="keep your energy up and burn calories"
+        ></Hero>
+        <WeightLoss />
+        <WeightGain />
+        <ExploreMore linksArr={this.exploreLinks} />
+        <div className="pt-still-q">
+          <div>Still have question? We can help.</div>
+          <Link to="/contactus" style={{ fontSize: "18px" }}>
+            Request Callback
+          </Link>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default OurPrograms;
