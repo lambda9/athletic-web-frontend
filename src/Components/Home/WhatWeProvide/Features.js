@@ -21,7 +21,7 @@ export const cardStyle = css`
 	width: 27vw;
 	padding: 0px 15px;
 	& > div {
-		box-shadow: 0px 5px 5px 0px #00000090;
+		box-shadow: 0px 5px 5px 0px #00000029;
 		height: 100%;
 	}
 	margin: 15px 0px;
@@ -80,31 +80,29 @@ const reducer = (state, dispatch) => {
 			isDragging: true,
 		};
 	} else if (dispatch.type === "dragmove") {
-		// console.log("state", state.start, " end ", dispatch.x);
 		return {
 			...state,
 			translate: state.isDragging ? dispatch.x - state.start : 0,
 			transition: 0,
 		};
 	} else if (dispatch.type === "dragend") {
-		console.log("width", dispatch.width);
 		let endTime = dispatch.timeStamp;
 		let fixTranslate = state.fixTranslate;
 		let nextIndex = state.index;
-		if (state.translate < 0) {
+		if (state.translate < 0 && state.index < state.count - 1) {
 			if (
 				(Math.abs(state.translate) > 10 && endTime - state.startTime < 250) ||
 				Math.abs(state.translate) > dispatch.width / 3
 			) {
-				fixTranslate = state.fixTranslate - dispatch.width;
+				fixTranslate = dispatch.width;
 				nextIndex = state.index + 1;
 			}
-		} else if (state.translate >= 0) {
+		} else if (state.translate >= 0 && state.index > 0) {
 			if (
 				(Math.abs(state.translate) > 10 && endTime - state.startTime < 250) ||
 				Math.abs(state.translate) > dispatch.width / 3
 			) {
-				fixTranslate = state.fixTranslate + dispatch.width;
+				fixTranslate = dispatch.width;
 				nextIndex = state.index - 1;
 			}
 		}
@@ -118,23 +116,62 @@ const reducer = (state, dispatch) => {
 			isDragging: false,
 		};
 	} else if (dispatch.type === "resize") {
-		console.log("width", dispatch.width);
-		if (dispatch.width < 600) {
+		if (dispatch.windowWidth < 600) {
 			return {
 				...state,
 				count: 6,
+				width: dispatch.width,
+				fixTranslate: 0,
+				index: 0,
+				display: 1,
 			};
-		} else if (dispatch.width < 900) {
+		} else if (dispatch.windowWidth < 900) {
 			return {
 				...state,
 				count: 3,
+				width: dispatch.width,
+				fixTranslate: 0,
+				index: 0,
+				display: 2,
 			};
 		} else {
 			return {
 				...state,
 				count: 2,
+				fixTranslate: 0,
+				width: dispatch.width,
+				index: 0,
+				display: 3,
 			};
 		}
+	} else if (dispatch.type === "init") {
+		if (dispatch.windowWidth < 600) {
+			return {
+				...state,
+				width: dispatch.width,
+				count: 6,
+				display: 1,
+			};
+		} else if (dispatch.windowWidth < 900) {
+			return {
+				...state,
+				width: dispatch.width,
+				count: 3,
+				display: 2,
+			};
+		} else {
+			return {
+				...state,
+				width: dispatch.width,
+				count: 2,
+				display: 3,
+			};
+		}
+	} else if (dispatch.type === "select") {
+		return {
+			...state,
+			index: dispatch.index,
+		};
 	} else {
 		throw new Error();
 	}
@@ -148,7 +185,9 @@ const defaultState = {
 	transition: 0,
 	index: 0,
 	isDragging: false,
-	count: 2,
+	// count: window.innerWidth > 900 ? 2 : window.innerWidth > 600 ? 3 : 6,
+	// width: window.innerWidth > 900 ? 81 : 80,
+	// display: window.innerWidth > 900 ? 3 : window.innerWidth > 600 ? 2 : 1,
 };
 
 const Features = () => {
@@ -156,7 +195,6 @@ const Features = () => {
 	const divRef = useRef(null);
 	const mainRef = useRef(null);
 	const handleMoveRef = useRef(null);
-	console.log("render");
 
 	const handleTouchStart = (e) => {
 		dispatch({
@@ -177,13 +215,12 @@ const Features = () => {
 		dispatch({
 			type: "dragend",
 			x: e.changedTouches[0].screenX,
-			width: divRef.current.clientWidth,
+			width: mainRef.current.clientWidth,
 			timeStamp: e.timeStamp,
 		});
 	};
 
 	const handleMouseDown = (e) => {
-		console.log(e);
 		dispatch({
 			type: "dragstart",
 			x: e.screenX,
@@ -213,11 +250,29 @@ const Features = () => {
 	}, [state.isDragging]);
 
 	const handleResize = () => {
-		dispatch({ type: "resize", width: window.innerWidth });
+		dispatch({
+			type: "resize",
+			windowWidth: window.innerWidth,
+			width: mainRef.current.clientWidth,
+		});
 	};
 
 	useEffect(() => {
+		dispatch({
+			type: "init",
+			width: mainRef.current.clientWidth,
+			windowWidth: window.innerWidth,
+		});
 		const func = (e) => handleMoveRef.current(e);
+		mainRef.current.addEventListener("touchstart", handleTouchStart, {
+			passive: true,
+		});
+		mainRef.current.addEventListener("touchmove", handleTouchMove, {
+			passive: true,
+		});
+		mainRef.current.addEventListener("touchend", handleTouchEnd, {
+			passive: true,
+		});
 		mainRef.current.addEventListener("mousedown", handleMouseDown, {
 			passive: true,
 		});
@@ -232,20 +287,25 @@ const Features = () => {
 		return () => {
 			sliderRef.removeEventListener("mousedown", handleMouseDown);
 			sliderRef.removeEventListener("mousemove", func);
+			sliderRef.removeEventListener("touchstart", handleTouchStart);
+			sliderRef.removeEventListener("touchmove", handleTouchMove);
+			sliderRef.removeEventListener("touchend", handleTouchEnd);
 			window.removeEventListener("mouseend", handleMouseUp);
 			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
 
-	// console.log("trans", state.translate, typeof state.translate);
-	// console.log("fix", state.fixTranslate, typeof state.fixTranslate);
-	// console.log("state", state.translate + state.fixTranslate);
+	const onClick = (index) => {
+		dispatch({
+			type: "select",
+			index: index,
+		});
+	};
 
 	return (
 		<MainContainer>
-			<h1>Building</h1>
+			<h1>Features</h1>
 			<p>Our space let you feel comfortable and airy. Just do it</p>
-			<p>{window.innerWidth}</p>
 			<div
 				ref={mainRef}
 				css={css`
@@ -263,7 +323,7 @@ const Features = () => {
 					style={{
 						transition: `transform ease-in-out ${state.transition}s`,
 						transform: `translate3d(${
-							state.translate + state.fixTranslate
+							state.translate - state.index * state.width
 						}px, 0px, 0px)`,
 					}}
 				>
@@ -317,27 +377,11 @@ const Features = () => {
 						<SvgSound css={svgStyle} />
 					</FeatureCard>
 				</ScrollDiv>
-				<ActiveBars count={state.count} activeIndex={state.index} />
-				{/* <img
-					src={left}
-					css={[
-						arrowStyle,
-						css`
-							left: 0%;
-						`,
-					]}
-					alt={"left-arrow"}
+				<ActiveBars
+					onClick={onClick}
+					count={state.count}
+					activeIndex={state.index}
 				/>
-				<img
-					src={right}
-					css={[
-						arrowStyle,
-						css`
-							right: 0%;
-						`,
-					]}
-					alt="right-arrow"
-				/> */}
 			</div>
 		</MainContainer>
 	);
