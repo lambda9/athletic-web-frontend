@@ -4,7 +4,7 @@ import "./Card.css";
 function HeadDescBorderCard(props) {
   const { heading, description } = props;
   return (
-    <div className="headDescBorderCard" style={props.styleProp}>
+    <div className={`headDescBorderCard ${props.styleClass}`} style={props.styleProp}>
       <h3>{heading}</h3>
       <p>{description}</p>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import img from "../../../Images/im3.jpg";
-import nutrition from "../../../Images/nutrition1.jpg";
+import nutrition from "../../../Images/im6.jpg";
 import ImgHeadDescCard from "../../CardGroup/ImgHeadDescCard";
 
 function WTLImgCards() {

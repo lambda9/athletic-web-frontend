@@ -3,20 +3,6 @@
   background-color: rgb(248, 248, 248);
 }
 
-.wtg-step-ahead {
-  margin-left: 4rem;
-  display: flex;
-  font-weight: 600;
-  font-size: 64px;
-  line-height: 1.2;
-}
-
-.wtg-step-ahead > div:nth-child(2) {
-  background-color: var(--mainBlack);
-  color: white;
-  margin: 0 1rem;
-}
-
 .wtg-our-pro {
   z-index: -1;
   background: url("../../../Images/bg9.jpg");
@@ -54,26 +40,8 @@
   margin-top: auto;
 }
 
-.wtg-our-tech-cards {
-  z-index: 1;
-  width: 100%;
-  height: 650px;
-  background-image: url("../../../Images/WeightGain/bg14.png");
-  background-color: #f7f7f7;
-  margin-top: 0px !important;
-  padding-top: 5rem !important;
-  padding-bottom: 4rem !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-}
-
-.wtg-our-tech-cards-cont {
-  width: 100%;
-  height: 100%;
-}
-
 .wtg-process {
+  margin: 2rem auto;
   padding-top: 2rem;
   background-color: rgb(248, 248, 248);
 }
@@ -91,26 +59,131 @@
   justify-content: center;
 }
 
+.wtg-step-ahead {
+  margin: 3rem auto 2rem 6rem;
+  font-weight: 600;
+  text-align: left;
+  font-size: 64px;
+  line-height: 1.2;
+}
+
+.wtg-step-ahead > div:nth-child(3) {
+  background-color: var(--mainBlack);
+  color: white;
+  width: fit-content;
+  padding: 0 0.3rem;
+}
+
+.wtg-muscle-gain-div {
+  z-index: 1;
+  width: 100%;
+  position: relative;
+  height: 550px;
+  background-image: url("../../../Images/bg8.jpg");
+  margin-top: 0px !important;
+  padding-top: 5rem !important;
+  padding-bottom: 4rem !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.wtg-muscle-card-cont {
+  display: flex;
+  position: absolute;
+  margin-bottom: 0;
+  left: 5%;
+  bottom: 0%;
+}
+
+.styleClass h3 {
+  font-size: 24px;
+}
+
+.styleClass p {
+  font-size: 14px;
+}
+
+.wtg-muscle-gain-cards-cont {
+  width: 100%;
+  height: 100%;
+}
+
+.wtg-muscle-head-text {
+  position: relative;
+  margin: auto 0;
+  width: 50%;
+  left: 5%;
+}
+
+@media screen and (max-width: 900px) {
+  .wtg-muscle-gain-cards {
+    height: fit-content;
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .wtg-muscle-head-text {
+    margin: auto;
+    width: 80%;
+    left: auto;
+  }
+  .wtg-muscle-card-cont {
+    position: relative;
+    justify-content: center;
+    left: auto;
+    margin: auto;
+  }
+}
 
 @media screen and (max-width: 650px) {
-    .wtg-our-pro {
-        flex-direction: column-reverse;
-        height: fit-content;
-    }
+  .wtg-our-pro {
+    flex-direction: column-reverse;
+    height: fit-content;
+  }
 
-    .wtg-our-pro-left-div, .wtg-our-pro-right-div {
-        width: 90%;
-        margin: auto;
-    }
+  .wtg-our-pro-left-div,
+  .wtg-our-pro-right-div {
+    width: 90%;
+    margin: auto;
+  }
 
-    .wtg-our-pro-right-div {
-        min-width: 100px;
-    }
+  .wtg-our-pro-right-div {
+    min-width: 100px;
+  }
 
-    .wtg-our-pro-right-div img {
-        margin: auto;
-        max-width: 300px;
-        width: 100%;
-        height: auto;
-    }
+  .wtg-our-pro-right-div img {
+    margin: auto;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+  }
+
+  .wtg-muscle-head-text {
+    width: 95%;
+  }
+
+  .wtg-muscle-card-cont {
+    position: relative;
+    margin-bottom: 0;
+    justify-content: center;
+    left: auto;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+  .styleClass h3 {
+    font-size: 22px;
+  }
+
+  .styleClass p, .wtg-muscle-head-text p {
+    font-size: 12px;
+  }
+
+  .wtg-step-ahead {
+    width: fit-content;
+    margin: 3rem auto;
+    font-size: 42px;
+  }
 }
+
+

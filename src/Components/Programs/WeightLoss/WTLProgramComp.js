@@ -1,5 +1,5 @@
 import React from "react";
-import wltImg from "../../../Images/wtl2.png";
+import wltImg from "../../../Images/WeightGain/wtl2.png";
 import MiniTitle from "../../Title/MiniTitle";
 import "./WeightLoss.css";
 
