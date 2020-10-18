@@ -13,10 +13,10 @@
     color:var(--mainGrey);
 }
 .membership-icon-container{
-    width: 1000px;
+    width: 1200px;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
  .membership-icon-card{
@@ -90,4 +90,17 @@
     font-size:20px;
     color:var(--mainGrey);
 }
-
+@media screen and (max-width:550px){
+    .membership-icon-background{
+        display: flex;
+        flex-direction: column;
+    }
+    .membership-icon-container{
+        width:auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .membership-icon-background h1{
+        font-size:25px;
+    }
+}
