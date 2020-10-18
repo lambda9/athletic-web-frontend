@@ -5,7 +5,7 @@ import IconSlider from "./IconSlider";
 import "./Membership.css";
 import bgImg from "../../Images/im6.jpg";
 import MembershipBG from "./MembershipBG";
-
+import MembershipIcon from "./MembershipIcon"
 class Membership extends Component {
   constructor(props) {
     super(props);
@@ -155,6 +155,7 @@ class Membership extends Component {
             })}
           </div>
         </div>
+        <MembershipIcon/>
       </div>
     );
   }
