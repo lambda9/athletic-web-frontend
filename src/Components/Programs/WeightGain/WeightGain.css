@@ -19,27 +19,74 @@
 }
 
 .wtg-our-pro {
+    z-index: -1;
     background: url('../../../Images/bg9.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: 400px;
+    height: 450px;
     display: flex;
     justify-content: center;
 }
 
 .wtg-our-pro-right-div, .wtg-our-pro-left-div {
-    width: 40%;
+    width: 25%;
     margin: 0 1rem;
-    background-color: blanchedalmond;
+}
+
+.wtg-our-pro-right-div {
+    min-width: 320px;
+    display: flex;
 }
 
 .wtg-our-pro-left-div {
+    width: 60%;
+    max-width: 650px;
     padding: 1rem;
-    padding-left: 3rem;
+    display: flex;
+    /* background-color: cornsilk; */
+    position: relative;
 }
 
 .wtg-our-pro-right-div img {
-    height: 110%;
+    height: 420px;
+    margin-top: auto;
+}
+
+.wtg-our-tech-cards {
+    z-index: 1;
+    width: 100%;
+    height: 650px;
+    background-image: url('../../../Images/WeightGain/bg14.png');
+    background-color: #F7F7F7;
+    margin-top: 0px !important;
+    padding-top: 5rem !important;
+    padding-bottom: 4rem !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+.wtg-our-tech-cards-cont {
+    width: 100%;
+    height: 100%;
+    /* background-color: coral; */
+}
+
+.wtg-process {
+    padding-top: 2rem;
+    background-color: rgb(248, 248, 248);
+}
+
+.wtg-process > div:first-child {
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bolder;
+    letter-spacing: 2.4px;
+}
+
+.wtg-process-card-cont {
+    display: flex;
+    justify-content: center;
 }
