@@ -3,14 +3,12 @@ import { css, jsx } from "@emotion/core";
 import area from "../../../Images/HomeWhatWeProvide/area.jpeg";
 import cooler from "../../../Images/HomeWhatWeProvide/cooler.jpeg";
 import sound from "../../../Images/HomeWhatWeProvide/sound.jpeg";
-// import left from "../../../Images/HomeWhatWeProvide/left-arrow.png";
-// import right from "../../../Images/HomeWhatWeProvide/right-arrow.png";
 import styled from "@emotion/styled";
 import SvgArea from "../Icons/SvgArea";
 import SvgAirConditioning from "../Icons/SvgAirConditioning";
 import SvgSound from "../Icons/SvgSound";
 import FeatureCard from "./FeatureCard";
-import { useEffect, useReducer, useRef } from "react";
+import { useCallback, useEffect, useReducer, useRef } from "react";
 import ActiveBars from "./ActiveBars";
 
 export const MainContainer = styled.div`
@@ -20,11 +18,18 @@ export const MainContainer = styled.div`
 `;
 
 export const cardStyle = css`
-	width: 30%;
-	box-shadow: 5px 5px 15px 0px #00000094;
+	width: 27vw;
+	padding: 0px 15px;
+	& > div {
+		box-shadow: 0px 5px 5px 0px #00000090;
+		height: 100%;
+	}
+	margin: 15px 0px;
 	@media screen and (max-width: 900px) {
+		width: 40vw;
+	}
+	@media screen and (max-width: 600px) {
 		width: 80vw;
-		margin-right: 10vw;
 	}
 `;
 
@@ -44,6 +49,20 @@ export const FeaturesDiv = styled.div`
 	}
 `;
 
+const ScrollDiv = styled.div`
+	display: flex;
+	width: 162vw;
+	justify-content: space-between;
+	align-items: stretch;
+	margin: auto;
+	@media screen and (max-width: 900px) {
+		width: 240vw;
+	}
+	@media screen and (max-width: 600px) {
+		width: 480vw;
+	}
+`;
+
 const arrowStyle = css`
 	position: absolute;
 	width: 2rem;
@@ -52,24 +71,27 @@ const arrowStyle = css`
 `;
 
 const reducer = (state, dispatch) => {
-	if (dispatch.type === "touchstart") {
+	if (dispatch.type === "dragstart") {
 		return {
 			...state,
-			startTime: new Date().getMilliseconds(),
+			startTime: dispatch.timeStamp,
 			start: dispatch.x,
 			transition: 0,
+			isDragging: true,
 		};
-	} else if (dispatch.type === "touchmove") {
+	} else if (dispatch.type === "dragmove") {
+		// console.log("state", state.start, " end ", dispatch.x);
 		return {
 			...state,
-			translate: dispatch.x - state.start,
+			translate: state.isDragging ? dispatch.x - state.start : 0,
 			transition: 0,
 		};
-	} else if (dispatch.type === "touchend") {
-		let endTime = new Date().getMilliseconds();
+	} else if (dispatch.type === "dragend") {
+		console.log("width", dispatch.width);
+		let endTime = dispatch.timeStamp;
 		let fixTranslate = state.fixTranslate;
 		let nextIndex = state.index;
-		if (state.translate < 0 && state.fixTranslate > -2 * dispatch.width) {
+		if (state.translate < 0) {
 			if (
 				(Math.abs(state.translate) > 10 && endTime - state.startTime < 250) ||
 				Math.abs(state.translate) > dispatch.width / 3
@@ -77,7 +99,7 @@ const reducer = (state, dispatch) => {
 				fixTranslate = state.fixTranslate - dispatch.width;
 				nextIndex = state.index + 1;
 			}
-		} else if (state.translate >= 0 && state.fixTranslate < 0) {
+		} else if (state.translate >= 0) {
 			if (
 				(Math.abs(state.translate) > 10 && endTime - state.startTime < 250) ||
 				Math.abs(state.translate) > dispatch.width / 3
@@ -91,9 +113,28 @@ const reducer = (state, dispatch) => {
 			fixTranslate: fixTranslate,
 			start: 0,
 			translate: 0,
-			transition: 0.1,
+			transition: 0.2,
 			index: nextIndex,
+			isDragging: false,
 		};
+	} else if (dispatch.type === "resize") {
+		console.log("width", dispatch.width);
+		if (dispatch.width < 600) {
+			return {
+				...state,
+				count: 6,
+			};
+		} else if (dispatch.width < 900) {
+			return {
+				...state,
+				count: 3,
+			};
+		} else {
+			return {
+				...state,
+				count: 2,
+			};
+		}
 	} else {
 		throw new Error();
 	}
@@ -106,74 +147,124 @@ const defaultState = {
 	fixTranslate: 0,
 	transition: 0,
 	index: 0,
+	isDragging: false,
+	count: 2,
 };
 
 const Features = () => {
 	const [state, dispatch] = useReducer(reducer, defaultState);
 	const divRef = useRef(null);
 	const mainRef = useRef(null);
+	const handleMoveRef = useRef(null);
+	console.log("render");
 
 	const handleTouchStart = (e) => {
-		dispatch({ type: "touchstart", x: e.changedTouches[0].screenX });
+		dispatch({
+			type: "dragstart",
+			x: e.changedTouches[0].screenX,
+			timeStamp: e.timeStamp,
+		});
 	};
 
 	const handleTouchMove = (e) => {
 		dispatch({
-			type: "touchmove",
+			type: "dragmove",
 			x: e.changedTouches[0].screenX,
 		});
 	};
 
 	const handleTouchEnd = (e) => {
-		let margin = parseFloat(
-			window.getComputedStyle(divRef.current).marginRight
-		);
 		dispatch({
-			type: "touchend",
+			type: "dragend",
 			x: e.changedTouches[0].screenX,
-			width: divRef.current.clientWidth + margin,
+			width: divRef.current.clientWidth,
+			timeStamp: e.timeStamp,
+		});
+	};
+
+	const handleMouseDown = (e) => {
+		console.log(e);
+		dispatch({
+			type: "dragstart",
+			x: e.screenX,
+			timeStamp: e.timeStamp,
+		});
+	};
+
+	const handleMouseUp = (e) => {
+		dispatch({
+			type: "dragend",
+			x: e.screenX,
+			width: mainRef.current.clientWidth,
+			timeStamp: e.timeStamp,
 		});
 	};
 
 	useEffect(() => {
-		mainRef.current.addEventListener("touchstart", handleTouchStart, {
+		const handleMouseMove = (e) => {
+			if (state.isDragging) {
+				dispatch({
+					type: "dragmove",
+					x: e.screenX,
+				});
+			}
+		};
+		handleMoveRef.current = handleMouseMove;
+	}, [state.isDragging]);
+
+	const handleResize = () => {
+		dispatch({ type: "resize", width: window.innerWidth });
+	};
+
+	useEffect(() => {
+		const func = (e) => handleMoveRef.current(e);
+		mainRef.current.addEventListener("mousedown", handleMouseDown, {
 			passive: true,
 		});
-		mainRef.current.addEventListener("touchmove", handleTouchMove, {
+		mainRef.current.addEventListener("mousemove", func, {
 			passive: true,
 		});
-		mainRef.current.addEventListener("touchend", handleTouchEnd, {
+		window.addEventListener("mouseup", handleMouseUp, {
 			passive: true,
 		});
+		window.addEventListener("resize", handleResize);
 		let sliderRef = mainRef.current;
 		return () => {
-			sliderRef.removeEventListener("touchstart", handleTouchStart);
-			sliderRef.removeEventListener("touchmove", handleTouchMove);
-			sliderRef.removeEventListener("touchend", handleTouchEnd);
+			sliderRef.removeEventListener("mousedown", handleMouseDown);
+			sliderRef.removeEventListener("mousemove", func);
+			window.removeEventListener("mouseend", handleMouseUp);
+			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
+
+	// console.log("trans", state.translate, typeof state.translate);
+	// console.log("fix", state.fixTranslate, typeof state.fixTranslate);
+	// console.log("state", state.translate + state.fixTranslate);
 
 	return (
 		<MainContainer>
 			<h1>Building</h1>
 			<p>Our space let you feel comfortable and airy. Just do it</p>
+			<p>{window.innerWidth}</p>
 			<div
 				ref={mainRef}
 				css={css`
 					position: relative;
 					overflow: hidden;
 					margin: auto;
-					width: 100%;
-					padding: 2rem 10vw;
+					width: 81vw;
+					@media screen and (max-width: 900px) {
+						width: 80vw;
+					}
 					label: slider;
 				`}
 			>
-				<FeaturesDiv
-					css={{
+				<ScrollDiv
+					style={{
 						transition: `transform ease-in-out ${state.transition}s`,
-						transform: `translate3D(${
-							state.fixTranslate + state.translate
-						}px, 0, 0)`,
+						transform: `translate3d(${
+							state.translate + state.fixTranslate
+						}px, 0px, 0px)`,
 					}}
 				>
 					<FeatureCard
@@ -201,17 +292,32 @@ const Features = () => {
 					>
 						<SvgSound css={svgStyle} />
 					</FeatureCard>
-				</FeaturesDiv>
-				<ActiveBars
-					css={css`
-						display: none;
-						@media screen and (max-width: 550px) {
-							display: flex;
-						}
-					`}
-					count={3}
-					activeIndex={state.index}
-				/>
+					<FeatureCard
+						src={sound}
+						title="Lele mera"
+						desc="listen to music in bull bass"
+						css={cardStyle}
+					>
+						<SvgSound css={svgStyle} />
+					</FeatureCard>
+					<FeatureCard
+						src={sound}
+						title="Kya baat hai"
+						desc="listen to music in bull bass"
+						css={cardStyle}
+					>
+						<SvgSound css={svgStyle} />
+					</FeatureCard>
+					<FeatureCard
+						src={sound}
+						title="Bade harami hore ho beta"
+						desc="listen to music in bull bass"
+						css={cardStyle}
+					>
+						<SvgSound css={svgStyle} />
+					</FeatureCard>
+				</ScrollDiv>
+				<ActiveBars count={state.count} activeIndex={state.index} />
 				{/* <img
 					src={left}
 					css={[

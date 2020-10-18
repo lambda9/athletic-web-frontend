@@ -6,22 +6,24 @@ const FeatureCard = React.memo(
 	({ src, title, desc, children, className, refs }) => {
 		return (
 			<div ref={refs} className={className}>
-				<img width={"100%"} src={src} alt={title}></img>
-				<section
-					css={css`
-						padding: 1rem;
-					`}
-				>
-					{children}
-					<h4
+				<div>
+					<img width={"100%"} src={src} alt={title}></img>
+					<section
 						css={css`
-							text-transform: capitalize;
+							padding: 1rem;
 						`}
 					>
-						{title}
-					</h4>
-					<p>{desc}</p>
-				</section>
+						{children}
+						<h4
+							css={css`
+								text-transform: capitalize;
+							`}
+						>
+							{title}
+						</h4>
+						<p>{desc}</p>
+					</section>
+				</div>
 			</div>
 		);
 	}
