@@ -24,10 +24,7 @@ function WeightGain() {
 
   return (
     <div className="wtg-main-comp">
-      <div className="wtg-step-ahead">
-        <div>Let's move a step </div>
-        <div> Ahead</div>
-      </div>
+     
 
       <div className="wtg-our-pro" id="parallex-child">
         <div className="wtg-our-pro-left-div">
@@ -55,8 +52,15 @@ function WeightGain() {
       <div className="wtg-our-tech-cards">
         <div className="wtg-our-tech-cards-cont"></div>
       </div>
+
+     
     </div>
   );
 }
 
 export default WeightGain;
+
+// <div className="wtg-step-ahead">
+// <div>Let's move a step </div>
+// <div> Ahead</div>
+// </div>
