@@ -48,11 +48,14 @@ function WeightGain() {
 
       <Process />
 
+      <div className="wtg-step-ahead-main-div">
       <div className="wtg-step-ahead">
         <div>Let's move a </div> 
         <div>STEP</div>
         <div>AHEAD</div>
-      </div>
+        </div>
+
+        </div>
       <div className="wtg-muscle-gain-div">
         <div className="wtg-muscle-head-text">
           <MiniTitle

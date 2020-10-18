@@ -103,7 +103,7 @@
     width: 60%;
     margin: auto;
   }
-  
+
   .pro-ex-right-div {
     margin-top: 1rem;
     width: 100%;
@@ -150,16 +150,58 @@
   }
 
   .pro-ex-right-div h1 {
-	margin-bottom: 0.3rem;
-	font-size: 22px;
+    margin-bottom: 0.3rem;
+    font-size: 22px;
   }
 
   .pro-ex-right-div li {
-	margin-bottom: 0.5rem;
-	font-size: 10px;
+    margin-bottom: 0.5rem;
+    font-size: 10px;
   }
 
   .pro-ex-below-div img {
-	  margin: auto;
+    margin: auto;
+  }
+}
+
+/* YOGA */
+
+.pro-yoga-main-div {
+  margin: 2rem auto;
+  width: 100%;
+  background-image: url("../../Images/WeightGain/yoga.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 500px;
+  display: flex;
+  /* background-color: thistle; */
+}
+
+.pro-yoga-text-div {
+  width: 75%;
+  margin: auto;
+  margin-right: 0;
+  /* background-color: tomato; */
+}
+
+.pro-yoga-text-div > div:first-child {
+  width: 75%;
+  margin: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .pro-yoga-main-div {
+    flex-direction: column;
+  }
+  .pro-yoga-left-div {
+    width: 80%;
+    height: 60%;
+    background: rgb(53, 29, 192);
+  }
+
+  .pro-yoga-left-div img {
+    width: 100%;
+    height: auto;
+    background: red;
   }
 }

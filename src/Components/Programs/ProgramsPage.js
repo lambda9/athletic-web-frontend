@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import {Link } from 'react-router-dom'
+import {Link } from 'react-router-dom';
 import Hero from "../Hero";
 import bgImg from "../../Images/im8.jpg";
 import WeightLoss from "./WeightLoss/WeightLoss";
 import WeightGain from "./WeightGain/WeightGain";
 import ExploreMore from "../ExploreMore/ExploreMore";
+import Yoga from "./Yoga";
 class OurPrograms extends Component {
   exploreLinks = [
     ["/pt", "Personal Training"],
@@ -20,6 +21,7 @@ class OurPrograms extends Component {
           description="keep your energy up and burn calories"
         ></Hero>
         <WeightLoss />
+        <Yoga />
         <WeightGain />
         <ExploreMore linksArr={this.exploreLinks} />
         <div className="pt-still-q">

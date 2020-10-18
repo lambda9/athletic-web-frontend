@@ -7,7 +7,7 @@ function WTLImgCards() {
   return (
     <div
       className="pt-foryou-card-div"
-      style={{ margin: "3rem auto" }}
+      style={{ margin: "3rem auto 0" }}
       data-aos="fade-up"
       data-aos-duration="1000"
     >
