@@ -4,11 +4,11 @@ import { css, jsx, keyframes } from "@emotion/core";
 import styled from "@emotion/styled";
 
 import { useState } from "react";
-import img1 from "../../Images/HomeBackdrop/im1.jpg";
-import img2 from "../../Images/HomeBackdrop/im2.jpg";
-import img3 from "../../Images/HomeBackdrop/im3.jpg";
-import img4 from "../../Images/HomeBackdrop/im4.jpg";
-import img5 from "../../Images/HomeBackdrop/im5.jpg";
+import img1 from "../../../Images/HomeBackdrop/im1.jpg";
+import img2 from "../../../Images/HomeBackdrop/im2.jpg";
+import img3 from "../../../Images/HomeBackdrop/im3.jpg";
+import img4 from "../../../Images/HomeBackdrop/im4.jpg";
+import img5 from "../../../Images/HomeBackdrop/im5.jpg";
 import CrossFadeImage from "./CrossFadeImage";
 
 const images = [img1, img2, img3, img4, img5];

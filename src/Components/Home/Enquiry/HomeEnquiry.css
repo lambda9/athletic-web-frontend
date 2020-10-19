@@ -5,7 +5,7 @@
 .div {
   width: 100%;
   height: 450px;
-  background-image: url("../../Images/im10.jpg");
+  background-image: url("../../../Images/im10.jpg");
   background-size: cover;
   margin: 4rem auto;
   background-attachment: fixed;

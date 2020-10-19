@@ -1,7 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import "../FreeTrial/FreeTrial.css";
+import { makeStyles } from "@material-ui/core/styles";
+import "../../FreeTrial/FreeTrial.css";
 import "./HomeEnquiry.css";
 
 const PRIME_COLOR = "#459fb6";
