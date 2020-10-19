@@ -35,13 +35,21 @@
   text-transform: capitalize;
 }
 
-.wtl-slogan-div {
-  /* background-color: cornflowerblue; */
+.wtl-slogan-div p {
+  font-size: 10px;
+  width: 60%;
+  margin-top: 1rem;
+  margin: auto;
+  color: red;
 }
 
 .wtl-slogan-div > div:first-child {
   width: 60%;
-  margin: auto;
+  margin: 1rem auto;
+  font-size: 20px;
+}
+
+#slogan-link {
   font-size: 20px;
 }
 
@@ -65,4 +73,13 @@
   .wtl-head-text-div span {
     font-size: 12px;
   }
+
+  .wtl-slogan-div > div:first-child, #slogan-link {
+    width: 95%;
+    font-size: 16px;
+  }
+  .wtl-slogan-div p {
+    width: 95%;
+  }
+ 
 }
