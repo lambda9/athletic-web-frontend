@@ -8,7 +8,7 @@ import PTGotCovered from "./PTGotCovered";
 import BeBolder from "./BeBolder";
 import { Link } from "react-router-dom";
 import MiniTitle from "../GlobalComponents/Title/MiniTitle";
-import ExploreMore from "../ExploreMore/ExploreMore";
+import ExploreMore from "../GlobalComponents/ExploreMore/ExploreMore";
 
 const exploreLinks = [
 	["/programs", "Weight Loss"],

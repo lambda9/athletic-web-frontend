@@ -1,5 +1,5 @@
 import React from "react";
-import MiniTitle from "../GlobalComponents/Title/MiniTitle";
+import MiniTitle from "../Title/MiniTitle";
 import { Link } from "react-router-dom";
 import "./ExploreMore.css";
 
