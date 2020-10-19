@@ -16,7 +16,13 @@ function Home() {
 	return (
 		<div>
 			<FadingCarousel />
-			<Features />
+			<Features>
+				<h1>hello</h1>
+				<h1>cycle</h1>
+				<h1>hi ello</h1>
+				<h1>kya baar hai</h1>
+				<h1>world</h1>
+			</Features>
 			{/* <Equipments /> */}
 			<Programs />
 			<Results />

@@ -7,7 +7,7 @@ import styled from "@emotion/styled";
 import SvgArea from "../Icons/SvgArea";
 import SvgAirConditioning from "../Icons/SvgAirConditioning";
 import SvgSound from "../Icons/SvgSound";
-import FeatureCard from "./FeatureCard";
+// import CardContainer> from "./CardContainer>";
 import { useCallback, useEffect, useReducer, useRef } from "react";
 import ActiveBars from "./ActiveBars";
 
@@ -17,15 +17,11 @@ export const MainContainer = styled.div`
 	padding: 2em 0em;
 `;
 
-export const cardStyle = css`
+export const CardContainer = styled.div`
 	width: 27vw;
 	padding: 0px 15px;
 	& * {
 		user-select: none;
-	}
-	& > div {
-		box-shadow: 0px 5px 5px 0px #00000029;
-		height: 100%;
 	}
 	margin: 15px 0px;
 	@media screen and (max-width: 900px) {
@@ -54,23 +50,10 @@ export const FeaturesDiv = styled.div`
 
 const ScrollDiv = styled.div`
 	display: flex;
-	width: 162vw;
-	justify-content: space-between;
+	width: fit-content;
 	align-items: stretch;
 	margin: auto;
-	@media screen and (max-width: 900px) {
-		width: 240vw;
-	}
-	@media screen and (max-width: 600px) {
-		width: 480vw;
-	}
-`;
-
-const arrowStyle = css`
-	position: absolute;
-	width: 2rem;
-	top: 50%;
-	transform: translateY(-50%);
+	will-change: transform;
 `;
 
 const reducer = (state, dispatch) => {
@@ -85,7 +68,7 @@ const reducer = (state, dispatch) => {
 	} else if (dispatch.type === "dragmove") {
 		return {
 			...state,
-			translate: state.isDragging ? dispatch.x - state.start : 0,
+			translate: dispatch.x - state.start,
 			transition: 0,
 		};
 	} else if (dispatch.type === "dragend") {
@@ -193,9 +176,8 @@ const defaultState = {
 	// display: window.innerWidth > 900 ? 3 : window.innerWidth > 600 ? 2 : 1,
 };
 
-const Features = () => {
+const Features = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, defaultState);
-	const divRef = useRef(null);
 	const mainRef = useRef(null);
 	const handleMoveRef = useRef(null);
 
@@ -266,7 +248,7 @@ const Features = () => {
 			width: mainRef.current.clientWidth,
 			windowWidth: window.innerWidth,
 		});
-		const func = (e) => handleMoveRef.current(e);
+		const handleMouseMove = (e) => handleMoveRef.current(e);
 		mainRef.current.addEventListener("touchstart", handleTouchStart, {
 			passive: true,
 		});
@@ -279,7 +261,7 @@ const Features = () => {
 		mainRef.current.addEventListener("mousedown", handleMouseDown, {
 			passive: true,
 		});
-		mainRef.current.addEventListener("mousemove", func, {
+		mainRef.current.addEventListener("mousemove", handleMouseMove, {
 			passive: true,
 		});
 		window.addEventListener("mouseup", handleMouseUp, {
@@ -289,11 +271,12 @@ const Features = () => {
 		let sliderRef = mainRef.current;
 		return () => {
 			sliderRef.removeEventListener("mousedown", handleMouseDown);
-			sliderRef.removeEventListener("mousemove", func);
+			sliderRef.removeEventListener("mousemove", handleMouseMove);
+			window.removeEventListener("mouseup", handleMouseUp);
+
 			sliderRef.removeEventListener("touchstart", handleTouchStart);
 			sliderRef.removeEventListener("touchmove", handleTouchMove);
 			sliderRef.removeEventListener("touchend", handleTouchEnd);
-			window.removeEventListener("mouseend", handleMouseUp);
 			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
@@ -331,55 +314,9 @@ const Features = () => {
 						}px, 0px, 0px)`,
 					}}
 				>
-					<FeatureCard
-						refs={divRef}
-						src={area}
-						title="1000 sq feet area"
-						desc="you can rome around full area"
-						css={cardStyle}
-					>
-						<SvgArea css={svgStyle} />
-					</FeatureCard>
-					<FeatureCard
-						src={cooler}
-						title="Air conditioning"
-						desc="2 big coolers to let you feel cold in winter"
-						css={cardStyle}
-					>
-						<SvgAirConditioning css={svgStyle} />
-					</FeatureCard>
-					<FeatureCard
-						src={sound}
-						title="Music System"
-						desc="listen to music in bull bass"
-						css={cardStyle}
-					>
-						<SvgSound css={svgStyle} />
-					</FeatureCard>
-					<FeatureCard
-						src={sound}
-						title="Lele mera"
-						desc="listen to music in bull bass"
-						css={cardStyle}
-					>
-						<SvgSound css={svgStyle} />
-					</FeatureCard>
-					<FeatureCard
-						src={sound}
-						title="Kya baat hai"
-						desc="listen to music in bull bass"
-						css={cardStyle}
-					>
-						<SvgSound css={svgStyle} />
-					</FeatureCard>
-					<FeatureCard
-						src={sound}
-						title="Bade harami hore ho beta"
-						desc="listen to music in bull bass"
-						css={cardStyle}
-					>
-						<SvgSound css={svgStyle} />
-					</FeatureCard>
+					{children.map((child) => {
+						return <CardContainer>{child}</CardContainer>;
+					})}
 				</ScrollDiv>
 			</div>
 			<ActiveBars
