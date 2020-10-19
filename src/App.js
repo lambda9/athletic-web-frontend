@@ -14,47 +14,44 @@ import Error from "./Components/Pages/Error";
 import JoinNow from "./Components/Pages/JoinNow";
 import Footer from "./Components/Footer/Footer";
 import ScrollToTop from "./Components/ScrollToTop";
-import FreeTrialPage from './Components/FreeTrial/FreeTrialPage'
-import NewsCard from "./Components/NewsBlog/NewsCard"
-import FranchisePage from './Components/Franchise/FranchisePage'
-import BlogPage from "./Components/NewsBlog/BlogPage"
+import FreeTrialPage from "./Components/FreeTrial/FreeTrialPage";
+import NewsCard from "./Components/NewsBlog/NewsCard";
+import FranchisePage from "./Components/Franchise/FranchisePage";
+import BlogPage from "./Components/NewsBlog/BlogPage";
 import FullBlogPage from "./Components/NewsBlog/FullBlogPage";
-import AdvertisePage from "./Components/Advertise/AdvertisePage"
-import PTPage from "./Components/Training/PersonalTraining/PTPage";
+import AdvertisePage from "./Components/Advertise/AdvertisePage";
+import PTPage from "./Components/PersonalTraining/PTPage";
 
 class App extends Component {
-  render() {
-    return (
-      <Router>
-
-        <ScrollToTop />
-        <Navbar />
-        <div className="main-content">
-        
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/programs/" component={Programs} />
-            <Route exact path="/contactUs/" component={ContactUs} />
-            <Route exact path="/aboutUs/" component={AboutUs} />
-            <Route exact path="/faq/" component={FAQ} />
-            <Route exact path="/gallery/" component={Gallery} />
-            <Route exact path="/membership/" component={Membership} />
-            <Route exact path="/joinNow/:slug" component={JoinNow} />
-            <Route exact path='/freetrial/' component={FreeTrialPage} />
-            <Route exact path='/news/' component={NewsCard} />
-            <Route exact path='/franchise/' component={FranchisePage} />
-            <Route exact path='/blog/' component={BlogPage} />
-            <Route exact path='/fullblog/' component={FullBlogPage} />
-            <Route exact path='/advertise/' component={AdvertisePage} />
-            <Route exact path='/pt' component={PTPage} />
-            <Route component={Error} />
-          </Switch>
-        </div>
-        <Footer />
-
-      </Router>
-    );
-  }
+	render() {
+		return (
+			<Router>
+				<ScrollToTop />
+				<Navbar />
+				<div className="main-content">
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/programs/" component={Programs} />
+						<Route exact path="/contactUs/" component={ContactUs} />
+						<Route exact path="/aboutUs/" component={AboutUs} />
+						<Route exact path="/faq/" component={FAQ} />
+						<Route exact path="/gallery/" component={Gallery} />
+						<Route exact path="/membership/" component={Membership} />
+						<Route exact path="/joinNow/:slug" component={JoinNow} />
+						<Route exact path="/freetrial/" component={FreeTrialPage} />
+						<Route exact path="/news/" component={NewsCard} />
+						<Route exact path="/franchise/" component={FranchisePage} />
+						<Route exact path="/blog/" component={BlogPage} />
+						<Route exact path="/fullblog/" component={FullBlogPage} />
+						<Route exact path="/advertise/" component={AdvertisePage} />
+						<Route exact path="/pt" component={PTPage} />
+						<Route component={Error} />
+					</Switch>
+				</div>
+				<Footer />
+			</Router>
+		);
+	}
 }
 
 export default App;
