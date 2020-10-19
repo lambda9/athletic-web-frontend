@@ -20,6 +20,9 @@ export const MainContainer = styled.div`
 export const cardStyle = css`
 	width: 27vw;
 	padding: 0px 15px;
+	& * {
+		user-select: none;
+	}
 	& > div {
 		box-shadow: 0px 5px 5px 0px #00000029;
 		height: 100%;
@@ -317,6 +320,7 @@ const Features = () => {
 						width: 80vw;
 					}
 					label: slider;
+					cursor: pointer;
 				`}
 			>
 				<ScrollDiv
@@ -377,12 +381,12 @@ const Features = () => {
 						<SvgSound css={svgStyle} />
 					</FeatureCard>
 				</ScrollDiv>
-				<ActiveBars
-					onClick={onClick}
-					count={state.count}
-					activeIndex={state.index}
-				/>
 			</div>
+			<ActiveBars
+				onClick={onClick}
+				count={state.count}
+				activeIndex={state.index}
+			/>
 		</MainContainer>
 	);
 };

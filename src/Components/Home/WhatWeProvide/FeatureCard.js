@@ -7,7 +7,7 @@ const FeatureCard = React.memo(
 		return (
 			<div ref={refs} className={className}>
 				<div>
-					<img width={"100%"} src={src} alt={title}></img>
+					<img draggable={false} width={"100%"} src={src} alt={title}></img>
 					<section
 						css={css`
 							padding: 1rem;
