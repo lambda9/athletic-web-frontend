@@ -14,6 +14,7 @@ class Footer extends Component {
     ["gallery", "Gallery"],
     ["programs", "Programs"],
     ["membership", "Membership"],
+    ['pt', "PT"]
   ];
 
   links2 = [

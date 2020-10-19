@@ -66,10 +66,14 @@ h6 {
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 a {
+  text-decoration: none;
+}
+
+a:hover {
   text-decoration: none;
 }
 
@@ -125,6 +129,15 @@ button:focus {
   background: transparent;
   color: var(--primaryRed);
   border: 2px solid var(--primaryRed);
+}
+
+.bottom-line {
+  width: 20%;
+  max-width: 120px;
+  min-width: 70px;
+  height: 4px;
+  background-color: var(--primaryRed);
+  margin: 0.5rem auto 1rem;
 }
 
 @media screen and (min-width: 550px) {
