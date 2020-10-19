@@ -6,6 +6,7 @@ import WeightLoss from "./WeightLoss/WeightLoss";
 import WeightGain from "./WeightGain/WeightGain";
 import ExploreMore from "../ExploreMore/ExploreMore";
 import Yoga from "./Yoga";
+import ProgramLogoStrip from "./ProgramLogoStrip";
 class OurPrograms extends Component {
   exploreLinks = [
     ["/pt", "Personal Training"],
@@ -22,6 +23,7 @@ class OurPrograms extends Component {
         ></Hero>
         <WeightLoss />
         <Yoga />
+        <ProgramLogoStrip />
         <WeightGain />
         <ExploreMore linksArr={this.exploreLinks} />
         <div className="pt-still-q">

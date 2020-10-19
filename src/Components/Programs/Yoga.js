@@ -14,9 +14,12 @@ function Yoga() {
               width: "50px",
             }}
           />
-          To stay fit and healthy, all you need is just you, relaxing mind and
-          environment. Be a part of yoga program and be proud of our Indian
-          culture
+          <p>
+            
+            To stay fit and healthy, you don't need equipments every time. All
+            you need is just you, relaxing mind and environment. Be a part of
+            yoga program and be proud of our Indian culture.
+          </p>
         </div>
       </div>
     </div>
