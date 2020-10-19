@@ -5,7 +5,7 @@ import { useEffect, useReducer } from "react";
 import "./Programs.css";
 import Slider from "./Slider";
 
-import { programs } from "./programs";
+import { programs } from "./programsData";
 import { reducer } from "./reducer";
 
 const getWindow = (arr, middleIndex, offset) => {

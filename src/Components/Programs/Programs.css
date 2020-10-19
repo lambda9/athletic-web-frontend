@@ -1,238 +1,184 @@
-.programs-image-overlay {
-	text-align: left;
-	bottom: 0%;
-	left: 0%;
-	width: 100%;
-}
-
-.programs-image-overlay * {
-	margin: 0.7rem;
-	text-transform: uppercase;
-	width: -moz-fit-content;
-	width: fit-content;
-	background-color: #04181d9e;
-	padding: 0.2rem 0.5rem;
-	font-family: "Montserrat";
-	color: var(--offWhite);
-}
-
-.pro-car-nextBtn,
-.pro-car-prevBtn {
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	font-size: 32px;
-	background-color: lightyellow;
-	border-radius: 50%;
-	z-index: 3;
-  text-align: left;
-  bottom: 0%;
-  left: 0%;
-  width: 100%;
-}
-
-.programs-image-overlay * {
-  margin: 0.7rem;
-  text-transform: uppercase;
-  width: -moz-fit-content;
-  width: fit-content;
-  background-color: #04181d9e;
-  padding: 0.2rem 0.5rem;
-  color: var(--offWhite);
-}
-
-.pro-car-img-unactive {
-  transform: scale(0.9);
-  box-shadow: 0 0 11px 0px #313131;
-}
-
-.pro-car-img-active {
-  transform: scale(1.5);
-  box-shadow: 0 0 11px 0px #313131;
-}
+/* YOGA */
 
 .pro-ex-card-div {
-  padding: 2rem;
-  margin: 1rem auto;
-  background-color: rgb(235, 235, 235);
-  width: 80%;
+	padding: 2rem;
+	margin: 1rem auto;
+	background-color: rgb(235, 235, 235);
+	width: 80%;
 }
 
 .pro-ex-upper-div {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
+	width: 100%;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
 }
 
 .pro-ex-left-div {
-  width: 50%;
-  display: flex;
+	width: 50%;
+	display: flex;
 }
 
 .pro-ex-left-div img {
-  width: 100%;
-  margin: auto 0;
+	width: 100%;
+	margin: auto 0;
 }
 .pro-ex-right-div {
-  width: 46%;
-  text-align: start;
+	width: 46%;
+	text-align: start;
 }
 
 .pro-ex-right-div ul {
-  list-style-position: inside;
-  list-style-type: none;
-  text-align: justify;
+	list-style-position: inside;
+	list-style-type: none;
+	text-align: justify;
 }
 
 .pro-ex-right-div li {
-  font-size: 14px;
-  margin-bottom: 1rem;
+	font-size: 14px;
+	margin-bottom: 1rem;
 }
 .pro-ex-right-div h1 {
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
 }
 
 .pro-ex-below-div {
-  width: 100%;
-  margin: auto;
-  margin-top: 2rem;
-  display: flex;
+	width: 100%;
+	margin: auto;
+	margin-top: 2rem;
+	display: flex;
 }
 
 .pro-ex-below-div img {
-  width: 20%;
-  margin: 0rem;
-  margin-right: 2rem;
+	width: 20%;
+	margin: 0rem;
+	margin-right: 2rem;
 }
 
 @media screen and (max-width: 900px) {
-  .programs-image-overlay * {
-    margin: 0.5rem;
-  }
+	.programs-image-overlay * {
+		margin: 0.5rem;
+	}
 
-  .programs-image-overlay > h3 {
-    font-size: 0.7rem;
-  }
+	.programs-image-overlay > h3 {
+		font-size: 0.7rem;
+	}
 
-  .pro-ex-card-div {
-    width: 95%;
-    padding: 1rem;
-  }
+	.pro-ex-card-div {
+		width: 95%;
+		padding: 1rem;
+	}
 
-  .pro-ex-upper-div {
-    flex-direction: column;
-  }
+	.pro-ex-upper-div {
+		flex-direction: column;
+	}
 
-  .pro-ex-left-div {
-    width: 60%;
-    margin: auto;
-  }
+	.pro-ex-left-div {
+		width: 60%;
+		margin: auto;
+	}
 
-  .pro-ex-right-div {
-    margin-top: 1rem;
-    width: 100%;
-  }
+	.pro-ex-right-div {
+		margin-top: 1rem;
+		width: 100%;
+	}
 
-  .pro-ex-below-div {
-    margin-top: 0;
-  }
+	.pro-ex-below-div {
+		margin-top: 0;
+	}
 
-  .pro-ex-below-div img {
-    width: 30%;
-  }
+	.pro-ex-below-div img {
+		width: 30%;
+	}
 
-  .pro-ex-right-div h1 {
-    margin-bottom: 0.5rem;
-  }
+	.pro-ex-right-div h1 {
+		margin-bottom: 0.5rem;
+	}
 
-  .pro-ex-right-div li {
-    margin-bottom: 0.5rem;
-  }
+	.pro-ex-right-div li {
+		margin-bottom: 0.5rem;
+	}
 }
 
 @media screen and (max-width: 550px) {
-  .pro-ex-card-div {
-    width: 95%;
-    padding: 0.5rem;
-  }
+	.pro-ex-card-div {
+		width: 95%;
+		padding: 0.5rem;
+	}
 
-  .pro-ex-left-div {
-    width: 60%;
-    margin: auto;
-  }
-  .pro-ex-right-div {
-    margin-top: 1rem;
-    width: 100%;
-  }
+	.pro-ex-left-div {
+		width: 60%;
+		margin: auto;
+	}
+	.pro-ex-right-div {
+		margin-top: 1rem;
+		width: 100%;
+	}
 
-  .pro-ex-below-div {
-    margin-top: 0;
-  }
+	.pro-ex-below-div {
+		margin-top: 0;
+	}
 
-  .pro-ex-below-div img {
-    width: 30%;
-  }
+	.pro-ex-below-div img {
+		width: 30%;
+	}
 
-  .pro-ex-right-div h1 {
-    margin-bottom: 0.3rem;
-    font-size: 22px;
-  }
+	.pro-ex-right-div h1 {
+		margin-bottom: 0.3rem;
+		font-size: 22px;
+	}
 
-  .pro-ex-right-div li {
-    margin-bottom: 0.5rem;
-    font-size: 10px;
-  }
+	.pro-ex-right-div li {
+		margin-bottom: 0.5rem;
+		font-size: 10px;
+	}
 
-  .pro-ex-below-div img {
-    margin: auto;
-  }
+	.pro-ex-below-div img {
+		margin: auto;
+	}
 }
 
-/* YOGA */
-
 .pro-yoga-main-div {
-  margin: 2rem auto 1rem;
-  /* background-color: tomato; */
-  width: 100%;
-  background-image: url("../../Images/WeightGain/yoga.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 500px;
-  display: flex;
+	margin: 2rem auto 1rem;
+	/* background-color: tomato; */
+	width: 100%;
+	background-image: url("../../Images/WeightGain/yoga.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	height: 500px;
+	display: flex;
 }
 
 .pro-yoga-text-div {
-  width: 75%;
-  margin: auto;
-  margin-right: 0;
-  /* background-color: tomato; */
+	width: 75%;
+	margin: auto;
+	margin-right: 0;
+	/* background-color: tomato; */
 }
 
 .pro-yoga-text-div > div:first-child {
-  width: 75%;
-  margin: auto;
+	width: 75%;
+	margin: auto;
 }
-
 
 /*program logo strip */
 
 .pro-logo {
-  display: flex;
-  justify-content: space-evenly;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .pro-logo img {
-  width: 25%;
-  max-width: 220px;
-  height: auto;
-  margin: auto;
-  transition: 0.2s;
+	width: 25%;
+	max-width: 220px;
+	height: auto;
+	margin: auto;
+	transition: 0.2s;
 }
 
 .pro-logo img:hover {
-  transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 @media screen and (max-width: 900px) {
@@ -247,31 +193,25 @@
 	.programs-image-overlay > p {
 		font-size: 0.2rem;
 	}
-  .pro-yoga-main-div {
-    flex-direction: column;
-    background-position: center;
-  }
-  .pro-yoga-text-div {
-    width: 80%;
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.562);
-  }
-
+	.pro-yoga-main-div {
+		flex-direction: column;
+		background-position: center;
+	}
+	.pro-yoga-text-div {
+		width: 80%;
+		margin: auto;
+		background-color: rgba(255, 255, 255, 0.562);
+	}
 }
 
 @media screen and (max-width: 550px) {
-  .pro-yoga-main-div {
-    height: 300px;
-
-  }
-  .pro-yoga-text-div {
-    width: 95%;
-  }
-  .pro-yoga-text-div p {
-    font-size: 12px;
-  }
-
-  /* .pro-logo {
-    flex-direction: column;
-  } */
+	.pro-yoga-main-div {
+		height: 300px;
+	}
+	.pro-yoga-text-div {
+		width: 95%;
+	}
+	.pro-yoga-text-div p {
+		font-size: 12px;
+	}
 }

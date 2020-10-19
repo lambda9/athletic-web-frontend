@@ -1,9 +1,9 @@
-import img1 from "../../Images/im4.jpg";
-import img2 from "../../Images/im5.jpg";
-import img3 from "../../Images/im9.jpg";
-import img4 from "../../Images/im10.jpg";
-import img5 from "../../Images/im20.jpg";
-import img6 from "../../Images/im21.jpg";
+import img1 from "../../../Images/im4.jpg";
+import img2 from "../../../Images/im5.jpg";
+import img3 from "../../../Images/im9.jpg";
+import img4 from "../../../Images/im10.jpg";
+import img5 from "../../../Images/im20.jpg";
+import img6 from "../../../Images/im21.jpg";
 
 export const programs = [
 	{

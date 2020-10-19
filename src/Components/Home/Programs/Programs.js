@@ -1,5 +1,5 @@
 import React from "react";
-import ProgramCarousel from "../Programs/ProgramCarousel";
+import ProgramCarousel from "./ProgramCarousel";
 
 const Programs = () => {
 	return (
