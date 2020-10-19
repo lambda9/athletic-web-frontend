@@ -1,5 +1,4 @@
 import React from "react";
-// import HeroSection from "../HeroSection/HeroSection";
 import HomePageEnquiry from "./HomePageEnquiry";
 import HomePageFAQ from "../FAQ/HomePageFAQ";
 import WhyJoinUs from "../WhyJoinUs/WhyJoinUs";
@@ -10,20 +9,18 @@ import BMI from "../BMI/BMI";
 import Features from "./WhatWeProvide/Features";
 import Results from "./WhatWeProvide/Results";
 import Programs from "./Programs";
-// import Equipments from "./WhatWeProvide/Equipments";
+import { features } from "./WhatWeProvide/features";
+import FeatureCard from "./WhatWeProvide/FeatureCard";
 
 function Home() {
 	return (
 		<div>
 			<FadingCarousel />
 			<Features>
-				<h1>hello</h1>
-				<h1>cycle</h1>
-				<h1>hi ello</h1>
-				<h1>kya baar hai</h1>
-				<h1>world</h1>
+				{features.map((value) => {
+					return <FeatureCard {...value} />;
+				})}
 			</Features>
-			{/* <Equipments /> */}
 			<Programs />
 			<Results />
 			<OurPlans />
