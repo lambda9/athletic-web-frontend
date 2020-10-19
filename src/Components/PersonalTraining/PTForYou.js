@@ -1,6 +1,6 @@
 import React from "react";
-import HeadDescBorderCard from "../CardGroup/HeadDescBorderCard";
-import MiniTitle from "../Title/MiniTitle";
+import HeadDescBorderCard from "../GlobalComponents/CardGroup/HeadDescBorderCard";
+import MiniTitle from "../GlobalComponents/Title/MiniTitle";
 
 function PTForYou() {
 	return (

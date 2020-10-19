@@ -7,7 +7,7 @@ import PTForYou from "./PTForYou";
 import PTGotCovered from "./PTGotCovered";
 import BeBolder from "./BeBolder";
 import { Link } from "react-router-dom";
-import MiniTitle from "../Title/MiniTitle";
+import MiniTitle from "../GlobalComponents/Title/MiniTitle";
 import ExploreMore from "../ExploreMore/ExploreMore";
 
 const exploreLinks = [

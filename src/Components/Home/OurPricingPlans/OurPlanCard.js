@@ -1,6 +1,6 @@
 import React from "react";
 import "./OurPlans.css";
-import Triangle from "../../Shapes/Triangle";
+import Triangle from "../../GlobalComponents/Shapes/Triangle";
 import { Link } from "react-router-dom";
 import { BsStarFill, FaRupeeSign } from "react-icons/all";
 

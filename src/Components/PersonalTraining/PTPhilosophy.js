@@ -1,5 +1,5 @@
 import React from "react";
-import MiniTitle from "../Title/MiniTitle";
+import MiniTitle from "../GlobalComponents/Title/MiniTitle";
 
 function PTPhilosophy() {
 	return (

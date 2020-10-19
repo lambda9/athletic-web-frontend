@@ -1,7 +1,7 @@
 import React from "react";
 import ptImg from "../../Images/im11.jpg";
-import MiniTitle from "../Title/MiniTitle";
-import ImgHeadDescCard from "../CardGroup/ImgHeadDescCard";
+import MiniTitle from "../GlobalComponents/Title/MiniTitle";
+import ImgHeadDescCard from "../GlobalComponents/CardGroup/ImgHeadDescCard";
 function PTGotCovered() {
 	return (
 		<div className="pt-got-covered-comp">

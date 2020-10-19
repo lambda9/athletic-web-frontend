@@ -13,7 +13,7 @@ import Membership from "./Components/Membership/Membership";
 import Error from "./Components/Pages/Error";
 import JoinNow from "./Components/Pages/JoinNow";
 import Footer from "./Components/Footer/Footer";
-import ScrollToTop from "./Components/ScrollToTop";
+import ScrollToTop from "./Components/GlobalComponents/ScrollToTop";
 import FreeTrialPage from "./Components/FreeTrial/FreeTrialPage";
 import NewsCard from "./Components/NewsBlog/NewsCard";
 import FranchisePage from "./Components/Franchise/FranchisePage";
