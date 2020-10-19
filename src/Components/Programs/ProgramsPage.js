@@ -8,6 +8,7 @@ import ExploreMore from "../ExploreMore/ExploreMore";
 import Yoga from "./Yoga";
 import ProgramLogoStrip from "./ProgramLogoStrip";
 import WTLSlogan from "./WeightLoss/WTLSlogan";
+
 class OurPrograms extends Component {
   exploreLinks = [
     ["/pt", "Personal Training"],
