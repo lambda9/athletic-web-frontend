@@ -7,31 +7,45 @@ import supplementIcon from "../../../Images/WeightGain/supplementIcon.png";
 import MiniTitle from "../../Title/MiniTitle";
 
 function Process() {
+  const processCardDt = [
+    {
+      id: 0,
+      icon: supplementIcon,
+      heading: "protein",
+      description:
+        "Calculated calorie and protein diet is necessary for desired outputs",
+    },
+    {
+      id: 1,
+      icon: strategyIcon,
+      heading: "strategy",
+      description:
+        "Build with a lot of research and experience. A plan which is necesssary from diet to training",
+    },
+    {
+      id: 2,
+      icon: weightIcon,
+      heading: "workout",
+      description:
+        "Do proper excercise in the guidance of our trainers and shape your body",
+    },
+  ];
+
   return (
     <div className="wtg-process">
-      <MiniTitle title={"p r o c e s s"}  />
+      <MiniTitle title={"p r o c e s s"} />
       <div className="wtg-process-card-cont">
-        <IconHeadDescCard
-          icon={supplementIcon}
-          heading={"protein"}
-          description={
-            "Calculated calorie and protein diet is necessary for desired outputs"
-          }
-        />
-        <IconHeadDescCard
-          icon={strategyIcon}
-          heading={"strategy"}
-          description={
-            "Build with a lot of research and experience. A plan which is necesssary from diet to training"
-          }
-        />
-        <IconHeadDescCard
-          icon={weightIcon}
-          heading={"workout"}
-          description={
-            "Do proper excercise in the guidance of our trainers and shape your body"
-          }
-        />
+        {processCardDt.map((item) => {
+          return (
+            <IconHeadDescCard
+              id={item.id}
+              dataAos="fade-up"
+              icon={item.icon}
+              heading={item.heading}
+              description={item.description}
+            />
+          );
+        })}
       </div>
     </div>
   );

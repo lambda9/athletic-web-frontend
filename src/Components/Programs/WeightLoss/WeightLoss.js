@@ -3,7 +3,6 @@ import "./WeightLoss.css";
 
 import WTLProgramComp from "./WTLProgramComp";
 import WTLImgCards from "./WTLImgCards";
-import WTLSlogan from "./WTLSlogan";
 import WTLAboutCards from "./WTLAboutCards";
 import MiniTitle from "../../Title/MiniTitle";
 
@@ -18,11 +17,8 @@ function WeightLoss() {
       >
         <MiniTitle title={"lose weight, live happy"} />
       </div>
-
       <WTLAboutCards />
-
       <WTLProgramComp />
-
       <WTLImgCards />
     </div>
   );
