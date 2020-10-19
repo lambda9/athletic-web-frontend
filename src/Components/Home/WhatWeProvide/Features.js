@@ -1,13 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
-import area from "../../../Images/HomeWhatWeProvide/area.jpeg";
-import cooler from "../../../Images/HomeWhatWeProvide/cooler.jpeg";
-import sound from "../../../Images/HomeWhatWeProvide/sound.jpeg";
 import styled from "@emotion/styled";
-import SvgArea from "../Icons/SvgArea";
-import SvgAirConditioning from "../Icons/SvgAirConditioning";
-import SvgSound from "../Icons/SvgSound";
-// import CardContainer> from "./CardContainer>";
 import { useCallback, useEffect, useReducer, useRef } from "react";
 import ActiveBars from "./ActiveBars";
 
@@ -314,8 +307,8 @@ const Features = ({ children }) => {
 						}px, 0px, 0px)`,
 					}}
 				>
-					{children.map((child) => {
-						return <CardContainer>{child}</CardContainer>;
+					{children.map((child, index) => {
+						return <CardContainer key={index}>{child}</CardContainer>;
 					})}
 				</ScrollDiv>
 			</div>

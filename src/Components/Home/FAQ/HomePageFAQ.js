@@ -8,13 +8,14 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./HomePageFAQ.css";
 
-const primaryColor = "#459fb6";
-const c2 = "#1ca9c9";
+// const primaryColor = "#459fb6";
+// const c2 = "#1ca9c9";
 
 export default function ControlledAccordions() {
   const faqDt = [
     {
       id: "faq_1",
+      key: 1,
       expanded: "panel1",
       ques: "Who are you and how long have you been around?",
       ans:
@@ -22,6 +23,7 @@ export default function ControlledAccordions() {
     },
     {
       id: "faq_2",
+      key: 2,
       expanded: "panel2",
       ques: "Do you have water or should I bring my own?",
       ans:
@@ -29,6 +31,7 @@ export default function ControlledAccordions() {
     },
     {
       id: "faq_3",
+      key: 3,
       expanded: "panel3",
       ques: "Do you have lockers?",
       ans:
@@ -61,11 +64,9 @@ export default function ControlledAccordions() {
     acc: {
       transition: "all linear 0.2s",
       backgroundColor: "transparent",
-      
     },
     head: {
-      "& .Mui-expanded": {
-      },
+      "& .Mui-expanded": {},
     },
     heading: {
       fontSize: width < 550 ? "16px" : "20px",
@@ -95,6 +96,7 @@ export default function ControlledAccordions() {
         {faqDt.map((item) => {
           return (
             <Accordion
+              key={item.key}
               expanded={expanded === item.expanded}
               onChange={handleChange(item.expanded)}
               className={classes.acc}

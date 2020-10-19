@@ -76,7 +76,6 @@ class FranchiseContForm extends Component {
         <form className={classes.root} autoComplete="nope">
           <CssTextField
             required
-            keyboard={false}
             type="text"
             name="name"
             value={this.state.name}

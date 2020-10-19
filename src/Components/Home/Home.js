@@ -20,7 +20,7 @@ function Home() {
 			<Covid />
 			<Features>
 				{features.map((value) => {
-					return <FeatureCard {...value} />;
+					return <FeatureCard {...value} key={value.id} />;
 				})}
 			</Features>
 			<OurPlans />

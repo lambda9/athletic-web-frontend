@@ -106,7 +106,6 @@ function BMIinput(props) {
               endAdornment={
                 <InputAdornment position="end">feet</InputAdornment>
               }
-              id="standard-adornment-height"
             />
           </FormControl>
           <FormControl className={classes.height}>
@@ -118,7 +117,6 @@ function BMIinput(props) {
               endAdornment={
                 <InputAdornment position="end">inch</InputAdornment>
               }
-              id="standard-adornment-height"
             />
           </FormControl>
         </div>
