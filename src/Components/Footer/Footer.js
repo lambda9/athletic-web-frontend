@@ -1,72 +1,66 @@
 import React, { Component } from "react";
 import "./Footer.css";
-import { Link } from "react-router-dom";
+import Quicklinks from "./QuickLinks";
+import Footerhead from "./FooterHeads";
+import Newsletter from "./Newsletter";
 import { FaCopyright } from "react-icons/all";
 import SocialMedia from "./SocialMedia";
 import GetApp from "./GetApp";
 
 class Footer extends Component {
-  links = [
-    ["/", "home"],
-    ["programs", "programs"],
-    ["membership", "membership"],
-    ["gallery", "gallery"],
-    ["aboutUs", "about us"],
-    ["contactUs", "contact us"],
-    ["faq", "FAQ"],
-    ["news","Latest News"],
-    ['blog', 'Blog'],
-    ['advertise', "Advertise With Us"]
+  links1 = [
+    ["/", "Home"],
+    ["blog", "Blog"],
+    ["gallery", "Gallery"],
+    ["programs", "Programs"],
+    ["membership", "Membership"],
+    ['pt', "PT"]
   ];
 
-  timmings = [
-    ["Week Days", "8 A.M. - 10 P.M."],
-    ["Weekends", "8 A.M. - 10 P.M."],
+  links2 = [
+    ["faq", "FAQ"],
+    ["aboutUs", "About us"],
+    ["news", "Latest News"],
+    ["contactUs", "Contact Us"],
+    ["advertise", "Advertise with us"],
   ];
 
   render() {
     return (
-      <div className="footer-comp">
-        <div className="footer-bg">
-          <div className="footer-link-timmings">
-            <div className="footer-quick-links-div">
-              <div className="footer-quick-links-cont">
-                <span>Quick Links</span>
-                {this.links.map((item) => {
-                  return <Link to={`${item[0]}`} key={item[0]}>{item[1]}</Link>;
-                })}
+      <div className="footer-component">
+        <div className="footer-text">WORK HARD . PLAY HARD</div>
+        <div className="footer-main">
+          <div className="footer-child child1">
+            <Footerhead head="Newsletter" />
+            <div className="footer-child-content">
+              <Newsletter />
+            </div>
+          </div>
+          <div className="footer-child child2">
+            <Footerhead head="Quick links" />
+            <div className="footer-child-content">
+              <div className="footer-quicklink-group">
+                <Quicklinks group={this.links1} />
+                <Quicklinks group={this.links2} />
               </div>
             </div>
-            <div className="footer-timmings-div">
-              <div className="footer-timmings-cont">
-                <span>Timings</span>
-                <br />
-
-                {this.timmings.map((item) => {
-                  return (
-                    <p>
-                      {item[0]}: {item[1]}
-                    </p>
-                  );
-                })}
-              </div>
+          </div>
+          <div className="footer-child child3">
+            <Footerhead head="Stay connected" />
+            <div className="footer-child-content">
+              <SocialMedia />
             </div>
-            <div className="footer-buttons-right">
+            <Footerhead head="Get our app" />
+            <div className="footer-child-content">
               <GetApp />
             </div>
           </div>
-          <div className="footer-buttons">
-            <SocialMedia />
-            <div className="footer-get-app-div">
-              <GetApp />
-            </div>
+        </div>
+        <div className="footer-copyright">
+          <div>
+            <FaCopyright /> Athletic gym and fitness center
           </div>
-          <div className="footer-copyright">
-            <div>
-              <FaCopyright /> Athletic gym and fitness center
-            </div>
-            <div>All rights reserved</div>
-          </div>
+          <div>All rights reserved</div>
         </div>
       </div>
     );

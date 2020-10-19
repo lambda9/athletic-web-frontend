@@ -1,7 +1,6 @@
 .Entry-Form{
     background-color: aqua;
     display: block;
-    /* flex-direction: column; */
 }
 
 input{

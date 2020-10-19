@@ -20,6 +20,7 @@ import FranchisePage from './Components/Franchise/FranchisePage'
 import BlogPage from "./Components/NewsBlog/BlogPage"
 import FullBlogPage from "./Components/NewsBlog/FullBlogPage";
 import AdvertisePage from "./Components/Advertise/AdvertisePage"
+import PTPage from "./Components/Training/PersonalTraining/PTPage";
 
 class App extends Component {
   render() {
@@ -45,6 +46,7 @@ class App extends Component {
             <Route exact path='/blog/' component={BlogPage} />
             <Route exact path='/fullblog/' component={FullBlogPage} />
             <Route exact path='/advertise/' component={AdvertisePage} />
+            <Route exact path='/pt' component={PTPage} />
             <Route component={Error} />
           </Switch>
         </div>

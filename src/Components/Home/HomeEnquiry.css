@@ -1,6 +1,5 @@
 .custom {
   height: 850px;
-  /* background-color: blue; */
 }
 
 .div {
@@ -24,10 +23,8 @@
   width: 90%;
   margin: auto;
   padding: 1rem;
-  /* min-width: ; */
   background-color: white;
-  box-shadow: 0 0 11px 0px #313131;
-  /* background-color: aquamarine; */
+  box-shadow: 0 0 11px 0px #c2c2c2;
 }
 
 .home-enquiry-left-div {
@@ -35,7 +32,6 @@
   margin: 1rem auto;
   color: white;
   height: fit-content;
-  /* background-color: aquamarine; */
 }
 
 .home-enquiry-left-div span {
@@ -76,7 +72,7 @@
   .home-enquiry-main-div {
     width: 40%;
     min-width: 450px;
-    transform: translateY(-45px);
+    transform: translateY(-38px);
     padding: 2rem;
     border-radius: 5px;
   }

@@ -16,6 +16,12 @@ const useStyles = (theme) => ({
       margin: theme.spacing(1),
       width: "95%",
     },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "#459fb6",
+    },
+    "& .MuiFormLabel-root.Mui-focused": {
+      color: "#459fb6",
+    },
   },
 
   cancelButton: {
@@ -29,28 +35,43 @@ const useStyles = (theme) => ({
     },
   },
 
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-
   radioControl: {
     textAlign: "left",
-    width: "50%",
+    width: "200px",
+    marginTop: "1rem",
     display: "flex",
+    // backgroundColor: "green",
   },
 
   radioButton: {
-    marginTop: "0px",
+    marginTop: "-5px",
     marginBottom: "-5px",
   },
 
-  temp: {
+  selectField: {
+    // backgroundColor: "yellow",
+    marginTop: "1rem",
+    width: "200px",
+    ["@media (max-width:473px)"]: {
+      // marginTop: "1rem",
+    },
     borderBottomColor: "#459fb6",
+    "& .FreeTrialEntryFields-root-1": {
+      backgroundColor: "#459fb6",
+    },
   },
 
-  selectEmpty: {
-    marginTop: theme.spacing(1),
+  ageField: {
+    "& .MuiTextField-root": {
+      width: "200px",
+      margin: "auto",
+      // marginTop: "1px",
+      marginTop: "1.009rem",
+      // backgroundColor: "red",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "#459fb6",
+    },
   },
 });
 
@@ -58,9 +79,6 @@ const CssTextField = withStyles({
   root: {
     "& label.Mui-focused": {
       color: "#459fb6",
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: "#459fb6",
     },
   },
 })(TextField);
@@ -77,9 +95,8 @@ const SelectField = withStyles({
   input: {
     borderRadius: 4,
     position: "relative",
-    border: "1px solid #ced4da",
+
     fontSize: 16,
-    padding: "10px 26px 10px 12px",
     "&:focus": {
       borderRadius: 4,
       borderColor: "#80bdff",
@@ -96,6 +113,8 @@ class FreeTrialEntryFields extends Component {
       name: "",
       email: "",
       phoneNum: "",
+      age: 18,
+      sex: "male",
       time: "morning",
       program: "none",
       date: this.getNextDate(),
@@ -116,8 +135,7 @@ class FreeTrialEntryFields extends Component {
     });
   };
 
-  handleSubmit = () => {
-  };
+  handleSubmit = () => {};
 
   render() {
     const { classes } = this.props;
@@ -166,6 +184,38 @@ class FreeTrialEntryFields extends Component {
             onChange={this.handleChange}
           />
           <div className="free-trial-entry-fields-selection">
+            <FormControl component="fieldset" className={classes.ageField}>
+              <TextField
+                required
+                value={this.state.age}
+                type="number"
+                name="age"
+                label="Age"
+                variant="standard"
+                onChange={this.handleChange}
+              />
+            </FormControl>
+            <FormControl className={classes.selectField}>
+              <InputLabel htmlFor="select-program">Program</InputLabel>
+              <SelectField
+                required
+                native
+                name="program"
+                defaultValue="None"
+                className={classes.temp}
+                value={this.state.program}
+                onChange={this.handleChange}
+              >
+                <option aria-label="None" value="none">
+                  None
+                </option>
+                <option value={"Cardio"}>Cardio</option>
+                <option value={"weightLoss"}>Weight Loss</option>
+                <option value={"muscleGain"}>Muscle Gain</option>
+              </SelectField>
+            </FormControl>
+          </div>
+          <div className="free-trial-entry-fields-selection">
             <FormControl component="fieldset" className={classes.radioControl}>
               <FormLabel component="legend">Choose Time</FormLabel>
               <RadioGroup
@@ -188,25 +238,27 @@ class FreeTrialEntryFields extends Component {
                 />
               </RadioGroup>
             </FormControl>
-
-            <FormControl className={classes.root}>
-              <InputLabel htmlFor="select-program">Program</InputLabel>
-              <SelectField
-                required
-                native
-                name="program"
-                defaultValue="None"
-                className={classes.temp}
-                value={this.state.program}
+            <FormControl component="fieldset" className={classes.radioControl}>
+              <FormLabel component="legend">Sex</FormLabel>
+              <RadioGroup
+                aria-label="male"
+                name="sex"
+                value={this.state.sex}
                 onChange={this.handleChange}
               >
-                <option aria-label="None" value="none">
-                  None
-                </option>
-                <option value={"Cardio"}>Cardio</option>
-                <option value={"weightLoss"}>Weight Loss</option>
-                <option value={"muscleGain"}>Muscle Gain</option>
-              </SelectField>
+                <FormControlLabel
+                  value="male"
+                  control={<Radio />}
+                  label="Male"
+                  className={classes.radioButton}
+                />
+                <FormControlLabel
+                  value="female"
+                  control={<Radio />}
+                  className={classes.radioButton}
+                  label="Female"
+                />
+              </RadioGroup>
             </FormControl>
           </div>
           <div className="free-trial-btn-container">
@@ -220,7 +272,6 @@ class FreeTrialEntryFields extends Component {
               Cancel
             </button>
           </div>
-
         </form>
       </div>
     );

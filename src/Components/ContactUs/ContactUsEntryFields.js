@@ -121,26 +121,26 @@ class UserContactForm extends Component {
 						label="Message"
 						onChange={this.handleChange}
 					/>
+          <div className="cont-comp-form-btn-container">
+            <button
+              onClick={this.handleSubmit}
+              className="button-primary btn-margin"
+              type="submit"
+            >
+              Submit
+            </button>
+            <button
+              onClick={this.handleReset}
+              className="button-primary  cancel-btn"
+            >
+              reset
+            </button>
+          </div>
+        </form>
+      </div>
+    );
+  }
 
-					<div className="cont-comp-form-btn-container">
-						<button
-							onClick={this.handleSubmit}
-							className="button-primary"
-							type="submit"
-						>
-							Submit
-						</button>
-						<button
-							onClick={this.handleReset}
-							className="button-primary  cancel-btn"
-						>
-							reset
-						</button>
-					</div>
-				</form>
-			</div>
-		);
-	}
 }
 
 export default withStyles(useStyles)(UserContactForm);

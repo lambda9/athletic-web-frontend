@@ -4,6 +4,7 @@
 .cont-rac-main-div {
   width: 100%;
   margin: 2rem auto;
+  margin-top: -5rem;
   transition: var(--fastTransition);
   border: 2px solid green;
 }

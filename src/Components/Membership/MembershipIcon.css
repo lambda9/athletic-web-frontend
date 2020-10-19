@@ -1,0 +1,106 @@
+.membership-icon-background{
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    background:var(--mainBlack);
+    display: grid;
+    grid-template-columns:repeat(1,auto);
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: consolas;
+}
+.membership-icon-background h1{
+    color:var(--mainGrey);
+}
+.membership-icon-container{
+    width: 1200px;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ .membership-icon-card{
+    position: relative;
+    cursor: pointer;
+    width: auto;
+}
+
+ .face{
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.face1{
+    position: relative;
+    background:rgb(102, 102, 102);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.membership-icon-card:hover .face.face1{
+    background: var(--primaryColor);
+    transform: translateY(0);
+}
+
+ .membership-icon-card-content{
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+ .membership-icon-card:hover .face.face1 .membership-icon-card-content{
+    opacity: 0.7;
+}
+
+ .membership-icon-card-content img{
+    max-width: 100px;
+}
+
+
+ .membership-icon-card-content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color: var(--mainGrey);
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.face2{
+    position: relative;
+    background: var(--mainBlack);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+}
+
+.membership-icon-container .membership-icon-card:hover .face.face2{
+    transform: translateY(0);
+}
+
+ .membership-icon-card-content p{
+    margin: 0;
+    padding: 0;
+    font-size:20px;
+    color:var(--mainGrey);
+}
+@media screen and (max-width:550px){
+    .membership-icon-background{
+        display: flex;
+        flex-direction: column;
+    }
+    .membership-icon-container{
+        width:auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .membership-icon-background h1{
+        font-size:25px;
+    }
+}
