@@ -1,55 +1,89 @@
 .franchise-main-comp {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
 }
 
 .franchise-head-div {
   width: 100%;
-  /* background-color: lightblue; */
-  margin: auto;
+  background-color: rgb(25, 206, 238);
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
 .franchise-head-div span {
   width: 90%;
   max-width: 1000px;
-  display: inline-block;
   /* background-color: khaki; */
+  margin: 0px auto;
 }
 
 .franchise-feature-main-div {
+  background-image: url("https://cdn.pixabay.com/photo/2018/03/01/05/45/businessman-3189794__340.jpg");
+  background-size: cover;
+  height: 400px;
+  align-items: flex-end;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  margin: 6rem auto;
   justify-content: center;
+}
+
+.franchise-feature-main-div{
+  display: flex;
+  left: 70%;
+
 }
 
 .franchise-feature-div {
-    margin: 1rem 1rem;
-    min-width: 250px;
-    flex-wrap: wrap;   width: 360px;
-    /* background-color: lightcyan; */
-    text-transform: uppercase;
+  margin: 1rem 1rem;
+  min-width: 250px;
+  flex-wrap: wrap;
+  width: 360px;
+  /* background-color: lightcyan; */
+  text-transform: uppercase;
 }
 
 .franchise-feature-div div {
-    margin: 1rem 1rem;
+  margin: 1rem 1rem;
 }
 
-.franchise-get-started {
-  display: flex;
-  flex-wrap: wrap;
-  width: 90%;
-  justify-content: center;
-  margin: 2rem auto 4rem;
-  /* background-color: honeydew; */
-}
-
-.franchise-get-started div {
-  margin: 1rem 2rem;
-  width: 320px;
-  /* background-color: lightcyan; */
-  text-align: left;
+.franchise-get-started-comp {
+  background-color: green;
+  height: 400px;
 }
 
 .franchise-get-started-icon {
   font-size: 42px;
+}
+
+.franchis-low-cost {
+  display: flex;
+  background-color: green;
+  height: 400px;
+}
+
+.franchis-low-cost div {
+  margin: 24px auto;
+}
+
+.franchise-simple-process {
+  background-color: yellow;
+  height: 400px;
+  display: flex;
+}
+
+.franchise-simple-process div {
+  margin: 24px auto;
+}
+
+.franchise-simple-process img {
+  position: relative;
+  right: 0%;
+}
+
+.franchise-360-support {
+  background-color: orange;
+  height: 400px;
 }

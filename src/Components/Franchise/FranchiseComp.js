@@ -34,16 +34,22 @@ function FranchiseComp(props) {
           </div>
         </div>
         <div>
-
-          <div className="franchise-get-started">
+          <div className="franchis-low-cost">
+            <img
+              src="https://cdn.pixabay.com/photo/2018/09/12/11/18/scale-3671883_960_720.jpg"
+              width="600"
+              height="400"
+            />
             <div>
               <BiWallet className="franchise-get-started-icon" />
               <h1>Low Cost Investment</h1>
               <p>
-                We offers very affordable franchise and monthly
-                fees versus other industries.
+                We offers very affordable franchise and monthly fees versus
+                other industries.
               </p>
             </div>
+          </div>
+          <div className="franchise-simple-process">
             <div>
               <FcProcess className="franchise-get-started-icon" />
               <h1>Simple Process</h1>
@@ -52,18 +58,24 @@ function FranchiseComp(props) {
                 owner.
               </p>
             </div>
-            <div>
-              <FaHeadset className="franchise-get-started-icon" />
-              <h1>360 Support</h1>
-              <p>
-                We’re here for you through the life of your club with customized
-                support for each stage of your growth.
-              </p>
-            </div>
+            <img
+              src="https://cdn.pixabay.com/photo/2018/04/05/17/21/kettlebell-3293475_960_720.jpg"
+              width="600"
+              height="400"
+            />
           </div>
+          <div className="franchise-360-support">
+            <FaHeadset className="franchise-get-started-icon" />
+            <h1>360 Support</h1>
+            <p>
+              We’re here for you through the life of your club with customized
+              support for each stage of your growth.
+            </p>
+          </div>
+
+          <div className="franchise-get-started"></div>
         </div>
       </div>
-      
     </div>
   );
 }
