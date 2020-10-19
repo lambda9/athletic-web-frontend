@@ -2,7 +2,7 @@
 	width: 100%;
 	height: fit-content;
 	/* font-size: 10%; */
-	background-image: url("../../Images/wju1.jpg");
+	background-image: url("../../../Images/wju1.jpg");
 	background-size: cover;
 	padding: 2em 0em;
 	background-attachment: fixed;
@@ -87,4 +87,3 @@
 		width: 100%;
 	}
 }
-

@@ -3,10 +3,10 @@ import "./BMI.css";
 import BMIinput from "./BMIinput";
 import BMITable from "./BMITable";
 import BMIConclusion from "./BMIConclusion";
-import underweight from "../../Images/BMI/underweight.png";
-import overweight from "../../Images/BMI/overweight.png";
-import obese from "../../Images/BMI/obese.png";
-import healthy from "../../Images/BMI/normal.png";
+import underweight from "../../../Images/BMI/underweight.png";
+import overweight from "../../../Images/BMI/overweight.png";
+import obese from "../../../Images/BMI/obese.png";
+import healthy from "../../../Images/BMI/normal.png";
 
 export const healthState = {
 	UNDERWEIGHT: "underweight",
