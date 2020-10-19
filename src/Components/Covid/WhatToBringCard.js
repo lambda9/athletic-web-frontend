@@ -1,12 +1,15 @@
-import React from 'react';
+import React from "react";
 import "./Covid.css";
-function WhatToBringCard({img,desc}) {
-    return (
-        <div className="what-to-bring-card">
-        <img className="what-to-bring-icon" src={img}/>
-        <p>{desc}</p>           
-        </div>
-    )
+
+// wtb = what-to-bring
+
+function WhatToBringCard({ img, desc }) {
+  return (
+    <div className="wtb-card">
+      <img className="wtb-icon" src={img} />
+      <p>{desc}</p>
+    </div>
+  );
 }
 
-export default WhatToBringCard
+export default WhatToBringCard;
