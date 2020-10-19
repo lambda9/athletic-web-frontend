@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactUs.css";
-import { SiGooglemaps } from "react-icons/all";
+import { SiGooglemaps, RiPhoneFill, MdMail, CgEye } from "react-icons/all";
 // add => address
 
 function AddressComp() {
@@ -16,7 +16,17 @@ function AddressComp() {
         <div>Jodhpur, Rajasthan</div>
         <div>India, PIN: 203205</div>
 
-        <div className="add-comp-rest-add-phone">Phone: 1234567</div>
+        <div className="add-comp-rest-add-phone">
+          <div>
+            <RiPhoneFill /> 1234567
+          </div>
+          <div>
+            <MdMail /> abc@ahtleticgym.com
+          </div>
+          <div>
+            <CgEye /> Explore Gym
+          </div>
+        </div>
       </div>
     </div>
   );
