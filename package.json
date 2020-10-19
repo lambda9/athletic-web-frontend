@@ -45,5 +45,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@svgr/cli": "^5.4.0"
+  }
 }

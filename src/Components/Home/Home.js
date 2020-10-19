@@ -1,5 +1,4 @@
 import React from "react";
-import HeroSection from "../HeroSection/HeroSection";
 import HomePageEnquiry from "./HomePageEnquiry";
 import HomePageFAQ from "../FAQ/HomePageFAQ";
 import WhyJoinUs from "../WhyJoinUs/WhyJoinUs";
@@ -11,14 +10,20 @@ import BMI from "../BMI/BMI";
 import Features from "./WhatWeProvide/Features";
 import Results from "./WhatWeProvide/Results";
 import Programs from "./Programs";
+import { features } from "./WhatWeProvide/features";
+import FeatureCard from "./WhatWeProvide/FeatureCard";
 
 function Home() {
 	return (
 		<div>
 			<FadingCarousel />
-			<Covid />
+      <Covid />
+			<Features>
+				{features.map((value) => {
+					return <FeatureCard {...value} />;
+				})}
+			</Features>
       <OurPlans />
-			<Features />
 			<Programs />
 			<Results />
 			<OurPlans />
