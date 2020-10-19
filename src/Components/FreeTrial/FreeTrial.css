@@ -188,14 +188,11 @@
 }
 
 @media screen and (max-width: 900px) {
-  .free-trial-banner-div {
-    height: 350px;
-  }
-
-  .free-trial-card {
+    .free-trial-card {
     position: absolute;
-    top: 20%;
-    left: 42%;
+    top: 35%;
+    margin-left: 0;
+    left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
@@ -220,13 +217,12 @@
     height: 350px;
   }
   .free-trial-card {
-    /* width: 200px; */
+    width: fit-content;
     min-width: 100px;
-    height: 200px;
-    top: 20%;
-    left: 42%;
-    transform: translate(-50%, -50%);
-    padding: 0.5rem 1.2rem ;
+    position: relative;
+    top: 100px;
+    /* transform: translate(-50%, -50%); */
+    padding: 0.5rem 1.2rem;
   }
 
   .free-trial-card-text {
@@ -235,10 +231,10 @@
 
   .free-trial-main-head-text {
     margin-top: 190px;
-    font-size: 35px;
+    font-size: 24px;
     font-weight: 400;
     position: absolute;
-    width: 75%;
+    width: 95%;
     top: 1%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
