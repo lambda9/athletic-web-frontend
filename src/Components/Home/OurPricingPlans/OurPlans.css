@@ -2,7 +2,9 @@
 
 .plans-main-comp {
 	background-image: url("../../../Images/bg11.jpg");
+	background-position: center;
 	width: 100%;
+	background-attachment: fixed;
 	margin: 0rem auto 5rem;
 	background-color: var(--mainBlack);
 }
@@ -70,7 +72,7 @@
 	color: white;
 	background-color: rgba(16, 134, 158, 0.25);
 	transform: scale(1.02);
-	border: 2.5px solid var(--primaryColor);
+	border: 2.5px solid rgb(86,220,210);
 	box-shadow: 0px 0px 2px 0px var(--primaryColor);
 }
 
@@ -203,8 +205,8 @@
 
 @media screen and (max-width: 550px) {
 	.plans-main-comp {
-		margin: 5rem auto;
-		padding: 30px 0 20px;
+		margin: 0rem auto 3rem;
+		padding: 20px 0 10px;
 	}
 
 	.plans-comp-btn-group {
@@ -235,10 +237,10 @@
 
 	.plan-card-main-div {
 		margin: 1rem;
-		width: 300px;
-		min-width: 300px;
-		height: 430px;
-		padding: 35px 0 40px;
+		width: 260px;
+		min-width: 260px;
+		height: 360px;
+		padding: 25px 0 25px;
 	}
 
 	.plan-card-star {
