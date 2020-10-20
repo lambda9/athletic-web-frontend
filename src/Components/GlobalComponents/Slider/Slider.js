@@ -188,7 +188,7 @@ const Slider = ({
 					overflow: hidden;
 					margin: auto;
 					width: ${width}vw;
-					cursor: pointer;
+					cursor: move;
 				`}
 			>
 				<ScrollDiv
