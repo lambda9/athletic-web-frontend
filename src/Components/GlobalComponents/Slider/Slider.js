@@ -8,7 +8,7 @@ import { actionTypes, defaultSliderState, sliderReducer } from "./reducer";
 export const MainContainer = styled.div`
 	width: 100%;
 	margin: auto;
-	padding: 2em 0em;
+	padding: 0.5rem 0rem;
 `;
 
 export const CardContainer = styled.div`
