@@ -7,7 +7,6 @@ import HomeUserReviews from "./UserReviews/HomeUserReviews";
 import FadingCarousel from "./FadingCarousel/FadingCarousel";
 import Covid from "./Covid/Covid";
 import BMI from "./BMI/BMI";
-import Features from "./WhatWeProvide/Features";
 import Results from "./WhatWeProvide/Results";
 import Programs from "./Programs/Programs";
 import { features } from "./WhatWeProvide/featuresData";
