@@ -21,7 +21,7 @@ function UserReviewCard() {
 				</span>
 				<h2>andy circus</h2>
 				<div className="review-card-user-img">
-					<img src={userImg}></img>
+					<img src={userImg} draggable={false}></img>
 				</div>
 			</div>
 		</div>
