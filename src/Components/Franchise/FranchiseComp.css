@@ -21,7 +21,7 @@
     90deg,
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 0.6970659357492996) 25%,
-    rgba(255, 255, 255, 0.7362816220238095) 43%,
+    rgba(255, 255, 255, 0.7362816220238095) 33%,
     rgba(255, 255, 255, 1) 100%
   );
   width: 100%;
@@ -90,7 +90,6 @@
   }
 
   .franchise-feature-main-div-overlay {
-    flex-direction: row;
     align-items: center;
   }
 
@@ -116,11 +115,11 @@
 
 @media screen and (max-width: 650px) {
   .franchise-feature-main-div {
-    height: 300px;
+    height: 4 00px;
   }
 
   .franchise-feature-main-div-overlay {
-    height: 300px;
+    height: 400px;
   }
 
   .franchise-feature-div h1 {
