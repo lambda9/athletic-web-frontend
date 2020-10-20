@@ -19,7 +19,7 @@ function HomeUserReviews() {
     },
   ];
   return (
-      <Slider  smallScreen={1} mediumScreen={1} largeScreen={1}>
+      <Slider width={100} smallScreen={1} mediumScreen={1} largeScreen={1}>
         
         {items.map((item) => {
           return <UserReviewCard key={item.id}/>
