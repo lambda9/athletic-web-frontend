@@ -5,9 +5,15 @@ import React from "react";
 const FeatureCard = React.memo(({ src, title, desc, children }) => {
 	return (
 		<div
-			css={{
-				boxShadow: "0px 4px 4px #00000045",
-			}}
+			css={css`
+				box-shadow: 0px 4px 4px #00000045;
+				height: 100%;
+				width: 90%;
+				margin: auto;
+				@media screen and (max-width: 500px) {
+					width: 100%;
+				}
+			`}
 		>
 			<div>
 				<img draggable={false} width={"100%"} src={src} alt={title}></img>

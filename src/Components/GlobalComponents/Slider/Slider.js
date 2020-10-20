@@ -3,7 +3,6 @@ import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import { useEffect, useReducer, useRef } from "react";
 import ActiveBars from "./ActiveBars";
-import { useTouch } from "./hooks";
 import { actionTypes, defaultSliderState, sliderReducer } from "./reducer";
 
 export const MainContainer = styled.div`
@@ -53,8 +52,6 @@ const Slider = ({
 	width = 80,
 	showBars = true,
 }) => {
-	console.log("render");
-
 	const [state, dispatch] = useReducer(sliderReducer, defaultSliderState);
 	const mainRef = useRef(null);
 	const handleMoveRef = useRef(null);
