@@ -1,33 +1,44 @@
-export const sliderReducer = (state, dispatch) => {
+export const actionTypes = {
+	dragStart: "DRAG_START",
+	dragMove: "DRAG_MOVE",
+	dragEnd: "DRAG_END",
+	resize: "RESIZE",
+	transitionEnd: "TRANSITION_END",
+	init: "INIT",
+	select: "SELECT",
+};
+
+export const sliderReducer = (state, action) => {
 	let translateThresold = 10;
 	let interactionDurationThresold = 250;
 
-	switch (dispatch.type) {
-		case "dragstart": {
+	switch (action.type) {
+		case actionTypes.dragStart: {
+			const { timeStamp, x } = action.payload;
 			return {
 				...state,
-				startTime: dispatch.timeStamp,
-				startX: dispatch.x,
+				startTime: timeStamp,
+				startX: x,
 				isDragging: true,
 			};
 		}
 
-		case "dragmove": {
+		case actionTypes.dragMove: {
 			return {
 				...state,
-				translate: dispatch.x - state.startX,
+				translate: action.x - state.startX,
 			};
 		}
 
-		case "dragend": {
-			let endTime = dispatch.timeStamp;
+		case actionTypes.dragEnd: {
+			let endTime = action.timeStamp;
 			let nextIndex = state.index;
 			let absTranslate = Math.abs(state.translate);
 			if (state.translate < 0 && state.index < state.bars - 1) {
 				if (
 					(absTranslate > translateThresold &&
 						endTime - state.startTime < interactionDurationThresold) ||
-					absTranslate > dispatch.width / 3
+					absTranslate > action.width / 3
 				) {
 					nextIndex = state.index + 1;
 				}
@@ -35,7 +46,7 @@ export const sliderReducer = (state, dispatch) => {
 				if (
 					(absTranslate > translateThresold &&
 						endTime - state.startTime < interactionDurationThresold) ||
-					absTranslate > dispatch.width / 3
+					absTranslate > action.width / 3
 				) {
 					nextIndex = state.index - 1;
 				}
@@ -51,60 +62,58 @@ export const sliderReducer = (state, dispatch) => {
 			};
 		}
 
-		case "resize": {
+		case actionTypes.resize: {
 			let bars = 0;
-			if (dispatch.windowWidth < 600) {
+			if (action.windowWidth < 600) {
 				bars = Math.ceil(state.cardCount / state.smallScreenCardCount);
-			} else if (dispatch.windowWidth < 900) {
+			} else if (action.windowWidth < 900) {
 				bars = Math.ceil(state.cardCount / state.mediumScreenCardCount);
 			} else {
 				bars = Math.ceil(state.cardCount / state.largeScreenCardCount);
 			}
 			return {
 				...state,
-				width: dispatch.width,
+				width: action.width,
 				bars: bars,
 				index: 0,
 			};
 		}
 
-		case "init": {
-			console.log("init");
+		case actionTypes.init: {
 			let bars = 0;
-			if (dispatch.windowWidth < 600) {
-				bars = Math.ceil(dispatch.cardCount / dispatch.smallScreenCardCount);
-			} else if (dispatch.windowWidth < 900) {
-				bars = Math.ceil(dispatch.cardCount / dispatch.mediumScreenCardCount);
+			if (action.windowWidth < 600) {
+				bars = Math.ceil(action.cardCount / action.smallScreenCardCount);
+			} else if (action.windowWidth < 900) {
+				bars = Math.ceil(action.cardCount / action.mediumScreenCardCount);
 			} else {
-				bars = Math.ceil(dispatch.cardCount / dispatch.largeScreenCardCount);
+				bars = Math.ceil(action.cardCount / action.largeScreenCardCount);
 			}
 			return {
 				...state,
 				bars: bars,
-				width: dispatch.width,
-				smallScreenCardCount: dispatch.smallScreenCardCount,
-				mediumScreenCardCount: dispatch.mediumScreenCardCount,
-				largeScreenCardCount: dispatch.largeScreenCardCount,
-				cardCount: dispatch.cardCount,
+				width: action.width,
+				smallScreenCardCount: action.smallScreenCardCount,
+				mediumScreenCardCount: action.mediumScreenCardCount,
+				largeScreenCardCount: action.largeScreenCardCount,
+				cardCount: action.cardCount,
 			};
 		}
 
-		case "transitionend": {
-			console.log("trans emd");
+		case actionTypes.transitionEnd: {
 			return {
 				...state,
 				transitionDuration: 0,
 			};
 		}
 
-		case "select": {
+		case actionTypes.select: {
 			return {
 				...state,
-				index: dispatch.index,
+				index: action.index,
 			};
 		}
 		default: {
-			throw new Error();
+			throw new Error(`unhandled action type ${action.type}`);
 		}
 	}
 };

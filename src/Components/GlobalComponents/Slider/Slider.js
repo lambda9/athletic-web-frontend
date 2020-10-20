@@ -3,7 +3,8 @@ import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import { useEffect, useReducer, useRef } from "react";
 import ActiveBars from "./ActiveBars";
-import { defaultSliderState, sliderReducer } from "./reducer";
+import { useTouch } from "./hooks";
+import { actionTypes, defaultSliderState, sliderReducer } from "./reducer";
 
 export const MainContainer = styled.div`
 	width: 100%;
@@ -52,76 +53,26 @@ const Slider = ({
 	width = 80,
 	showBars = true,
 }) => {
+	console.log("render");
+
 	const [state, dispatch] = useReducer(sliderReducer, defaultSliderState);
 	const mainRef = useRef(null);
 	const handleMoveRef = useRef(null);
 
-	// console.log("chi;derem", children);
-
-	const handleTouchStart = (e) => {
-		dispatch({
-			type: "dragstart",
-			x: e.changedTouches[0].screenX,
-			timeStamp: e.timeStamp,
-		});
-	};
-
-	const handleTouchMove = (e) => {
-		dispatch({
-			type: "dragmove",
-			x: e.changedTouches[0].screenX,
-		});
-	};
-
-	const handleTouchEnd = (e) => {
-		dispatch({
-			type: "dragend",
-			x: e.changedTouches[0].screenX,
-			width: mainRef.current.clientWidth,
-			timeStamp: e.timeStamp,
-		});
-	};
-
-	const handleMouseDown = (e) => {
-		dispatch({
-			type: "dragstart",
-			x: e.screenX,
-			timeStamp: e.timeStamp,
-		});
-	};
-
-	const handleMouseUp = (e) => {
-		dispatch({
-			type: "dragend",
-			x: e.screenX,
-			width: mainRef.current.clientWidth,
-			timeStamp: e.timeStamp,
-		});
-	};
-
 	useEffect(() => {
-		const handleMouseMove = (e) => {
+		handleMoveRef.current = (e) => {
 			if (state.isDragging) {
 				dispatch({
-					type: "dragmove",
+					type: actionTypes.dragMove,
 					x: e.screenX,
 				});
 			}
 		};
-		handleMoveRef.current = handleMouseMove;
 	}, [state.isDragging]);
-
-	const handleResize = () => {
-		dispatch({
-			type: "resize",
-			windowWidth: window.innerWidth,
-			width: mainRef.current.clientWidth,
-		});
-	};
 
 	useEffect(() => {
 		dispatch({
-			type: "init",
+			type: actionTypes.init,
 			width: mainRef.current.clientWidth,
 			windowWidth: window.innerWidth,
 			smallScreenCardCount: smallScreen,
@@ -132,7 +83,43 @@ const Slider = ({
 	}, [children, largeScreen, mediumScreen, smallScreen]);
 
 	useEffect(() => {
-		const handleMouseMove = (e) => handleMoveRef.current(e);
+		const handleResize = () => {
+			dispatch({
+				type: actionTypes.resize,
+				windowWidth: window.innerWidth,
+				width: mainRef.current.clientWidth,
+			});
+		};
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
+	useEffect(() => {
+		const handleTouchStart = (e) => {
+			dispatch({
+				type: actionTypes.dragStart,
+				payload: {
+					x: e.changedTouches[0].screenX,
+					timeStamp: e.timeStamp,
+				},
+			});
+		};
+
+		const handleTouchMove = (e) => {
+			dispatch({
+				type: actionTypes.dragMove,
+				x: e.changedTouches[0].screenX,
+			});
+		};
+
+		const handleTouchEnd = (e) => {
+			dispatch({
+				type: actionTypes.dragEnd,
+				x: e.changedTouches[0].screenX,
+				width: mainRef.current.clientWidth,
+				timeStamp: e.timeStamp,
+			});
+		};
 		mainRef.current.addEventListener("touchstart", handleTouchStart, {
 			passive: true,
 		});
@@ -142,6 +129,35 @@ const Slider = ({
 		mainRef.current.addEventListener("touchend", handleTouchEnd, {
 			passive: true,
 		});
+		let sliderRef = mainRef.current;
+		return () => {
+			sliderRef.removeEventListener("touchstart", handleTouchStart);
+			sliderRef.removeEventListener("touchmove", handleTouchMove);
+			sliderRef.removeEventListener("touchend", handleTouchEnd);
+		};
+	}, []);
+
+	useEffect(() => {
+		const handleMouseDown = (e) => {
+			dispatch({
+				type: actionTypes.dragStart,
+				payload: {
+					x: e.screenX,
+					timeStamp: e.timeStamp,
+				},
+			});
+		};
+
+		const handleMouseUp = (e) => {
+			dispatch({
+				type: actionTypes.dragEnd,
+				x: e.screenX,
+				width: mainRef.current.clientWidth,
+				timeStamp: e.timeStamp,
+			});
+		};
+
+		const handleMouseMove = (e) => handleMoveRef.current(e);
 		mainRef.current.addEventListener("mousedown", handleMouseDown, {
 			passive: true,
 		});
@@ -151,23 +167,17 @@ const Slider = ({
 		window.addEventListener("mouseup", handleMouseUp, {
 			passive: true,
 		});
-		window.addEventListener("resize", handleResize);
 		let sliderRef = mainRef.current;
 		return () => {
 			sliderRef.removeEventListener("mousedown", handleMouseDown);
 			sliderRef.removeEventListener("mousemove", handleMouseMove);
 			window.removeEventListener("mouseup", handleMouseUp);
-
-			sliderRef.removeEventListener("touchstart", handleTouchStart);
-			sliderRef.removeEventListener("touchmove", handleTouchMove);
-			sliderRef.removeEventListener("touchend", handleTouchEnd);
-			window.removeEventListener("resize", handleResize);
 		};
 	}, []);
 
 	const onClick = (index) => {
 		dispatch({
-			type: "select",
+			type: actionTypes.select,
 			index: index,
 		});
 	};
@@ -191,7 +201,7 @@ const Slider = ({
 							state.translate - state.index * state.width
 						}px, 0px, 0px)`,
 					}}
-					onTransitionEnd={() => dispatch({ type: "transitionend" })}
+					onTransitionEnd={() => dispatch({ type: actionTypes.transitionEnd })}
 				>
 					{children.map((child, index) => {
 						return (
