@@ -26,11 +26,9 @@ export class WhyJoinUs extends Component {
 
   render() {
     return (
-      <div className="wju-main-div" id="dd">
+      <div className="wju-main-div" >
         <div className="wju-text-div">
-          <span>WHY</span> <br></br>
-          <span>JOIN</span> <br></br>
-          <span>US ?</span> <br></br>
+          <span>WHY JOIN US ?</span>
         </div>
         <div className="wju-card-div">
           <div className="wju-card-slider">

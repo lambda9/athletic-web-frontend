@@ -11,15 +11,18 @@
 
 .wju-text-div {
 	text-align: start;
-	width: 30%;
+	width: 300px;
+	background-color: greenyellow;
+	/* min-width: fit-content; */
 	margin: auto 0;
 }
 
 .wju-text-div span {
-	font-size: 108px;
+	font-size: 72px;
 	color: rgba(255, 255, 255, 0.9);
 	margin: auto 1rem;
 	font-weight: 900;
+	/* word-break: ; */
 	line-height: 1.2;
 }
 
@@ -29,9 +32,7 @@
 }
 
 .wju-card-div {
-	width: 55%;
-
-	/* background-color: red; */
+	width: 65%;
 	position: relative;
 }
 
@@ -39,6 +40,7 @@
 	margin: auto;
 	margin-right: 1rem;
 	font-size: 0.8rem;
+	background-color: rgb(47, 248, 255);
 	width: 100%;
 	padding: 2em;
 	display: grid;
@@ -52,8 +54,11 @@
 	flex-direction: column;
 	font-size: 1em;
 	padding: 1.5em;
-	width: 100%;
-	background: linear-gradient(45deg, #3992a0d4 30%, #2bd2dba6 0%);
+	/* width: 400px; */
+	min-width: 210px;
+	color: rgb(243, 243, 243);
+	width: 90%;
+	background: linear-gradient(30deg, #343a40 38%, #030202 30%);
 	text-align: left;
 	transition: transform ease-in-out 0.4s;
 }
@@ -64,13 +69,10 @@
 }
 
 .wju-card h1 {
-	font-size: 2em;
+	font-size: 28px;
 	padding-bottom: 0.75em;
-	font-weight: 500;
-}
-
-.wju-card p {
-	font-size: 1.3em;
+	word-wrap: break-word;
+	/* font-weight: 500; */
 }
 
 .wju-card:hover {
@@ -85,6 +87,20 @@
 }
 
 @media screen and (max-width: 900px) {
+	.wju-main-div {
+		flex-direction: column;
+	}
+	.wju-text-div {
+		text-align: center;
+		width: 90%;
+		background-color: greenyellow;
+		/* min-width: fit-content; */
+		margin: auto;
+	}
+	.wju-card-div {
+		width: 90%;
+		margin: auto;
+	}
 	.wju-card-slider {
 		grid-template-columns: 1fr 1fr;
 		font-size: 0.5rem;
