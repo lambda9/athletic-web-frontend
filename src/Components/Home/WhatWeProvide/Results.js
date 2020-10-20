@@ -10,11 +10,8 @@ import logo from "../../../Images/HomeWhatWeProvide/logo.png";
 const mediaBreakpoint = "@media (max-width: 900px)";
 
 const ImagesDiv = styled.div`
-	${mediaBreakpoint} {
-		width: 100%;
-	}
-	width: 70%;
 	display: flex;
+	width: 100%;
 	& > div {
 		position: relative;
 	}
@@ -52,12 +49,8 @@ const Results = () => {
 	return (
 		<div
 			css={css`
-				width: 80%;
-				display: flex;
-				margin: 2em auto;
-				@media (max-width: 900px) {
-					flex-direction: column;
-				}
+				width: 90%;
+				margin: auto;
 			`}
 		>
 			<ImagesDiv>
@@ -74,27 +67,37 @@ const Results = () => {
 			</ImagesDiv>
 			<div
 				css={css`
-					width: 30%;
+					width: 100%;
 					padding: 1rem;
 					border: 2px solid black;
 					display: flex;
 					flex-direction: column;
-					@media (max-width: 900px) {
-						width: 100%;
+					border-top: none;
+					@media screen and (max-width: 600px) {
+						& h2 {
+							font-size: 1.2rem;
+						}
+						& p {
+							font-size: 0.7rem;
+						}
+						& h4 {
+							font-size: 1rem;
+						}
+						padding: 0.5rem;
 					}
 				`}
 			>
 				<h2
-					css={css`
-						font-size: 3rem;
-					`}
+				// css={css`
+				// 	font-size: 3rem;
+				// `}
 				>
 					Devendra Singh
 				</h2>
 				<p>
 					Gained weight in 5 days and 6 months wich goes to gym ofnetly geanve
 				</p>
-				<h3>2 Months</h3>
+				<h4>2 Months</h4>
 			</div>
 		</div>
 	);

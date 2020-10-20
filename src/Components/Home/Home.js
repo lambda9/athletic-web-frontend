@@ -23,9 +23,12 @@ function Home() {
 					return <FeatureCard {...value} key={value.id} />;
 				})}
 			</Slider>
+			<Slider smallScreen={1} mediumScreen={2} largeScreen={2}>
+				<Results />
+				<Results />
+			</Slider>
 			<OurPlans />
 			<Programs />
-			<Results />
 			<WhyJoinUs />
 			<HomePageEnquiry />
 			<BMI />
