@@ -80,7 +80,7 @@
   padding-left: 2rem;
 }
 
-.franchis-low-cost {
+.franchis-low-cost, .franchise-360-support, .franchise-simple-process {
   display: flex;
   height: 400px;
   margin-top: 4rem;
