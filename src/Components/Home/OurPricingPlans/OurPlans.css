@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;530;600;700&display=swap");
 
 .plans-main-comp {
+	background-image: url("../../../Images/bg11.jpg");
 	width: 100%;
-	margin: 5rem auto;
+	margin: 0rem auto 5rem;
 	background-color: var(--mainBlack);
 }
 
 #plan-main-comp-tint {
-	padding: 60px 5px 50px;
+	padding: 40px 5px 30px;
 }
 
 /* our plans heading */
@@ -56,6 +57,7 @@
 	height: fit-content;
 	text-transform: uppercase;
 	font-size: 18px;
+	background-color: rgba(51, 51, 51, 0.25);
 	border: 2px solid grey;
 }
 
@@ -66,7 +68,7 @@
 #plan-comp-btn-active {
 	font-size: 20px;
 	color: white;
-	background-color: rgba(16, 134, 158, 0.18);
+	background-color: rgba(16, 134, 158, 0.25);
 	transform: scale(1.02);
 	border: 2.5px solid var(--primaryColor);
 	box-shadow: 0px 0px 2px 0px var(--primaryColor);
@@ -75,13 +77,13 @@
 /*plan card  */
 .plan-card-main-div {
 	margin: 1rem;
-	width: 340px;
-	min-width: 340px;
+	width: 310px;
+	min-width: 310px;
 	display: inline-block;
-	height: 500px;
+	height: 420px;
 	background: var(--mainWhite);
 	text-align: center;
-	padding: 35px 0 40px;
+	padding: 30px 0 30px;
 	color: #272727;
 	border: 0.2px solid var(--primaryRed);
 	position: relative;
@@ -116,7 +118,7 @@
 
 /* price div */
 .plan-card-price-div > div:first-child {
-	margin: 0rem auto 1.4rem;
+	margin: 0rem auto 1.1rem;
 	width: fit-content;
 	display: flex;
 	position: relative;
@@ -157,7 +159,7 @@
 }
 
 .plan-card-main-text ul {
-	margin-top: 1.5rem;
+	margin-top: 1.2rem;
 	list-style-type: disc;
 }
 
