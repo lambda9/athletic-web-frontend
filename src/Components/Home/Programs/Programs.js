@@ -14,7 +14,7 @@ const Programs = () => {
 			<ProgramCarousel
 				transitionDelay={2000}
 				transitionDuration={500}
-				width={80}
+				width={90}
 				imageWidth={30}
 				height={70}
 			/>

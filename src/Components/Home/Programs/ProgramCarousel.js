@@ -25,7 +25,7 @@ const getWindow = (arr, middleIndex, offset) => {
 // transitionDelay and transitionDuraction should be passed as milliseconds.
 const ProgramCarousel = ({
 	data = programs,
-	autoStart = false,
+	autoStart = true,
 	width,
 	transitionDelay,
 	transitionDuration,

@@ -1,23 +1,26 @@
 .wju-main-div {
 	width: 100%;
 	height: fit-content;
-	/* font-size: 10%; */
 	background-image: url("../../../Images/wju1.jpg");
 	background-size: cover;
-	padding: 2em 0em;
+	display: flex;
+	justify-content: center;
+	padding: 2rem 0;
 	background-attachment: fixed;
 }
 
 .wju-text-div {
 	text-align: start;
+	width: 30%;
+	margin: auto 0;
 }
 
 .wju-text-div span {
-	font-size: 5vw;
-	color: gray;
-	margin: 1rem 1rem;
+	font-size: 108px;
+	color: rgba(255, 255, 255, 0.9);
+	margin: auto 1rem;
 	font-weight: 900;
-	line-height: 0.9;
+	line-height: 1.2;
 }
 
 .wju-below-text-line {
@@ -26,26 +29,27 @@
 }
 
 .wju-card-div {
-	/* transform: translateY(-5vw); */
+	width: 55%;
+
+	/* background-color: red; */
 	position: relative;
-	/* width: fit-content; */
 }
 
 .wju-card-slider {
 	margin: auto;
+	margin-right: 1rem;
 	font-size: 0.8rem;
-	width: 80%;
+	width: 100%;
 	padding: 2em;
 	display: grid;
 	justify-items: center;
-	gap: 2em;
-	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem;
+	grid-template-columns: 1fr 1fr;
 }
 
 .wju-card {
 	display: flex;
 	flex-direction: column;
-	/* justify-content: space-evenly; */
 	font-size: 1em;
 	padding: 1.5em;
 	width: 100%;
