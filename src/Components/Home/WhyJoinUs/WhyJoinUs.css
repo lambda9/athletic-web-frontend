@@ -1,109 +1,113 @@
 .wju-main-div {
-	width: 100%;
-	height: fit-content;
-	background-image: url("../../../Images/wju1.jpg");
-	background-size: cover;
-	display: flex;
-	justify-content: center;
-	padding: 2rem 0;
-	background-attachment: fixed;
+  width: 100%;
+  height: fit-content;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  background-image: url("../../../Images/wju1.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .wju-text-div {
-	text-align: start;
-	width: 300px;
-	background-color: greenyellow;
-	/* min-width: fit-content; */
-	margin: auto 0;
+  width: 290px;
+  margin: auto 0;
+  text-align: center;
+  display: flex;
+  text-align: start;
+  /* background-color: indianred; */
+  justify-content: center;
+  flex-direction: column;
 }
 
 .wju-text-div span {
-	font-size: 72px;
-	color: rgba(255, 255, 255, 0.9);
-	margin: auto 1rem;
-	font-weight: 900;
-	/* word-break: ; */
-	line-height: 1.2;
-}
-
-.wju-below-text-line {
-	background-color: gray;
-	height: 10px;
+  font-size: 72px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: auto 1rem;
+  /* background-color: hotpink; */
+  font-weight: 900;
+  line-height: 1.2;
 }
 
 .wju-card-div {
-	width: 65%;
-	position: relative;
-}
-
-.wju-card-slider {
-	margin: auto;
-	margin-right: 1rem;
-	font-size: 0.8rem;
-	background-color: rgb(47, 248, 255);
-	width: 100%;
-	padding: 2em;
-	display: grid;
-	justify-items: center;
-	gap: 1rem;
-	grid-template-columns: 1fr 1fr;
+  width: 65%;
+  margin-right: 1rem;
+  width: 100%;
+  padding: 2em;
+  justify-content: space-evenly;
+  display: flex;
+  /* justify-items: center; */
 }
 
 .wju-card {
-	display: flex;
-	flex-direction: column;
-	font-size: 1em;
-	padding: 1.5em;
-	/* width: 400px; */
-	min-width: 210px;
-	color: rgb(243, 243, 243);
-	width: 90%;
-	background: linear-gradient(30deg, #343a40 38%, #030202 30%);
-	text-align: left;
-	transition: transform ease-in-out 0.4s;
+  margin: 0.5rem;
+  padding: 15px 15px;
+  color: rgb(243, 243, 243);
+  width: 95%;
+  min-width: 210px;
+  max-width: 350px;
+  background: linear-gradient(30deg, #343a40 38%, #030202 30%);
+  text-align: left;
+  transition: transform ease-in-out 0.4s;
 }
 
 .wju-card * {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .wju-card h1 {
-	font-size: 28px;
-	padding-bottom: 0.75em;
-	word-wrap: break-word;
-	/* font-weight: 500; */
+  font-size: 28px;
+  padding-bottom: 0.75em;
+  word-wrap: break-word;
 }
 
 .wju-card:hover {
-	transform: translateY(-10px);
-}
-
-.cont {
-	position: relative;
-	width: 300px;
-	height: 300px;
-	background-color: antiquewhite;
+  transform: translateY(-10px);
 }
 
 @media screen and (max-width: 900px) {
-	.wju-main-div {
-		flex-direction: column;
-	}
-	.wju-text-div {
-		text-align: center;
-		width: 90%;
-		background-color: greenyellow;
-		/* min-width: fit-content; */
-		margin: auto;
-	}
-	.wju-card-div {
-		width: 90%;
-		margin: auto;
-	}
-	.wju-card-slider {
-		grid-template-columns: 1fr 1fr;
-		font-size: 0.5rem;
-		width: 100%;
-	}
+  .wju-main-div {
+    flex-direction: column;
+  }
+  .wju-text-div {
+    width: 100%;
+    margin: auto;
+    flex-direction: row;
+  }
+  .wju-card-div {
+    width: 100%;
+    margin: auto;
+  }
+  .wju-card-slider {
+    grid-template-columns: 1fr 1fr;
+    font-size: 0.5rem;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .wju-text-div {
+    width: 100%;
+  }
+  .wju-text-div span {
+    margin: auto 0.4rem;
+    font-size: 36px;
+  }
+  .wju-card-div {
+    width: 100%;
+    /* background-color: lavenderblush; */
+    flex-wrap: wrap;
+  }
+
+  .wju-card h1 {
+    font-size: 20px;
+    padding-bottom: 0.55em;
+  }
+  .wju-card p {
+    font-size: 10px;
+  }
+  .wju-card:hover {
+    transform: translateY(0);
+  }
 }

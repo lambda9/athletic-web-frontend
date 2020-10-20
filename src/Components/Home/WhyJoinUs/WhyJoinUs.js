@@ -26,20 +26,34 @@ export class WhyJoinUs extends Component {
 
   render() {
     return (
-      <div className="wju-main-div" >
+      <div className="wju-main-div">
         <div className="wju-text-div">
-          <span>WHY JOIN US ?</span>
+		  <span>WHY</span>
+          <span>JOIN</span>
+          <span>US ?</span>
+		  
         </div>
-        <div className="wju-card-div">
-          <div className="wju-card-slider">
+        <div>
+          <div className="wju-card-div" style={{paddingBottom: "0"}}>
             {data.map((value) => {
-              return (
+              return value.id % 2 === 0 ? (
                 <WJUcard
                   key={value.id}
                   heading={value.heading}
                   content={value.content}
                 />
-              );
+              ) : null;
+            })}
+          </div>
+          <div className="wju-card-div" style={{paddingTop: "0"}}>
+            {data.map((value) => {
+              return value.id % 2 === 1 ? (
+                <WJUcard
+                  key={value.id}
+                  heading={value.heading}
+                  content={value.content}
+                />
+              ) : null;
             })}
           </div>
         </div>
