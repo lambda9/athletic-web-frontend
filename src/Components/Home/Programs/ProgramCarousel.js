@@ -6,20 +6,7 @@ import "./Programs.css";
 import Slider from "./Slider";
 
 import { programs } from "./programsData";
-import { reducer } from "./reducer";
-
-const getWindow = (arr, middleIndex, offset) => {
-	let startIndex = middleIndex - offset;
-	if (startIndex < 0) {
-		startIndex += arr.length;
-	}
-	let newArr = [];
-	for (let i = 0; i < offset * 2 + 1; i++) {
-		newArr.push(arr[startIndex]);
-		startIndex = (startIndex + 1) % arr.length;
-	}
-	return newArr;
-};
+import { init, reducer } from "./reducer";
 
 // width, height, imageWidth will be applied as vw.
 // transitionDelay and transitionDuraction should be passed as milliseconds.
@@ -30,15 +17,7 @@ const ProgramCarousel = ({
 	transitionDelay,
 	transitionDuration,
 }) => {
-	const [state, dispatch] = useReducer(reducer, {
-		currentIndex: 0,
-		data: getWindow(data, 0, 2),
-		transition: 0,
-		activeIndex: 2,
-		len: data.length,
-		imageWidth: window.innerWidth < 900 ? 60 : 30,
-		height: window.innerWidth < 900 ? 60 : 30,
-	});
+	const [state, dispatch] = useReducer(reducer, data, init);
 	const offset = -(state.imageWidth - (width - state.imageWidth) / 2);
 
 	useEffect(() => {
@@ -84,26 +63,6 @@ const ProgramCarousel = ({
 				width={state.imageWidth}
 				onTransitionEnd={() => dispatch({ type: "update", data: data })}
 			/>
-			<div
-				css={{
-					display: autoStart ? "none" : "block",
-				}}
-				onClick={() =>
-					dispatch({ type: "next", transitionDuration: transitionDuration })
-				}
-			>
-				&#8250;
-			</div>
-			<div
-				css={{
-					display: autoStart ? "none" : "block",
-				}}
-				onClick={() =>
-					dispatch({ type: "prev", transitionDuration: transitionDuration })
-				}
-			>
-				&#8249;
-			</div>
 		</div>
 	);
 };

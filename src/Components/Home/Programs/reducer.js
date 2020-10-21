@@ -1,5 +1,8 @@
+import { useEffect, useRef } from "react";
+import { act } from "react-dom/test-utils";
+
 const getWindow = (arr, middleIndex, offset) => {
-	let startIndex = middleIndex - offset;
+	let startIndex = middleIndex - offset + 1;
 	if (startIndex < 0) {
 		startIndex += arr.length;
 	}
@@ -11,7 +14,21 @@ const getWindow = (arr, middleIndex, offset) => {
 	return newArr;
 };
 
+export const init = (data) => {
+	console.log("init called", data);
+	return {
+		currentIndex: 0,
+		data: getWindow(data, 0, 2),
+		transition: 0,
+		activeIndex: 1,
+		len: data.length,
+		imageWidth: window.innerWidth < 900 ? 60 : 30,
+		height: window.innerWidth < 900 ? 60 : 30,
+	};
+};
+
 export const reducer = (state, action) => {
+	console.log("action", action);
 	switch (action.type) {
 		case "next":
 			return {
@@ -35,7 +52,7 @@ export const reducer = (state, action) => {
 				...state,
 				transition: 0,
 				data: getWindow(action.data, state.currentIndex, 2),
-				activeIndex: 2,
+				activeIndex: 1,
 			};
 
 		case "resize":
@@ -46,6 +63,18 @@ export const reducer = (state, action) => {
 			};
 
 		default:
-			throw new Error();
+			throw new Error(`got unhandled action type "${action.type}"`);
 	}
+};
+
+export const defaultState = {};
+
+const useTimeout = (reset, duration, callback) => {
+	const refTimer = useRef(null);
+	useEffect(() => {
+		refTimer.current = setTimeout(callback, duration);
+		return () => {
+			clearTimeout(refTimer.current);
+		};
+	}, [reset, duration, callback]);
 };

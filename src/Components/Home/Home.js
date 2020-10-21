@@ -17,9 +17,9 @@ function Home() {
 			<FadingCarousel />
 			<Covid />
 			<Features />
+			<Programs />
 			<Results />
 			<OurPlans />
-			<Programs />
 			<WhyJoinUs />
 			<HomePageEnquiry />
 			<BMI />

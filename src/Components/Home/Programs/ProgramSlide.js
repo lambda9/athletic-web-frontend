@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
+import React from "react";
 
-const ProgramSlide = ({ className, img, title }) => {
+const ProgramSlide = React.memo(({ className, img, title }) => {
 	return (
 		<div
 			className={className}
@@ -22,6 +23,6 @@ const ProgramSlide = ({ className, img, title }) => {
 			</div>
 		</div>
 	);
-};
+});
 
 export default ProgramSlide;
