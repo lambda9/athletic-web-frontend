@@ -1,36 +1,18 @@
-
-.franchise-head-div {
-  width: 100%;
-  height: 200px;
+.franchise-main-comp {
+  width: 90%;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
-}
-
-.franchise-head-div span {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0px auto;
+  /* background-color: rgb(255, 0, 0); */
+  margin: auto auto;
 }
 
 .franchise-feature-main-div {
   background-image: url("https://cdn.pixabay.com/photo/2018/03/01/05/45/businessman-3189794__340.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 400px;
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
   margin-top: 10rem;
-  width: 95%;
-}
-
-.franchise-feature-main-div {
-  display: flex;
-  left: 70%;
+  /* background-color: rgb(0, 0, 0); */
 }
 
 .franchise-feature-main-div-overlay {
@@ -39,36 +21,26 @@
     90deg,
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 0.6970659357492996) 25%,
-    rgba(255, 255, 255, 0.7362816220238095) 43%,
+    rgba(255, 255, 255, 0.7362816220238095) 33%,
     rgba(255, 255, 255, 1) 100%
   );
-  width: 1200px;
+  width: 100%;
   height: 400px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  /* background: chartreuse; */
 }
 .franchise-feature-div {
-  min-width: 250px;
+  min-width: 100px;
   flex-wrap: wrap;
-  width: 530px;
-  height: 400px;
+  width: 50%;
   text-transform: uppercase;
-  margin-top: 21px;
-}
-
-.franchise-feature-div div {
-  margin: 1rem 1rem;
-}
-
-.franchise-get-started-comp {
-  background-color: green;
-  height: 400px;
+  margin-top: 3rem;
+  /* background-color: darkcyan; */
 }
 
 .franchise-get-started-icon {
-  color: black;
-  fill: black;
   font-size: 112px;
 }
 
@@ -76,53 +48,97 @@
   fill: black;
 }
 
-.franchise-content-div {
-  padding-left: 2rem;
-}
+.franchise-content-card {
 
-.franchis-low-cost, .franchise-360-support, .franchise-simple-process {
   display: flex;
   height: 400px;
+  overflow: hidden;
+  justify-content: center;
   margin-top: 4rem;
-  width: 95%;
+  /* background-color: coral; */
 }
 
-.franchis-low-cost div {
-  margin: 80px auto;
+.reverse-card-content {
+  flex-direction: row-reverse;
 }
 
-.franchise-simple-process {
-  height: 400px;
-  display: flex;
-  margin-top: 4rem;
-  width: 95%;
+.franchise-content-card > div {
+  width: 55%;
+  margin: auto 1.4rem;
+  padding: 2rem 4rem;
+  /* background-color: rgb(170, 157, 243); */
 }
 
-.franchise-simple-process div {
-  margin: 80px auto;
+.franchise-content-card img {
+  width: auto;
+  height: 100%;
+  margin: auto;
 }
 
-.franchise-simple-process img {
-  position: relative;
-  right: 0%;
+.tt-support {
+  font-size: 82px;
+  font-weight: 700;
 }
 
-.franchise-360-support {
-  height: 400px;
-  display: flex;
-  margin-top: 4rem;
-  width: 95%;
+@media screen and (max-width: 900px) {
+  .franchise-main-comp {
+    width: 100%;
+  }
+
+  .franchise-feature-main-div {
+    background-size: auto;
+    background-position: 70%;
+  }
+
+  .franchise-feature-main-div-overlay {
+    align-items: center;
+  }
+
+  .franchise-content-card {
+    margin-top: 4rem;
+  }
+
+  .franchise-content-card img {
+    height: auto;
+    width: 60%;
+  }
+
+  .franchise-get-started-icon {
+    font-size: 70px;
+  }
+
+  .franchise-content-card > div {
+    width: fit-content;
+    margin: auto auto;
+    padding: 0px 5px;
+  }
 }
 
-.franchise-360-support img {
-  position: absolute;
-  height: 400px;
-  margin-right: 5.5rem;
-  right: 0px;
-  width: 600px;
-}
+@media screen and (max-width: 650px) {
+  .franchise-feature-main-div {
+    height: 4 00px;
+  }
 
-.franchise-360-support div {
-  margin-top: 90px;
-  margin-left: 170px;
+  .franchise-feature-main-div-overlay {
+    height: 400px;
+  }
+
+  .franchise-feature-div h1 {
+    font-size: 20px;
+  }
+
+  .franchise-feature-div span {
+    font-size: 12px;
+  }
+
+  .franchise-content-card{
+    flex-direction: column;
+    height: auto;
+  }
+
+  .franchise-content-card img {
+    height: auto;
+    width: fit-content;
+    max-width: 100%;
+  }
 }

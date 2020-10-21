@@ -9,6 +9,9 @@ const Bar = styled.p`
 `;
 
 const ActiveBars = ({ count, activeIndex, className, onClick }) => {
+	if (count <= 1) {
+		return null;
+	}
 	const bars = [];
 	for (let i = 0; i < count; i++) {
 		bars.push(
