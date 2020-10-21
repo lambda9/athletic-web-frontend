@@ -39,3 +39,41 @@
   margin: auto;
 }
 
+.merchandise-container{
+  width:80%;
+  height:fit-content;
+  margin:auto;
+}
+.merchandise-card-container{
+  text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+  margin: auto;
+  background-color: white;
+	height: 85%;
+	width: 65%;
+  box-shadow: var(--darkShadow);
+  border:1px solid rgb(105, 105, 105);
+}
+.merchandise-card-container > img{
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	float: right;
+	width: 50%;
+  display: inline-block;
+  
+}
+.merchandise-tag{
+  background-color:rgb(122, 2, 106);
+  color:white;
+  margin:auto;
+}
+.merchandise-price{
+  background-color:rgb(122, 2, 106);
+  color: white;
+  font-size:1rem;
+  margin-top:10%;
+}
+

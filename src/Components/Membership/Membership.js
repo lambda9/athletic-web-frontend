@@ -6,6 +6,7 @@ import "./Membership.css";
 import bgImg from "../../Images/im6.jpg";
 import MembershipBG from "./MembershipBG";
 import MembershipIcon from "./MembershipIcon";
+import Merchandise from "./Merchandise";
 class Membership extends Component {
 	constructor(props) {
 		super(props);
@@ -139,7 +140,6 @@ class Membership extends Component {
 		return (
 			<div className="membership-page">
 				<Hero bgImg={bgImg} title="get membership" description="get today" />
-
 				<div className="plan-bg-container">
 					<MembershipBG />
 				</div>
@@ -155,6 +155,7 @@ class Membership extends Component {
 						})}
 					</div>
 				</div>
+				<Merchandise/>
 				<MembershipIcon />
 			</div>
 		);
