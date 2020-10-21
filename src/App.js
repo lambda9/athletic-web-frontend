@@ -15,7 +15,6 @@ import JoinNow from "./Components/Pages/JoinNow";
 import Footer from "./Components/Footer/Footer";
 import ScrollToTop from "./Components/GlobalComponents/ScrollToTop";
 import FreeTrialPage from "./Components/FreeTrial/FreeTrialPage";
-import NewsCard from "./Components/NewsBlog/NewsCard";
 import FranchisePage from "./Components/Franchise/FranchisePage";
 import BlogPage from "./Components/NewsBlog/BlogPage";
 import FullBlogPage from "./Components/NewsBlog/FullBlogPage";
@@ -39,7 +38,6 @@ class App extends Component {
 						<Route exact path="/membership/" component={Membership} />
 						<Route exact path="/joinNow/:slug" component={JoinNow} />
 						<Route exact path="/freetrial/" component={FreeTrialPage} />
-						<Route exact path="/news/" component={NewsCard} />
 						<Route exact path="/franchise/" component={FranchisePage} />
 						<Route exact path="/blog/" component={BlogPage} />
 						<Route exact path="/fullblog/" component={FullBlogPage} />

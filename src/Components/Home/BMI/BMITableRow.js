@@ -11,7 +11,7 @@ const BMITableRow = ({
 }) => {
 	const style = css`
 		color: ${active ? activeColor : "black"};
-		transform: scale(${active ? 1.3 : 1});
+		transform: scale(${active ? 1.1 : 1});
 	`;
 	return (
 		<tr className={className}>

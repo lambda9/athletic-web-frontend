@@ -49,6 +49,7 @@
 }
 
 .franchise-content-card {
+
   display: flex;
   height: 400px;
   overflow: hidden;

@@ -1,31 +1,23 @@
 [
-	{
-		"id": 0,
-		"heading": "WORKOUTS THAT DON'T SUCK",
-		"content": "We're here to make you feel capable and confident with our right, updated equipments and various specifically designed programs  for both cardio and strength training."
-	},
+	
 	{
 		"id": 1,
 		"heading": "STRETCH YOUR LIMITS",
 		"content": "Our workouts stretch your limits and help you define success for yourself."
 	},
 	{
-		"id": 6,
+		"id": 2,
 		"heading": "INFRASTRUCTURE",
 		"content": "Alongside the equipments, we maintain an energetic, clean and cool environment to help you get ready for the calorie burn."
 	},
+	
 	{
-		"id": 2,
-		"heading": "ESCAPE MONOTONY",
-		"content": "We provide the ever evolving workouts and a chance to enjoy them with like minded people who will push you to do your best."
-	},
-	{
-		"id": 4,
+		"id": 3,
 		"heading": "HELP ACHIEVE ZEN MIND",
 		"content": "Facilities at the gym ensures that the member doesn't only receive adequate physical training but mental strengthening too. You'll have zen mind even before you know it."
 	},
 	{
-		"id": 5,
+		"id": 4,
 		"heading": "CANCEL ANYTIME",
 		"content": "We understand that life throws unexpected surprises and sometimes makes us shift our priority on other urgent things.  With no time commitment or long term contract, cancel anytime"
 	}

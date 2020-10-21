@@ -23,8 +23,8 @@ function Home() {
 			<WhyJoinUs />
 			<HomePageEnquiry />
 			<BMI />
-			<HomePageFAQ />
 			<HomeUserReviews />
+			<HomePageFAQ />
 		</div>
 	);
 }

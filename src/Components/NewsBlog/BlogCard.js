@@ -15,9 +15,11 @@ function BlogCard(props) {
         <hr />
         <p>{props.obj.description}</p>
       </div>
-      <Link to="/fullblog" className="blog-btn-primary">
-        Read More
-      </Link>
+      {props.obj.tag == "blog" ? (
+        <Link to="/fullblog" className="blog-btn-primary">
+          Read More
+        </Link>
+      ) : null}
     </div>
   );
 }
