@@ -19,7 +19,10 @@ const FeatureCard = React.memo(({ src, title, desc, children }) => {
 				<img draggable={false} width={"100%"} src={src} alt={title}></img>
 				<section
 					css={css`
-						padding: 1rem;
+						padding: 0.5rem;
+						& * {
+							margin-bottom: 0.5rem;
+						}
 					`}
 				>
 					{children}

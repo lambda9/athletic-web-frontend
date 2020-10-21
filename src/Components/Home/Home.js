@@ -9,23 +9,17 @@ import Covid from "./Covid/Covid";
 import BMI from "./BMI/BMI";
 import Results from "./WhatWeProvide/Results";
 import Programs from "./Programs/Programs";
-import { features } from "./WhatWeProvide/featuresData";
-import FeatureCard from "./WhatWeProvide/FeatureCard";
-import Slider from "../GlobalComponents/Slider/Slider";
+import Features from "./WhatWeProvide/Features";
 
 function Home() {
 	return (
 		<div>
 			<FadingCarousel />
 			<Covid />
-			<Slider smallScreen={1} mediumScreen={2} largeScreen={3}>
-				{features.map((value) => {
-					return <FeatureCard {...value} key={value.id} />;
-				})}
-			</Slider>
+			<Features />
+			<Results />
 			<OurPlans />
 			<Programs />
-			<Results />
 			<WhyJoinUs />
 			<HomePageEnquiry />
 			<BMI />
