@@ -7,7 +7,7 @@ const ButtonGroup = () => {
 			<Link to="/freetrial" className="button-primary">
 				free trial
 			</Link>
-			<Link className="button-primary" to='/'>login</Link>
+			<Link className="button-primary" to='/login'>login</Link>
 		</div>
 	);
 };
