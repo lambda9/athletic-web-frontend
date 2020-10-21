@@ -68,36 +68,21 @@ const ResultCard = () => {
 			<div
 				css={css`
 					width: 100%;
-					padding: 1rem;
+					padding: 0.5rem;
 					border: 2px solid black;
 					display: flex;
 					flex-direction: column;
 					border-top: none;
-					@media screen and (max-width: 600px) {
-						& h2 {
-							font-size: 1.2rem;
-						}
-						& p {
-							font-size: 0.7rem;
-						}
-						& h4 {
-							font-size: 1rem;
-						}
-						padding: 0.5rem;
+					& * {
+						margin-bottom: 0.2rem;
 					}
 				`}
 			>
-				<h2
-				// css={css`
-				// 	font-size: 3rem;
-				// `}
-				>
-					Devendra Singh
-				</h2>
+				<h3>Devendra Singh</h3>
 				<p>
 					Gained weight in 5 days and 6 months wich goes to gym ofnetly geanve
 				</p>
-				<h4>2 Months</h4>
+				<h5>2 Months</h5>
 			</div>
 		</div>
 	);

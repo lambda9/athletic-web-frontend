@@ -1,9 +1,9 @@
 import React from "react";
 import "./Covid.css";
-import i1 from "../../../Images/Programs/i1.png";
-import i2 from "../../../Images/Programs/i2.png";
-import i3 from "../../../Images/Programs/i3.png";
-import i4 from "../../../Images/Programs/i4.png";
+import i1 from "../../../Images/Covid/mask.png";
+import i2 from "../../../Images/Covid/liquid-soap.png";
+import i3 from "../../../Images/Covid/water.png";
+import i4 from "../../../Images/Covid/home.png";
 import CovidCard from "./CovidCard";
 import Slider from "../../GlobalComponents/Slider/Slider";
 
@@ -28,13 +28,13 @@ function Covid() {
 	];
 	return (
 		<div className="covid">
-			<h1>Your safety is our priority</h1>
+			<h2>Your safety is our priority</h2>
 			<p className="covid-desc">
 				During these difficult times of the pandemic, we continue to be at your
 				service. But here are a few measures that we expect all our members to
 				follow.
 			</p>
-			<Slider smallScreen={1} mediumScreen={2} largeScreen={4} showBars={false}>
+			<Slider smallScreen={1} mediumScreen={2} largeScreen={4}>
 				{card.map((items, index) => {
 					return <CovidCard key={index} img={items.img} desc={items.desc} />;
 				})}

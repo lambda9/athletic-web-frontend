@@ -2,14 +2,15 @@
 	height: fit-content;
 	background-image: url("../../../Images/bg7.jpg");
 	background-position: center;
-
+	padding-top: 2rem;
 	display: flex;
 	flex-direction: column;
 }
-.covid h1 {
-	font-size: 28px;
-	margin: 2rem auto 1rem;
+
+.covid > h2 {
+	text-transform: capitalize;
 }
+
 .covid-desc {
 	font-size: 16px;
 	width: 80%;
@@ -23,7 +24,7 @@
 	width: 200px;
 	height: 200px;
 	margin: 1rem auto;
-	background: linear-gradient(to left, rgb(190, 190, 190), rgb(255, 255, 255));
+	border: 2px solid #bcbcbc;
 }
 
 .covid-card p {
@@ -106,9 +107,6 @@
 		width: 90%;
 		margin: auto;
 	}
-	.covid h1 {
-		font-size: 2.5rem;
-	}
 
 	.wtb h1 {
 		font-size: 2.5rem;
@@ -168,10 +166,5 @@
 	}
 	.covid-desc {
 		font-size: 14px;
-	}
-	.covid h1 {
-		font-size: 24px;
-		padding-top: 1rem;
-		width: 80%;
 	}
 }

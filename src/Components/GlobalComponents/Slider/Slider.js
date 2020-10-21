@@ -14,6 +14,13 @@ export const MainContainer = styled.div`
 export const CardContainer = styled.div`
 	width: ${(props) => props.largeWidth}vw;
 	padding: 0px 15px;
+	& img {
+		-webkit-user-drag: none;
+		-khtml-user-drag: none;
+		-moz-user-drag: none;
+		-o-user-drag: none;
+		user-drag: none;
+	}
 	& * {
 		user-select: none;
 	}
