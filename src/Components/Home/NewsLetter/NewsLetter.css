@@ -17,7 +17,7 @@
     padding: 1rem;
 }
 
-.news-letter-card a{
+.news-letter-card a:first-child{
     margin: 1rem 0px;
     font-size: 18px;
     font-weight: 400;
@@ -40,9 +40,10 @@
 .news-letter-card span{
     margin-top: 1rem;
     font-size: 15px;
-    text-align: justify ;
+    text-align: left ;
 }
 
-.news-letter-card button{
-    margin: 5px auto;
+.news-letter-card a:last-child{
+    height: 32px;
+    font-size: 14px;
 }
