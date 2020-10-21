@@ -6,12 +6,13 @@ import "../FreeTrial/FreeTrial.css";
 const PRIME_COLOR = "#459fb6";
 const useStyles = makeStyles({
 	root: {
+
 		"& .MuiTextField-root": {
-			margin: `0 auto 0.6rem`,
+		width: "95%",
+		margin: `0 auto 0.6rem`,
 			["@media (min-width:750px)"]: {
 				margin: "0 auto 0.5rem",
 			},
-			width: "95%",
 		},
 	},
 

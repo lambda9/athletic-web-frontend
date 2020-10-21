@@ -1,143 +1,99 @@
-import React, { Component } from "react";
-import TextField from "@material-ui/core/TextField";
-import { withStyles } from "@material-ui/core/styles";
+/** @jsx jsx */
 
-const PRIME_COLOR = "#459fb6";
+import  { useState } from "react";
+import Form from "../GlobalComponents/Form";
+import { css, jsx } from "@emotion/core";
 
-const useStyles = (theme) => ({
-  root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(1.2),
-      width: "90%",
+function FranchiseContForm() {
+  const [entryData, setentryData] = useState({
+    name: "",
+    email: "",
+    phoneNum: "",
+    address: "",
+    companyName: "",
+    amount: ""
+  });
+
+  const inputDt = [
+    {
+      id: "id_1",
+      type: "text",
+      name: "name",
+      label: "Name",
+      value: entryData.name,
     },
-  },
-});
-
-const CssTextField = withStyles({
-  root: {
-    "& label.Mui-focused": {
-      color: PRIME_COLOR,
+    {
+      id: "id_2",
+      type: "email",
+      name: "email",
+      label: "Email",
+      value: entryData.email,
     },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: PRIME_COLOR,
+    {
+      id: "id_3",
+      type: "tel",
+      name: "phoneNum",
+      label: "Phone Number",
+      value: entryData.phoneNum,
     },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "black",
-      },
-      "&:hover fieldset": {
-        color: PRIME_COLOR,
-        borderColor: PRIME_COLOR,
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: PRIME_COLOR,
-      },
+    {
+      id: "id_4",
+      type: "text",
+      name: "address",
+      label: "Address",
+      value: entryData.address,
     },
-  },
-})(TextField);
+    {
+      id: "id_5",
+      type: "text",
+      name: "companyName",
+      label: "Company Name",
+      value: entryData.companyName,
+    },
+    {
+      id: "id_6",
+      type: "number",
+      name: "amount",
+      label: "Amount available for inverstment",
+      value: entryData.amount,
+    },
+  ];
 
-class FranchiseContForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: "",
-      email: "",
-      phoneNum: "",
-      subject: "",
-    };
-  }
-
-  handleChange = (event) => {
-    const name = event.target.name;
-    this.setState({
-      ...this.state,
-      [name]: event.target.value,
-    });
-  };
-
-  handleSubmit = (event) => {
-  };
-
-  handleReset = (event) => {
-    this.setState({
-      name: "",
-      email: "",
-      phoneNum: "",
-      subject: "",
-    });
+  const handleChange = (event) => {
+    var name = event.target.name;
+    var value = event.target.value;
+    console.log(name, value);
+    setentryData({ ...entryData, [name]: value });
     event.preventDefault();
   };
 
-  render() {
-    const { classes } = this.props;
-    return (
-      <div className="franchise-cont-form-main-div">
-        <form className={classes.root} autoComplete="nope">
-          <CssTextField
-            required
-            type="text"
-            name="name"
-            value={this.state.name}
-            autoComplete="nope"
-            label="Name"
-            onChange={this.handleChange}
-          />
-          <CssTextField
-            required
-            type="email"
-            value={this.state.email}
-            name="email"
-            autoComplete="nope"
-            label="E-mail"
-            onChange={this.handleChange}
-          />
-          <CssTextField
-            required
-            value={this.state.phoneNum}
-            type="tel"
-            autoComplete="nope"
-            name="phoneNum"
-            label="Phone Number"
-            onChange={this.handleChange}
-          />
-          <CssTextField
-            required
-            value={this.state.subject}
-            type="text"
-            name="subject"
-            label="Subject"
-            onChange={this.handleChange}
-          />
+  const handleSubmit = (event) => {
+    console.log(entryData);
+  };
 
-          <CssTextField
-            required
-            value={this.state.subject}
-            type="textarea"
-            name="message"
-            label="Message"
-            onChange={this.handleChange}
-          />
+  const handleReset = (event) => {
+    setentryData({
+      name: "",
+      email: "",
+      phoneNum: "",
+      subject: "",
+      message: "",
+      companyName: ""
+    });
 
-          <div className="franchise-cont-form-btn-container">
-            <button
-              onClick={this.handleSubmit}
-              className="button-primary"
-              type="submit"
-            >
-              Submit
-            </button>
-            <button
-              onClick={this.handleReset}
-              className="button-primary  cancel-btn"
-            >
-              reset
-            </button>
-          </div>
-        </form>
-      </div>
-    );
-  }
+    event.preventDefault();
+  };
+
+  return (
+    
+      <Form
+        inputDt={inputDt}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        handleReset={handleReset}
+      ></Form>
+
+  );
 }
 
-export default withStyles(useStyles)(FranchiseContForm);
+export default FranchiseContForm;
