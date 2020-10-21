@@ -1,7 +1,24 @@
+.review-main-comp {
+  margin: 2rem auto;
+  /* background-image: url('../../../Images/review.jpg'); */
+  /* background-position: bottom; */
+
+}
+
+.review-main-comp > h3{
+  font-size: 22px;
+  font-weight: 500;
+  /* margin-bottom: -2rem; */
+  color: var(--primaryRed);
+  width: fit-content;
+  margin: 0 auto;
+}
+
 .review-card-main-div {
   width: 100%;
-  margin: auto;
-  padding: 1.2rem 2rem;
+  margin: 0 auto;
+  /* color: aliceblue; */
+  padding: 0rem 2rem;
 }
 
 .review-card-star {
@@ -47,12 +64,12 @@
 
   .review-card-text-div {
     margin-top: 0.6rem;
-    font-size: 12px;
+    font-size: 10px;
     width: 100%;
   }
 
   .review-card-text-div h2 {
-    font-size: 18px;
+    font-size: 16px;
     margin: 0.6rem auto;
   }
   .review-card-user-img {

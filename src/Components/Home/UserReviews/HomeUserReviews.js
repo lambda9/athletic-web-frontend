@@ -19,12 +19,14 @@ function HomeUserReviews() {
     },
   ];
   return (
+    <div className="review-main-comp">
+      <h3>T E S T I M O N I A L S</h3>
       <Slider width={100} smallScreen={1} mediumScreen={1} largeScreen={1}>
-        
         {items.map((item) => {
-          return <UserReviewCard key={item.id}/>
+          return <UserReviewCard key={item.id} />;
         })}
       </Slider>
+    </div>
   );
 }
 
