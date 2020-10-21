@@ -15,7 +15,6 @@
   text-align: center;
   display: flex;
   text-align: start;
-  /* background-color: indianred; */
   justify-content: center;
   flex-direction: column;
 }
@@ -24,7 +23,6 @@
   font-size: 72px;
   color: rgba(255, 255, 255, 0.9);
   margin: auto 1rem;
-  /* background-color: hotpink; */
   font-weight: 900;
   line-height: 1.2;
 }
@@ -36,7 +34,6 @@
   padding: 2em;
   justify-content: space-evenly;
   display: flex;
-  /* justify-items: center; */
 }
 
 .wju-card {
@@ -46,7 +43,7 @@
   width: 95%;
   min-width: 210px;
   max-width: 350px;
-  background: linear-gradient(30deg, #343a40 38%, #030202 30%);
+  background: linear-gradient(30deg, #343a40 20%, #030202 30%);
   text-align: left;
   transition: transform ease-in-out 0.4s;
 }

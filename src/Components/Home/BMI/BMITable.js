@@ -7,7 +7,6 @@ function BMITable(props) {
 
   return (
     <div className="bmi-content-left-div">
-      <h4>BMI CHART</h4>
       <table>
         <tbody>
           <tr>

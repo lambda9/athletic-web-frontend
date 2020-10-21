@@ -136,9 +136,8 @@ function HomePageEnquiry() {
 
   const classes = useStyles();
   return (
-    <div className="custom">
-      <div className="div">
-        <div className="div2">
+      <div className="home-enquiry-comp">
+        <div className="home-enquiry-gradient">
           <div className="home-enquiry-left-div">
             <span>I N T E R E S T E D</span>
             <h2>A N Y Q U E R Y ?</h2>
@@ -186,7 +185,6 @@ function HomePageEnquiry() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

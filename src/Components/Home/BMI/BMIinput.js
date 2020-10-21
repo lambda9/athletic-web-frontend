@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: "1.5rem auto",
       width: "70%",
+      // backgroundColor: "red",
       ["@media (max-width:550px)"]: {
         width: "85%",
         margin: "0.8rem auto"
