@@ -11,11 +11,6 @@
   margin: 5rem 0rem;
 }
 
-.news-letter-main-component h4 {
-  color: var(--primaryColor);
-  margin-top: 4rem;
-}
-
 .news-letter-main-component h1 {
   font-size: 48px;
   margin-top: 4rem;
@@ -50,7 +45,6 @@
 .news-letter-card div {
   display: flex;
   width: 33%;
-  /* min-width: 260px; */
   flex-direction: column;
   padding: 0rem 1.5rem;
   border-right: 1px solid var(--primaryColor);
@@ -74,7 +68,7 @@
 
 .news-letter-card a:last-child {
   height: 32px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 420;
 }
 
