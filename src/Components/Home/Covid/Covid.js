@@ -5,6 +5,7 @@ import i2 from "../../../Images/Programs/i2.png";
 import i3 from "../../../Images/Programs/i3.png";
 import i4 from "../../../Images/Programs/i4.png";
 import CovidCard from "./CovidCard";
+import Slider from "../../GlobalComponents/Slider/Slider";
 
 function Covid() {
 	const card = [
@@ -33,11 +34,11 @@ function Covid() {
 				service. But here are a few measures that we expect all our members to
 				follow.
 			</p>
-			<div className="covid-grid">
+			<Slider smallScreen={1} mediumScreen={2} largeScreen={4} showBars={false}>
 				{card.map((items, index) => {
 					return <CovidCard key={index} img={items.img} desc={items.desc} />;
 				})}
-			</div>
+			</Slider>
 		</div>
 	);
 }
