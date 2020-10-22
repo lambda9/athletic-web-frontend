@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { css, jsx } from "@emotion/core";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import IconButton from "@material-ui/core/IconButton";
 import Checkbox from "@material-ui/core/Checkbox";
 import "./Login.css";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import {
   RiLoginCircleFill,
   HiOutlineUser,
   HiOutlineLockClosed,
 } from "react-icons/all";
+import { Input } from "@material-ui/core";
 
 /** @jsx jsx */
 
@@ -20,6 +25,7 @@ const useStyles = makeStyles({
     flexDirection: "column",
     "& > div": {
       display: "flex",
+      color: "white",
     },
     "& .MuiTextField-root": {
       width: "80%",
@@ -28,9 +34,17 @@ const useStyles = makeStyles({
 
       ["@media (min-width:750px)"]: {},
     },
-
     "& .MuiInputBase-input": {
       color: "white",
+    },
+    "& .MuiInput-underline:before": {
+      borderBottomColor: "rgb(255, 255, 255, 0.5)",
+    },
+    "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
+      borderBottomColor: "rgb(255, 255, 255, 0.9)",
+    },
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "white",
     },
 
     "& .MuiInputLabel-root": {
@@ -60,6 +74,21 @@ const CustomCheckBox = withStyles({
 function Login() {
   const classes = useStyles();
 
+  const [loginDt, setLoginDt] = useState({
+    userName: "",
+    password: "",
+    showPassword: false,
+    rememberMe: false,
+  });
+
+  const handleChange = (event) => {
+    let name = event.target.name;
+    let value =
+      name == "rememberMe" ? event.target.checked : event.target.value;
+
+    setLoginDt({ ...loginDt, [name]: value });
+  };
+
   return (
     <div className="login-page">
       <div className="login-entry-form">
@@ -71,8 +100,10 @@ function Login() {
             <HiOutlineUser className="login-icon" />
             <TextField
               className={classes.root}
-              id="input-with-icon-grid"
               label="Username"
+              name="userName"
+              value={loginDt.userName}
+              onChange={handleChange}
               autoFill="nope"
             />
           </div>
@@ -80,16 +111,51 @@ function Login() {
             <HiOutlineLockClosed className="login-icon" />
             <TextField
               autoFill="nope"
-              id="input-with-icon-grid"
+              type={loginDt.showPassword ? "text" : "password"}
+              name="password"
               label="Password"
+              value={loginDt.value}
+              onChange={handleChange}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      style={{ color: "white" }}
+                      aria-label="toggle password visibility"
+                      name="showPassword"
+                      onClick={() => {
+                        setLoginDt({
+                          ...loginDt,
+                          ["showPassword"]: !loginDt.showPassword,
+                        });
+                      }}
+                      onMouseDown={(event) => {
+                        event.preventDefault();
+                      }}
+                    >
+                      {loginDt.showPassword ? (
+                        <Visibility />
+                      ) : (
+                        <VisibilityOff />
+                      )}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
           </div>
           <FormControlLabel
-            control={<CustomCheckBox checked={true} name="checkedF" />}
+            control={
+              <CustomCheckBox
+                checked={loginDt.rememberMe}
+                name="rememberMe"
+                onChange={handleChange}
+              />
+            }
             label="Remember Password"
           />
 
-          <button>Login</button>
+          <button className="login-entry-for-button">Login</button>
           <p>Forgot password ?</p>
         </form>
       </div>

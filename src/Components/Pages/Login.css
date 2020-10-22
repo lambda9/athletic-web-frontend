@@ -1,5 +1,5 @@
 .login-page {
-  background-image: url("../../Images/review.jpg");
+  background-image: url("../../Images/loginBG.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,7 +18,7 @@
   background: linear-gradient(to bottom, #7579ff, #1ca9c9);
 }
 
-.login-entry-form button {
+.login-entry-for-button {
   font-size: 16px;
   color: #555555;
   line-height: 1.2;
