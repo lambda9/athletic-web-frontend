@@ -7,6 +7,8 @@ import Slider from "./Slider";
 
 import { programs } from "./programsData";
 import { init, reducer } from "./reducer";
+import { StarTwoTone } from "@material-ui/icons";
+import ProgramSlide from "./ProgramSlide";
 
 // width, height, imageWidth will be applied as vw.
 // transitionDelay and transitionDuraction should be passed as milliseconds.
@@ -55,14 +57,49 @@ const ProgramCarousel = ({
 				margin: auto;
 			`}
 		>
-			<Slider
-				images={state.data}
-				transition={`transform ease-in-out ${state.transition / 1000}s`}
-				activeIndex={state.activeIndex}
-				translate={-(state.activeIndex - 1) * state.imageWidth + offset}
-				width={state.imageWidth}
+			<div
+				style={{
+					transition: `transform ease-in-out ${state.transition / 1000}s`,
+					transform: `translateX(${
+						-(state.activeIndex - 1) * state.imageWidth + offset
+					}vw)`,
+				}}
+				css={css`
+					display: flex;
+					align-items: center;
+					width: fit-content;
+					height: 90%;
+					& > div {
+						padding: 3vw;
+						z-index: 0;
+					}
+					& img {
+						width: 100%;
+					}
+				`}
 				onTransitionEnd={() => dispatch({ type: "update", data: data })}
-			/>
+			>
+				{state.data.map((item, index) => {
+					return (
+						<div
+							key={item.id}
+							css={css`
+								width: ${state.imageWidth}vw;
+								transition: transform ease-in-out 0.5s;
+								transform: scale(
+									${index === state.activeIndex ? 1 + 12 / state.imageWidth : 1}
+								);
+							`}
+							onTransitionEnd={(e) => {
+								e.stopPropagation();
+							}}
+						>
+							<ProgramSlide css={{ width: "100%" }} {...item} />
+						</div>
+					);
+				})}
+			</div>
+			);
 		</div>
 	);
 };
