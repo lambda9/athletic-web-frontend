@@ -1,6 +1,7 @@
 .ad-main-comp {
   width: 100%;
   margin-top: 2rem;
+  padding: 1em;
 }
 
 .ad-reach-audience {
@@ -21,7 +22,7 @@
 }
 
 .advertise-medium-container {
-  margin: 5.1rem auto 2rem;
+  margin: 2em auto;
   position: relative;
   width: 70%;
   height: auto;
@@ -29,18 +30,40 @@
 }
 
 .advertise-medium-container h3 {
-  font-size: 32px;
-  font-size: 400;
+  color: var(--primaryColor);
+  font-size: 2em;
 }
 .advertise-medium {
+  color: var(--mainWhite);
+  font-weight: 500;
   column-count: 2;
   column-width: 300px;
-  padding: 1rem 2rem 1.5rem 1rem;
+  padding: 1em;
+  padding-bottom: 0;
+  line-height: 2;
 }
 .advertise-medium ul {
   list-style-position: inside;
   list-style-type: circle;
   text-align: justify;
+}
+
+.ad-msg {
+  text-align: center;
+  font-size: 1.15em;
+  font-weight: 500;
+  padding: 1em 10%;
+}
+
+.ad-msg span {
+  color: var(--primaryColor);
+}
+
+.ad-msg-quote {
+  margin: 1em 0;
+  font-size: 1.25em;
+  font-weight: 550;
+  color: orange;
 }
 
 .ad-form-cont {
@@ -49,22 +72,20 @@
 }
 
 .ad-form-div {
-  width: 90%;
+  width: 100%;
   display: flex;
-  margin: 0rem auto 1rem;
-}
-
-.ad-form-left-div {
-  /* background-color: rgb(165, 65, 65); */
-  width: 45%;
-  margin: auto;
+  margin: 1rem auto;
+  padding: 1rem 3em;
 }
 
 .ad-form-right-div {
-  width: 45%;
-  text-align: left;
-  /* background-color: blanchedalmond; */
-  margin: 0rem auto;
+  width: 50%;
+  padding: 1em;
+}
+
+.ad-form-left-div {
+  width: 50%;
+  background-color: var(--accentColor);
 }
 
 @media screen and (max-width: 750px) {

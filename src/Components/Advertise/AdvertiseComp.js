@@ -6,7 +6,7 @@ import ContactUsEntryFields from "../ContactUs/ContactUsEntryFields";
 import Title from "../Title/Title";
 import Form from "../Form";
 
-function AdvertiseComp() {
+const AdvertiseComp = () => {
   const [entryData, setentryData] = useState({
     name: "",
     email: "",
@@ -88,12 +88,16 @@ function AdvertiseComp() {
 
   return (
     <div className="ad-main-comp" id="advertise">
-      <Title>Reach the right audience</Title>
-      <div className="ad-right-msg">With Right Message at Right time</div>
-
-      <AdvertiseContent />
+      <div className = "ad-msg">
+        Promoting your business with <span>the Atheletic Gym</span> is easier then you
+        think, via our wide range of marketing platform. So let's connect and
+        <div className="ad-msg-quote">Reach the Right audience with Right message at Right time !</div>
+      </div>
       <div className="ad-form-div">
         <div className="ad-form-left-div">
+          <AdvertiseContent />
+        </div>
+        <div className="ad-form-right-div">
           <h1>Tell us about yourself</h1>
           <Form
             inputDt={inputDt}
@@ -102,7 +106,6 @@ function AdvertiseComp() {
             handleReset={handleReset}
           />
         </div>
-        <div className="ad-form-right-div">Some relevant image</div>
       </div>
     </div>
   );

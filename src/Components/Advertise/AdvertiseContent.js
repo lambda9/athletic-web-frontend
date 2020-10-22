@@ -1,4 +1,5 @@
 import React from "react";
+import "./AdvertiseComp.css";
 
 function AdvertiseContent() {
   return (

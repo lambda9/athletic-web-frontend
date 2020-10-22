@@ -78,9 +78,6 @@ function Form(props) {
           >
             Submit
           </button>
-          <button onClick={handleReset} className="button-primary  cancel-btn">
-            reset
-          </button>
         </div>
       </form>
   );
