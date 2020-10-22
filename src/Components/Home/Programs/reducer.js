@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { act } from "react-dom/test-utils";
 
 const getWindow = (arr, middleIndex, offset) => {
 	let startIndex = middleIndex - offset + 1;
@@ -15,7 +14,6 @@ const getWindow = (arr, middleIndex, offset) => {
 };
 
 export const init = (data) => {
-	console.log("init called", data);
 	return {
 		currentIndex: 0,
 		data: getWindow(data, 0, 2),
@@ -28,7 +26,6 @@ export const init = (data) => {
 };
 
 export const reducer = (state, action) => {
-	console.log("action", action);
 	switch (action.type) {
 		case "next":
 			return {
