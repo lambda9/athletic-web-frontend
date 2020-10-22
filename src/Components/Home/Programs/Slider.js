@@ -13,9 +13,11 @@ const Slider = ({
 }) => {
 	return (
 		<div
+			style={{
+				transition: `${transition}`,
+				transform: `translateX(${translate}vw)`,
+			}}
 			css={css`
-				transition: ${transition};
-				transform: translateX(${translate}vw);
 				display: flex;
 				align-items: center;
 				width: fit-content;
@@ -28,7 +30,10 @@ const Slider = ({
 					width: 100%;
 				}
 			`}
-			onTransitionEnd={onTransitionEnd}
+			onTransitionEnd={() => {
+				console.log("trans end");
+				onTransitionEnd();
+			}}
 		>
 			{images.map((item, index) => {
 				return (
@@ -39,6 +44,9 @@ const Slider = ({
 							transition: transform ease-in-out 0.5s;
 							transform: scale(${index === activeIndex ? 1 + 12 / width : 1});
 						`}
+						onTransitionEnd={(e) => {
+							e.stopPropagation();
+						}}
 					>
 						<ProgramSlide css={{ width: "100%" }} {...item} />
 					</div>

@@ -10,6 +10,7 @@ import BMI from "./BMI/BMI";
 import Results from "./WhatWeProvide/Results";
 import Programs from "./Programs/Programs";
 import Features from "./WhatWeProvide/Features";
+import NewsLetter from "./NewsLetter/NewsLetter";
 
 function Home() {
 	return (
@@ -17,13 +18,14 @@ function Home() {
 			<FadingCarousel />
 			<Covid />
 			<Features />
+			<Programs />
 			<Results />
 			<OurPlans />
-			<Programs />
 			<WhyJoinUs />
 			<HomePageEnquiry />
 			<BMI />
 			<HomeUserReviews />
+			<NewsLetter />
 			<HomePageFAQ />
 		</div>
 	);
