@@ -4,13 +4,14 @@ import ProgramCarousel from "./ProgramCarousel";
 const Programs = () => {
 	return (
 		<div>
-			<h1
+			<h2
 				css={{
 					textTransform: "uppercase",
 				}}
 			>
 				Programs Offered By Us
-			</h1>
+			</h2>
+			<p>We offer wide variety of programs.</p>
 			<ProgramCarousel
 				transitionDelay={2000}
 				transitionDuration={500}

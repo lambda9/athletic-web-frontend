@@ -6,20 +6,9 @@ import "./Programs.css";
 import Slider from "./Slider";
 
 import { programs } from "./programsData";
-import { reducer } from "./reducer";
-
-const getWindow = (arr, middleIndex, offset) => {
-	let startIndex = middleIndex - offset;
-	if (startIndex < 0) {
-		startIndex += arr.length;
-	}
-	let newArr = [];
-	for (let i = 0; i < offset * 2 + 1; i++) {
-		newArr.push(arr[startIndex]);
-		startIndex = (startIndex + 1) % arr.length;
-	}
-	return newArr;
-};
+import { init, reducer } from "./reducer";
+import { StarTwoTone } from "@material-ui/icons";
+import ProgramSlide from "./ProgramSlide";
 
 // width, height, imageWidth will be applied as vw.
 // transitionDelay and transitionDuraction should be passed as milliseconds.
@@ -30,15 +19,7 @@ const ProgramCarousel = ({
 	transitionDelay,
 	transitionDuration,
 }) => {
-	const [state, dispatch] = useReducer(reducer, {
-		currentIndex: 0,
-		data: getWindow(data, 0, 2),
-		transition: 0,
-		activeIndex: 2,
-		len: data.length,
-		imageWidth: window.innerWidth < 900 ? 60 : 30,
-		height: window.innerWidth < 900 ? 60 : 30,
-	});
+	const [state, dispatch] = useReducer(reducer, data, init);
 	const offset = -(state.imageWidth - (width - state.imageWidth) / 2);
 
 	useEffect(() => {
@@ -76,34 +57,49 @@ const ProgramCarousel = ({
 				margin: auto;
 			`}
 		>
-			<Slider
-				images={state.data}
-				transition={`transform ease-in-out ${state.transition / 1000}s`}
-				activeIndex={state.activeIndex}
-				translate={-(state.activeIndex - 1) * state.imageWidth + offset}
-				width={state.imageWidth}
+			<div
+				style={{
+					transition: `transform ease-in-out ${state.transition / 1000}s`,
+					transform: `translateX(${
+						-(state.activeIndex - 1) * state.imageWidth + offset
+					}vw)`,
+				}}
+				css={css`
+					display: flex;
+					align-items: center;
+					width: fit-content;
+					height: 90%;
+					& > div {
+						padding: 3vw;
+						z-index: 0;
+					}
+					& img {
+						width: 100%;
+					}
+				`}
 				onTransitionEnd={() => dispatch({ type: "update", data: data })}
-			/>
-			<div
-				css={{
-					display: autoStart ? "none" : "block",
-				}}
-				onClick={() =>
-					dispatch({ type: "next", transitionDuration: transitionDuration })
-				}
 			>
-				&#8250;
+				{state.data.map((item, index) => {
+					return (
+						<div
+							key={item.id}
+							css={css`
+								width: ${state.imageWidth}vw;
+								transition: transform ease-in-out 0.5s;
+								transform: scale(
+									${index === state.activeIndex ? 1 + 12 / state.imageWidth : 1}
+								);
+							`}
+							onTransitionEnd={(e) => {
+								e.stopPropagation();
+							}}
+						>
+							<ProgramSlide css={{ width: "100%" }} {...item} />
+						</div>
+					);
+				})}
 			</div>
-			<div
-				css={{
-					display: autoStart ? "none" : "block",
-				}}
-				onClick={() =>
-					dispatch({ type: "prev", transitionDuration: transitionDuration })
-				}
-			>
-				&#8249;
-			</div>
+			);
 		</div>
 	);
 };

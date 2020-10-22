@@ -96,6 +96,7 @@ export const sliderReducer = (state, action) => {
 				mediumScreenCardCount: action.mediumScreenCardCount,
 				largeScreenCardCount: action.largeScreenCardCount,
 				cardCount: action.cardCount,
+				index: 0,
 			};
 		}
 
