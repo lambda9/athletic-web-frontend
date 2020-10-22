@@ -25,6 +25,7 @@ function HomeUserReviews() {
 			})}
 		</Slider>
 	);
+
 }
 
 export default HomeUserReviews;

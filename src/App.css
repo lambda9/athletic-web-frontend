@@ -78,6 +78,11 @@ a:hover {
   text-decoration: none;
 }
 
+button {
+  outline: none;
+  border: none;
+}
+
 button:active {
   outline: none;
 }
