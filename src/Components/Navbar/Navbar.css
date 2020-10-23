@@ -111,9 +111,10 @@
 	.nav-logo {
 		margin-left: 0.5rem;
 	}
+
 	.right-nav {
-		overflow: scroll;
-		overflow-x: visible;
+		overflow-x: scroll;
+		overflow-y: visible;
 		justify-content: flex-start;
 		mask-image: -webkit-linear-gradient(
 			to right,
@@ -191,6 +192,7 @@
 	}
 
 	.nav-link-group {
+		overflow-x: visible ;
 		width: fit-content;
 	}
 }

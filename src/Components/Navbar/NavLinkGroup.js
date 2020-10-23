@@ -8,9 +8,14 @@ const NavLinkGroup = (props) => {
   const value = props.value;
   const [dropDown, setdropDown] = useState(false);
   return (
-    <div className='ttee'>
-      <div className="drop-link-div" onMouseOver={() => setdropDown(!dropDown)}>
-        {value.dropDown ? <BsChevronDown className="drop-link-icon" /> : null}
+    <div className="ttee">
+      <div className="drop-link-div">
+        {value.dropDown ? (
+          <BsChevronDown
+            className="drop-link-icon"
+            onClick={() => setdropDown(!dropDown)}
+          />
+        ) : null}
         <Link
           to={value.path}
           id={props.currentLink === value.path ? "nav-link-active" : ""}
