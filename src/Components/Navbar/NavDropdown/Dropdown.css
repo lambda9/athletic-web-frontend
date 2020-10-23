@@ -1,0 +1,45 @@
+.ttee {
+    position: relative;
+
+}
+
+.drop-link-div {
+    display: flex;
+    color: white;
+    margin: 0 0.2rem;
+    background-color: darkorange;
+}
+
+.drop-link-icon {
+    /* background-color: cornflowerblue; */
+    margin: auto;
+    font-size: 16px;
+}
+
+.drop-down {
+    width: fit-content;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    text-align: left;
+    padding: 0.3rem 0;
+    bottom: 0;
+    left: 2px;
+    transform: translateY(100%);
+    background-color: var(--mainBlack);
+    background-color: red;
+    position: absolute;
+}
+
+#visible {
+    visibility: visible;
+}
+
+.drop-down a {
+    margin-top: 0.4rem;
+    font-size: 1rem;
+    padding: 0 0.1rem ;
+	letter-spacing: var(--mainSpacing);
+
+}
