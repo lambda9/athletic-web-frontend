@@ -21,14 +21,18 @@
 
 .plan-card-container {
   z-index: 3;
-  margin: 0 auto;
-  width: 85%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   row-gap: 1rem;
   column-gap: 5rem;
+  background:var(--mainBlack);
 }
-
+ h2{
+  background-color:var(--mainGrey);
+  padding-top:1%;
+  padding-bottom:1%;
+}
 .plan-filter-div {
   width: 100%;
   display: grid;
@@ -40,9 +44,11 @@
 }
 
 .merchandise-container{
-  width:80%;
+  width:100%;
+  background-color:white;
   height:fit-content;
   margin:auto;
+
 }
 .merchandise-card-container{
   text-align: center;
@@ -75,5 +81,41 @@
   color: white;
   font-size:1rem;
   margin-top:10%;
+}
+.moto-container{
+  z-index: 1;
+width: 100%;
+position: relative;
+height: fit-content;
+background-image:     linear-gradient(to bottom, rgba(129, 129, 129, 0.52), rgba(116, 228, 243, 0.73)),url("../../Images/Membership/moto.jpeg");
+margin-top: 1% ;
+padding-top: 5rem ;
+padding-bottom: 4rem ;
+background-position: center ;
+background-repeat: no-repeat ;
+background-size: cover ;
+}
+.moto-heading{
+  position: relative;
+  margin: auto ;
+  width: 50%;
+  color:white;
+}
+.moto-heading span{
+background-color:var(--primaryColor);
+}
+.offer-heading{
+  height:fit-content;
+  position: relative;
+  margin:auto;
+  width: 100%;
+  color:white;
+  background-color:var(--mainBlack);
+}
+.offer-image{
+  height:300px;
+  position: relative;
+  background-image:    linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(61, 61, 61, 0.73)),url(../../Images/Membership/offer.jpg);
+  background-size: cover;
 }
 

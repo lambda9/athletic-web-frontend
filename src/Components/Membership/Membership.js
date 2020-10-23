@@ -7,6 +7,9 @@ import bgImg from "../../Images/im6.jpg";
 import MembershipBG from "./MembershipBG";
 import MembershipIcon from "./MembershipIcon";
 import Merchandise from "./Merchandise";
+import Moto from "./Moto";
+import LatestOffer from "./LatestOffer"
+import Slider from "../GlobalComponents/Slider/Slider";
 class Membership extends Component {
 	constructor(props) {
 		super(props);
@@ -140,19 +143,45 @@ class Membership extends Component {
 		return (
 			<div className="membership-page">
 				<Hero bgImg={bgImg} title="get membership" description="get today" />
-				<div className="plan-bg-container">
-					<MembershipBG />
-				</div>
+				<Moto/>
+				<LatestOffer/>
+			
 
 				<div className="plan-container-center">
 					<div className="plan-selectMembership-title">
 						<Title>Select membership plan</Title>
 					</div>
-
+					<h2>Yearly Plans</h2>
 					<div className="plan-card-container">
+						<Slider smallScreen={1} mediumScreen={2} largeScreen={3}>
 						{this.state.plans.map((plan) => {
 							return <IconSlider item={plan} />;
 						})}
+						</Slider>
+					</div>
+					<h2>Half Yearly Plans</h2>
+					<div className="plan-card-container">
+						<Slider smallScreen={1} mediumScreen={2} largeScreen={3}>
+						{this.state.plans.map((plan) => {
+							return <IconSlider item={plan} />;
+						})}
+						</Slider>
+					</div>
+					<h2>Quarterly Plans</h2>
+					<div className="plan-card-container">
+						<Slider smallScreen={1} mediumScreen={2} largeScreen={3}>
+						{this.state.plans.map((plan) => {
+							return <IconSlider item={plan} />;
+						})}
+						</Slider>
+					</div>
+					<h2>Monthly Plans</h2>
+					<div className="plan-card-container">
+						<Slider smallScreen={1} mediumScreen={2} largeScreen={3}>
+						{this.state.plans.map((plan) => {
+							return <IconSlider item={plan} />;
+						})}
+						</Slider>
 					</div>
 				</div>
 				<Merchandise/>
