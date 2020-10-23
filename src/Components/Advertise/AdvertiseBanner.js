@@ -1,6 +1,5 @@
 import React from "react";
 import "./Advertise.css";
-import AdvertiseOverlapCard from "./AdvertiseOverlapCard";
 
 const AdvertiseBanner = () => {
   return (

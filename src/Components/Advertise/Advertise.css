@@ -13,8 +13,8 @@
   display: flex;
   justify-content: center;
   justify-items: center;
-  height: 400px;
   letter-spacing: 1.2px;
+  padding: 9em 0;
 }
 
 .advertise-hero-text-div {
@@ -24,9 +24,11 @@
   margin: auto;
   font-size: 4em;
   font-weight: 550;
+  text-shadow: 2px 2px 10px black;
 }
 
 .advertise-hero-text-div span {
+  
   font-size: 0.4em;
   margin: auto;
   height: fit-content;
@@ -34,122 +36,13 @@
   color: var(--primaryColor);
 }
 
-.advertise-overlap-card {
-  font-size: 96px;
-  text-transform: uppercase;
-  color: white;
-  position: absolute;
-  top: 70%;
-  left: 2%;
-}
-
-@media screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
   .advertise-hero {
-    height: 400px;
+    padding: 4em 0;
   }
 
-  .advertise-page {
-    margin-top: -55px;
+  .advertise-hero-text-div {
+    font-size: 2em;
+    font-weight: 550;
   }
 }
-
-@media screen and (max-width: 650px) {
-  .advertise-hero {
-    height: 350px;
-    padding: 0;
-    flex-direction: column;
-  }
-
-  .advertise-hero-text-div span {
-    margin-top: 1rem;
-    font-size: 16px;
-  }
-
-  .advertise-overlap-card {
-    font-size: 42px;
-    position: relative;
-    top: -10px;
-    margin: 0 auto;
-  }
-
-}
-.advertise-card-container {
-  margin-top: 5.1rem;
-  margin-bottom: 2rem;
-  position: relative;
-
-  background: #fff;
-  width: 100%;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border: 2px solid green;
-}
-.advertise-card-container span {
-  color: var(--primaryRed);
-}
-.advertise-card-center {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-}
-.advertise-card-item-container {
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 170px;
-  margin: 1.5em;
-  padding: 0.4rem 0;
-  background: linear-gradient(to top, #d6d6d6, #ffffff67);
-  box-shadow: rgba(0, 0, 0, 0.3);
-  color: black;
-  border: 1px solid black;
-}
-.advertise-card-item-container h4 {
-  color: var(--primaryRed);
-  text-align: center;
-  margin: auto;
-  font-weight: 900;
-}
-.advertise-card-item-container p {
-  width: 80%;
-  text-align: center;
-  margin: auto;
-  font-weight: 500;
-}
-.advertise-card-item-icon {
-  font-size: 64px;
-  color: var(--primaryRed);
-  margin: 0.2rem auto 0.2rem;
-}
-@media screen and (max-width: 550px) {
-  .advertise-card-center {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-    grid-row-gap: 0.3rem;
-    grid-column-gap: 0.4rem;
-    justify-items: center;
-    align-items: stretch;
-  }
-}
-/* @media screen and (max-width: 900px) {
-  .advertise-card-center {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-    grid-row-gap: 0.3rem;
-    grid-column-gap: 0.4rem;
-    justify-items: center;
-    align-items: stretch;
-  }
-}
-.advertise-card-column-icon {
-  color: black;
-} */

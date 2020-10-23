@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./AdvertiseComp.css";
 import { Link } from "react-router-dom";
-import AdvertiseContent from "./AdvertiseContent";
-import ContactUsEntryFields from "../ContactUs/ContactUsEntryFields";
-import Title from "../Title/Title";
 import Form from "../Form";
+import AdvertiseFlipCard from "./AdvertiseFlipCard";
+import adIMG from "../../Images/adIMG2.jpg";
 
 const AdvertiseComp = () => {
   const [entryData, setentryData] = useState({
@@ -93,9 +92,10 @@ const AdvertiseComp = () => {
         think, via our wide range of marketing platform. So let's connect and
         <div className="ad-msg-quote">Reach the Right audience with Right message at Right time !</div>
       </div>
+      <AdvertiseFlipCard />
       <div className="ad-form-div">
         <div className="ad-form-left-div">
-          <AdvertiseContent />
+          <img src = {adIMG} />
         </div>
         <div className="ad-form-right-div">
           <h1>Tell us about yourself</h1>

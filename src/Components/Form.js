@@ -76,7 +76,7 @@ function Form(props) {
             className="button-primary"
             type="submit"
           >
-            Submit
+            Get in touch
           </button>
         </div>
       </form>
