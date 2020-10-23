@@ -4,7 +4,7 @@
 }
 
 .advertise-hero {
-  background: url('../../Images/adBG.jpg') rgba(6, 36, 43, 0.6);
+  background: url('../../Images/Advertise/adBG.jpg') rgba(6, 36, 43, 0.6);
   background-size: contain;
   background-blend-mode: multiply ;
   background-attachment: fixed;

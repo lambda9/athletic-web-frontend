@@ -1,8 +1,8 @@
 import React from "react";
 import "./AdvertiseFlipCard.css";
-import img1 from "../../Images/adwhyus.svg";
-import img2 from "../../Images/adService.svg";
-import img3 from "../../Images/adProcess.svg";
+import img1 from "../../Images/Advertise/adwhyus.svg";
+import img2 from "../../Images/Advertise/adService.svg";
+import img3 from "../../Images/Advertise/adProcess.svg";
 
 const AdvertiseFlipCard = () => {
   const flipCardInfo = [

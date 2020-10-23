@@ -3,7 +3,7 @@ import "./AdvertiseComp.css";
 import { Link } from "react-router-dom";
 import Form from "../Form";
 import AdvertiseFlipCard from "./AdvertiseFlipCard";
-import adIMG from "../../Images/adIMG2.jpg";
+import adIMG from "../../Images/Advertise/adIMG2.jpg";
 
 const AdvertiseComp = () => {
   const [entryData, setentryData] = useState({
