@@ -4,6 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  flex-direction: column;
   height: 800px;
 }
 
@@ -84,4 +85,21 @@
   .login-icon1 {
     font-size: 72px;
   }
+}
+
+.login-page-footer{
+  display: flex;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 60px;
+  background-color: rgb(4,24,29);
+}
+
+.login-page-footer > div:first-child{
+  color: white;
+}
+
+.login-page-footer > div {
+  width: 30%;
 }
