@@ -1,46 +1,25 @@
 .ad-main-comp {
   width: 100%;
-  margin-top: 2rem;
 }
 
-.ad-reach-audience {
-  width: fit-content;
-  text-align: left;
-  margin: auto;
-  line-height: 1.2;
-  font-size: 72px;
+.ad-msg {
+  text-align: center;
+  font-size: 1.15em;
   font-weight: 500;
+  padding: 3em 10%;
+  color: var(--mainWhite);
+  background-color: var(--accentColor);
+}
+
+.ad-msg span {
   color: var(--primaryColor);
 }
 
-.ad-right-msg {
-  width: fit-content;
-  text-align: left;
-  margin: auto;
-  font-size: 18px;
-}
-
-.advertise-medium-container {
-  margin: 5.1rem auto 2rem;
-  position: relative;
-  width: 70%;
-  height: auto;
-  text-align: left;
-}
-
-.advertise-medium-container h3 {
-  font-size: 32px;
-  font-size: 400;
-}
-.advertise-medium {
-  column-count: 2;
-  column-width: 300px;
-  padding: 1rem 2rem 1.5rem 1rem;
-}
-.advertise-medium ul {
-  list-style-position: inside;
-  list-style-type: circle;
-  text-align: justify;
+.ad-msg-quote {
+  margin-top: 1em;
+  font-size: 1.25em;
+  font-weight: 550;
+  color: orange;
 }
 
 .ad-form-cont {
@@ -49,65 +28,51 @@
 }
 
 .ad-form-div {
-  width: 90%;
+  width: 100%;
   display: flex;
-  margin: 0rem auto 1rem;
-}
-
-.ad-form-left-div {
-  /* background-color: rgb(165, 65, 65); */
-  width: 45%;
-  margin: auto;
+  margin: 3rem auto;
+  padding: 1rem 3em;
 }
 
 .ad-form-right-div {
-  width: 45%;
-  text-align: left;
-  /* background-color: blanchedalmond; */
-  margin: 0rem auto;
+  width: 50%;
+  padding: 1em;
+  
 }
 
-@media screen and (max-width: 750px) {
+.ad-form-right-div h1 {
+  color: var(--accentColor);
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+.ad-form-left-div {
+  width: 50%;
+  text-align: center;
+}
+
+.ad-form-left-div img {
+  width: 75%;
+}
+
+@media only screen and (max-width: 900px) {
+  .ad-msg {
+    font-size: 0.9em;
+  }
+  .ad-msg-quote {
+    font-size: 1.15em;
+  }
   .ad-form-div {
     flex-direction: column;
-    margin: 0rem auto 1rem;
+    margin-top: 1em;
+    padding: 0;
   }
-  
-  .ad-form-left-div {
+  .ad-form-right-div, .ad-form-left-div {
     width: 100%;
-    margin: auto;
+    padding: 1em;
   }
-  
-  .ad-form-right-div {
-    width: 100%;
-    margin: 0rem auto;
+  .ad-form-right-div h1 {
+    font-size: 2em;
   }
-}
-
-@media screen and (max-width: 550px) {
-  .advertise-medium {
-    column-count: 1;
-  }
-  .advertise-medium-container {
-    margin: 3rem auto 2rem;
-    width: 85%;
-  }
-
-  .advertise-medium-container h3 {
-    font-size: 22px;
-  }
-  .advertise-medium {
-    column-count: 2;
-    column-width: 300px;
-    padding: 0rem 2rem 1.5rem 1rem;
-  }
-  .advertise-medium ul {
-    font-size: 14px;
-  }
-
-  .ad-right-msg {
-    font-size: 14px;
-  }
-
- 
 }

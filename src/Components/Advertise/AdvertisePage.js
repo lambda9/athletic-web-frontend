@@ -1,7 +1,8 @@
 import React from "react";
-import AdvertiseBanner from "./AdvertiseBanner";
 import "./Advertise.css";
-import AdvertiseComp from "./AdvertiseComp";
+import AdvertiseComp from './AdvertiseComp'
+import AdvertiseBanner from './AdvertiseBanner'
+
 
 function AdvertisePage() {
   return (

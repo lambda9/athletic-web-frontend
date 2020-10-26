@@ -1,16 +1,15 @@
 import React from "react";
 import "./Advertise.css";
-import AdvertiseOverlapCard from "./AdvertiseOverlapCard";
-function AdvertiseBanner() {
+
+const AdvertiseBanner = () => {
   return (
     <div className="advertise-hero">
       <div className="advertise-hero-text-div">
+        Advertise With Us
         <span>
-          Promoting your business with the Atheletic Gym is easier then you
-          think, via our wide range of marketing platform.
+          Be Seen Be Recognized
         </span>
       </div>
-      <AdvertiseOverlapCard />
     </div>
   );
 }
