@@ -5,6 +5,9 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { css, jsx } from "@emotion/core";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import { FaCopyright } from "react-icons/all";
+import SocialMedia from "../Footer/SocialMedia";
+import GetApp from "../Footer/GetApp";
 import IconButton from "@material-ui/core/IconButton";
 import Checkbox from "@material-ui/core/Checkbox";
 import "./Login.css";
@@ -90,75 +93,88 @@ function Login() {
   };
 
   return (
-    <div className="login-page">
-      <div className="login-entry-form">
-        <RiLoginCircleFill className="login-icon1" />
-        <h2>LOG IN</h2>
+    <div>
+      <div className="login-page">
+        <div className="login-entry-form">
+          <RiLoginCircleFill className="login-icon1" />
+          <h2>LOG IN</h2>
 
-        <form className={classes.root}>
-          <div>
-            <HiOutlineUser className="login-icon" />
-            <TextField
-              className={classes.root}
-              label="Username"
-              name="userName"
-              value={loginDt.userName}
-              onChange={handleChange}
-              autoFill="nope"
-            />
-          </div>
-          <div>
-            <HiOutlineLockClosed className="login-icon" />
-            <TextField
-              autoFill="nope"
-              type={loginDt.showPassword ? "text" : "password"}
-              name="password"
-              label="Password"
-              value={loginDt.value}
-              onChange={handleChange}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      style={{ color: "white" }}
-                      aria-label="toggle password visibility"
-                      name="showPassword"
-                      onClick={() => {
-                        setLoginDt({
-                          ...loginDt,
-                          ["showPassword"]: !loginDt.showPassword,
-                        });
-                      }}
-                      onMouseDown={(event) => {
-                        event.preventDefault();
-                      }}
-                    >
-                      {loginDt.showPassword ? (
-                        <Visibility />
-                      ) : (
-                        <VisibilityOff />
-                      )}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </div>
-          <FormControlLabel
-            control={
-              <CustomCheckBox
-                checked={loginDt.rememberMe}
-                name="rememberMe"
+          <form className={classes.root}>
+            <div>
+              <HiOutlineUser className="login-icon" />
+              <TextField
+                className={classes.root}
+                label="Username"
+                name="userName"
+                value={loginDt.userName}
                 onChange={handleChange}
+                autoFill="nope"
               />
-            }
-            label="Remember Password"
-          />
+            </div>
+            <div>
+              <HiOutlineLockClosed className="login-icon" />
+              <TextField
+                autoFill="nope"
+                type={loginDt.showPassword ? "text" : "password"}
+                name="password"
+                label="Password"
+                value={loginDt.value}
+                onChange={handleChange}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        style={{ color: "white" }}
+                        aria-label="toggle password visibility"
+                        name="showPassword"
+                        onClick={() => {
+                          setLoginDt({
+                            ...loginDt,
+                            ["showPassword"]: !loginDt.showPassword,
+                          });
+                        }}
+                        onMouseDown={(event) => {
+                          event.preventDefault();
+                        }}
+                      >
+                        {loginDt.showPassword ? (
+                          <Visibility />
+                        ) : (
+                          <VisibilityOff />
+                        )}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </div>
+            <FormControlLabel
+              control={
+                <CustomCheckBox
+                  checked={loginDt.rememberMe}
+                  name="rememberMe"
+                  onChange={handleChange}
+                />
+              }
+              label="Remember Password"
+            />
 
-          <button className="login-entry-for-button">Login</button>
-          <p>Forgot password ?</p>
-        </form>
+            <button className="login-entry-for-button">Login</button>
+            <p>Forgot password ?</p>
+          </form>
+        </div>
       </div>
+        <div className="login-page-footer">
+          <div>
+            <FaCopyright /> Athletic gym and fitness center
+          </div>
+          <div className="footer-child-content">
+            <SocialMedia />
+          </div>
+          <div className="footer-child-content">
+            <GetApp />
+          </div>
+        </div>
     </div>
   );
 }
