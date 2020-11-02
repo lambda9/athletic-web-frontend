@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 
 const SelectOptions = React.memo(({ options }) => {
-	console.log("oprions", options);
 	return (
 		<Fragment>
 			{options.map((value, index) => {

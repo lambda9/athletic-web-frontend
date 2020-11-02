@@ -20,19 +20,29 @@ const FreeTrialFormContainer = () => {
 	});
 
 	const handleChange = (event) => {
-		// console.log("handle cahnge", event);
-		// const name = event.target.name;
-		// const value = event.target.value;
-		// setState((prevState) => ({
-		// 	...prevState,
-		// 	[name]: value,
-		// }));
+		const name = event.target.name;
+		const value = event.target.value;
+		setState((prevState) => ({
+			...prevState,
+			[name]: value,
+		}));
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log("submit", state);
+		const requestOptions = {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(state),
+		};
+		fetch("http://localhost:8000/free-trials/requests/", requestOptions)
+			.then((response) => response.json())
+			.then((data) => console.log(data));
 	};
+
+	if (!response) {
+		return null;
+	}
 
 	return (
 		<FreeTrialForm
@@ -41,7 +51,7 @@ const FreeTrialFormContainer = () => {
 			is_service_active={6}
 			onChange={handleChange}
 			onSubmit={handleSubmit}
-			choices={response}
+			choices={response.choices}
 		/>
 	);
 };

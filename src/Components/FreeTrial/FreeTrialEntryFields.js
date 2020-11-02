@@ -10,6 +10,7 @@ import FormLabel from "@material-ui/core/FormLabel";
 import { withStyles } from "@material-ui/core/styles";
 import "./FreeTrial.css";
 import SelectOptions from "./SelectOptions";
+import RadioOptions from "./RadioOptions";
 
 const useStyles = (theme) => ({
 	root: {
@@ -177,10 +178,7 @@ const FreeTrialEntryFields = ({
 							onChange={onChange}
 						>
 							<SelectOptions
-								options={[
-									["M", "hello"],
-									["waah", "jaaa"],
-								]}
+								options={choices !== null ? choices.programs : []}
 							/>
 						</SelectField>
 					</FormControl>
@@ -194,39 +192,23 @@ const FreeTrialEntryFields = ({
 							value={state.timing}
 							onChange={onChange}
 						>
-							<FormControlLabel
-								value="morning"
-								control={<Radio />}
-								label="Morning"
+							<RadioOptions
+								options={choices.timing}
 								className={classes.radioButton}
-							/>
-							<FormControlLabel
-								value="evening"
-								control={<Radio />}
-								className={classes.radioButton}
-								label="Evening"
 							/>
 						</RadioGroup>
 					</FormControl>
 					<FormControl component="fieldset" className={classes.radioControl}>
-						<FormLabel component="legend">Sex</FormLabel>
+						<FormLabel component="legend">Gender</FormLabel>
 						<RadioGroup
 							aria-label="male"
 							name="gender"
 							value={state.gender}
 							onChange={onChange}
 						>
-							<FormControlLabel
-								value="male"
-								control={<Radio />}
-								label="Male"
+							<RadioOptions
+								options={choices.gender}
 								className={classes.radioButton}
-							/>
-							<FormControlLabel
-								value="female"
-								control={<Radio />}
-								className={classes.radioButton}
-								label="Female"
 							/>
 						</RadioGroup>
 					</FormControl>

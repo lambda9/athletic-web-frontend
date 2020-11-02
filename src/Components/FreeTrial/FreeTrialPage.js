@@ -11,18 +11,6 @@ function FreeTrialPage() {
 		"http://localhost:8000/free-trials/settings/"
 	);
 
-	const [settings, setSettings] = useState({
-		is_service_active: false,
-		days_offered: 0,
-	});
-
-	useEffect(() => {
-		// console.log("response", response);
-		// console.log("erro", error);
-	}, [isLoading]);
-
-	const history = useHistory();
-
 	return (
 		<div className="free-trial-page">
 			<FreeTrialCardBG />

@@ -31,7 +31,6 @@ const Slider = ({
 				}
 			`}
 			onTransitionEnd={() => {
-				console.log("trans end");
 				onTransitionEnd();
 			}}
 		>
