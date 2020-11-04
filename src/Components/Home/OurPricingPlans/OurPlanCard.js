@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { BsStarFill, FaRupeeSign } from "react-icons/all";
 
 function OurPlanCard(props) {
-  const { tag, price, discount, duration, features } = props.obj;
-
-  const discountedPrice = Math.floor(price - (discount * price) / 100);
+  const { tag, price, duration, description, discount } = props.obj;
+  const discountPer = discount ? discount.disc : 0;
+  const discountedPrice = Math.floor(price - (discountPer * price) / 100);
 
   const durationFun = () => {
     if (duration == 1) {
@@ -31,25 +31,31 @@ function OurPlanCard(props) {
         angle={45}
       />
       <BsStarFill className="plan-card-star" />
-      {discount === 0 ? null : (
-        <div className="plan-card-discount">{discount}% OFF</div>
-      )}
+      {discount ? (
+        <div className="plan-card-discount">{discount.disc}% OFF</div>
+      ) : null}
       <div className="plan-card-main-text">
         <h4>{tag}</h4>
+
         <div className="plan-card-price-div">
           <div>
             <FaRupeeSign id="rupee-sign" />
+
             <div className="plan-card-price-div-h2">
-              { price }
+              {discount ? discountedPrice : price}
             </div>
-            {discount === 0 ? null : (
+
+            {discount ? (
               <div className="plan-card-price-disc-active">{price}</div>
-            )}
+            ) : null}
           </div>
+
           <span>{durationFun()}</span>
         </div>
-       
+
+        <p>{description}</p>
       </div>
+
       <Link to="/" className="button-primary plan-card-btn">
         join now
       </Link>

@@ -10,13 +10,14 @@ function OurPlans() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
   const [plansData, setPlansData] = useState([]);
+  
   const handleChange = (newValue) => {
     setDuration(newValue);
   };
 
   const fetchData = () => {
     axios
-      .get("http://127.0.0.1:8000/list/")
+      .get("http://127.0.0.1:8000/plans/")
       .then((res) => {
         setPlansData(res.data);
         setIsLoaded(true);
@@ -43,11 +44,15 @@ function OurPlans() {
           </p>
         </div>
         <PlanDurationSlider duration={duration} handleDuration={handleChange} />
-        <Slider width={80} smallScreen={1} mediumScreen={2} largeScreen={3}>
-          {newData.map((item) => {
-            return <OurPlanCard key={item.id} obj={item} />;
-          })}
-        </Slider>
+        {isLoaded ? (
+          <Slider width={80} smallScreen={1} mediumScreen={2} largeScreen={3}>
+            {newData.map((item) => {
+              return <OurPlanCard key={item.id} obj={item} />;
+            })}
+          </Slider>
+        ) : (
+          "Loading..."
+        )}
       </div>
     </div>
   );

@@ -79,8 +79,8 @@
 /*plan card  */
 .plan-card-main-div {
 	margin: 1rem;
-	width: 310px;
-	min-width: 310px;
+	width: 290px;
+	min-width: 290px;
 	display: inline-block;
 	height: 420px;
 	background: var(--mainWhite);
@@ -98,14 +98,15 @@
 	color: var(--mainWhite);
 }
 
+/* Discount tag */
 .plan-card-discount {
 	position: absolute;
-	font-size: 18px;
-	top: 2%;
-	left: -1.4rem;
+	font-size: 14px;
+	top: 1.5%;
+	left: -1.5rem;
 	font-weight: 400;
 	background-color: var(--primaryRed);
-	padding: 0.15rem 0.3rem;
+	padding: 0.1rem 0.25rem;
 	color: var(--mainWhite);
 }
 
@@ -114,6 +115,7 @@
 	text-transform: uppercase;
 	font-weight: 500;
 	line-height: 1.2px;
+	margin-top: 20px;
 	margin-bottom: 34px;
 	font-size: 24px;
 }
@@ -160,22 +162,18 @@
 	letter-spacing: 2px;
 }
 
-.plan-card-main-text ul {
-	margin-top: 1.2rem;
-	list-style-type: disc;
-}
-
-.plan-card-main-text ul li {
-	list-style: none;
-	font-size: 16px;
-	line-height: 32px;
-}
-
 .plan-card-main-div a {
 	position: absolute;
 	bottom: 0;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.plan-card-main-div p{
+	width: 90%;
+	margin: auto;
+	margin-top: 20px;
+	font-size: 16px;
 }
 
 .plan-card-btn {
@@ -278,12 +276,7 @@
 		font-size: 18px;
 	}
 
-	.plan-card-main-text ul {
-		margin-top: 0.8rem;
-	}
-
-	.plan-card-main-text ul li {
+	.plan-card-main-div p{
 		font-size: 14px;
-		line-height: 28px;
 	}
 }
