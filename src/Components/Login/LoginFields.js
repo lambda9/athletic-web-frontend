@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { css, jsx } from "@emotion/core";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import { FaCopyright } from "react-icons/all";
@@ -18,9 +16,6 @@ import {
   HiOutlineUser,
   HiOutlineLockClosed,
 } from "react-icons/all";
-import { Input } from "@material-ui/core";
-
-/** @jsx jsx */
 
 const useStyles = makeStyles({
   root: {
@@ -74,23 +69,13 @@ const CustomCheckBox = withStyles({
   },
 })((props) => <Checkbox color="default" {...props} />);
 
-function Login() {
+function LoginFields(props) {
+  const { baby, loginDt, handleChange, handleShowPassword } = props;
+  
+  
   const classes = useStyles();
 
-  const [loginDt, setLoginDt] = useState({
-    userName: "",
-    password: "",
-    showPassword: false,
-    rememberMe: false,
-  });
-
-  const handleChange = (event) => {
-    let name = event.target.name;
-    let value =
-      name == "rememberMe" ? event.target.checked : event.target.value;
-
-    setLoginDt({ ...loginDt, [name]: value });
-  };
+  console.log(baby, props, handleChange, handleShowPassword, "login Dt");
 
   return (
     <div>
@@ -107,7 +92,7 @@ function Login() {
                 label="Username"
                 name="userName"
                 value={loginDt.userName}
-                onChange={handleChange}
+                onChange={(event) => handleChange()}
                 autoFill="nope"
               />
             </div>
@@ -119,7 +104,7 @@ function Login() {
                 name="password"
                 label="Password"
                 value={loginDt.value}
-                onChange={handleChange}
+                onChange={(event) => handleChange()}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -127,12 +112,7 @@ function Login() {
                         style={{ color: "white" }}
                         aria-label="toggle password visibility"
                         name="showPassword"
-                        onClick={() => {
-                          setLoginDt({
-                            ...loginDt,
-                            ["showPassword"]: !loginDt.showPassword,
-                          });
-                        }}
+                        onClick={() => handleShowPassword()}
                         onMouseDown={(event) => {
                           event.preventDefault();
                         }}
@@ -164,19 +144,19 @@ function Login() {
           </form>
         </div>
       </div>
-        <div className="login-page-footer">
-          <div>
-            <FaCopyright /> Athletic gym and fitness center
-          </div>
-          <div className="footer-child-content">
-            <SocialMedia />
-          </div>
-          <div className="footer-child-content">
-            <GetApp />
-          </div>
+      <div className="login-page-footer">
+        <div>
+          <FaCopyright /> Athletic gym and fitness center
         </div>
+        <div className="footer-child-content">
+          <SocialMedia />
+        </div>
+        <div className="footer-child-content">
+          <GetApp />
+        </div>
+      </div>
     </div>
   );
 }
 
-export default Login;
+export default LoginFields;
