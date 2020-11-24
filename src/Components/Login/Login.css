@@ -5,7 +5,7 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 800px;
+  height: 760px;
 }
 
 .login-entry-form {
@@ -14,7 +14,7 @@
   border-radius: 10px;
   overflow: hidden;
   padding: 20px 40px 20px;
-  height: 600px;
+  /* height: 570px; */
   margin: auto;
   background: linear-gradient(to bottom, #7579ff, #1ca9c9);
 }
@@ -27,7 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2.5rem auto 4rem;
+  margin: 1.8rem auto 2.3rem;
   padding: 0 20px;
   min-width: 120px;
   height: 50px;

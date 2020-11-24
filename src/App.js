@@ -20,7 +20,7 @@ import BlogPage from "./Components/NewsBlog/BlogPage";
 import FullBlogPage from "./Components/NewsBlog/FullBlogPage";
 import AdvertisePage from "./Components/Advertise/AdvertisePage";
 import PTPage from "./Components/PersonalTraining/PTPage";
-import Login from "./Components/Login/LoginFields";
+import Login from "./Components/Login/Login";
 
 class App extends Component {
   render() {
