@@ -21,9 +21,9 @@ export class SocialMedia extends Component {
           <a target="_blank" href="https://www.instagram.com/theathleticgym/">
             <FaInstagram />
           </a>
-          <Link href="/https://www.youtube.com/channel/UCaLrziwKCIUS6PWlwu1Y8Hw/featured">
+          <a href="/https://www.youtube.com/channel/UCaLrziwKCIUS6PWlwu1Y8Hw/featured">
             <BiPhoneCall />
-          </Link>
+          </a>
           <Link to="/">
             <SiGooglemaps />
           </Link>

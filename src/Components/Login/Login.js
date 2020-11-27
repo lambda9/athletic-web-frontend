@@ -1,66 +1,90 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import LoginFields from "./LoginFields";
 import { FaCopyright } from "react-icons/all";
 import SocialMedia from "../Footer/SocialMedia";
 import GetApp from "../Footer/GetApp";
 import axios from "axios";
 
+class Login extends Component {
+  constructor(props) {
+    super(props);
 
-function Login() {
-  const [loginDt, setLoginDt] = useState({
-    userName: "",
-    password: "",
-    showPassword: false,
-    rememberMe: false,
-  });
+    this.state = {
+      userName: "",
+      password: "",
+      rememberMe: false,
+      showPassword: false,
+    };
+  }
 
-  const handleChange = (event) => {
+  componentDidMount() {
+    if (localStorage.checkbox && localStorage.email !== "") {
+      this.setState({
+        rememberMe: true,
+        email: localStorage.username,
+        password: localStorage.password,
+      });
+    }
+  }
+
+  handleChange = (event) => {
     let name = event.target.name;
-    let value = name == "rememberMe" ? event.target.checked : event.target.value;
+    let value =
+      name == "rememberMe" ? event.target.checked : event.target.value;
 
-    setLoginDt({ ...loginDt, [name]: value });
-  };
-
-  const handleShowPassword = (event) => {
-    setLoginDt({
-      ...loginDt,
-      ["showPassword"]: !loginDt.showPassword,
+    this.setState({
+      [name]: value,
     });
   };
 
-  const handleLogin = (event) => {
-    console.log("Hey login Data", loginDt)
+  handleShowPassword = (event) => {
+    this.setState({
+      showPassword: !this.state.showPassword,
+    });
+  };
 
-    let item = {
-      email: loginDt.userName,
-      password: loginDt.password,
+  handleLogin = (event) => {
+    console.log("Hey login Data", this.state);
+    const { username, password, rememberMe } = this.state;
+    if (rememberMe && username !== "") {
+      localStorage.username = username;
+      localStorage.password = password;
+      localStorage.checkbox = rememberMe;
     }
-    axios.post("http://127.0.0.1:8000/memberapi/user/", item)
-    .then(res => console.log(res, "Response"))
-    .catch(err => console.log(err, "error in posting"))  }
+    let item = {
+      email: username,
+      password: password,
+    };
+    axios
+      .post("http://127.0.0.1:8000/memberapi/user/", item)
+      .then((res) => console.log(res, "Response"))
+      .catch((err) => console.log(err, "error in posting"));
+  };
 
-  return (
-    <div>
-      <LoginFields
-        loginDt={loginDt}
-        handleChange={handleChange}
-        handleShowPassword={handleShowPassword}
-        handleLogin={handleLogin}
-      />
+  render() {
+    return (
+      <div>
+        <LoginFields
+          loginDt={this.state}
+          handleChange={this.handleChange}
+          handleShowPassword={this.handleShowPassword}
+          handleLogin={this.handleLogin}
+        />
 
-      <div className="login-page-footer">
-        <div>
-          <FaCopyright /> Athletic gym and fitness center
-        </div>
-        <div className="footer-child-content">
-          <SocialMedia />
-        </div>
-        <div className="footer-child-content">
-          <GetApp />
+        <div className="login-page-footer">
+          <div>
+            <FaCopyright /> Athletic gym and fitness center
+          </div>
+          <div className="footer-child-content">
+            <SocialMedia />
+          </div>
+          <div className="footer-child-content">
+            <GetApp />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Login;

@@ -10,9 +10,9 @@ function OurPlanCard(props) {
   const discountedPrice = Math.floor(price - (discountPer * price) / 100);
 
   const durationFun = () => {
-    if (duration == 1) {
+    if (duration === 1) {
       return "Monthly";
-    } else if (duration == 12) {
+    } else if (duration === 12) {
       return "yearly";
     } else {
       return `${duration} Months`;

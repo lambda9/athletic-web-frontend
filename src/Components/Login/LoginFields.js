@@ -78,7 +78,9 @@ function LoginFields(props) {
         <RiLoginCircleFill className="login-icon1" />
         <h2>LOG IN</h2>
 
-        <form className={classes.root} >
+        <form className={classes.root} onSubmit={(event) => {
+          // event.preventDefault();
+        }} >
           <div>
             <HiOutlineUser className="login-icon" />
             <TextField

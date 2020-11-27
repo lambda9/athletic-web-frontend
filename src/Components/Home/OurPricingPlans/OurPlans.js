@@ -31,7 +31,7 @@ function OurPlans() {
 
   useEffect(() => fetchData(), []);
 
-  const newData = plansData.filter((item) => item.duration == duration);
+  const newData = plansData.filter((item) => item.duration === duration);
 
   return (
     <div className="plans-main-comp">
