@@ -14,6 +14,7 @@ import {
   HiOutlineUser,
   HiOutlineLockClosed,
 } from "react-icons/all";
+import USerConsumer, { UserConsumer } from "../GlobalComponents/UserContext";
 
 const useStyles = makeStyles({
   root: {
@@ -68,80 +69,100 @@ const CustomCheckBox = withStyles({
 })((props) => <Checkbox color="default" {...props} />);
 
 function LoginFields(props) {
-  const { loginDt, handleChange, handleShowPassword, handleLogin } = props;
-
   const classes = useStyles();
 
   return (
-    <div className="login-page">
-      <div className="login-entry-form">
-        <RiLoginCircleFill className="login-icon1" />
-        <h2>LOG IN</h2>
+    <UserConsumer>
+      {(value) => {
 
-        <form className={classes.root} onSubmit={(event) => {
-          // event.preventDefault();
-        }} >
-          <div>
-            <HiOutlineUser className="login-icon" />
-            <TextField
-              className={classes.root}
-              label="Username"
-              name="userName"
-              required={true}
-              value={loginDt.userName}
-              onChange={handleChange}
-              autoFill="nope"
-            />
-          </div>
-          <div>
-            <HiOutlineLockClosed className="login-icon" />
-            <TextField
-              autoFill="nope"
-              type={loginDt.showPassword ? "text" : "password"}
-              name="password"
-              label="Password"
-              value={loginDt.value}
-              required={true}
-              onChange={handleChange}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      style={{ color: "white" }}
-                      aria-label="toggle password visibility"
-                      name="showPassword"
-                      onClick={() => handleShowPassword()}
-                      onMouseDown={(event) => {
-                        event.preventDefault();
-                      }}
-                    >
-                      {loginDt.showPassword ? (
-                        <Visibility />
-                      ) : (
-                        <VisibilityOff />
-                      )}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </div>
-          <FormControlLabel
-            control={
-              <CustomCheckBox
-                checked={loginDt.rememberMe}
-                name="rememberMe"
-                onChange={handleChange}
-              />
-            }
-            label="Remember Password"
-          />
+        const {
+          loginDt,
+          handleChange,
+          handleShowPassword,
+          handleLogin,
+        } = value;
+        
+        return (
+          <div className="login-page">
+            <div className="login-entry-form">
+              <RiLoginCircleFill className="login-icon1" />
+              <h2>LOG IN</h2>
 
-          <button className="login-entry-for-button" onClick={handleLogin} >Login</button>
-          <p>Forgot password ?</p>
-        </form>
-      </div>
-    </div>
+              <form
+                className={classes.root}
+                onSubmit={(event) => {
+                  event.preventDefault();
+                }}
+              >
+                <div>
+                  <HiOutlineUser className="login-icon" />
+                  <TextField
+                    className={classes.root}
+                    label="Username"
+                    name="userName"
+                    required={true}
+                    value={loginDt.userName}
+                    onChange={handleChange}
+                    autoFill="nope"
+                  />
+                </div>
+                <div>
+                  <HiOutlineLockClosed className="login-icon" />
+                  <TextField
+                    autoFill="nope"
+                    type={loginDt.showPassword ? "text" : "password"}
+                    name="password"
+                    label="Password"
+                    value={loginDt.value}
+                    required={true}
+                    onChange={handleChange}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            style={{ color: "white" }}
+                            aria-label="toggle password visibility"
+                            name="showPassword"
+                            onClick={() => handleShowPassword()}
+                            onMouseDown={(event) => {
+                              event.preventDefault();
+                            }}
+                          >
+                            {loginDt.showPassword ? (
+                              <Visibility />
+                            ) : (
+                              <VisibilityOff />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </div>
+                <FormControlLabel
+                  control={
+                    <CustomCheckBox
+                      checked={loginDt.rememberMe}
+                      name="rememberMe"
+                      onChange={handleChange}
+                    />
+                  }
+                  label="Remember Password"
+                />
+
+                <button
+                  className="login-entry-for-button"
+                  onClick={handleLogin}
+                >
+                  Login
+                </button>
+                <p>Forgot password ?</p>
+              </form>
+            </div>
+          </div>
+        );
+      }}
+    </UserConsumer>
   );
 }
 
