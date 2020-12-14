@@ -11,11 +11,14 @@ import Results from "./WhatWeProvide/Results";
 import Programs from "./Programs/Programs";
 import Features from "./WhatWeProvide/Features";
 import NewsLetter from "./NewsLetter/NewsLetter";
+import LoadingSpinner from "../GlobalComponents/LoadingSpinner";
+import Loader from "../GlobalComponents/Loader";
 
 function Home() {
 	return (
 		<div>
 			<FadingCarousel />
+			{Loader(LoadingSpinner, Covid)}
 			<Covid />
 			<Features />
 			<Programs />

@@ -10,7 +10,9 @@ const FreeTrialForm = ({
 	onChange,
 	onSubmit,
 	choices,
+	isLoading,
 }) => {
+	console.log("is Loadng", isLoading);
 	const history = useHistory();
 	if (is_service_active) {
 		return (
@@ -29,6 +31,12 @@ const FreeTrialForm = ({
 				<Link className="free-trial-terms-text">
 					*By submitting this form you agree to our terms and conditions.
 				</Link>
+				<div
+					className="loader-div"
+					style={{ display: isLoading ? "block" : "none" }}
+				>
+					<div className="loader">Loading...</div>
+				</div>
 			</div>
 		);
 	} else {
