@@ -2,12 +2,7 @@ import React, { useEffect, useState } from "react";
 import FreeTrialForm from "./FreeTrialForm";
 import { useFetch } from "./hooks";
 
-const FreeTrialFormContainer = ({days_offered}) => {
-	const { response, error, isLoading } = useFetch(
-		"http://localhost:8000/free-trials/form/",
-		null
-	);
-
+const FreeTrialFormContainer = ({ days_offered, data, error }) => {
 	const [state, setState] = useState({
 		name: "",
 		email: "",
@@ -40,10 +35,6 @@ const FreeTrialFormContainer = ({days_offered}) => {
 			.then((data) => console.log(data));
 	};
 
-	if (!response) {
-		return null;
-	}
-
 	return (
 		<FreeTrialForm
 			state={state}
@@ -51,8 +42,8 @@ const FreeTrialFormContainer = ({days_offered}) => {
 			is_service_active={6}
 			onChange={handleChange}
 			onSubmit={handleSubmit}
-			choices={response.choices}
-			isLoading={isLoading}
+			choices={data.choices}
+			isLoading={false}
 		/>
 	);
 };

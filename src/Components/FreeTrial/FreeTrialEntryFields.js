@@ -146,14 +146,6 @@ const FreeTrialEntryFields = ({
 					onChange={onChange}
 				/>
 
-				<CssTextField
-					required
-					label="Date"
-					name="proposed_date"
-					type="date"
-					value={state.proposed_date}
-					onChange={onChange}
-				/>
 				<div className="free-trial-entry-fields-selection">
 					<FormControl component="fieldset" className={classes.ageField}>
 						<TextField
@@ -166,38 +158,8 @@ const FreeTrialEntryFields = ({
 							onChange={onChange}
 						/>
 					</FormControl>
-					<FormControl className={classes.selectField}>
-						<InputLabel htmlFor="select-program">Program</InputLabel>
-						<SelectField
-							required
-							native
-							name="program"
-							defaultValue="None"
-							className={classes.temp}
-							value={state.program}
-							onChange={onChange}
-						>
-							<SelectOptions
-								options={choices !== null ? choices.programs : []}
-							/>
-						</SelectField>
-					</FormControl>
 				</div>
 				<div className="free-trial-entry-fields-selection">
-					<FormControl component="fieldset" className={classes.radioControl}>
-						<FormLabel component="legend">Choose Time</FormLabel>
-						<RadioGroup
-							aria-label="morning"
-							name="timing"
-							value={state.timing}
-							onChange={onChange}
-						>
-							<RadioOptions
-								options={choices.timing}
-								className={classes.radioButton}
-							/>
-						</RadioGroup>
-					</FormControl>
 					<FormControl component="fieldset" className={classes.radioControl}>
 						<FormLabel component="legend">Gender</FormLabel>
 						<RadioGroup
