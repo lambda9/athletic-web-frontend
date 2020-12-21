@@ -21,6 +21,16 @@ import FullBlogPage from "./Components/NewsBlog/FullBlogPage";
 import AdvertisePage from "./Components/Advertise/AdvertisePage";
 import PTPage from "./Components/PersonalTraining/PTPage";
 import Login from "./Components/Pages/Login";
+import FreeTrialForm from "./Components/FreeTrial/FreeTrialForm";
+import Loader from "./Components/GlobalComponents/Loader";
+
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:8000/";
+
+const FreeTrial = () => {
+	return Loader("free-trials/settings/", FreeTrialPage);
+};
 
 class App extends Component {
 	render() {
@@ -38,13 +48,15 @@ class App extends Component {
 						<Route exact path="/gallery/" component={Gallery} />
 						<Route exact path="/membership/" component={Membership} />
 						<Route exact path="/joinNow/:slug" component={JoinNow} />
-						<Route exact path="/freetrial/" component={FreeTrialPage} />
+
+						<Route exact path="/freetrial/" component={FreeTrial} />
+
 						<Route exact path="/franchise/" component={FranchisePage} />
 						<Route exact path="/blog/" component={BlogPage} />
 						<Route exact path="/fullblog/" component={FullBlogPage} />
 						<Route exact path="/advertise/" component={AdvertisePage} />
 						<Route exact path="/pt" component={PTPage} />
-						<Route exact path='/login' component={Login} />
+						<Route exact path="/login" component={Login} />
 						<Route component={Error} />
 					</Switch>
 				</div>
