@@ -24,8 +24,12 @@ import Login from "./Components/Pages/Login";
 import FreeTrialForm from "./Components/FreeTrial/FreeTrialForm";
 import Loader from "./Components/GlobalComponents/Loader";
 
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:8000/";
+
 const FreeTrial = () => {
-	return Loader("http://localhost:8000/free-trials/settings/", FreeTrialPage);
+	return Loader("free-trials/settings/", FreeTrialPage);
 };
 
 class App extends Component {

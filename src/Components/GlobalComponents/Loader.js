@@ -8,14 +8,13 @@ const Loader = (api, Content, props) => {
 	const [error, setError] = useState(null);
 	useEffect(() => {
 		axios
-			.get(api, { timeout: 1000 })
+			.get(api, { timeout: 10000 })
 			.then((res) => {
 				setData(res.data);
 				setLoading(false);
 			})
 			.catch((err) => {
 				setError(err);
-				setLoading(false);
 				console.log(err.request, err.message);
 			});
 	}, [api]);
