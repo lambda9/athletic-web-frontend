@@ -2,7 +2,7 @@
 import { css, jsx } from "@emotion/core";
 import React from "react";
 
-const FeatureCard = React.memo(({ src, title, desc, children }) => {
+const FeatureCard = React.memo(({ photo, title, description, children }) => {
 	return (
 		<div
 			css={css`
@@ -16,7 +16,7 @@ const FeatureCard = React.memo(({ src, title, desc, children }) => {
 			`}
 		>
 			<div>
-				<img draggable={false} width={"100%"} src={src} alt={title}></img>
+				<img draggable={false} width={"100%"} src={photo} alt={title}></img>
 				<section
 					css={css`
 						padding: 0.5rem;
@@ -25,7 +25,6 @@ const FeatureCard = React.memo(({ src, title, desc, children }) => {
 						}
 					`}
 				>
-					{children}
 					<h4
 						css={css`
 							text-transform: capitalize;
@@ -33,7 +32,7 @@ const FeatureCard = React.memo(({ src, title, desc, children }) => {
 					>
 						{title}
 					</h4>
-					<p>{desc}</p>
+					<p>{description}</p>
 				</section>
 			</div>
 		</div>

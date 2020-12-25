@@ -1,32 +1,42 @@
-import React, { Component } from "react";
+import React, { Component, lazy, Suspense } from "react";
+// import { Loadable } from "react-loadable";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Navbar from "./Components/Navbar/Navbar";
-import Home from "./Components/Home/Home";
-import Programs from "./Components/Programs/ProgramsPage";
-import ContactUs from "./Components/ContactUs/ContactUs";
-import AboutUs from "./Components/AboutUs/AboutUs";
-import FAQ from "./Components/FAQ/FAQ";
-import Gallery from "./Components/Gallery/Gallery";
-import Membership from "./Components/Membership/Membership";
-import Error from "./Components/Pages/Error";
-import JoinNow from "./Components/Pages/JoinNow";
-import Footer from "./Components/Footer/Footer";
-import ScrollToTop from "./Components/GlobalComponents/ScrollToTop";
-import FreeTrialPage from "./Components/FreeTrial/FreeTrialPage";
-import FranchisePage from "./Components/Franchise/FranchisePage";
-import BlogPage from "./Components/NewsBlog/BlogPage";
-import FullBlogPage from "./Components/NewsBlog/FullBlogPage";
-import AdvertisePage from "./Components/Advertise/AdvertisePage";
-import PTPage from "./Components/PersonalTraining/PTPage";
-import Login from "./Components/Pages/Login";
-import FreeTrialForm from "./Components/FreeTrial/FreeTrialForm";
+
 import Loader from "./Components/GlobalComponents/Loader";
+import Navbar from "./Components/Navbar/Navbar";
+// import Footer from "./Components/Footer/Footer";
 
 import axios from "axios";
+import LoadingSpinner from "./Components/GlobalComponents/LoadingSpinner";
+// import LoadingSpinner from "./Components/GlobalComponents/LoadingSpinner";
 
 axios.defaults.baseURL = "http://localhost:8000/";
+
+const Home = lazy(() => import("./Components/Home/Home"));
+
+const Programs = lazy(() => import("./Components/Programs/ProgramsPage"));
+
+const ContactUs = lazy(() => import("./Components/ContactUs/ContactUs"));
+const AboutUs = lazy(() => import("./Components/AboutUs/AboutUs"));
+const FAQ = lazy(() => import("./Components/FAQ/FAQ"));
+const Gallery = lazy(() => import("./Components/Gallery/Gallery"));
+const Membership = lazy(() => import("./Components/Membership/Membership"));
+const JoinNow = lazy(() => import("./Components/Pages/JoinNow"));
+const FreeTrialPage = lazy(() =>
+	import("./Components/FreeTrial/FreeTrialPage")
+);
+const FranchisePage = lazy(() =>
+	import("./Components/Franchise/FranchisePage")
+);
+const BlogPage = lazy(() => import("./Components/NewsBlog/BlogPage"));
+const FullBlogPage = lazy(() => import("./Components/NewsBlog/FullBlogPage"));
+const AdvertisePage = lazy(() =>
+	import("./Components/Advertise/AdvertisePage")
+);
+const PTPage = lazy(() => import("./Components/PersonalTraining/PTPage"));
+const Login = lazy(() => import("./Components/Pages/Login"));
 
 const FreeTrial = () => {
 	return Loader("free-trials/settings/", FreeTrialPage);
@@ -36,32 +46,31 @@ class App extends Component {
 	render() {
 		return (
 			<Router>
-				<ScrollToTop />
 				<Navbar />
 				<div className="main-content">
-					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route exact path="/programs/" component={Programs} />
-						<Route exact path="/contactUs/" component={ContactUs} />
-						<Route exact path="/aboutUs/" component={AboutUs} />
-						<Route exact path="/faq/" component={FAQ} />
-						<Route exact path="/gallery/" component={Gallery} />
-						<Route exact path="/membership/" component={Membership} />
-						<Route exact path="/joinNow/:slug" component={JoinNow} />
-
-						<Route exact path="/freetrial/" component={FreeTrial} />
-
-						<Route exact path="/franchise/" component={FranchisePage} />
-						<Route exact path="/blog/" component={BlogPage} />
-						<Route exact path="/fullblog/" component={FullBlogPage} />
-						<Route exact path="/advertise/" component={AdvertisePage} />
-						<Route exact path="/pt" component={PTPage} />
-						<Route exact path="/login" component={Login} />
-						<Route component={Error} />
-					</Switch>
+					<Suspense fallback={LoadingSpinner}>
+						<Switch>
+							<Route exact path="/" component={Home} />
+							<Route exact path="/programs/" component={Programs} />
+							<Route exact path="/contactUs/" component={ContactUs} />
+							<Route exact path="/aboutUs/" component={AboutUs} />
+							<Route exact path="/faq/" component={FAQ} />
+							<Route exact path="/gallery/" component={Gallery} />
+							<Route exact path="/membership/" component={Membership} />
+							<Route exact path="/joinNow/:slug" component={JoinNow} />
+							<Route exact path="/freetrial/" component={FreeTrial} />
+							<Route exact path="/franchise/" component={FranchisePage} />
+							<Route exact path="/blog/" component={BlogPage} />
+							<Route exact path="/fullblog/" component={FullBlogPage} />
+							<Route exact path="/advertise/" component={AdvertisePage} />
+							<Route exact path="/pt" component={PTPage} />
+							<Route exact path="/login" component={Login} />
+							<Route component={Error} />
+						</Switch>
+					</Suspense>
 				</div>
 
-				<Footer />
+				{/* <Footer /> */}
 			</Router>
 		);
 	}
