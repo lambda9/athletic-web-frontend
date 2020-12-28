@@ -21,7 +21,7 @@ export const features = [
 	{
 		id: 0,
 		src: area,
-		title: "1000 sq feet area",
+		title: "5000 sq feet area",
 		children: <SvgArea css={svgStyle} />,
 		desc: "we provide most open and wide area",
 	},
@@ -44,7 +44,7 @@ export const features = [
 		src: crossfit,
 		title: "cross fit",
 		children: <SvgArea css={svgStyle} />,
-		desc: "one of the best cross-fit in the world",
+		desc: "one of the best cross-fit available in other gyms",
 	},
 	{
 		id: 4,

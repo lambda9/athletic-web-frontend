@@ -1,15 +1,13 @@
-FROM node:lts-alpine AS BUILDER
+FROM node:lts-alpine as BUILDER
 
 WORKDIR /app
 COPY package-lock.json .
 COPY package.json .
 RUN npm install
 COPY . .
-RUN npm run-script build
+RUN npm run build
 
 FROM nginx:alpine
+COPY --from=BUILDER /app/build /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
 
-WORKDIR /usr/share/nginx/html
-RUN rm -rf ./*
-COPY --from=BUILDER /app/build .
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
