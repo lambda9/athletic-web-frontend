@@ -15,11 +15,9 @@ function FreeTrialPage({ data, error }) {
 		<div className="free-trial-page">
 			<FreeTrialCardBG days={data["days_offered"]} />
 			<div className="free-trial-content-div">
-				{Loader(
-					"http://localhost:8000/free-trials/form/",
-					FreeTrialFormContainer,
-					{ days_offered: data["days_offered"] }
-				)}
+				{Loader("/free-trials/form/", FreeTrialFormContainer, {
+					days_offered: data["days_offered"],
+				})}
 				<div className="free-trial-join-today-div">
 					<span>
 						Join today to avail special offers on Athletic's Gym membership.

@@ -30,7 +30,7 @@ const FreeTrialFormContainer = ({ days_offered, data, error }) => {
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(state),
 		};
-		fetch("http://localhost:8000/free-trials/requests/", requestOptions)
+		fetch("/free-trials/requests/", requestOptions)
 			.then((response) => response.json())
 			.then((data) => console.log(data));
 	};
