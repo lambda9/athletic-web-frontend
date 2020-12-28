@@ -12,7 +12,7 @@ import axios from "axios";
 import LoadingSpinner from "./Components/GlobalComponents/LoadingSpinner";
 // import LoadingSpinner from "./Components/GlobalComponents/LoadingSpinner";
 
-axios.defaults.baseURL = "http://localhost:8000/";
+axios.defaults.baseURL = "http://theathleticgym/api/";
 
 const Home = lazy(() => import("./Components/Home/Home"));
 
